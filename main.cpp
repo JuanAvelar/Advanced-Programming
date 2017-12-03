@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
 	Controller controller(level, lifes, score); //create the controller instance
 	controller.launchGame();
-	
+	//test comment
 	
 
 	return 0;
