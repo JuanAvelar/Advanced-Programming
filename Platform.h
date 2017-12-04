@@ -4,16 +4,20 @@
 #include <string> // C++ standard string class
 #include "MoveableObject.h"
 
-class Platform : public MoveableObject {
+class Platform : public MoveableObject, public Window {
 public:
-	Platform(const Window &window, int = 0, int = 0, const int = 0, const int = 0, double = 0.0, double = 0.0, double = 0.0, double = 0.0);
+	Platform(const Window &window, int xposition, int yposition, const int height, const int width, int r, int g, int b, int a);
 	virtual ~Platform() = default; // virtual destructor
 
 	virtual std::string toString() const override;
 	virtual double move() override;
 
+	void draw() const;
 
 private:
+
+	int _r, _g, _b, _a;
+	SDL_Texture *platform = nullptr;
 	//empty for now (unless we want to add more later), but should not be necessary
 };
 

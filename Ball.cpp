@@ -7,7 +7,7 @@ using namespace std;
 
 // constructor
 Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, double xspeed, double yspeed, const std::string &image_path)
-	: Window(window), MoveableObject(xposition, yposition, height, width, xspeed, yspeed), _x(xposition) , _y(yposition), _h(height), _w(width) {
+	: Window(window), MoveableObject(xposition, yposition, height, width, xspeed, yspeed) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
@@ -25,7 +25,7 @@ Ball::~Ball() {
 }
 
 void Ball::draw() const {
-	SDL_Rect ball = { _x, _y, _w, _h };
+	SDL_Rect ball = { xposition, yposition, width, height };
 	if (pinball) {
 		SDL_RenderCopy(_renderer, pinball, nullptr, &ball);
 	}

@@ -4,6 +4,7 @@
 #include "GameElement.h"
 #include "Controller.h"
 #include "Ball.h"
+#include "Platform.h"
 
 // constructor
 Controller::Controller(int lev, int lif, int sco)
@@ -13,7 +14,8 @@ Controller::Controller(int lev, int lif, int sco)
 void Controller::launchGame() {
 	Window window_c("Breakout", 1000, 600);
 	SDL_Event event;
-	Ball ball(window_c, 100, 100, 200, 200, 200, 200,"pictures/shiny_pinball.png");
+	Ball ball(window_c, 100, 100, 20, 20, 200, 200,"pictures/shiny_pinball.png");
+	Platform platform(window_c, 500, 500, 20, 100, 0, 0, 255, 255);
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
@@ -24,6 +26,7 @@ void Controller::launchGame() {
 			window_c.pollEvents(event);
 		}
 		ball.draw();
+		platform.draw();
 		window_c.clear();
 	}
 

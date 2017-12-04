@@ -7,27 +7,27 @@ MoveableObject::MoveableObject( int xposition, int yposition, const int height, 
 }
 
 void MoveableObject::setXSpeed(double xspeed) {
-	xspe = xspeed;
+	_xspeed = xspeed;
 }
 
 void MoveableObject::setYSpeed(double yspeed) {
-	yspe = yspeed;
+	_yspeed = yspeed;
 }
 
 double MoveableObject::getXPosition() {
-	return xpos;
+	return xposition;
 }
 
 double MoveableObject::getYPosition() {
-	return ypos;
+	return yposition;
 }
 
 double MoveableObject::getXSpeed() {
-	return xspe;
+	return _xspeed;
 }
 
 double MoveableObject::getYSpeed() {
-	return yspe;
+	return _yspeed;
 }
 
 // return a string representation of Brick's information 

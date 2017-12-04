@@ -23,10 +23,9 @@ public:
 	virtual double move();
 
 protected:
-	double xpos;
-	double ypos;
-	double xspe;
-	double yspe;
+	
+	double _xspeed = 0;
+	double _yspeed = 0;
 };
 
 #endif // MoveableObject_H

@@ -19,7 +19,7 @@ public:
 	void destroyGameElement();
 	virtual std::string toString() const;
 
-private:
+protected:
 	int xposition, yposition, height, width;
 };
 

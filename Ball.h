@@ -15,10 +15,8 @@ public:
 	void draw() const;
 
 private:
-	int _w, _h;
-	int _x, _y;
+	
 	int _r, _g, _b, _a;
-	int x_speed, y_speed;
 	SDL_Texture *pinball = nullptr;
 	
 };
