@@ -22,3 +22,4 @@ string Brick::toString() const {
 	return "0";
 }
 
+je moeder is lelijk
