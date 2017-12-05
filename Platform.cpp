@@ -9,7 +9,7 @@ Platform::Platform(const Window &window, int xposition, int yposition, const int
 }
 
 /*Platform::~Platform() {
-	//SDL_DestroyTexture(platform);
+	//SDL_DestroyTexture(platform); //this is only for the images
 }*/
 
 void Platform::draw() const {
