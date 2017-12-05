@@ -30,8 +30,26 @@ string Platform::toString() const {
 }
 
 //function move --> implements abstract class function
-double Platform::move() {
-	return 0;
+void Platform::move(SDL_Event &event) {
+	switch (event.type) {
+	
+	case SDL_KEYDOWN:
+		switch (event.key.keysym.sym) {
+		case SDLK_LEFT:
+			if (xposition > 0) {
+				xposition -= 100;
+			}
+			break;
+		case SDLK_RIGHT:
+			if (xposition < 900) {
+			xposition += 100;
+			}
+			break;
+		}
+	default:
+		break;
+	}
+
 	//create the move function --> determined by userinput which we get in the controller
 }
 

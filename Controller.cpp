@@ -35,6 +35,7 @@ void Controller::launchGame() {
 		//rect.draw();
 		//rect2.draw();
 		if (SDL_PollEvent(&event)) {
+			platform.move(event);
 			window_c.pollEvents(event);
 		}
 		ball.draw();

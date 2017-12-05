@@ -34,4 +34,3 @@ int Brick::getHitsToDestroy() {
 string Brick::toString() const {
 	return "0";
 }
-
