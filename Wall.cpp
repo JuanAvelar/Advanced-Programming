@@ -4,8 +4,8 @@ using namespace std;
 // wall side can be either "up", "down", "right", "left"
 
 // constructor 
-Wall::Wall(int xposition, int yposition, const int	height, const int width, const Wall_type wallSide)
-	: GameElement(xposition, yposition, height, width) {
+Wall::Wall(const Window window, int xposition, int yposition, const int	height, const int width, const Wall_type wallSide, int r, int g, int b, int a)
+	: Window(window),GameElement(xposition, yposition, height, width) {
 	setWallSide(wallSide);
 }
 
