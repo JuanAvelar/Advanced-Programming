@@ -10,7 +10,7 @@ public:
 	virtual ~Platform() = default; // virtual destructor
 
 	virtual std::string toString() const override;
-	virtual double move() override;
+	void move(SDL_Event &event);
 
 	void draw() const;
 
@@ -21,4 +21,4 @@ private:
 	//empty for now (unless we want to add more later), but should not be necessary
 };
 
-#endif // Platform_H
+#endif // Platform_HH
