@@ -22,3 +22,6 @@ string Brick::toString() const {
 	return "0";
 }
 
+some comment
+part 2
+
