@@ -18,7 +18,7 @@ void Controller::launchGame() {
 	Ball ball(window_c, 100, 100, 20, 20, 200, 200,"pictures/shiny_pinball.png");
 	Platform platform(window_c, 500, 500, 20, 100, 0, 0, 255, 255);
 
-	vector_elements = { &platform };
+	//vector_elements = { &platform };
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
@@ -26,6 +26,7 @@ void Controller::launchGame() {
 		//rect.draw();
 		//rect2.draw();
 		if (SDL_PollEvent(&event)) {
+			platform.move(event);
 			window_c.pollEvents(event);
 		}
 		ball.draw();
