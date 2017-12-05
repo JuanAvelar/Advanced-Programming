@@ -25,7 +25,7 @@ public:
 private:
 	int lifes, score, level;
 
-	vector <GameElement*> vector_elements = {};
+	//vector <GameElement*> vector_elements = {};
 };
 
 class Window{
