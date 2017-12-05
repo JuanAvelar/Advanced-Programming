@@ -116,7 +116,16 @@
     <ClInclude Include="GameElement.h" />
     <ClInclude Include="MoveableObject.h" />
     <ClInclude Include="Platform.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Breakout.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+    <Image Include="pictures\shiny_pinball.png" />
+    <Image Include="pictures\sphere_pinball_icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

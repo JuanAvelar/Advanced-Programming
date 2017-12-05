@@ -1,9 +1,10 @@
 #include "Platform.h"
+
 using namespace std;
 
 // constructor
 Platform::Platform(const Window &window, int xposition, int yposition, const int height, const int width,int r, int g, int b, int a)
-	:Window(window), MoveableObject( xposition, yposition, height, width) , _r(r), _g(g), _b(b), _a(a) {
+	:Window(window), MoveableObject( xposition, yposition, height, width, _xdirection, _ydirection, speed) , _r(r), _g(g), _b(b), _a(a) {
 	//... no extra attributes to include?
 }
 
