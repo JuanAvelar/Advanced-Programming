@@ -10,7 +10,7 @@ public:
 	virtual ~Platform() = default; // virtual destructor
 
 	virtual std::string toString() const override;
-	virtual double move() override;
+	void move(SDL_Event &event) ;
 
 	void draw() const;
 
