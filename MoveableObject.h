@@ -7,7 +7,7 @@
 
 class MoveableObject : public GameElement {
 public:
-	MoveableObject( int = 0, int = 0, const int = 0, const int = 0, double = 0.0, double = 0.0 );
+	MoveableObject(int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed);
 	virtual ~MoveableObject() = default; // virtual destructor
 
 	void setXSpeed(double);
@@ -23,9 +23,9 @@ public:
 	virtual double move();
 
 protected:
-	
-	double _xspeed = 0;
-	double _yspeed = 0;
+	double _xdirection = 0;
+	double _ydirection = 0; 
+	double speed = 0;
 };
 
 #endif // MoveableObject_H

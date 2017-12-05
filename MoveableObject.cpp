@@ -2,7 +2,7 @@
 using namespace std;
 
 // constructor
-MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width, double xspeed, double yspeed)
+MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed)
 	: GameElement(xposition, yposition, height, width) {
 }
 

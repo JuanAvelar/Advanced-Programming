@@ -4,6 +4,8 @@
 #include "GameElement.h"
 #include <SDL2/SDL.h>
 #undef main
+#include <vector>
+using std::vector;
 
 class Controller {
 public:
@@ -22,6 +24,8 @@ public:
 
 private:
 	int lifes, score, level;
+
+	vector <GameElement*> vector_elements = {};
 };
 
 class Window{
