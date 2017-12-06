@@ -6,8 +6,8 @@
 using namespace std;
 
 // constructor
-Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, double xspeed, double yspeed, const std::string &image_path)
-	: Window(window), MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, speed) {
+Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed, const std::string &image_path)
+	: Window(window), MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, 0.0) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
@@ -18,6 +18,11 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
+	xposd = xposition;
+	yposd = yposition;
+	xdir = xdirection;
+	ydir = ydirection;
+	ballspeed = speed;
 }
 
 Ball::~Ball() {
@@ -41,9 +46,50 @@ string Ball::toString() const {
 	// make string output
 }
 
+
+void Ball::ballServe(SDL_Event &event) {
+	if (ballspeed == 0) {
+		switch (event.type) {
+		case SDL_KEYDOWN:
+			switch (event.key.keysym.sym) {
+			case SDLK_LEFT:
+				if (xposition > 30) {
+					xposition -= 100;
+					xposd = xposition;
+				}
+				break;
+			case SDLK_RIGHT:
+				if (xposition < 930) {
+					xposition += 100;
+					xposd = xposition;
+				}
+				break;
+			case SDLK_UP:
+				ballspeed += 3;
+				break;
+			}
+		default:
+			break;
+		}
+
+	}
+	else {}
+}
 //function move --> implements abstract class function
 double Ball::move() {
-	return 0;
+	std::cout << "speed = " << ballspeed << endl;
+	if (ballspeed != 0) {
+		std::cout << xdir << endl << ydir << endl << speed << endl << xdir*speed << endl;
+		xposd += xdir*speed;
+		yposd += ydir*speed;
+		xposition = (int)round(xposd);
+		yposition = (int)round(yposd);
+		std::cout << "xposd = " << xposd << endl << "yposd = " << yposd << endl << "xposition = " << xposition << endl << "yposition = " << yposition << endl;
+		return 0;
+	}
+	else {
+		return 0;
+	}
 	//create the move function --> determined by userinput which we get in the controller
 	//return new position
 }

@@ -15,7 +15,7 @@ Controller::Controller(int lev, int lif, int sco)
 void Controller::launchGame() {
 	Window window_c("Breakout", 1000, 600);
 	SDL_Event event;
-	Ball ball(window_c, 100, 100, 20, 20, 200, 200,"pictures/shiny_pinball.png");
+	Ball ball(window_c, 530, 480, 20, 20, 0.7, -0.7, 0, "pictures/shiny_pinball.png");
 	Platform platform(window_c, 500, 500, 20, 100, 0, 0, 255, 255);
 
 	//vector_elements = { &platform };
@@ -28,7 +28,9 @@ void Controller::launchGame() {
 		if (SDL_PollEvent(&event)) {
 			platform.move(event);
 			window_c.pollEvents(event);
+			ball.ballServe(event);
 		}
+		ball.move();
 		ball.draw();
 		platform.draw();
 		window_c.clear();
