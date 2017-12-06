@@ -2,32 +2,36 @@
 using namespace std;
 
 // constructor
-MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed)
+MoveableObject::MoveableObject(int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed)
 	: GameElement(xposition, yposition, height, width) {
+	setXDirection(xdirection);
+	setYDirection(ydirection);
+	setSpeed(speed);
 }
 
-void MoveableObject::setXSpeed(double xspeed) {
-	_xdirection = xspeed;
+void MoveableObject::setXDirection(double xdirection) {
+	_xdirection = xdirection;
 }
 
-void MoveableObject::setYSpeed(double yspeed) {
-	_ydirection = yspeed;
+void MoveableObject::setYDirection(double ydirection) {
+	_ydirection = ydirection;
 }
 
-double MoveableObject::getXPosition() {
-	return xposition;
-}
 
-double MoveableObject::getYPosition() {
-	return yposition;
-}
-
-double MoveableObject::getXSpeed() {
+double MoveableObject::getXDirection() {
 	return _xdirection;
 }
 
-double MoveableObject::getYSpeed() {
+double MoveableObject::getYDirection() {
 	return _ydirection;
+}
+
+double MoveableObject::getSpeed() {
+	return _speed;
+}
+
+void MoveableObject::setSpeed(double speed) {
+	_speed = speed;
 }
 
 // return a string representation of Brick's information 
@@ -40,3 +44,8 @@ double MoveableObject::move() {
 	return 0;
 };
 
+
+//MoveableObject MoveableObject::bounceOnObject(MoveableObject ball) {
+	//change ball ...
+//	return ball;
+//}

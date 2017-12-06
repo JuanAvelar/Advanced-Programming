@@ -1,3 +1,4 @@
+#pragma once
 #ifndef Controller_H
 #define Controller_H
 #include <string>
@@ -17,8 +18,7 @@ public:
 
 	void endGame();
 	void showGraphicOutput();
-	int checkForCollision();
-	void bounceOnObject(int);
+	void checkForCollision(GameElement ball);
 	char getUserInput();
 	void loadLevel();
 
@@ -28,7 +28,7 @@ private:
 	//vector <GameElement*> vector_elements = {};
 };
 
-class Window{
+class Window {
 public:
 	Window(const std::string &title, int width, int height);
 	~Window();

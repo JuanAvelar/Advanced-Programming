@@ -1,8 +1,11 @@
+#pragma once
 #ifndef Platform_H
 #define Platform_H
 
 #include <string> // C++ standard string class
+#include "GameElement.h"
 #include "MoveableObject.h"
+#include "Controller.h"
 
 class Platform : public MoveableObject, public Window {
 public:
@@ -11,8 +14,11 @@ public:
 
 	virtual std::string toString() const override;
 	void move(SDL_Event &event);
+	void bounceOnObject(MoveableObject &ball) ;
 
 	void draw() const;
+
+
 
 private:
 
