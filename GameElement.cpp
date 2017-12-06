@@ -7,8 +7,8 @@
 using namespace std;
 
 // constructor
-GameElement::GameElement( int xpos, int ypos, const int h, const int w)
-	:	 xposition(xpos), yposition(ypos), height(h), width(w) {}
+GameElement::GameElement(int xpos, int ypos, const int h, const int w)
+	: xposition(xpos), yposition(ypos), height(h), width(w) {}
 
 //get height of element
 int GameElement::getHeight() const {
@@ -41,3 +41,13 @@ string GameElement::toString() const {
 }
 
 
+//virtual function bounce that will be defined by all child classes
+GameElement GameElement::bounceOnObject(GameElement ball) {
+	//change ball ...
+	return ball;
+}
+
+
+bool GameElement::isDestructible() {
+	return false;
+}

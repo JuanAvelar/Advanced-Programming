@@ -1,3 +1,4 @@
+#pragma once
 #include <sstream>
 #include <SDL2/SDL_image.h>
 #include <iostream>
@@ -5,31 +6,48 @@
 #include "Controller.h"
 #include "Ball.h"
 #include "Platform.h"
+#include "Brick.h"
 #include <vector>
+using std::vector;
+
+
+//create vectors with the elements --> can be accessed in whole program
+vector < GameElement > vector_elements = {};
+
 
 // constructor
 Controller::Controller(int lev, int lif, int sco)
 	: level(lev), lifes(lif), score(sco) {}//private
 
-/**In this function every function from the game is implemented(top major function)*/
+										   /**In this function every function from the game is implemented(top major function)*/
 void Controller::launchGame() {
 	Window window_c("Breakout", 1000, 600);
 	SDL_Event event;
-	Ball ball(window_c, 100, 100, 20, 20, 200, 200,"pictures/shiny_pinball.png");
-	Platform platform(window_c, 500, 500, 20, 100, 0, 0, 255, 255);
-
-	vector_elements = { &platform };
-
+	Ball ball(window_c, 100, 100, 20, 20, "pictures/shiny_pinball.png");
+	Platform platform(window_c, 500, 500, 20, 100, 0, 255, 0, 0);
+	//Brick brick(window_c,10, 150, 30, 100, 3, 0, 0, 255, 255);
+	vector <Brick*> brick;
+	int number_of_bricks = 0;
+	for (int i = 1; i < 10; i++) {
+		for (int f = 0; f < 3; f++) {
+			brick.emplace_back(new Brick{ window_c, i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+			number_of_bricks++;
+		}
+	}
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
 		//pollEvents(window, rect, rect2);
 		//rect.draw();
 		//rect2.draw();
 		if (SDL_PollEvent(&event)) {
+			platform.move(event);
 			window_c.pollEvents(event);
 		}
 		ball.draw();
 		platform.draw();
+		for (int i = 1; i < number_of_bricks + 1; i++) {
+			brick[i - 1]->draw();
+		}
 		window_c.clear();
 	}
 
@@ -43,23 +61,54 @@ void Controller::showGraphicOutput() {
 	// function to show all the graphics, will be updated often
 }
 
-int Controller::checkForCollision() {
-	return 0;
-	//function that checks if the ball hits another object, need to think of what is a logical return? maybe an int (e.g. 0 for no colossion, 1 for brick, 2 for wall, 3 for platform)?
-	//if colission takes place, call for bounceOnObject to handle colission
+
+
+bool overlap(GameElement ball, GameElement object) {
+	//check if ball overlaps with object
+
+	bool noOverlap = ball.getXLocation() + ball.getWidth() < object.getXLocation() ||
+		ball.getXLocation() > object.getXLocation() + object.getWidth() ||
+		ball.getYLocation() + ball.getHeight() < object.getYLocation() ||
+		ball.getYLocation() > object.getYLocation() + object.getHeight();
+	return !noOverlap;
+
 }
-//gets input from checkForColission
-void Controller::bounceOnObject(int obj) {
-	
+
+
+void Controller::checkForCollision(GameElement ball) {
+	for (vector<GameElement>::iterator it = vector_elements.begin(); it != vector_elements.end();) {
+		if (overlap(ball, *it)) {
+			//handle colission and then break out of for loop
+			it->bounceOnObject(ball);
+			if (it->isDestructible()) { //aka is a brick
+				GameElement *i = &(*it);
+				Brick *ia = dynamic_cast<Brick*>(i);
+				ia->setHitsToDestroy(ia->getHitsToDestroy() - 1);
+				if (ia->getHitsToDestroy() <1) {
+					it = vector_elements.erase(it);
+				}//it = vector_elements.erase(it);
+			}
+			break;
+		}
+		else {
+			++it;
+		}
+		//if there is no colission, do nothing
+	}
 }
+
+
+
+
+
 //process the user input, we could turn it into an int, e.g. 0 for no input, 1 for left and 2 for right
 char Controller::getUserInput() {
 	return 0;
-	
+
 }
 //get level from level enumeration
 void Controller::loadLevel() {
-	
+
 }
 
 /**Constructor of window*/
