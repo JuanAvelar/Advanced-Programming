@@ -37,12 +37,12 @@ void Platform::move(SDL_Event &event) {
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
 			if (xposition > 0) {
-				xposition -= 100;
+				xposition -= 10;
 			}
 			break;
 		case SDLK_RIGHT:
 			if (xposition < 900) {
-				xposition += 100;
+				xposition += 10;
 			}
 			break;
 		}
