@@ -6,7 +6,7 @@
 using namespace std;
 
 // constructor
-Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed, const std::string &image_path)
+Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, const std::string &image_path)
 	: Window(window), MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, 0.0) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
