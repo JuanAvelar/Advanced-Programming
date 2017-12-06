@@ -54,34 +54,35 @@ void Platform::move(SDL_Event &event) {
 }
 
 
-MoveableObject Platform::bounceOnObject(MoveableObject ball) {
+
+void Platform::bounceOnObject(MoveableObject &ball) {
 	//if ball hits the top, output direction will totally depend on the impact position
 	//if ball hits the side, ball bounces of with same angle
 
-	//ball hits side: --> then change the ydirection
-	if (ball.getXLocation() + ball.getWidth() < this->getXLocation() ||
-		ball.getXLocation() > this->getXLocation() + this->getWidth()) {
+	//ball hits top: --> then change the ydirection
+	if (ball.getYLocation() + ball.getHeight() > this->getYLocation() && ball.getYLocation() + ball.getHeight() < this->getYLocation() + this->getHeight() && ball.getXLocation() > this->getXLocation() && ball.getXLocation() < this->getXLocation() + this->getWidth() )//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
+	{
 		double ydir = ball.getYDirection();
 		ball.setYDirection(-ydir);
 	}
-	else { //ball hits the top
+	//else { //ball hits the top
 
 		   //calculate impact place wrt platform (middle=0%, left=-100%, right=100%)
 		   // we first need to know the middle of the ball
-		int middle_ball = ball.getXLocation() + ball.getWidth();
+	//	int middle_ball = ball.getXLocation() + ball.getWidth();
 
-		int leftEdgePlatform = this->getXLocation();
-		int rightEdgePlatform = leftEdgePlatform + this->getWidth();
+	//	int leftEdgePlatform = this->getXLocation();
+	//	int rightEdgePlatform = leftEdgePlatform + this->getWidth();
 
 		//remap values form left to right edge of platform to values between -1 and 1
-		double collisionPoint = -1 + (2 / (rightEdgePlatform - leftEdgePlatform)) * (middle_ball - leftEdgePlatform);
+	//	double collisionPoint = -1 + (2 / (rightEdgePlatform - leftEdgePlatform)) * (middle_ball - leftEdgePlatform);
 		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
 
 		//set the new directions for the ball
-		ball.setXDirection(collisionPoint);
-		ball.setYDirection(1 - collisionPoint);
+	//	ball.setXDirection(collisionPoint);
+	//	ball.setYDirection(1 - collisionPoint);
 
-	}
+	//}
 
-	return ball;
+	//return ball;
 }

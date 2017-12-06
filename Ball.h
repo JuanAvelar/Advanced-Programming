@@ -4,6 +4,7 @@
 #include <string> // C++ standard string class
 #include "MoveableObject.h"
 #include "Controller.h"
+#include "Ball.h"
 
 class Ball : public MoveableObject, public Window {
 public:
@@ -12,13 +13,20 @@ public:
 
 	virtual std::string toString() const override;
 	virtual double move() override;
+	void serveBall(SDL_Event &event);
+	double getXDirection();
+	double getYDirection();
+	void setXDirection(double xdirection);
+	void setYDirection(double ydirection);
 
-	MoveableObject bounceOnObject(MoveableObject) override;
+	void wallBounce();
+
+	MoveableObject bounceOnObject(MoveableObject) ;
 
 	void draw() const;
 
 private:
-
+	double xposd, yposd;
 	int _r, _g, _b, _a;
 	SDL_Texture *pinball = nullptr;
 

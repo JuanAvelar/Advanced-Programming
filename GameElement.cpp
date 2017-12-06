@@ -20,6 +20,7 @@ int GameElement::getWidth() const {
 	return width;
 }
 
+
 //return the current location of the element (x an y seperately)
 int GameElement::getXLocation() {
 	return xposition;

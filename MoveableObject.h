@@ -19,7 +19,7 @@ public:
 	double getYDirection();
 	double getSpeed();
 
-	virtual MoveableObject bounceOnObject(MoveableObject ball);
+	//virtual MoveableObject bounceOnObject(MoveableObject &ball);
 
 
 	virtual std::string toString() const override;

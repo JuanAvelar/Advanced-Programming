@@ -7,12 +7,13 @@
 #include "Ball.h"
 #include "Platform.h"
 #include "Brick.h"
+#include "Wall.h"
 #include <vector>
 using std::vector;
 
 
 //create vectors with the elements --> can be accessed in whole program
-vector < GameElement > vector_elements = {};
+vector < GameElement > vector_elements = { };
 
 
 // constructor
@@ -23,9 +24,10 @@ Controller::Controller(int lev, int lif, int sco)
 void Controller::launchGame() {
 	Window window_c("Breakout", 1000, 600);
 	SDL_Event event;
-	Ball ball(window_c, 100, 100, 20, 20, "pictures/shiny_pinball.png");
+	Ball ball(window_c, 530, 400, 20, 20, "pictures/shiny_pinball.png");
 	Platform platform(window_c, 500, 500, 20, 100, 0, 255, 0, 0);
 	//Brick brick(window_c,10, 150, 30, 100, 3, 0, 0, 255, 255);
+	//Wall left_wall(window_c, 0, 0, 1000, 0, Wall::Wall_type(1), 0, 0, 0, 0);
 	vector <Brick*> brick;
 	int number_of_bricks = 0;
 	for (int i = 1; i < 10; i++) {
@@ -40,12 +42,17 @@ void Controller::launchGame() {
 		//rect.draw();
 		//rect2.draw();
 		if (SDL_PollEvent(&event)) {
+			ball.serveBall(event);
 			platform.move(event);
 			window_c.pollEvents(event);
 		}
+		ball.wallBounce();
+		platform.bounceOnObject(ball);
+		ball.move();
 		ball.draw();
 		platform.draw();
 		for (int i = 1; i < number_of_bricks + 1; i++) {
+			brick[i - 1]->bounceOnObject(ball);
 			brick[i - 1]->draw();
 		}
 		window_c.clear();

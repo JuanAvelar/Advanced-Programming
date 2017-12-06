@@ -45,13 +45,13 @@ MoveableObject Brick::bounceOnObject(MoveableObject ball) {
 	//ball hits side: --> then change the ydirection
 	if (ball.getXLocation() + ball.getWidth() < this->getXLocation() ||
 		ball.getXLocation() > this->getXLocation() + this->getWidth()) {
-		double ydir = ball.getYDirection();
-		ball.setYDirection(-ydir);
-	}
-	else { //ball hits top/bottom --> change xdirection
 		double xdir = ball.getXDirection();
 		ball.setYDirection(-xdir);
 	}
+	//else { //ball hits top/bottom --> change xdirection
+	//	double xdir = ball.getXDirection();
+	//	ball.setYDirection(-xdir);
+	//}
 
 	//this->removeBrickLife();
 

@@ -9,7 +9,7 @@
 
 
 class Wall : public GameElement, public Window {
-private:
+public:
 	enum Wall_type { up, down, right, left };
 
 public:

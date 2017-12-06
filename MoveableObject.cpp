@@ -45,7 +45,7 @@ double MoveableObject::move() {
 };
 
 
-MoveableObject MoveableObject::bounceOnObject(MoveableObject ball) {
+//MoveableObject MoveableObject::bounceOnObject(MoveableObject ball) {
 	//change ball ...
-	return ball;
-}
+//	return ball;
+//}
