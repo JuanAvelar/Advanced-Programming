@@ -27,7 +27,7 @@ double MoveableObject::getXSpeed() {
 }
 
 double MoveableObject::getYSpeed() {
-	return _yspeed;
+	return _ydirection*speed;
 }
 
 // return a string representation of Brick's information 

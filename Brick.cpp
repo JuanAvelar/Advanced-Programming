@@ -4,11 +4,11 @@ using namespace std;
 
 // constructor 
 Brick::Brick(const Window &window, int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a)
-	:Window(window), GameElement(xposition, yposition, height, width) , _r(r), _g(g), _b(b), _a(a) {
+	:Window(window), GameElement(xposition, yposition, height, width), _r(r), _g(g), _b(b), _a(a) {
 	setHitsToDestroy(hitsToDestroy);
 }
 
- void Brick::draw() const {
+void Brick::draw() const {
 	SDL_Rect brick_draw = { xposition, yposition, width, height };
 	if (bricks) {
 		SDL_RenderCopy(_renderer, bricks, nullptr, &brick_draw);

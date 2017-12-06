@@ -15,10 +15,10 @@ public:
 	void draw() const;
 
 private:
-	
+
 	int _r, _g, _b, _a;
 	SDL_Texture *pinball = nullptr;
-	
+
 };
 
 #endif // Ball_H

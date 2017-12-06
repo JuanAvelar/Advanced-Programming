@@ -5,8 +5,8 @@
 #include "GameElement.h"
 
 
-class Wall : public GameElement , public Window{
-private:
+class Wall : public GameElement, public Window {
+public:
 	enum Wall_type { up, down, right, left };
 
 public:
@@ -15,12 +15,15 @@ public:
 
 	void setWallSide(Wall_type);
 	std::string getWallSide();
+	void Wall::draw() const;
 
 	virtual std::string toString() const override;
 
 private:
 	std::string wallSide;
 	std::string wall;
+	int _r, _g, _b, _a;
+	SDL_Texture *game_wall = nullptr;
 	
 };
 

@@ -3,13 +3,13 @@
 using namespace std;
 
 // constructor
-Platform::Platform(const Window &window, int xposition, int yposition, const int height, const int width,int r, int g, int b, int a)
-	:Window(window), MoveableObject( xposition, yposition, height, width, _xdirection, _ydirection, speed) , _r(r), _g(g), _b(b), _a(a) {
+Platform::Platform(const Window &window, int xposition, int yposition, const int height, const int width, int r, int g, int b, int a)
+	:Window(window), MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, speed), _r(r), _g(g), _b(b), _a(a) {
 	//... no extra attributes to include?
 }
 
 /*Platform::~Platform() {
-	//SDL_DestroyTexture(platform); //this is only for the images
+//SDL_DestroyTexture(platform); //this is only for the images
 }*/
 
 void Platform::draw() const {
@@ -32,17 +32,17 @@ string Platform::toString() const {
 //function move --> implements abstract class function
 void Platform::move(SDL_Event &event) {
 	switch (event.type) {
-	
+
 	case SDL_KEYDOWN:
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
 			if (xposition > 0) {
-				xposition -= 100;
+				xposition -= 10;
 			}
 			break;
 		case SDLK_RIGHT:
 			if (xposition < 900) {
-			xposition += 100;
+				xposition += 10;
 			}
 			break;
 		}
@@ -52,4 +52,3 @@ void Platform::move(SDL_Event &event) {
 
 	//create the move function --> determined by userinput which we get in the controller
 }
-
