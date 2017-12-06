@@ -24,9 +24,9 @@ Controller::Controller(int lev, int lif, int sco)
 void Controller::launchGame() {
 	Window window_c("Breakout", 1000, 600);								/**UI instance*/
 	SDL_Event event;													/**Event of keyboard instance*/
-	Ball ball(window_c, 100, 100, 20, 20, "pictures/shiny_pinball.png");/**ball instance*/
+	Ball ball(window_c, 530, 479, 20, 20, "pictures/shiny_pinball.png");/**ball instance*/
 	Platform platform(window_c, 500, 500, 20, 100, 0, 255, 0, 0);		/**Platform instance*/
-	Wall wall(window_c, 590, 0, 600, 10, Wall::right, 255, 0, 0, 0);	/**wall instance*/
+	//Wall wall(window_c, 590, 0, 600, 10, Wall::right, 255, 0, 0, 0);	/**wall instance*/
 	std::cout << "aqui no esta el error\n";
 	//Brick brick(window_c,10, 150, 30, 100, 3, 0, 0, 255, 255);
 	vector <Brick*> brick;												/**Vector of pointer to brick objects*/
@@ -36,7 +36,7 @@ void Controller::launchGame() {
 	case 1:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
-				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 150 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
 				number_of_bricks++;
 			}
 		}
@@ -44,7 +44,7 @@ void Controller::launchGame() {
 	case 2:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
-				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 50 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 50 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
 				number_of_bricks++;
 			}
 		}

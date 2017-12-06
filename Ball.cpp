@@ -21,8 +21,8 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 	_speed = 0;
 	xposd = (double) xposition;
 	yposd = (double) yposition;
-	_xdirection = sqrt(2);
-	_ydirection = -sqrt(2);
+	_xdirection = 0.5*sqrt(2);
+	_ydirection = -0.5*sqrt(2);
 }
 
 Ball::~Ball() {
@@ -71,17 +71,17 @@ void Ball::serveBall(SDL_Event &event) {
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym) {
 			case SDLK_LEFT:
-				if (xposition > 30) {
-					xposition -= 100;
+				if (xposition > 0+30) {
+					xposition -= 50;
 				}
 				break;
 			case SDLK_RIGHT:
-				if (xposition < 930) {
-					xposition += 100;
+				if (xposition < (1000-getWidth())+30) {
+					xposition += 50;
 				}
 				break;
 			case SDLK_UP:
-				_speed = 0.1;
+				_speed = 0.3;
 				break;
 			}
 		default:
@@ -108,14 +108,14 @@ double Ball::move() {
 }
 
 void Ball::wallBounce() {
-	if (xposition < 0 || xposition > 980) {
+	if (xposition < 0 || xposition > (1000-getWidth())) {
 		_xdirection = -_xdirection;
 	}
 	
 	if (yposition < 0) {
 	_ydirection = -_ydirection;
 }
-	if (yposition > 580) {
+	if (yposition > (600-getHeight())) {
 		Ball::~Ball();
 	}
 

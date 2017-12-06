@@ -17,6 +17,7 @@ public:
 	int getHitsToDestroy();
 
 	void Brick::draw() const;
+	void removeBrickLife();
 
 	virtual std::string toString() const override;
 
