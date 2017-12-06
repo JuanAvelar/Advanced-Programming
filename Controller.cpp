@@ -63,9 +63,14 @@ void Controller::launchGame() {
 		ball.move();
 		ball.draw();
 		platform.draw();
+		int bricksleft = 0;
 		for (int i = 1; i < number_of_bricks + 1; i++) {
 			brick[i - 1]->bounceOnObject(ball);
 			brick[i - 1]->draw();
+			bricksleft += brick[i - 1]->getHitsToDestroy();
+		}
+		if (bricksleft == 0) {
+			window_c.~Window();
 		}
 		window_c.clear();
 	}

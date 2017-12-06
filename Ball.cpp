@@ -19,6 +19,7 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 	}
 	SDL_FreeSurface(surface);
 	_speed = 0;
+	//define a position double so rounding can be done on the position
 	xposd = (double) xposition;
 	yposd = (double) yposition;
 	_xdirection = 0.5*sqrt(2);
@@ -62,7 +63,7 @@ void Ball::setYDirection(double ydirection) {
 	_ydirection = ydirection;
 }
 
-
+//function for when the ball is still attached to the platform
 void Ball::serveBall(SDL_Event &event) {
 	std::cout << "speed = " << _speed << endl;
 	if (_speed == 0) {
@@ -81,7 +82,7 @@ void Ball::serveBall(SDL_Event &event) {
 				}
 				break;
 			case SDLK_UP:
-				_speed = 0.3;
+				_speed = 0.1;
 				break;
 			}
 		default:
@@ -93,7 +94,7 @@ void Ball::serveBall(SDL_Event &event) {
 	else {}
 
 }
-//function move --> implements abstract class function
+//function to move the ball, xposd and yposd are double for the rounding
 double Ball::move() {
 	if (_speed != 0) {
 		xposd += _xdirection*_speed;
@@ -107,6 +108,7 @@ double Ball::move() {
 	//return new position
 }
 
+//reverses the ball direction if it hits a wall, destroys the ball if it hits the bottom wall
 void Ball::wallBounce() {
 	if (xposition < 0 || xposition > (1000-getWidth())) {
 		_xdirection = -_xdirection;

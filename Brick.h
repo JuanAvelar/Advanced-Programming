@@ -21,7 +21,7 @@ public:
 
 	virtual std::string toString() const override;
 
-	MoveableObject bounceOnObject(MoveableObject ball);
+	MoveableObject bounceOnObject(MoveableObject &ball);
 
 	bool isDestructible() override;
 

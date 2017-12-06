@@ -62,10 +62,11 @@ void Platform::bounceOnObject(MoveableObject &ball) {
 	//ball hits top: --> then change the ydirection
 	
 	
-	if (ball.getYLocation() + ball.getHeight() > this->getYLocation() && ball.getYLocation() + ball.getHeight() < this->getYLocation() + this->getHeight() && ball.getXLocation() > this->getXLocation() && ball.getXLocation() < this->getXLocation() + this->getWidth() )//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
+	if (ball.getYLocation() + ball.getHeight() > this->getYLocation() && ball.getYLocation() + ball.getHeight() < this->getYLocation() + this->getHeight() && 
+		ball.getXLocation() + ball.getWidth() > this->getXLocation() && ball.getXLocation() < this->getXLocation() + this->getWidth() )//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
 	{
 
-		//remap values form left to right edge of platform to values between -1 and 1
+		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
 		double collisionPoint = (-0.9 + 1.8 * (((double)ball.getXLocation()+ 0.5 * (double)ball.getWidth()-(double)this->getXLocation())/(double)getWidth()));
 		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
 
