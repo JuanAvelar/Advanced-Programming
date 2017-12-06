@@ -1,4 +1,5 @@
 #include "Brick.h"
+#include "MoveableObject.h"
 #include <iostream>
 using namespace std;
 
@@ -33,4 +34,31 @@ int Brick::getHitsToDestroy() {
 // return a string representation of Brick's information 
 string Brick::toString() const {
 	return "0";
+}
+
+
+
+
+MoveableObject Brick::bounceOnObject(MoveableObject ball) {
+	//first we need to check if the ball hits the side or the top/bottom
+
+	//ball hits side: --> then change the ydirection
+	if (ball.getXLocation() + ball.getWidth() < this->getXLocation() ||
+		ball.getXLocation() > this->getXLocation() + this->getWidth()) {
+		double xdir = ball.getXDirection();
+		ball.setYDirection(-xdir);
+	}
+	//else { //ball hits top/bottom --> change xdirection
+	//	double xdir = ball.getXDirection();
+	//	ball.setYDirection(-xdir);
+	//}
+
+	//this->removeBrickLife();
+
+	return ball;
+}
+
+
+bool Brick::isDestructible() {
+	return true;
 }

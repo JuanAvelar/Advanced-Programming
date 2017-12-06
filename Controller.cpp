@@ -1,3 +1,4 @@
+#pragma once
 #include <sstream>
 #include <SDL2/SDL_image.h>
 #include <iostream>
@@ -9,6 +10,10 @@
 #include "Wall.h"
 #include <vector>
 using std::vector;
+
+
+//create vectors with the elements --> can be accessed in whole program
+vector < GameElement > vector_elements = { };
 
 
 // constructor
@@ -49,17 +54,19 @@ void Controller::launchGame() {
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
 		if (SDL_PollEvent(&event)) {
+			ball.serveBall(event);
 			platform.move(event);
 			window_c.pollEvents(event);
 		}
+		ball.wallBounce();
+		platform.bounceOnObject(ball);
+		ball.move();
 		ball.draw();
 		platform.draw();
-		//wall.draw();
 		for (int i = 1; i < number_of_bricks + 1; i++) {
-				//std::cerr << "You are trying to access a direction that does not exist " << sizeof(brick) << "    " << sizeof(brick[0]) << std::endl;
-				brick[i - 1]->draw();			
+			brick[i - 1]->bounceOnObject(ball);
+			brick[i - 1]->draw();
 		}
-		std::cout << "el error tampoco esta aqui\n";
 		window_c.clear();
 	}
 }
@@ -72,15 +79,46 @@ void Controller::showGraphicOutput() {
 	// function to show all the graphics, will be updated often
 }
 
-int Controller::checkForCollision() {
-	return 0;
-	//function that checks if the ball hits another object, need to think of what is a logical return? maybe an int (e.g. 0 for no colossion, 1 for brick, 2 for wall, 3 for platform)?
-	//if colission takes place, call for bounceOnObject to handle colission
-}
-//gets input from checkForColission
-void Controller::bounceOnObject(int obj) {
+
+
+bool overlap(GameElement ball, GameElement object) {
+	//check if ball overlaps with object
+
+	bool noOverlap = ball.getXLocation() + ball.getWidth() < object.getXLocation() ||
+		ball.getXLocation() > object.getXLocation() + object.getWidth() ||
+		ball.getYLocation() + ball.getHeight() < object.getYLocation() ||
+		ball.getYLocation() > object.getYLocation() + object.getHeight();
+	return !noOverlap;
 
 }
+
+
+void Controller::checkForCollision(GameElement ball) {
+	for (vector<GameElement>::iterator it = vector_elements.begin(); it != vector_elements.end();) {
+		if (overlap(ball, *it)) {
+			//handle colission and then break out of for loop
+			it->bounceOnObject(ball);
+			if (it->isDestructible()) { //aka is a brick
+				GameElement *i = &(*it);
+				Brick *ia = dynamic_cast<Brick*>(i);
+				ia->setHitsToDestroy(ia->getHitsToDestroy() - 1);
+				if (ia->getHitsToDestroy() <1) {
+					it = vector_elements.erase(it);
+				}//it = vector_elements.erase(it);
+			}
+			break;
+		}
+		else {
+			++it;
+		}
+		//if there is no colission, do nothing
+	}
+}
+
+
+
+
+
 //process the user input, we could turn it into an int, e.g. 0 for no input, 1 for left and 2 for right
 char Controller::getUserInput() {
 	return 0;

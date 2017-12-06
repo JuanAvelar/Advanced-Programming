@@ -1,5 +1,6 @@
 #include "Wall.h"
-#include <iostream>
+#include "MoveableObject.h"
+
 using namespace std;
 
 // wall side can be either "up", "down", "right", "left"
@@ -26,7 +27,7 @@ void Wall::setWallSide(Wall_type wallSide) {
 	//wall = wallSide;
 }
 
-string Wall::getWallSide() {
+Wall::Wall_type Wall::getWallSide() {
 	return wall;
 }
 
@@ -36,3 +37,37 @@ string Wall::toString() const {
 	//...
 }
 
+
+MoveableObject Wall::bounceOnObject(MoveableObject ball) {
+	//change ball ...
+	Wall_type side = this->getWallSide();
+	double xdir, ydir;
+	switch (side)
+	{
+	case left: //left
+			   //invert the xdirection of the movement
+		xdir = ball.getXDirection();
+		ball.setXDirection(-xdir);
+		break;
+	case right: //right
+				//invert the xdirection of the movement
+		xdir = ball.getXDirection();
+		ball.setXDirection(-xdir);
+		break;
+	case up: //top
+			 //invert the xdirection of the movement
+		ydir = ball.getYDirection();
+		ball.setYDirection(-ydir);
+		break;
+	case down: //bottom
+			   //invert the xdirection of the movement
+		ydir = ball.getYDirection();
+		ball.setYDirection(-ydir);
+		break;
+	default:
+		break;
+	}
+
+
+	return ball;
+}

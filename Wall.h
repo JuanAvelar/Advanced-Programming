@@ -1,8 +1,11 @@
+#pragma once
 #ifndef WALL_H
 #define WALL_H
 
 #include <string> // C++ standard string class
 #include "GameElement.h"
+#include "MoveableObject.h"
+#include "Controller.h"
 
 
 class Wall : public GameElement, public Window {
@@ -14,17 +17,15 @@ public:
 	virtual ~Wall() = default; // virtual destructor
 
 	void setWallSide(Wall_type);
-	std::string getWallSide();
-	void Wall::draw() const;
+	Wall_type getWallSide();
+	MoveableObject bounceOnObject(MoveableObject);
 
 	virtual std::string toString() const override;
 
 private:
-	std::string wallSide;
-	std::string wall;
-	int _r, _g, _b, _a;
-	SDL_Texture *game_wall = nullptr;
-	
+	Wall_type wallSide;
+	Wall_type wall;
+
 };
 
 #endif // Wall_H

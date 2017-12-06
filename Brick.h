@@ -1,8 +1,12 @@
+#pragma once
+
 #ifndef BRICK_H
 #define BRICK_H
 
 #include <string> // C++ standard string class
 #include "GameElement.h" 
+#include "MoveableObject.h"
+#include "Controller.h"
 
 class Brick : public GameElement, public Window {
 public:
@@ -15,6 +19,10 @@ public:
 	void Brick::draw() const;
 
 	virtual std::string toString() const override;
+
+	MoveableObject bounceOnObject(MoveableObject ball);
+
+	bool isDestructible() override;
 
 private:
 	int hitsToDestroy;
