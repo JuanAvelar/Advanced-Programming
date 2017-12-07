@@ -21,12 +21,12 @@ void Controller::launchGame() {
 	SDL_Event event;													/**Event of keyboard instance*/
 	Ball ball(window_c, 100, 100, 20, 20, "pictures/shiny_pinball.png");/**ball instance*/
 	Platform platform(window_c, 500, 500, 20, 100, 0, 255, 0, 0);		/**Platform instance*/
-	Wall wall(window_c, 590, 0, 600, 10, Wall::right, 255, 0, 0, 0);	/**wall instance*/
 	std::cout << "aqui no esta el error\n";
 	//Brick brick(window_c,10, 150, 30, 100, 3, 0, 0, 255, 255);
 	vector <Brick*> brick;												/**Vector of pointer to brick objects*/
 	int number_of_bricks = 0;											/**Counts the number of bricks in the game*/
-
+	Wall::Wall_type wallside = Wall::up;
+	Wall walls( 990, 0, 600, 10, 255, 255, 0, 100, wallside);															/**wall instance*/
 	switch (level) {
 	case 1:
 		for (int i = 1; i < 10; i++) {
@@ -54,12 +54,11 @@ void Controller::launchGame() {
 		}
 		ball.draw();
 		platform.draw();
-		//wall.draw();
+		walls.draw(&window_c);
 		for (int i = 1; i < number_of_bricks + 1; i++) {
 				//std::cerr << "You are trying to access a direction that does not exist " << sizeof(brick) << "    " << sizeof(brick[0]) << std::endl;
 				brick[i - 1]->draw();			
 		}
-		std::cout << "el error tampoco esta aqui\n";
 		window_c.clear();
 	}
 }
@@ -103,6 +102,7 @@ Window::~Window() {
 	SDL_DestroyWindow(_window);
 	IMG_Quit();
 	SDL_Quit();
+	std::cout << "Why is window being destroyed??\n";
 }
 /**Checks initial conditions to make sense (used by constructor of game window)*/
 bool Window::init() {

@@ -31,7 +31,7 @@ private:
 class Window{
 public:
 	Window(const std::string &title, int width, int height);
-	~Window();
+	
 
 	void pollEvents(SDL_Event &event);
 	void clear()const;
@@ -39,11 +39,14 @@ public:
 	inline bool isClosed() const { return _closed; }
 
 	SDL_Window *_window = nullptr;//should be private
+public:
+	~Window();
 
 private:
 	bool init();
 
 private:
+
 	std::string _title;
 	int _width = 800;
 	int _height = 600;
@@ -52,7 +55,7 @@ private:
 
 	SDL_Surface *_surface;
 
-protected:
+public:
 	SDL_Renderer *_renderer = nullptr;
 };
 

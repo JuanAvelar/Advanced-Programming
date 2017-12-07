@@ -7,7 +7,7 @@
 class GameElement {
 public:								  
 	// constructor
-	GameElement(int = 0, int = 0, const int = 0, const int = 0);
+	GameElement(int xpos, int ypos, const int h, const int w);
 	virtual ~GameElement() = default; // virtual standard destructor
 
 	int getHeight() const;
