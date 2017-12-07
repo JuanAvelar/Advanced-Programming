@@ -12,6 +12,8 @@ Platform::Platform(const Window &window, int xposition, int yposition, const int
 //SDL_DestroyTexture(platform); //this is only for the images
 }*/
 
+
+// *Draw the platform*
 void Platform::draw() const {
 	SDL_Rect platform_draw = { xposition, yposition, width, height };
 	if (platform) {
@@ -23,11 +25,6 @@ void Platform::draw() const {
 	}
 }
 
-// return a string representation of Moveable Object's information --> implements abstract class function
-string Platform::toString() const {
-	return "0";
-	// make string output
-}
 
 //function move --> implements abstract class function
 void Platform::move(SDL_Event &event) {
@@ -55,7 +52,7 @@ void Platform::move(SDL_Event &event) {
 
 
 
-void Platform::bounceOnObject(MoveableObject &ball) {
+void Platform::platformBounce(MoveableObject &ball) {
 	//if ball hits the top, output direction will totally depend on the impact position
 	//if ball hits the side, ball bounces of with same angle
 
@@ -76,6 +73,4 @@ void Platform::bounceOnObject(MoveableObject &ball) {
 		ball.setYDirection(-sqrt(1 - pow(collisionPoint,2)));
 	}
 }
-
-	//return ball;
 

@@ -18,18 +18,25 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
+	
+	//set the speed to 0
 	_speed = 0;
+	
 	//define a position double so rounding can be done on the position
 	xposd = (double) xposition;
 	yposd = (double) yposition;
+	
+	//initial directions of the ball
 	_xdirection = 0.5*sqrt(2);
 	_ydirection = -0.5*sqrt(2);
 }
 
+// *Destroys the ball graphics
 Ball::~Ball() {
 	SDL_DestroyTexture(pinball);
 }
 
+// *Draws the ball using the SDL package
 void Ball::draw() const {
 	SDL_Rect ball = { xposition, yposition, width, height };
 	if (pinball) {
@@ -41,12 +48,7 @@ void Ball::draw() const {
 	}
 }
 
-// return a string representation of Moveable Object's information --> implements abstract class function
-string Ball::toString() const {
-	return "0";
-	// make string output
-}
-
+//* return functions for the x and y direction
 double Ball::getYDirection() {
 	return _ydirection;
 }
@@ -55,6 +57,7 @@ double Ball::getXDirection() {
 	return _xdirection;
 }
 
+// * function to set the x and y direction
 void Ball::setXDirection(double xdirection) {
 	_xdirection = xdirection;
 }
@@ -63,9 +66,8 @@ void Ball::setYDirection(double ydirection) {
 	_ydirection = ydirection;
 }
 
-//function for when the ball is still attached to the platform
+//function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.
 void Ball::serveBall(SDL_Event &event) {
-	std::cout << "speed = " << _speed << endl;
 	if (_speed == 0) {
 		switch (event.type) {
 
@@ -88,6 +90,7 @@ void Ball::serveBall(SDL_Event &event) {
 		default:
 			break;
 		}
+		//makes the doubles follow the current position
 		xposd = (double)xposition;
 		yposd = (double)yposition;
 	}
@@ -95,7 +98,7 @@ void Ball::serveBall(SDL_Event &event) {
 
 }
 //function to move the ball, xposd and yposd are double for the rounding
-double Ball::move() {
+void Ball::move() {
 	if (_speed != 0) {
 		xposd += _xdirection*_speed;
 		yposd += _ydirection*_speed;
@@ -103,7 +106,7 @@ double Ball::move() {
 		yposition = (int)round(yposd);
 	}
 	
-	return 0;
+	else {}
 	//create the move function --> determined by userinput which we get in the controller
 	//return new position
 }
@@ -119,11 +122,10 @@ void Ball::wallBounce() {
 }
 	if (yposition > (600-getHeight())) {
 		Ball::~Ball();
+		std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
+		system("pause");
+		exit(0);
 	}
-
+	else {}
 }
 
-MoveableObject Ball::bounceOnObject(MoveableObject ball) {
-	//change ball ...
-	return ball;
-}

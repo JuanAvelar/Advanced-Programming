@@ -34,18 +34,8 @@ void MoveableObject::setSpeed(double speed) {
 	_speed = speed;
 }
 
-// return a string representation of Brick's information 
-string MoveableObject::toString() const {
-	return "0";
-};
-
 //virtual function move, has to be defined for the child classes
-double MoveableObject::move() {
-	return 0;
+void MoveableObject::move() {
 };
 
 
-//MoveableObject MoveableObject::bounceOnObject(MoveableObject ball) {
-	//change ball ...
-//	return ball;
-//}

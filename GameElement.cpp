@@ -30,25 +30,3 @@ int GameElement::getYLocation() {
 	return yposition;
 }
 
-//function to destroy the game element
-void GameElement::destroyGameElement() {
-	//...
-}
-
-
-// toString GameElements's information
-string GameElement::toString() const {
-	return "0";
-}
-
-
-//virtual function bounce that will be defined by all child classes
-GameElement GameElement::bounceOnObject(GameElement ball) {
-	//change ball ...
-	return ball;
-}
-
-
-bool GameElement::isDestructible() {
-	return false;
-}

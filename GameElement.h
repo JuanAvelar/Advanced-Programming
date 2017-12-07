@@ -3,8 +3,9 @@
 #define GameElement_H
 
 #include <string>
-
-//#include "Controller.h"
+#include "Window.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
 
 class GameElement {
 public:
@@ -17,13 +18,6 @@ public:
 
 	int getXLocation();
 	int getYLocation();
-
-	void destroyGameElement();
-	virtual std::string toString() const;
-
-	virtual GameElement bounceOnObject(GameElement ball);
-
-	virtual bool isDestructible();
 
 protected:
 	int xposition, yposition, height, width;

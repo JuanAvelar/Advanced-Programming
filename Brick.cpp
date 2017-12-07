@@ -6,7 +6,6 @@ using namespace std;
 // constructor 
 Brick::Brick(const Window &window, int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a)
 	:Window(window), GameElement(xposition, yposition, height, width), _r(r), _g(g), _b(b), _a(a) {
-	setHitsToDestroy(hitsToDestroy);
 	hits = hitsToDestroy;
 }
 
@@ -24,29 +23,22 @@ void Brick::draw() const {
 	}
 }
 
-void Brick::setHitsToDestroy(int hitsToDestroy) {
-	hits = hitsToDestroy;
-}
-
+// *called upon to display the hits to destroy
 int Brick::getHitsToDestroy() {
 	return hits;
 }
 
-
-// return a string representation of Brick's information 
-string Brick::toString() const {
-	return "0";
-}
-
+// *reduces the brick life (used if a brick is hit)
 void Brick::removeBrickLife() {
 	hits--;
 }
 
-
-MoveableObject Brick::bounceOnObject(MoveableObject &ball) {
+//*function to make the brick bounce with a lot of stuff in it. The ball will reverse its direction if it is within 5% of the boundary, 
+// so at corners it will reverse both x and y direction
+void Brick::brickBounce(MoveableObject &ball) {
 	//first we need to check if the ball hits the side or the top/bottom
 	if (hits > 0) {
-		//ball hits left side: --> then change the xdirection
+		//ball hits sides: --> then change the xdirection. Also remove a life of the brick.
 		if (ball.getXLocation() + ball.getWidth() > this->getXLocation() && ball.getXLocation() + ball.getWidth() < this->getXLocation() + 0.05*this->getWidth() &&
 			ball.getYLocation() + ball.getHeight() > this->getYLocation() && ball.getYLocation() < this->getYLocation() + this->getHeight()
 			|| ball.getXLocation() < this->getXLocation() + this->getWidth() && ball.getXLocation() > this->getXLocation() + 0.95*this->getWidth() &&
@@ -54,7 +46,7 @@ MoveableObject Brick::bounceOnObject(MoveableObject &ball) {
 			ball.setXDirection(-ball.getXDirection());
 			this->removeBrickLife();
 		}
-		// ball hits the top: --> then change the ydirection
+		// ball hits the top/bottom: --> then change the ydirection. Also remove a life of the brick.
 
 		if (ball.getYLocation() + ball.getHeight() > this->getYLocation() && ball.getYLocation() + ball.getHeight() < this->getYLocation() + 0.05*this->getHeight() &&
 			ball.getXLocation() + ball.getWidth() > this->getXLocation() && ball.getXLocation() < this->getXLocation() + this->getWidth()
@@ -70,14 +62,6 @@ MoveableObject Brick::bounceOnObject(MoveableObject &ball) {
 	}
 	else {}
 
-
-	
-	
-
-	return ball;
 }
 
 
-bool Brick::isDestructible() {
-	return true;
-}

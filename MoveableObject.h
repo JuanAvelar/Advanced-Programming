@@ -2,7 +2,6 @@
 #ifndef MoveableObject_H
 #define MoveableObject_H
 
-#include <string> // C++ standard string class
 #include "GameElement.h"
 
 
@@ -19,11 +18,8 @@ public:
 	double getYDirection();
 	double getSpeed();
 
-	//virtual MoveableObject bounceOnObject(MoveableObject &ball);
 
-
-	virtual std::string toString() const override;
-	virtual double move();
+	virtual void move();
 
 protected:
 	double _xdirection = 0;

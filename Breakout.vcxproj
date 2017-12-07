@@ -108,7 +108,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveableObject.cpp" />
     <ClCompile Include="Platform.cpp" />
-    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
@@ -118,7 +118,7 @@
     <ClInclude Include="MoveableObject.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Breakout.rc" />
