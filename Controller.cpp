@@ -10,6 +10,8 @@
 #include <vector>
 using std::vector;
 
+//Global variables
+int number_of_bricks = 0;
 
 // constructor
 Controller::Controller(int lev, int lif, int sco)
@@ -24,27 +26,11 @@ void Controller::launchGame() {
 	std::cout << "aqui no esta el error\n";
 	//Brick brick(window_c,10, 150, 30, 100, 3, 0, 0, 255, 255);
 	vector <Brick*> brick;												/**Vector of pointer to brick objects*/
-	int number_of_bricks = 0;											/**Counts the number of bricks in the game*/
+											/**Counts the number of bricks in the game*/
 	Wall::Wall_type wallside = Wall::up;
-	Wall walls( 990, 0, 600, 10, 255, 255, 0, 100, wallside);															/**wall instance*/
-	switch (level) {
-	case 1:
-		for (int i = 1; i < 10; i++) {
-			for (int f = 0; f < 3; f++) {
-				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
-				number_of_bricks++;
-			}
-		}
-		break;
-	case 2:
-		for (int i = 1; i < 10; i++) {
-			for (int f = 0; f < 3; f++) {
-				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 50 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
-				number_of_bricks++;
-			}
-		}
-		break;
-	}
+	Wall walls( 990, 0, 600, 10, 255, 255, 0, 100, wallside);			/**wall instance*/
+
+
 	
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
@@ -83,10 +69,6 @@ void Controller::bounceOnObject(int obj) {
 //process the user input, we could turn it into an int, e.g. 0 for no input, 1 for left and 2 for right
 char Controller::getUserInput() {
 	return 0;
-
-}
-//get level from level enumeration
-void Controller::loadLevel() {
 
 }
 
@@ -175,6 +157,27 @@ void Window::pollEvents(SDL_Event &event) {
 		break;
 
 	default:
+		break;
+	}
+}
+//You must disinherit the window object to the rest of the objects
+void Controller::select_brick_level(int level, vector <Brick*> brick) {
+	switch (level) {
+	case 1:
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 3; f++) {
+				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				number_of_bricks++;
+			}
+		}
+		break;
+	case 2:
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 3; f++) {
+				brick.emplace_back(new Brick{ window_c, i * 110 - 100, 50 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				number_of_bricks++;
+			}
+		}
 		break;
 	}
 }

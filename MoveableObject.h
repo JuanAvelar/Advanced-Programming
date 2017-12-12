@@ -20,12 +20,12 @@ public:
 
 
 	virtual std::string toString() const override;
-	virtual double move();
+	virtual void move();
 
 protected:
 	double _xdirection = 0;
 	double _ydirection = 0; 
-	double speed = 0;
+	double _speed = 0;
 };
 
 #endif // MoveableObject_H

@@ -20,7 +20,8 @@ public:
 	int checkForCollision();
 	void bounceOnObject(int);
 	char getUserInput();
-	void loadLevel();
+	void select_brick_level(int level, vector <Brick*> brick);
+
 
 private:
 	int lifes, score, level;
@@ -40,7 +41,7 @@ public:
 
 	SDL_Window *_window = nullptr;//should be private
 public:
-	~Window();
+	virtual ~Window();
 
 private:
 	bool init();
