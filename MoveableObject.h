@@ -18,7 +18,6 @@ public:
 	double getXSpeed();
 	double getYSpeed();
 
-
 	virtual std::string toString() const override;
 	virtual void move();
 

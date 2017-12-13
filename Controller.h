@@ -15,49 +15,35 @@ public:
 
 	void launchGame();
 
-	void endGame();
 	void showGraphicOutput();
 	int checkForCollision();
 	void bounceOnObject(int);
-	char getUserInput();
-	void select_brick_level(int level, vector <Brick*> brick);
+	void select_brick_level(int level);
 
 
 private:
 	int lifes, score, level;
-
+	
 	//vector <GameElement*> vector_elements = {};
 };
 
-class Window{
-public:
-	Window(const std::string &title, int width, int height);
-	
-
-	void pollEvents(SDL_Event &event);
-	void clear()const;
-
-	inline bool isClosed() const { return _closed; }
-
-	SDL_Window *_window = nullptr;//should be private
-public:
-	virtual ~Window();
-
-private:
-	bool init();
-
-private:
-
-	std::string _title;
-	int _width = 800;
-	int _height = 600;
-
-	bool _closed = false;
-
-	SDL_Surface *_surface;
-
-public:
-	SDL_Renderer *_renderer = nullptr;
+struct Green {
+	int r = 0;
+	int g = 255;
+	int b = 0;
+	int a = 0;
+};
+struct Yellow {
+	int r = 255;
+	int g = 255;
+	int b = 0;
+	int a = 100;
+};
+struct Red {
+	int r = 255;
+	int g = 0;
+	int b = 0;
+	int a = 0;
 };
 
 #endif // Controller_H

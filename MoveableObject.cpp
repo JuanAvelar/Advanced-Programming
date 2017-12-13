@@ -23,11 +23,11 @@ double MoveableObject::getYPosition() {
 }
 
 double MoveableObject::getXSpeed() {
-	return _xdirection*speed;
+	return _xdirection*_speed;
 }
 
 double MoveableObject::getYSpeed() {
-	return _ydirection*speed;
+	return _ydirection*_speed;
 }
 
 // return a string representation of Brick's information 
@@ -36,7 +36,7 @@ string MoveableObject::toString() const {
 };
 
 //virtual function move, has to be defined for the child classes
-double MoveableObject::move() {
-	return 0;
+void MoveableObject::move() {
+	
 };
 

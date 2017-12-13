@@ -4,15 +4,15 @@
 #include <string> // C++ standard string class
 #include "GameElement.h" 
 
-class Brick : public GameElement, public Window {
+class Brick : public GameElement {
 public:
-	Brick(const Window &window, int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
+	Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
 	virtual ~Brick() = default; // virtual destructor
 
 	void setHitsToDestroy(int);
 	int getHitsToDestroy();
 
-	void Brick::draw() const;
+	virtual void Brick::draw(Window *window_brick) const;
 
 	virtual std::string toString() const override;
 

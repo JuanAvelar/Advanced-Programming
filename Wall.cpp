@@ -1,4 +1,5 @@
 #include "Wall.h"
+#include "Window.h"
 #include <iostream>
 #include <SDL2/SDL_image.h>
 using namespace std;
@@ -24,15 +25,15 @@ void Wall::draw(Window *window_wall) const {
 		SDL_RenderFillRect(window_wall->_renderer, &fixed_wall);
 	}
 }
-
+/*
 void Wall::setWallSide(Wall_type wallSide) {
-	//wall = wallSide;
+		
 }
 
 string Wall::getWallSide() {
-	return wall;
+	return string(wall);
 }
-
+*/
 // return a string representation of Brick's information 
 string Wall::toString() const {
 	return "0";

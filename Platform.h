@@ -4,7 +4,7 @@
 #include <string> // C++ standard string class
 #include "MoveableObject.h"
 
-class Platform : public MoveableObject, public Window {
+class Platform : public MoveableObject {
 public:
 	Platform(const Window &window, int xposition, int yposition, const int height, const int width, int r, int g, int b, int a);
 	virtual ~Platform() = default; // virtual destructor
@@ -12,7 +12,7 @@ public:
 	virtual std::string toString() const override;
 	void move(SDL_Event &event);
 
-	void draw() const;
+	void draw(Window *platform_window) const;
 
 private:
 

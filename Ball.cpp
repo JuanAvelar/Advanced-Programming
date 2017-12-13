@@ -7,13 +7,13 @@ using namespace std;
 
 // constructor
 Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, const std::string &image_path)
-	: Window(window), MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
+	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
 	}
-	pinball = SDL_CreateTextureFromSurface(_renderer, surface);
+	pinball = SDL_CreateTextureFromSurface(window._renderer, surface);
 	if (!pinball) {
 		std::cerr << "Failed to create texture\n";
 	}
@@ -28,14 +28,14 @@ Ball::~Ball() {
 	SDL_DestroyTexture(pinball);
 }
 
-void Ball::draw() const {
+void Ball::draw(Window *ball_window) const {
 	SDL_Rect ball = { xposition, yposition, width, height };
 	if (pinball) {
-		SDL_RenderCopy(_renderer, pinball, nullptr, &ball);
+		SDL_RenderCopy(ball_window->_renderer, pinball, nullptr, &ball);
 	}
 	else {
-		SDL_SetRenderDrawColor(_renderer, _r, _g, _b, _a);
-		SDL_RenderFillRect(_renderer, &ball);
+		SDL_SetRenderDrawColor(ball_window->_renderer, _r, _g, _b, _a);
+		SDL_RenderFillRect(ball_window->_renderer, &ball);
 	}
 }
 
@@ -43,11 +43,15 @@ void Ball::draw() const {
 void Ball::move() {
 
 	if (_speed != 0) {
-		xposition += _xdirection*_speed;
-		yposition += _ydirection*_speed;
+		xpos += _xdirection*_speed;
+		ypos += _ydirection*_speed;
+		xposition = int(xpos);
+		yposition = int(ypos);
 	}
-
-	else {}
+	else {
+		xpos = double(xposition);
+		ypos = double(yposition);
+	}
 	//create the move function --> determined by userinput which we get in the controller
 	//return new position
 }
@@ -80,4 +84,21 @@ void Ball::serveBall(SDL_Event &event) {
 	}
 	else {}
 
+}
+
+//reverses the ball direction if it hits a wall, destroys the ball if it hits the bottom wall
+void Ball::wallBounce() {
+	if (xposition < 0 || xposition >(1000 - getWidth())) {
+		_xdirection = -_xdirection;
+	}
+
+	if (yposition < 0) {
+		_ydirection = -_ydirection;
+	}
+	if (yposition >(600 - getHeight())) {
+		Ball::~Ball();
+		std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
+		while (1) {};
+	}
+	else {}
 }

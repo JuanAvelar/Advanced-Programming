@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Controller.h"
+#include "Window.h"
 
 class GameElement {
 public:								  
@@ -16,10 +17,12 @@ public:
 	int getXLocation();
 	int getYLocation();
 
+	virtual void draw(Window* window) const = 0;//pure virtual
+
 	void destroyGameElement();
 	virtual std::string toString() const;
 
-protected:
+public:
 	int xposition, yposition, height, width;
 };
 
