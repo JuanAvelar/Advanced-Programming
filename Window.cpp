@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "Controller.h"
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include <sstream>
@@ -49,14 +50,16 @@ bool Window::init() {
 	}
 	_surface = IMG_Load("pictures/shiny_pinball.png");
 	SDL_SetWindowIcon(_window, _surface);
+	SDL_SetWindowMinimumSize(_window, 1000, 600);
+	//SDL_SetWindowMaximumSize(_window, 1001, 601);
 
 	return true;
 }
 /**Render backround color*/
 void Window::clear()const {
-	SDL_RenderPresent(_renderer);
-	SDL_SetRenderDrawColor(_renderer, 255, 127, 50, 55);//Here you choose the colors in RBGA of the color of the window
-	SDL_RenderClear(_renderer);
+	SDL_RenderPresent(_renderer);					//Use this function to update the screen with any rendering performed since the previous call.
+	SDL_SetRenderDrawColor(_renderer, 0, 0, 50, 55);//Use this function to set the color used for drawing operations
+	SDL_RenderClear(_renderer);						//Use this function to clear the current rendering target with the drawing color.
 }
 /**Events of keyboard and mouse*/
 void Window::pollEvents(SDL_Event &event) {
@@ -86,7 +89,6 @@ void Window::pollEvents(SDL_Event &event) {
 	case SDL_MOUSEBUTTONUP:
 		std::cout << "You released your mouse.\n";
 		break;
-
 	default:
 		break;
 	}

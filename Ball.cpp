@@ -1,12 +1,13 @@
 #include "Ball.h"
 #include "Controller.h"
+#include "Wall.h"
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
 using namespace std;
 
 // constructor
-Ball::Ball(const Window &window, int xposition, int yposition, const int height, const int width, const std::string &image_path)
+Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
@@ -18,7 +19,22 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
-
+	xposition = 530;
+	yposition = 480;
+	switch (size) {
+	case small:
+		height = 20;
+		width = 20;
+		break;
+	case medium:
+		height = 60;
+		width = 60;
+		break;
+	case big:
+		height = 120;
+		width = 120;
+		break;
+	};
 	//initial directions of the ball
 	_xdirection = 0.5*sqrt(2);
 	_ydirection = -0.5*sqrt(2);
@@ -26,6 +42,7 @@ Ball::Ball(const Window &window, int xposition, int yposition, const int height,
 
 Ball::~Ball() {
 	SDL_DestroyTexture(pinball);
+	std::cout << "Ball is being destroyed\n";
 }
 
 void Ball::draw(Window *ball_window) const {
@@ -57,48 +74,86 @@ void Ball::move() {
 }
 
 //function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.
-void Ball::serveBall(SDL_Event &event) {
+void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
 	if (_speed == 0) {
 		switch (event.type) {
 
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym) {
 			case SDLK_LEFT:
-				if (xposition > 0 + 30) {
+				if (xposition > left_wall->getXLocation()+ 20 + 30) {
 					xposition -= 50;
 				}
 				break;
 			case SDLK_RIGHT:
-				if (xposition < (1000 - getWidth()) + 30) {
+				if (xposition < (right_wall->getXLocation() - getWidth() -20) + 30) {
 					xposition += 50;
 				}
 				break;
 			case SDLK_UP:
-				_speed = 0.1;
+				_speed = 1.0;
 				break;
 			}
 		default:
 			break;
 		}
-		
 	}
-	else {}
-
 }
 
 //reverses the ball direction if it hits a wall, destroys the ball if it hits the bottom wall
-void Ball::wallBounce() {
-	if (xposition < 0 || xposition >(1000 - getWidth())) {
+void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4) {
+	Wall *lower_inh_ptr[4] = { dynamic_cast<Wall*> (wall1) , dynamic_cast<Wall*> (wall2) , dynamic_cast<Wall*> (wall3), dynamic_cast<Wall*> (wall4)};
+	int layer[4] = {0,0,0,0};
+	for (int i = 0; i < 4; i++) {
+		switch (lower_inh_ptr[i]->getWallSide()) {
+		case Wall::up:
+			layer[0] = lower_inh_ptr[i]->getYLocation() + 10;
+			break;
+		case Wall::left:
+			layer[1] = lower_inh_ptr[i]->getXLocation() + 10;
+			break;
+		case Wall::right:
+			layer[2] = lower_inh_ptr[i]->getXLocation();
+			break;
+		case Wall::down:
+			layer[3] = lower_inh_ptr[i]->getYLocation();
+			break;
+		}
+	}
+	if (xposition < layer[1] || xposition >(layer[2] - getWidth())) {
 		_xdirection = -_xdirection;
 	}
 
-	if (yposition < 0) {
+	if (yposition < layer[0]) {
 		_ydirection = -_ydirection;
 	}
-	if (yposition >(600 - getHeight())) {
-		Ball::~Ball();
+	if (yposition >(layer[3] - getHeight())) {
 		std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
+		std::cout << layer[0] << std::endl;
+		std::cout << layer[1] << std::endl;
+		std::cout << layer[2] << std::endl;
+		std::cout << layer[3] << std::endl;
+		std::cout << lower_inh_ptr[3]->getYLocation() << std::endl;
+		std::cout << yposition << std::endl;
 		while (1) {};
 	}
 	else {}
+}
+
+//* return functions for the x and y direction
+double Ball::getYDirection() {
+	return _ydirection;
+}
+
+double Ball::getXDirection() {
+	return _xdirection;
+}
+
+// * function to set the x and y direction
+void Ball::setXDirection(double xdirection) {
+	_xdirection = xdirection;
+}
+
+void Ball::setYDirection(double ydirection) {
+	_ydirection = ydirection;
 }

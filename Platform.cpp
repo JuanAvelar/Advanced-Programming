@@ -1,16 +1,30 @@
 #include "Platform.h"
 #include "Window.h"
+#include "Ball.h"
+#include <iostream>
+#include <sstream>
 using namespace std;
 
 // constructor
-Platform::Platform(const Window &window, int xposition, int yposition, const int height, const int width, int r, int g, int b, int a)
-	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed), _r(r), _g(g), _b(b), _a(a) {
+Platform::Platform(const Window &window, GameElement::Color color)
+	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
 	//... no extra attributes to include?
+	int *ptr;
+	ptr = set_color_rgba(color);
+	_r = *ptr;
+	_g = *(ptr + 1);
+	_b = *(ptr + 2);
+	_a = *(ptr + 3);
+	xposition = 500;
+	yposition = 500;
+	height = 20;
+	width = 100;
 }
 
-/*Platform::~Platform() {
-//SDL_DestroyTexture(platform); //this is only for the images
-}*/
+Platform::~Platform() {
+SDL_DestroyTexture(platform); //this is only for the images
+std::cout << "Platform is being destroyed\n";
+}
 
 void Platform::draw(Window *platform_window) const {
 	SDL_Rect platform_draw = { xposition, yposition, width, height };
@@ -30,19 +44,19 @@ string Platform::toString() const {
 }
 
 //function move --> implements abstract class function
-void Platform::move(SDL_Event &event) {
+void Platform::keyInput(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
 	switch (event.type) {
 
 	case SDL_KEYDOWN:
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
-			if (xposition > 0) {
-				xposition -= 10;
+			if (xposition > left_wall->getXLocation()+10) {
+				xposition -= 50;
 			}
 			break;
 		case SDLK_RIGHT:
-			if (xposition < 900) {
-				xposition += 10;
+			if (xposition < right_wall->getXLocation()-getWidth()) {
+				xposition += 50;
 			}
 			break;
 		}
@@ -51,4 +65,26 @@ void Platform::move(SDL_Event &event) {
 	}
 
 	//create the move function --> determined by userinput which we get in the controller
+}
+
+void Platform::platformBounce(GameElement * ball) {
+	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
+
+	//if ball hits the top, output direction will totally depend on the impact position
+	//if ball hits the side, ball bounces of with same angle
+
+	//ball hits top: --> then change the ydirection
+	if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + this->getHeight() &&
+		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth())//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
+	{
+
+		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
+		double collisionPoint = (-0.9 + 1.8 * (((double)ball->getXLocation() + 0.5 * (double)ball->getWidth() - (double)this->getXLocation()) / (double)getWidth()));
+		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
+
+		//set the new directions for the ball
+		lower_inh_ptr->setXDirection(collisionPoint);
+		//set the y direction based on the total direction length being 1
+		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
+	}
 }

@@ -12,47 +12,77 @@
 #include <vector>
 #define window_height 600
 #define window_width 1000
+#define brick_starting_from 6
+#define iterations_per_cycle 4
+#define cycle_time 30
 using std::vector;
 
-//Global variables
-int number_of_bricks = 0;	/**Counts the number of bricks in the game*/
-vector <GameElement*> Game_elements;
-
 // constructor
-Controller::Controller(int lev, int lif, int sco)
-	: level(lev), lifes(lif), score(sco) {}//private
+Controller::Controller( int liv, int sco)
+	: lives(liv), score(sco) {
+	
+}//private
 
-										   /**In this function every function from the game is implemented(top major function)*/
-void Controller::launchGame() {
+/**In this function every function from the game is implemented(top major function)*/
+void Controller::launchGame(int level) {
 	Window window_c("Breakout", window_width, window_height);								/**UI instance*/
-	SDL_Event event;													/**Event of keyboard instance*/
-	Ball* ball = new Ball{ window_c, 100, 100, 20, 20, "pictures/shiny_pinball.png" };/**ball instance*/
-	Platform* platform= new Platform{ window_c, 500, 500, 20, 100, Green().r, Green().g, Green().b, Green().a };		/**Platform instance*/
-	std::cout << "aqui no esta el error\n";
-	vector <Brick*> brick;												/**Vector of pointer to brick objects*/
+	SDL_Event event;																		/**Event of keyboard instance*/
+	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
+	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
 	
-	Wall* walls = new Wall{ 990, 0, 600, 10, Yellow().r, Yellow().g, Yellow().b, Yellow().a, Wall::up };			/**wall instance*/
+	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
+	Game_elements.emplace_back(platform);										//platform pointer as second
+	Game_elements.emplace_back(new Wall{ GameElement::yellow, Wall::up });		//wall pointers as third, fourth, fifth
+	Game_elements.emplace_back(new Wall{ GameElement::yellow, Wall::right });
+	Game_elements.emplace_back(new Wall{ GameElement::yellow, Wall::left });
+	Game_elements.emplace_back(new Wall{ GameElement::yellow, Wall::down });
+
+	set_brick_level(level);																	/**Function to generate all bricks depending on the level*/
 	
+
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed()) {
 		if (SDL_PollEvent(&event)) {
-			platform->move(event);
-			window_c.pollEvents(event);
+			ball->serveBall(event, Game_elements[3], Game_elements[4]);
+			platform->keyInput(event, Game_elements[3],Game_elements[4]);//moves when an event happens
+			window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
+			poll(event, &window_c);//checks if the window has changed its size
 		}
-		ball->draw(&window_c);
-		platform->draw(&window_c);
-		walls->draw(&window_c);
-		for (int i = 1; i < number_of_bricks + 1; i++) {
-				Game_elements[i - 1]->draw(&window_c);	
-				std::cout << i;
-		}
-		window_c.clear();
+
+		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
+		
+			if ((time % cycle_time == 1) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
+				if (iterator == iterations_per_cycle) {
+					you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates 1 time in that millisecond
+				}
+				ball->move();
+				for (int i = brick_starting_from; i < signed(Game_elements.size()); i++) {//check for a brick collision
+					Brick *lower_inh_ptr = dynamic_cast<Brick*> (Game_elements[i]);
+					lower_inh_ptr->brickBounce(Game_elements[0]);//the element in 0 is the ball
+				}
+				platform->platformBounce(Game_elements[0]);//the element in 0 is the ball
+				ball->wallBounce(Game_elements[2], Game_elements[3], Game_elements[4], Game_elements[5]);//positions of wall 
+				iterator++;
+			}
+			else {
+				if (time% cycle_time == 0) {//checks that the millisecond passes in order to let it pass again
+					you_shall_not_pass = false;
+					iterator = 0;
+				}
+				if (time % 40 == 28) {
+					showGraphicOutput(&window_c);
+				}
+			}
 	}
 }
 
-
-void Controller::showGraphicOutput() {
-	// function to show all the graphics, will be updated often
+/**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
+void Controller::showGraphicOutput(Window *window_foo) {
+	
+	for (int i = 0; i < signed(Game_elements.size()); i++) {
+		Game_elements[i]->draw(window_foo);
+	}
+	window_foo->clear();
 }
 
 int Controller::checkForCollision() {
@@ -60,19 +90,21 @@ int Controller::checkForCollision() {
 	//function that checks if the ball hits another object, need to think of what is a logical return? maybe an int (e.g. 0 for no colossion, 1 for brick, 2 for wall, 3 for platform)?
 	//if colission takes place, call for bounceOnObject to handle colission
 }
+
 //gets input from checkForColission
 void Controller::bounceOnObject(int obj) {
 
 }
 
 //You must disinherit the window object to the rest of the objects
-void Controller::select_brick_level(int level) {
+void Controller::set_brick_level(int level) {
+	
 	switch (level) {
 	case 1:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
 				Game_elements.emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
-				number_of_bricks++;
+				
 			}
 		}
 		break;
@@ -80,9 +112,30 @@ void Controller::select_brick_level(int level) {
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
 				Game_elements.emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
-				number_of_bricks++;
+				
 			}
 		}
 		break;
 	}
+}
+
+/**Displaces the game to the center of the window*/
+
+void Controller::poll(SDL_Event &event,Window *window) {
+	if (event.type == SDL_WINDOWEVENT) {
+		switch (event.window.event) {
+			case SDL_WINDOWEVENT_SIZE_CHANGED:
+				std::cout << (SDL_GetWindowSurface(window->_window)->w)  << std::endl;
+				std::cout << (SDL_GetWindowSurface(window->_window)->w)/2-500 << std::endl;
+				
+			for (int i = 0; i < signed(Game_elements.size()); i++) {
+				Game_elements[i]->xposition += (SDL_GetWindowSurface(window->_window)->w)/2 - xprevious_wsize/2;
+				Game_elements[i]->yposition += (SDL_GetWindowSurface(window->_window)->h)/2 - yprevious_wsize/2;
+
+			}
+			xprevious_wsize = (SDL_GetWindowSurface(window->_window)->w);
+			yprevious_wsize = (SDL_GetWindowSurface(window->_window)->h);
+			break;
+		};
+	};
 }

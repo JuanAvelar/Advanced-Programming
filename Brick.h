@@ -3,16 +3,18 @@
 
 #include <string> // C++ standard string class
 #include "GameElement.h" 
+#include "Ball.h"
 
 class Brick : public GameElement {
 public:
 	Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
 	virtual ~Brick() = default; // virtual destructor
 
-	void setHitsToDestroy(int);
-	int getHitsToDestroy();
-
 	virtual void Brick::draw(Window *window_brick) const;
+
+	void brickBounce(GameElement * ball );
+
+	void removeBrickLife();
 
 	virtual std::string toString() const override;
 

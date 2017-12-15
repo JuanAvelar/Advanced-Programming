@@ -6,16 +6,21 @@
 
 class Ball : public MoveableObject {
 public:
-	Ball(const Window &window, int xposition, int yposition, const int height, const int width, const std::string &image_path);
+	Ball(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Ball(); // normal destructor
 
 	void move() override;
 
-	void serveBall(SDL_Event &event);
+	void serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall);
 
-	void wallBounce();
+	void wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4);
 
 	void draw(Window *ball_window)const;
+
+	double getXDirection();
+	double getYDirection();
+	void setXDirection(double xdirection);
+	void setYDirection(double ydirection);
 
 private:
 	double xpos, ypos;

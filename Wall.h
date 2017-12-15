@@ -10,11 +10,11 @@ public:
 	enum Wall_type { up, down, right, left };
 
 public:
-	Wall( int xposition, int yposition, const int height, const int width, int r, int g, int b, int a, Wall_type wallside);
+	Wall(GameElement::Color color, Wall_type wallside);
 	~Wall(); // nonvirtual destructor
 
 	void setWallSide(Wall_type);
-	std::string getWallSide();
+	enum Wall_type getWallSide();
 
 	void Wall::draw(Window *window_wall) const;
 
@@ -25,6 +25,9 @@ private:
 	std::string wall;
 	int _r, _g, _b, _a;
 	SDL_Texture *game_wall = nullptr;
+
+protected:
+	Wall_type wallside_pick;
 	
 };
 
