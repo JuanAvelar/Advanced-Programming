@@ -3,6 +3,7 @@
 #include "Ball.h"
 #include <iostream>
 #include <sstream>
+#include <SDL2/SDL_image.h>
 using namespace std;
 
 // constructor
@@ -19,6 +20,37 @@ Platform::Platform(const Window &window, GameElement::Color color)
 	yposition = 500;
 	height = 20;
 	width = 100;
+}
+
+// constructor
+Platform::Platform(const Window &window, GameElement::Size size, const std::string &image_path)
+	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
+	//... no extra attributes to include?
+	auto surface = IMG_Load(image_path.c_str());
+	if (!surface) {
+		std::cerr << "Failed to create surface.\n";
+	}
+	platform = SDL_CreateTextureFromSurface(window._renderer, surface);
+	if (!platform) {
+		std::cerr << "Failed to create texture\n";
+	}
+	SDL_FreeSurface(surface);
+	xposition = 500;
+	yposition = 500;
+	switch (size) {
+	case small:
+		height = 20;
+		width = 100;
+		break;
+	case medium:
+		height = 20;
+		width = 130;
+		break;
+	case big:
+		height = 20;
+		width = 160;
+		break;
+	};
 }
 
 Platform::~Platform() {

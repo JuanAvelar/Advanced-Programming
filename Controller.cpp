@@ -13,7 +13,7 @@
 #define window_height 600
 #define window_width 1000
 #define brick_starting_from 6
-#define iterations_per_cycle 5
+#define iterations_per_cycle 8
 #define cycle_time 30
 #define duty_cycle_percentage 0.3
 using std::vector;
@@ -33,7 +33,7 @@ void Controller::launchGame(int level) {
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
-	Game_lost = false;
+	Game_lost = false;/**The game is not lost when you begin*/
 
 	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
 	Game_elements.emplace_back(platform);										//platform pointer as second
@@ -68,10 +68,10 @@ void Controller::launchGame(int level) {
 				platform->platformBounce(Game_elements[0]);//the element in 0 is the ball
 				ball->wallBounce(Game_elements[2], Game_elements[3], Game_elements[4], Game_elements[5], &Game_lost);//positions of wall 
 				iterator++;
-				std::cout << iterator << std::endl;
+				//std::cout << iterator << std::endl;
 			}
 			else {
-				if (time % cycle_time == 0) {//checks that the millisecond passes in order to let it pass again
+				if (time % cycle_time == cycle_time - 1) {//checks that the millisecond passes in order to let it pass again
 					you_shall_not_pass = false;
 					iterator = 0;
 				}
