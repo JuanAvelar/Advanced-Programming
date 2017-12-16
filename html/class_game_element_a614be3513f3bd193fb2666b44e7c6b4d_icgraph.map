@@ -1,0 +1,9 @@
+<map id="GameElement::getWidth" name="GameElement::getWidth">
+<area shape="rect" id="node2" href="$class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="251,5,355,32"/>
+<area shape="rect" id="node5" href="$class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="243,56,362,83"/>
+<area shape="rect" id="node6" href="$class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="237,107,369,133"/>
+<area shape="rect" id="node7" href="$class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="239,157,366,184"/>
+<area shape="rect" id="node8" href="$class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="219,208,387,235"/>
+<area shape="rect" id="node3" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="435,107,593,133"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="641,107,692,133"/>
+</map>

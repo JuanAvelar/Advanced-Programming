@@ -1,7 +1,18 @@
+/**
+*\mainpage Breakout description
+*\section a Why?
+*Breakout is a game in which various objects are being created and destroyed along the lifecycle of the game
+*
+*\section b How?
+*
+*
+*
+*\author Juan Pablo Avelar
+*\date 16 december 2017
+*/
 #include "Controller.h"
 #include "GameElement.h"
 #include <iostream>
-
 
 int main(int argc, char **argv) {
 	int lives = 3;

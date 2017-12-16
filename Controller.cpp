@@ -14,7 +14,7 @@
 #define window_width 1000
 #define brick_starting_from 6
 #define iterations_per_cycle 5
-#define cycle_time 40
+#define cycle_time 30
 #define duty_cycle_percentage 0.3
 using std::vector;
 
@@ -26,7 +26,9 @@ Controller::Controller( int liv, int sco)
 
 /**In this function every function from the game is implemented(top major function)*/
 void Controller::launchGame(int level) {
-	Window window_c("Breakout", window_width, window_height);								/**UI instance*/
+	std::ostringstream Window_title;
+	Window_title << "Breakout: Level " << level;
+	Window window_c(Window_title.str(), window_width, window_height);								/**UI instance*/
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
@@ -35,13 +37,12 @@ void Controller::launchGame(int level) {
 
 	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
 	Game_elements.emplace_back(platform);										//platform pointer as second
-	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::up });		//wall pointers as third, fourth, fifth
+	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::right });
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::left });
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });
 
 	set_brick_level(level, &Game_elements);																	/**Function to generate all bricks depending on the level*/
-	
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
@@ -74,7 +75,7 @@ void Controller::launchGame(int level) {
 					you_shall_not_pass = false;
 					iterator = 0;
 				}
-				if (time % cycle_time*2 == 20) {
+				if (time % cycle_time*2 == cycle_time) {
 					showGraphicOutput(&window_c, &Game_elements);
 				}
 			}

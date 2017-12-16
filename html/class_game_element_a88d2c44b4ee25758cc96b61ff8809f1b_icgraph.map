@@ -1,0 +1,4 @@
+<map id="GameElement::set_color_rgba" name="GameElement::set_color_rgba">
+<area shape="rect" id="node2" href="$class_platform.html#aab657eabe23844e757e5ad27c54174f9" title="Platform::Platform" alt="" coords="252,5,379,32"/>
+<area shape="rect" id="node3" href="$class_wall.html#ab6ba5936b820b65e1566fa11181c2aab" title="Wall::Wall" alt="" coords="274,56,357,83"/>
+</map>

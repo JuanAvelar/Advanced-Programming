@@ -1,0 +1,4 @@
+<map id="Platform::keyInput" name="Platform::keyInput">
+<area shape="rect" id="node2" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="180,5,367,32"/>
+<area shape="rect" id="node3" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="191,56,356,83"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Brick::brickBounce" name="Brick::brickBounce">
+<area shape="rect" id="node2" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="187,5,373,32"/>
+<area shape="rect" id="node3" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="197,56,363,83"/>
+<area shape="rect" id="node4" href="$class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="185,107,375,133"/>
+<area shape="rect" id="node5" href="$class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="196,157,364,184"/>
+<area shape="rect" id="node6" href="$class_ball.html#a33c7d96eba2d906bbc499096cab640f9" title="Ball::setXDirection" alt="" coords="216,208,344,235"/>
+<area shape="rect" id="node7" href="$class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1" title="Ball::getXDirection" alt="" coords="216,259,344,285"/>
+<area shape="rect" id="node8" href="$class_brick.html#a3ec7bb017d112a16144986ff7446b5a2" title="Brick::removeBrickLife" alt="" coords="205,309,355,336"/>
+<area shape="rect" id="node9" href="$class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456" title="Ball::getYDirection" alt="" coords="215,360,345,387"/>
+<area shape="rect" id="node10" href="$class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207" title="Ball::setYDirection" alt="" coords="215,411,345,437"/>
+</map>

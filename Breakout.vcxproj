@@ -117,7 +117,6 @@
     <ClInclude Include="GameElement.h" />
     <ClInclude Include="MoveableObject.h" />
     <ClInclude Include="Platform.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
