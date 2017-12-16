@@ -13,8 +13,9 @@
 #define window_height 600
 #define window_width 1000
 #define brick_starting_from 6
-#define iterations_per_cycle 4
-#define cycle_time 30
+#define iterations_per_cycle 5
+#define cycle_time 40
+#define duty_cycle_percentage 0.3
 using std::vector;
 
 // constructor
@@ -45,17 +46,17 @@ void Controller::launchGame(int level) {
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
-			ball->serveBall(event, Game_elements[3], Game_elements[4]);
-			platform->keyInput(event, Game_elements[3],Game_elements[4]);//moves when an event happens
+			ball->serveBall(event, Game_elements[3], Game_elements[4]);//ball moves with the platform when speed is 0
+			platform->keyInput(event, Game_elements[3],Game_elements[4]);//platform moves when an event happens
 			window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
 			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 		}
 
 		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
 		
-			if ((time % cycle_time == 1) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
-				if (iterator == iterations_per_cycle) {
-					you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates 1 time in that millisecond
+			if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
+				if (iterator == iterations_per_cycle - 1) {
+					you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 				}
 				ball->move();
 				for (int i = brick_starting_from; i < signed(Game_elements.size()); i++) {//check for a brick collision
@@ -66,13 +67,14 @@ void Controller::launchGame(int level) {
 				platform->platformBounce(Game_elements[0]);//the element in 0 is the ball
 				ball->wallBounce(Game_elements[2], Game_elements[3], Game_elements[4], Game_elements[5], &Game_lost);//positions of wall 
 				iterator++;
+				std::cout << iterator << std::endl;
 			}
 			else {
-				if (time% cycle_time == 0) {//checks that the millisecond passes in order to let it pass again
+				if (time % cycle_time == 0) {//checks that the millisecond passes in order to let it pass again
 					you_shall_not_pass = false;
 					iterator = 0;
 				}
-				if (time % 40 == 28) {
+				if (time % cycle_time*2 == 20) {
 					showGraphicOutput(&window_c, &Game_elements);
 				}
 			}
