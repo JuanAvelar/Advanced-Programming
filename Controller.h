@@ -16,11 +16,12 @@ public:
 
 	void launchGame(int level);
 
-	void showGraphicOutput(Window * window_foo);
+	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
 	int checkForCollision();
 	void bounceOnObject(int);
-	void set_brick_level(int level);
-	void poll(SDL_Event &event, Window * window);
+	void set_brick_level(int level, vector <GameElement*>* elements);
+	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
+	void Controller::destroy_level(int level, vector <GameElement*>* elements);
 
 private:
 	int lives, score;
@@ -31,10 +32,10 @@ private:
 	/**window sizes in X and Y to resize*/
 	int xprevious_wsize = 1000;
 	int yprevious_wsize = 600;
+	bool Game_lost = false;
 
 	//Global variables
-	/** Vector of Game element pointers*/
-	vector <GameElement*> Game_elements;
+
 	/**Map of bits to check further collisions*/
 	bool map_array[1000][600];
 	/**Flag to ensure just one iteration per milisecond*/

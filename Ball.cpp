@@ -101,7 +101,7 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 }
 
 //reverses the ball direction if it hits a wall, destroys the ball if it hits the bottom wall
-void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4) {
+void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4, bool *Game_lost) {
 	Wall *lower_inh_ptr[4] = { dynamic_cast<Wall*> (wall1) , dynamic_cast<Wall*> (wall2) , dynamic_cast<Wall*> (wall3), dynamic_cast<Wall*> (wall4)};
 	int layer[4] = {0,0,0,0};
 	for (int i = 0; i < 4; i++) {
@@ -128,14 +128,8 @@ void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wa
 		_ydirection = -_ydirection;
 	}
 	if (yposition >(layer[3] - getHeight())) {
+		*Game_lost = true;
 		std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
-		std::cout << layer[0] << std::endl;
-		std::cout << layer[1] << std::endl;
-		std::cout << layer[2] << std::endl;
-		std::cout << layer[3] << std::endl;
-		std::cout << lower_inh_ptr[3]->getYLocation() << std::endl;
-		std::cout << yposition << std::endl;
-		while (1) {};
 	}
 	else {}
 }

@@ -10,6 +10,10 @@ Brick::Brick( int xposition, int yposition, const int	height, const int width, i
 	hits = hitsToDestroy;
 }
 
+Brick::~Brick() {
+	std::cout << "Brick is being destroyed\n";
+}
+
 void Brick::draw(Window *window_brick) const {
 	SDL_Rect brick_draw = { xposition, yposition, width, height };
 	if (bricks) {
@@ -22,7 +26,7 @@ void Brick::draw(Window *window_brick) const {
 	}
 }
 
-void Brick::brickBounce(GameElement * ball) {
+bool Brick::brickBounce(GameElement * ball) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 
 	//first we need to check if the ball hits the side or the top/bottom
@@ -47,6 +51,11 @@ void Brick::brickBounce(GameElement * ball) {
 			lower_inh_ptr->setYDirection(-ydir);
 			this->removeBrickLife();
 		}
+		return false;
+	}
+	else {
+		delete this;
+		return true;
 	}
 }
 

@@ -13,7 +13,7 @@ public:
 
 	void serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall);
 
-	void wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4);
+	void wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4, bool *Game_lost);
 
 	void draw(Window *ball_window)const;
 

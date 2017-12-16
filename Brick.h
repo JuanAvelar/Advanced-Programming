@@ -8,11 +8,11 @@
 class Brick : public GameElement {
 public:
 	Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
-	virtual ~Brick() = default; // virtual destructor
+	~Brick(); // virtual destructor
 
 	virtual void Brick::draw(Window *window_brick) const;
 
-	void brickBounce(GameElement * ball );
+	bool brickBounce(GameElement *ball);
 
 	void removeBrickLife();
 
