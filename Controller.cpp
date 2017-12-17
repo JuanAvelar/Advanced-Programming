@@ -33,7 +33,7 @@ void Controller::launchGame(int level) {
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
-	Game_lost = false;/**The game is not lost when you begin*/
+	Game_lost = false;																		/**The game is not lost when you begin*/
 
 	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
 	Game_elements.emplace_back(platform);										//platform pointer as second
@@ -98,12 +98,6 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 			(*elements)[i]->draw(window_foo);
 	}
 	window_foo->clear();
-}
-
-int Controller::checkForCollision() {
-	return 0;
-	//function that checks if the ball hits another object, need to think of what is a logical return? maybe an int (e.g. 0 for no colossion, 1 for brick, 2 for wall, 3 for platform)?
-	//if colission takes place, call for bounceOnObject to handle colission
 }
 
 //gets input from checkForColission
