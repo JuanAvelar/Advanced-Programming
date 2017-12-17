@@ -57,7 +57,7 @@ void Controller::launchGame(int level) {
 				you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 			}
 			ball->move();
-			//int[number of balls] = {position1, position2, etc.};//positions in the array of game elements
+			//int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
 			int number_of_ball[1] = { 0 };
 			for (auto c : number_of_ball) {
 				for (int i = 0; i < signed(Game_elements.size()); i++) {//check for a brick collision
