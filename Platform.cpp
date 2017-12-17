@@ -20,6 +20,11 @@ Platform::Platform(const Window &window, GameElement::Color color)
 	yposition = 500;
 	height = 20;
 	width = 100;
+	_xdirection = 0;
+	_ydirection = 0;
+	_speed = 1.0;
+	xpos = double(xposition);
+	ypos = double(yposition);
 }
 
 // constructor
@@ -76,26 +81,35 @@ string Platform::toString() const {
 }
 
 //function move --> implements abstract class function
-void Platform::keyInput(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
-	switch (event.type) {
-
-	case SDL_KEYDOWN:
+void Platform::keyInput(SDL_Event &event) {
+	if (event.type == SDL_KEYDOWN) {
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
-			if (xposition > left_wall->getXLocation()+10) {
-				xposition -= 50;
+			_xdirection = -1.0;
+			break;
+		case SDLK_RIGHT:
+			_xdirection = 1.0;
+			break;
+		default:
+			break;
+		}
+	}
+	if (event.type == SDL_KEYUP){
+		switch (event.key.keysym.sym) {
+		case SDLK_LEFT:
+			if (_xdirection < 0) {
+				_xdirection = 0;
 			}
 			break;
 		case SDLK_RIGHT:
-			if (xposition < right_wall->getXLocation()-getWidth()) {
-				xposition += 50;
+			if (_xdirection > 0) {
+				_xdirection = 0;
 			}
 			break;
-		case SDLK_DOWN://press p to pause
-			while (event.key.keysym.sym != SDLK_UP) { SDL_PollEvent(&event); }//press c to continue
+		default:
+			break;
 		}
-	default:
-		break;
+	
 	}
 
 	//create the move function --> determined by userinput which we get in the controller
@@ -103,17 +117,16 @@ void Platform::keyInput(SDL_Event &event, GameElement *right_wall, GameElement *
 
 bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
-
 	//if ball hits the top, output direction will totally depend on the impact position
 	//if ball hits the side, ball bounces of with same angle
 
 	//ball hits top: --> then change the ydirection
-	if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + this->getHeight() &&
+	if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 2 &&
 		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth())//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
 	{
 
 		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
-		double collisionPoint = (-0.9 + 1.8 * (((double)ball->getXLocation() + 0.5 * (double)ball->getWidth() - (double)this->getXLocation()) / (double)getWidth()));
+		double collisionPoint = (-0.9 + 1.8 * (((double)ball->getXLocation() + (double)ball->getWidth()  - (double)this->getXLocation()) / ((double)getWidth()+(double)ball->getWidth())));
 		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
 
 		//set the new directions for the ball
@@ -121,5 +134,17 @@ bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
 		//set the y direction based on the total direction length being 1
 		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
 	}
+
+
 	return 0;
 }
+
+/*void Platform::move(GameElement *right_wall, GameElement *left_wall) {
+	if (xposition > left_wall->xposition + right_wall->width && _xdirection < 0) {
+		xposition -= 1;
+	}
+	if (xposition+width < right_wall->xposition && _xdirection > 0) {
+		xposition += 1;
+	}
+
+}*/

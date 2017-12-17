@@ -69,26 +69,12 @@ void Window::pollEvents(SDL_Event &event) {
 		break;
 	case SDL_KEYDOWN:
 		switch (event.key.keysym.sym) {
-		case SDLK_a:
-			std::cout << "You clicked 'A'!\n";
-			std::cout << (SDL_GetWindowSurface(_window)->w) << " is width \n";
-			break;
-		case SDLK_LEFT:
-			std::cout << "You clicked left arrow.\n";
-			break;
-		case SDLK_RIGHT:
-			std::cout << "Right.\n";
-			break;
 		case SDLK_ESCAPE:
 			_closed = true;
 			break;
+		default:
+			break;
 		}
-	case SDL_MOUSEMOTION:
-		std::cout << event.motion.x << ", " << event.motion.y << std::endl;
-		break;
-	case SDL_MOUSEBUTTONUP:
-		std::cout << "You released your mouse.\n";
-		break;
 	default:
 		break;
 	}

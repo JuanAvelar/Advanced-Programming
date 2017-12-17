@@ -17,6 +17,7 @@ public:
 	void launchGame(int level);
 
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
+	int checkForCollision();
 	void bounceOnObject(int);
 	void set_brick_level(int level, vector <GameElement*>* elements);
 	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
@@ -24,7 +25,7 @@ public:
 
 private:
 	int lives, score;
-	/**Get the time since the SDL library was accessed for the first time (in milliseconds)*/
+	/**Time passed in milliseconds*/
 	int time = 0;
 	/**Second time to compare*/
 	int new_time = 0;
@@ -40,7 +41,6 @@ private:
 	/**Flag to ensure just one iteration per milisecond*/
 	bool you_shall_not_pass = 0;
 	int iterator = 0;
-	bool event_flag = false;
 };
 
 struct Green {

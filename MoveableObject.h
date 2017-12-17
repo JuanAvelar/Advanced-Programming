@@ -19,12 +19,13 @@ public:
 	double getYSpeed();
 
 	virtual std::string toString() const override;
-	virtual void move();
+	virtual void move(GameElement *right_wall, GameElement *left_wall);
 
 	double _xdirection = 0;
 	double _ydirection = 0;
 
 protected:
+	double xpos, ypos;
 	double _speed = 0;
 };
 

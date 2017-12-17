@@ -35,8 +35,28 @@ string MoveableObject::toString() const {
 	return "0";
 };
 
-//virtual function move, has to be defined for the child classes
-void MoveableObject::move() {
-	
-};
+//function to move the ball, xposd and yposd are double for the rounding
+void MoveableObject::move(GameElement *right_wall, GameElement *left_wall) {
+
+	if (_speed != 0) {
+		if (xposition > left_wall->xposition + left_wall->width - 2 && _xdirection < 0) {
+			xpos += _xdirection*_speed;
+			ypos += _ydirection*_speed;
+			xposition = int(xpos);
+			yposition = int(ypos);
+		}
+		else if  (xposition + getWidth() < right_wall->xposition + right_wall->width && _xdirection > 0) {
+			xpos += _xdirection*_speed;
+			ypos += _ydirection*_speed;
+			xposition = int(xpos);
+			yposition = int(ypos);
+		}
+	}
+	else {
+		xpos = double(xposition);
+		ypos = double(yposition);
+	}
+	//create the move function --> determined by userinput which we get in the controller
+	//return new position
+}
 
