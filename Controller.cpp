@@ -42,7 +42,7 @@ void Controller::launchGame(int level) {
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::left });
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });
 
-	set_brick_level(level, &Game_elements);																	/**Function to generate all bricks depending on the level*/
+	set_brick_level(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
