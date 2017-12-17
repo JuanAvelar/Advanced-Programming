@@ -1,5 +1,6 @@
 #include "Wall.h"
 #include "Window.h"
+#include "MoveableObject.h"
 #include <iostream>
 #include <SDL2/SDL_image.h>
 using namespace std;
@@ -68,7 +69,38 @@ enum Wall::Wall_type Wall::getWallSide()
 	return wallside_pick;
 }
 
-
+bool Wall::Bounce(GameElement * ball, bool *Game_lost) {
+	MoveableObject *lower_inh_ptr = { dynamic_cast<MoveableObject*> (ball)};
+	int layer[4] = { 0, 0, 0, 0 };
+		switch (this->getWallSide()) {
+		case Wall::up:
+			layer[0] = this->getYLocation() + 10;
+			if (ball->yposition < layer[0]) {
+				lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
+			}
+			break;
+		case Wall::left:
+			layer[1] = this->getXLocation() + 10;
+			if (ball->xposition < layer[1]) {
+				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+			}
+			break;
+		case Wall::right:
+			layer[2] = this->getXLocation();
+			if ( ball->xposition >(layer[2] - ball->getWidth())) {
+				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+			}
+			break;
+		case Wall::down:
+			layer[3] = this->getYLocation();
+			if (ball->yposition >(layer[3] - ball->getHeight())) {
+				*Game_lost = true;
+				std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
+			}
+			break;
+		}
+		return 0;
+}
 
 // return a string representation of Brick's information 
 string Wall::toString() const {

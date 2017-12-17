@@ -134,6 +134,25 @@ void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wa
 	else {}
 }
 
+bool Ball::Bounce(GameElement * ball, bool *Game_lost) {
+	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
+	int layer[4] = { this->getXLocation() , this->getXLocation() , this->getYLocation() , this->getYLocation() };
+
+	if (ball->xposition == layer[0]) {//right collision
+		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+	}
+	if (ball->xposition == (layer[1] + getWidth())) {//left collision
+		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+	}
+	if (ball->yposition == layer[2]) {//up collision
+		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
+	}
+	if (ball->yposition == (layer[3] + getHeight())) {//down collision
+		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
+	}
+	return 0;
+}
+
 //* return functions for the x and y direction
 double Ball::getYDirection() {
 	return _ydirection;

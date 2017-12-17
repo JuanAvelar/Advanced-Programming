@@ -23,6 +23,8 @@ public:
 
 	virtual void draw(Window* window) const = 0;//pure virtual
 
+	virtual bool Bounce(GameElement * ball, bool *Game_lost) = 0;
+
 	void destroyGameElement();
 
 	

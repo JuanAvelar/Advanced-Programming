@@ -99,7 +99,7 @@ void Platform::keyInput(SDL_Event &event, GameElement *right_wall, GameElement *
 	//create the move function --> determined by userinput which we get in the controller
 }
 
-void Platform::platformBounce(GameElement * ball) {
+bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 
 	//if ball hits the top, output direction will totally depend on the impact position
@@ -119,4 +119,5 @@ void Platform::platformBounce(GameElement * ball) {
 		//set the y direction based on the total direction length being 1
 		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
 	}
+	return 0;
 }

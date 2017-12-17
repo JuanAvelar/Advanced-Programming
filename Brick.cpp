@@ -26,7 +26,7 @@ void Brick::draw(Window *window_brick) const {
 	}
 }
 
-bool Brick::brickBounce(GameElement * ball) {
+bool Brick::Bounce(GameElement * ball, bool *Game_lost) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 
 	//first we need to check if the ball hits the side or the top/bottom

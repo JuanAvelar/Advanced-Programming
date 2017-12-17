@@ -16,7 +16,7 @@ public:
 
 	void draw(Window *platform_window) const;
 
-	void platformBounce(GameElement * ball);
+	bool Bounce(GameElement * ball, bool *Game_lost);
 
 private:
 

@@ -12,7 +12,6 @@
 #include <vector>
 #define window_height 600
 #define window_width 1000
-#define brick_starting_from 6
 #define iterations_per_cycle 8
 #define cycle_time 30
 #define duty_cycle_percentage 0.3
@@ -60,13 +59,11 @@ void Controller::launchGame(int level) {
 					you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 				}
 				ball->move();
-				for (int i = brick_starting_from; i < signed(Game_elements.size()); i++) {//check for a brick collision
-					Brick *lower_inh_ptr = dynamic_cast<Brick*> (Game_elements[i]);//Change pointer type to lower inheritance
-					bool Brick_destructed = lower_inh_ptr->brickBounce(Game_elements[0]);//the element in 0 is the ball //Returns true if brick is destroyed
+				for (int i = 1; i < signed(Game_elements.size()); i++) {//check for a brick collision
+					//Brick *lower_inh_ptr = dynamic_cast<Brick*> (Game_elements[i]);//Change pointer type to lower inheritance
+					bool Brick_destructed = Game_elements[i]->Bounce(Game_elements[0], &Game_lost);//the element in 0 is the ball //Returns true if brick is destroyed
 					if (Brick_destructed) { Game_elements.erase(Game_elements.begin() + i); }//if brick is destroyed then it gets rid of the vector element
 				}
-				platform->platformBounce(Game_elements[0]);//the element in 0 is the ball
-				ball->wallBounce(Game_elements[2], Game_elements[3], Game_elements[4], Game_elements[5], &Game_lost);//positions of wall 
 				iterator++;
 				//std::cout << iterator << std::endl;
 			}

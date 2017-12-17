@@ -15,6 +15,8 @@ public:
 
 	void wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4, bool *Game_lost);
 
+	bool Ball::Bounce(GameElement * ball, bool *Game_lost);
+
 	void draw(Window *ball_window)const;
 
 	double getXDirection();

@@ -21,9 +21,10 @@ public:
 	virtual std::string toString() const override;
 	virtual void move();
 
-protected:
 	double _xdirection = 0;
-	double _ydirection = 0; 
+	double _ydirection = 0;
+
+protected:
 	double _speed = 0;
 };
 
