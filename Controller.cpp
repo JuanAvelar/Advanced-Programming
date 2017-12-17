@@ -61,7 +61,7 @@ void Controller::launchGame(int level) {
 			int number_of_ball[1] = { 0 };
 			for (auto c : number_of_ball) {
 				for (int i = 0; i < signed(Game_elements.size()); i++) {//check for a brick collision
-					if (i != number_of_ball[i]) {//skips the collision between the ball and the same ball, because it is phisically not possible
+					if (i != c) {//skips the collision between the ball and the same ball, because it is phisically not possible
 						bool Brick_destructed = Game_elements[i]->Bounce(Game_elements[c], &Game_lost);//the element in c is the ball //Returns true if brick is destroyed
 						if (Brick_destructed) { Game_elements.erase(Game_elements.begin() + i); }//if brick is destroyed then it gets rid of the vector element
 					}
@@ -71,7 +71,7 @@ void Controller::launchGame(int level) {
 		}
 		else if (time % cycle_time > cycle_time/2 && time % cycle_time < cycle_time / 2 + time_for_graphic_output) {
 			showGraphicOutput(&window_c, &Game_elements);
-			 std::cout << time << std::endl; 
+			 //std::cout << time << std::endl; 
 		}
 		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//checks that the millisecond passes in order to let it pass again
 			if (you_shall_not_pass) {
