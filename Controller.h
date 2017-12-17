@@ -33,6 +33,8 @@ private:
 	int xprevious_wsize = 1000;
 	int yprevious_wsize = 600;
 	bool Game_lost = false;
+	//Boolean to see if an event occurs
+	bool event_flag;
 
 	//Global variables
 

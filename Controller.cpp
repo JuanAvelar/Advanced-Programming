@@ -56,7 +56,8 @@ void Controller::launchGame(int level) {
 			if (iterator == iterations_per_cycle - 1) {
 				you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 			}
-			ball->move();
+			ball->move(Game_elements[3], Game_elements[4]);
+			platform->move(Game_elements[3], Game_elements[4]);
 			//int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
 			int number_of_ball[1] = { 0 };
 			for (auto c : number_of_ball) {
@@ -80,7 +81,7 @@ void Controller::launchGame(int level) {
 			}
 			if (event_flag) {
 					ball->serveBall(event, Game_elements[3], Game_elements[4]);//ball moves with the platform when speed is 0
-					platform->keyInput(event, Game_elements[3], Game_elements[4]);//platform moves when an event happens
+					platform->keyInput(event);//platform moves when an event happens
 					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
 					poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 					event_flag = false;
