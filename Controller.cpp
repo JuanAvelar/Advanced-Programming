@@ -13,8 +13,9 @@
 #define window_height 600
 #define window_width 1000
 #define iterations_per_cycle 8
-#define cycle_time 30
-#define duty_cycle_percentage 0.3
+#define cycle_time 30				//in milliseconds
+#define time_for_graphic_output 10	//in milliseconds
+#define duty_cycle_percentage 0.4	//state percentage of time spent to complete motion of the ball and collisions
 using std::vector;
 
 // constructor
@@ -46,36 +47,45 @@ void Controller::launchGame(int level) {
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
-			ball->serveBall(event, Game_elements[3], Game_elements[4]);//ball moves with the platform when speed is 0
-			platform->keyInput(event, Game_elements[3],Game_elements[4]);//platform moves when an event happens
-			window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
-			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
+			event_flag = true;
 		}
-
+		//std::cout << "busy" << std::endl;
 		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
 		
-			if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
-				if (iterator == iterations_per_cycle - 1) {
-					you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
-				}
-				ball->move();
-				for (int i = 1; i < signed(Game_elements.size()); i++) {//check for a brick collision
-					//Brick *lower_inh_ptr = dynamic_cast<Brick*> (Game_elements[i]);//Change pointer type to lower inheritance
-					bool Brick_destructed = Game_elements[i]->Bounce(Game_elements[0], &Game_lost);//the element in 0 is the ball //Returns true if brick is destroyed
-					if (Brick_destructed) { Game_elements.erase(Game_elements.begin() + i); }//if brick is destroyed then it gets rid of the vector element
-				}
-				iterator++;
-				//std::cout << iterator << std::endl;
+		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
+			if (iterator == iterations_per_cycle - 1) {
+				you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 			}
-			else {
-				if (time % cycle_time == cycle_time - 1) {//checks that the millisecond passes in order to let it pass again
-					you_shall_not_pass = false;
-					iterator = 0;
-				}
-				if (time % cycle_time*2 == cycle_time) {
-					showGraphicOutput(&window_c, &Game_elements);
+			ball->move();
+			//int[number of balls] = {position1, position2, etc.};//positions in the array of game elements
+			int number_of_ball[1] = { 0 };
+			for (auto c : number_of_ball) {
+				for (int i = 0; i < signed(Game_elements.size()); i++) {//check for a brick collision
+					if (i != number_of_ball[i]) {//skips the collision between the ball and the same ball, because it is phisically not possible
+						bool Brick_destructed = Game_elements[i]->Bounce(Game_elements[c], &Game_lost);//the element in c is the ball //Returns true if brick is destroyed
+						if (Brick_destructed) { Game_elements.erase(Game_elements.begin() + i); }//if brick is destroyed then it gets rid of the vector element
+					}
 				}
 			}
+			iterator++;
+		}
+		else if (time % cycle_time > cycle_time/2 && time % cycle_time < cycle_time / 2 + time_for_graphic_output) {
+			showGraphicOutput(&window_c, &Game_elements);
+			 std::cout << time << std::endl; 
+		}
+		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//checks that the millisecond passes in order to let it pass again
+			if (you_shall_not_pass) {
+				you_shall_not_pass = false;
+				iterator = 0;
+			}
+			if (event_flag) {
+					ball->serveBall(event, Game_elements[3], Game_elements[4]);//ball moves with the platform when speed is 0
+					platform->keyInput(event, Game_elements[3], Game_elements[4]);//platform moves when an event happens
+					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
+					poll(event, &window_c, &Game_elements);//checks if the window has changed its size
+					event_flag = false;
+			}
+		}
 	}
 	destroy_level(level, &Game_elements);
 	Game_elements.clear();
@@ -108,7 +118,7 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	case 1:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 2, i * 25, 0, 255 - i * 25, 0 });
 				
 			}
 		}
@@ -116,7 +126,7 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	case 2:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 3, i * 25, 0, 255 - i * 25, 0 });
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
 				
 			}
 		}

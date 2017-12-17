@@ -41,6 +41,7 @@ private:
 	/**Flag to ensure just one iteration per milisecond*/
 	bool you_shall_not_pass = 0;
 	int iterator = 0;
+	bool event_flag = false;
 };
 
 struct Green {

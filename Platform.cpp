@@ -91,6 +91,8 @@ void Platform::keyInput(SDL_Event &event, GameElement *right_wall, GameElement *
 				xposition += 50;
 			}
 			break;
+		case SDLK_DOWN://press p to pause
+			while (event.key.keysym.sym != SDLK_UP) { SDL_PollEvent(&event); }//press c to continue
 		}
 	default:
 		break;

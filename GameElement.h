@@ -20,19 +20,18 @@ public:
 
 	int getXLocation();
 	int getYLocation();
-
+	/**Virtual function to draw all items in the game*/
 	virtual void draw(Window* window) const = 0;//pure virtual
-
+	/**Virtual function to bounce certain ball with its environment*/
 	virtual bool Bounce(GameElement * ball, bool *Game_lost) = 0;
 
 	void destroyGameElement();
-
-	
 
 	virtual std::string toString() const;
 
 public:
 	int xposition, yposition, height, width;
+
 };
 
 #endif // GameElement_H
