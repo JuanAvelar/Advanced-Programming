@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 	int score = 0; 
 	
 	//GameElement game_element(100,100,20,20);
-
+	/**This is a controller*/
 	Controller controller( lives, score); //create the controller instance
 	for (int level = 1; level < 4; level++) {
 		controller.launchGame(level);

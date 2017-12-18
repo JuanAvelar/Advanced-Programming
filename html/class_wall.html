@@ -120,6 +120,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a07c0c8d97afbf44b744bd9c364a9c503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d0f02eebf32d1f85d3a24c91a2c5509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509">draw</a> (<a class="el" href="class_window.html">Window</a> *window_wall) const</td></tr>
 <tr class="separator:a1d0f02eebf32d1f85d3a24c91a2c5509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47fd100838dde29f79e46862961ab185"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a47fd100838dde29f79e46862961ab185">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball, bool *Game_lost)</td></tr>
+<tr class="separator:a47fd100838dde29f79e46862961ab185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a6aa7345415ced1ba906215b1fa1fa2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a1a6aa7345415ced1ba906215b1fa1fa2">toString</a> () const override</td></tr>
 <tr class="separator:a1a6aa7345415ced1ba906215b1fa1fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_element')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
@@ -233,6 +235,57 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a47fd100838dde29f79e46862961ab185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47fd100838dde29f79e46862961ab185">&#9670;&nbsp;</a></span>Bounce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Wall::Bounce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_element.html">GameElement</a> *&#160;</td>
+          <td class="paramname"><em>ball</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>Game_lost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Virtual function to bounce certain ball with its environment </p>
+
+<p>Implements <a class="el" href="class_game_element.html#a2d58156599ba3b52ef3776f9f4d3478d">GameElement</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wall_a47fd100838dde29f79e46862961ab185_cgraph.png" border="0" usemap="#class_wall_a47fd100838dde29f79e46862961ab185_cgraph" alt=""/></div>
+<map name="class_wall_a47fd100838dde29f79e46862961ab185_cgraph" id="class_wall_a47fd100838dde29f79e46862961ab185_cgraph">
+<area shape="rect" id="node2" href="class_wall.html#a07c0c8d97afbf44b744bd9c364a9c503" title="Wall::getWallSide" alt="" coords="185,5,311,32"/>
+<area shape="rect" id="node3" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="153,56,343,83"/>
+<area shape="rect" id="node4" href="class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="155,107,341,133"/>
+<area shape="rect" id="node5" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="165,157,331,184"/>
+<area shape="rect" id="node6" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="164,208,332,235"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1d0f02eebf32d1f85d3a24c91a2c5509"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d0f02eebf32d1f85d3a24c91a2c5509">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -246,7 +299,7 @@ Here is the call graph for this function:</div>
           <td class="memname">void Wall::draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_window.html">Window</a> *&#160;</td>
-          <td class="paramname"><em>window_wall</em></td><td>)</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -256,6 +309,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Virtual function to draw all items in the game </p>
 
 <p>Implements <a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">GameElement</a>.</p>
 
@@ -275,6 +329,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_wall_a07c0c8d97afbf44b744bd9c364a9c503_icgraph.png" border="0" usemap="#class_wall_a07c0c8d97afbf44b744bd9c364a9c503_icgraph" alt=""/></div>
+<map name="class_wall_a07c0c8d97afbf44b744bd9c364a9c503_icgraph" id="class_wall_a07c0c8d97afbf44b744bd9c364a9c503_icgraph">
+<area shape="rect" id="node2" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="180,5,280,32"/>
+</map>
+</div>
 
 </div>
 </div>

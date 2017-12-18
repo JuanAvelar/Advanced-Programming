@@ -1,6 +1,4 @@
 <map id="Ball::setYDirection" name="Ball::setYDirection">
-<area shape="rect" id="node2" href="$class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="202,5,334,32"/>
-<area shape="rect" id="node5" href="$class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="184,56,352,83"/>
-<area shape="rect" id="node3" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="400,31,559,57"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="607,31,657,57"/>
+<area shape="rect" id="node2" href="$class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="193,5,297,32"/>
+<area shape="rect" id="node3" href="$class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="184,56,307,83"/>
 </map>

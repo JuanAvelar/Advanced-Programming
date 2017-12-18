@@ -99,6 +99,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc3a970624c3c0c53a3a06e8811d36f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1da9238c136e43523cddea8a2d96c19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19">wallBounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *wall1, <a class="el" href="class_game_element.html">GameElement</a> *wall2, <a class="el" href="class_game_element.html">GameElement</a> *wall3, <a class="el" href="class_game_element.html">GameElement</a> *wall4, bool *Game_lost)</td></tr>
 <tr class="separator:ab1da9238c136e43523cddea8a2d96c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0e0b3912efd228f4075129f7fd836"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball, bool *Game_lost)</td></tr>
+<tr class="separator:a2ab0e0b3912efd228f4075129f7fd836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b170c27c74586af6108314c3623da53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#a9b170c27c74586af6108314c3623da53">draw</a> (<a class="el" href="class_window.html">Window</a> *ball_window) const</td></tr>
 <tr class="separator:a9b170c27c74586af6108314c3623da53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfbb8c4f504e354663b8a775e48d1e1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1">getXDirection</a> ()</td></tr>
@@ -160,6 +162,11 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7aeb1bfe6e9cd8b838dd0071ea86d645a9">big</a>
  }</td></tr>
 <tr class="separator:a88e64c35dcdc76eec6078096cf5b64f7 inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_moveable_object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_moveable_object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_moveable_object.html">MoveableObject</a></td></tr>
+<tr class="memitem:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a57f836d0869c42b5a6c26288018a57db">_xdirection</a> = 0</td></tr>
+<tr class="separator:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0">_ydirection</a> = 0</td></tr>
+<tr class="separator:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_game_element')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
 <tr class="memitem:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a></td></tr>
 <tr class="separator:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,10 +177,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
 <tr class="separator:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_moveable_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_moveable_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_moveable_object.html">MoveableObject</a></td></tr>
-<tr class="memitem:a57f836d0869c42b5a6c26288018a57db inherit pro_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a57f836d0869c42b5a6c26288018a57db">_xdirection</a> = 0</td></tr>
-<tr class="separator:a57f836d0869c42b5a6c26288018a57db inherit pro_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0db3d6c36068da78ba54753817b634f0 inherit pro_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0">_ydirection</a> = 0</td></tr>
-<tr class="separator:a0db3d6c36068da78ba54753817b634f0 inherit pro_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pro_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#aa1c4b67da638d07aa0abed7ea039c5e2">_speed</a> = 0</td></tr>
 <tr class="separator:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pro_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -230,6 +233,56 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2ab0e0b3912efd228f4075129f7fd836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0e0b3912efd228f4075129f7fd836">&#9670;&nbsp;</a></span>Bounce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ball::Bounce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_game_element.html">GameElement</a> *&#160;</td>
+          <td class="paramname"><em>ball</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>Game_lost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Virtual function to bounce certain ball with its environment </p>
+
+<p>Implements <a class="el" href="class_game_element.html#a2d58156599ba3b52ef3776f9f4d3478d">GameElement</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_ball_a2ab0e0b3912efd228f4075129f7fd836_cgraph.png" border="0" usemap="#class_ball_a2ab0e0b3912efd228f4075129f7fd836_cgraph" alt=""/></div>
+<map name="class_ball_a2ab0e0b3912efd228f4075129f7fd836_cgraph" id="class_ball_a2ab0e0b3912efd228f4075129f7fd836_cgraph">
+<area shape="rect" id="node2" href="class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="151,5,337,32"/>
+<area shape="rect" id="node3" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="149,56,339,83"/>
+<area shape="rect" id="node4" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="161,107,327,133"/>
+<area shape="rect" id="node5" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="160,157,328,184"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a9b170c27c74586af6108314c3623da53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b170c27c74586af6108314c3623da53">&#9670;&nbsp;</a></span>draw()</h2>
 
@@ -243,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void Ball::draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_window.html">Window</a> *&#160;</td>
-          <td class="paramname"><em>ball_window</em></td><td>)</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -253,6 +306,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Virtual function to draw all items in the game </p>
 
 <p>Implements <a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">GameElement</a>.</p>
 
@@ -277,9 +331,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_acbfbb8c4f504e354663b8a775e48d1e1_icgraph.png" border="0" usemap="#class_ball_acbfbb8c4f504e354663b8a775e48d1e1_icgraph" alt=""/></div>
 <map name="class_ball_acbfbb8c4f504e354663b8a775e48d1e1_icgraph" id="class_ball_acbfbb8c4f504e354663b8a775e48d1e1_icgraph">
-<area shape="rect" id="node2" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="181,5,313,32"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="361,5,520,32"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="568,5,619,32"/>
+<area shape="rect" id="node2" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="181,5,285,32"/>
 </map>
 </div>
 
@@ -304,9 +356,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_ad8a9bd03b11c5bfdebd60698baa24456_icgraph.png" border="0" usemap="#class_ball_ad8a9bd03b11c5bfdebd60698baa24456_icgraph" alt=""/></div>
 <map name="class_ball_ad8a9bd03b11c5bfdebd60698baa24456_icgraph" id="class_ball_ad8a9bd03b11c5bfdebd60698baa24456_icgraph">
-<area shape="rect" id="node2" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="184,5,316,32"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="364,5,523,32"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="571,5,621,32"/>
+<area shape="rect" id="node2" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="184,5,288,32"/>
 </map>
 </div>
 
@@ -420,10 +470,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_a33c7d96eba2d906bbc499096cab640f9_icgraph.png" border="0" usemap="#class_ball_a33c7d96eba2d906bbc499096cab640f9_icgraph" alt=""/></div>
 <map name="class_ball_a33c7d96eba2d906bbc499096cab640f9_icgraph" id="class_ball_a33c7d96eba2d906bbc499096cab640f9_icgraph">
-<area shape="rect" id="node2" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="199,5,331,32"/>
-<area shape="rect" id="node5" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="181,56,349,83"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="397,31,556,57"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="604,31,655,57"/>
+<area shape="rect" id="node2" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="191,5,295,32"/>
+<area shape="rect" id="node3" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="181,56,304,83"/>
 </map>
 </div>
 
@@ -449,10 +497,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball_abd9ccb6c5c49cacbfbcd25447bfd6207_icgraph.png" border="0" usemap="#class_ball_abd9ccb6c5c49cacbfbcd25447bfd6207_icgraph" alt=""/></div>
 <map name="class_ball_abd9ccb6c5c49cacbfbcd25447bfd6207_icgraph" id="class_ball_abd9ccb6c5c49cacbfbcd25447bfd6207_icgraph">
-<area shape="rect" id="node2" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="202,5,334,32"/>
-<area shape="rect" id="node5" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="184,56,352,83"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="400,31,559,57"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="607,31,657,57"/>
+<area shape="rect" id="node2" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="193,5,297,32"/>
+<area shape="rect" id="node3" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="184,56,307,83"/>
 </map>
 </div>
 
@@ -510,15 +556,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node3" href="class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="173,56,360,83"/>
 <area shape="rect" id="node4" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="184,107,349,133"/>
 <area shape="rect" id="node5" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="183,157,351,184"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_ball_ab1da9238c136e43523cddea8a2d96c19_icgraph.png" border="0" usemap="#class_ball_ab1da9238c136e43523cddea8a2d96c19_icgraph" alt=""/></div>
-<map name="class_ball_ab1da9238c136e43523cddea8a2d96c19_icgraph" id="class_ball_ab1da9238c136e43523cddea8a2d96c19_icgraph">
-<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="172,5,331,32"/>
-<area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="379,5,429,32"/>
 </map>
 </div>
 

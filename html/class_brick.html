@@ -93,8 +93,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0e27476ccaeaed1d61a06bddf247c8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a005005bbb1c9f5adcd5addfbc683c3d4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4">draw</a> (<a class="el" href="class_window.html">Window</a> *window_brick) const</td></tr>
 <tr class="separator:a005005bbb1c9f5adcd5addfbc683c3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac05aa003aeb4194aa83d58af6fb7d5cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc">brickBounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)</td></tr>
-<tr class="separator:ac05aa003aeb4194aa83d58af6fb7d5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c4a1f26d327a551b8215bd575442fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball, bool *Game_lost)</td></tr>
+<tr class="separator:ab3c4a1f26d327a551b8215bd575442fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec7bb017d112a16144986ff7446b5a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a3ec7bb017d112a16144986ff7446b5a2">removeBrickLife</a> ()</td></tr>
 <tr class="separator:a3ec7bb017d112a16144986ff7446b5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a024e3e055a8b17ada060f84772c564a9"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a024e3e055a8b17ada060f84772c564a9">toString</a> () const override</td></tr>
@@ -230,44 +230,56 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac05aa003aeb4194aa83d58af6fb7d5cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac05aa003aeb4194aa83d58af6fb7d5cc">&#9670;&nbsp;</a></span>brickBounce()</h2>
+<a id="ab3c4a1f26d327a551b8215bd575442fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c4a1f26d327a551b8215bd575442fd">&#9670;&nbsp;</a></span>Bounce()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Brick::brickBounce </td>
+          <td class="memname">bool Brick::Bounce </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_game_element.html">GameElement</a> *&#160;</td>
-          <td class="paramname"><em>ball</em></td><td>)</td>
+          <td class="paramname"><em>ball</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>Game_lost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+<p>Virtual function to bounce certain ball with its environment </p>
+
+<p>Implements <a class="el" href="class_game_element.html#a2d58156599ba3b52ef3776f9f4d3478d">GameElement</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_cgraph.png" border="0" usemap="#class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_cgraph" alt=""/></div>
-<map name="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_cgraph" id="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_cgraph">
-<area shape="rect" id="node2" href="class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="187,5,373,32"/>
-<area shape="rect" id="node3" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="197,56,363,83"/>
-<area shape="rect" id="node4" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="185,107,375,133"/>
-<area shape="rect" id="node5" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="196,157,364,184"/>
-<area shape="rect" id="node6" href="class_ball.html#a33c7d96eba2d906bbc499096cab640f9" title="Ball::setXDirection" alt="" coords="216,208,344,235"/>
-<area shape="rect" id="node7" href="class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1" title="Ball::getXDirection" alt="" coords="216,259,344,285"/>
-<area shape="rect" id="node8" href="class_brick.html#a3ec7bb017d112a16144986ff7446b5a2" title="Brick::removeBrickLife" alt="" coords="205,309,355,336"/>
-<area shape="rect" id="node9" href="class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456" title="Ball::getYDirection" alt="" coords="215,360,345,387"/>
-<area shape="rect" id="node10" href="class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207" title="Ball::setYDirection" alt="" coords="215,411,345,437"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_icgraph.png" border="0" usemap="#class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_icgraph" alt=""/></div>
-<map name="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_icgraph" id="class_brick_ac05aa003aeb4194aa83d58af6fb7d5cc_icgraph">
-<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="185,5,344,32"/>
-<area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="392,5,443,32"/>
+<div class="center"><img src="class_brick_ab3c4a1f26d327a551b8215bd575442fd_cgraph.png" border="0" usemap="#class_brick_ab3c4a1f26d327a551b8215bd575442fd_cgraph" alt=""/></div>
+<map name="class_brick_ab3c4a1f26d327a551b8215bd575442fd_cgraph" id="class_brick_ab3c4a1f26d327a551b8215bd575442fd_cgraph">
+<area shape="rect" id="node2" href="class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="159,5,345,32"/>
+<area shape="rect" id="node3" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="169,56,335,83"/>
+<area shape="rect" id="node4" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="157,107,347,133"/>
+<area shape="rect" id="node5" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="168,157,336,184"/>
+<area shape="rect" id="node6" href="class_ball.html#a33c7d96eba2d906bbc499096cab640f9" title="Ball::setXDirection" alt="" coords="188,208,316,235"/>
+<area shape="rect" id="node7" href="class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1" title="Ball::getXDirection" alt="" coords="188,259,316,285"/>
+<area shape="rect" id="node8" href="class_brick.html#a3ec7bb017d112a16144986ff7446b5a2" title="Brick::removeBrickLife" alt="" coords="177,309,327,336"/>
+<area shape="rect" id="node9" href="class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456" title="Ball::getYDirection" alt="" coords="187,360,317,387"/>
+<area shape="rect" id="node10" href="class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207" title="Ball::setYDirection" alt="" coords="187,411,317,437"/>
 </map>
 </div>
 
@@ -286,7 +298,7 @@ Here is the caller graph for this function:</div>
           <td class="memname">void Brick::draw </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_window.html">Window</a> *&#160;</td>
-          <td class="paramname"><em>window_brick</em></td><td>)</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -296,6 +308,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Virtual function to draw all items in the game </p>
 
 <p>Implements <a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">GameElement</a>.</p>
 
@@ -320,9 +333,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_brick_a3ec7bb017d112a16144986ff7446b5a2_icgraph.png" border="0" usemap="#class_brick_a3ec7bb017d112a16144986ff7446b5a2_icgraph" alt=""/></div>
 <map name="class_brick_a3ec7bb017d112a16144986ff7446b5a2_icgraph" id="class_brick_a3ec7bb017d112a16144986ff7446b5a2_icgraph">
-<area shape="rect" id="node2" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="204,5,336,32"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="384,5,543,32"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="591,5,641,32"/>
+<area shape="rect" id="node2" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="204,5,308,32"/>
 </map>
 </div>
 

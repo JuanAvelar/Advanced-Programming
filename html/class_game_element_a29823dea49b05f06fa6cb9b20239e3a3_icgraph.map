@@ -1,7 +1,7 @@
 <map id="GameElement::getYLocation" name="GameElement::getYLocation">
-<area shape="rect" id="node2" href="$class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="267,5,386,32"/>
-<area shape="rect" id="node5" href="$class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="261,56,393,83"/>
-<area shape="rect" id="node6" href="$class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="243,107,411,133"/>
-<area shape="rect" id="node3" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="459,56,617,83"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="665,56,716,83"/>
+<area shape="rect" id="node2" href="$class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="245,5,363,32"/>
+<area shape="rect" id="node3" href="$class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="256,56,352,83"/>
+<area shape="rect" id="node4" href="$class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="252,107,356,133"/>
+<area shape="rect" id="node5" href="$class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="243,157,365,184"/>
+<area shape="rect" id="node6" href="$class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="254,208,354,235"/>
 </map>

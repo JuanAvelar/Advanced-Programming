@@ -73,7 +73,7 @@ void Controller::launchGame(int level) {
 			showGraphicOutput(&window_c, &Game_elements);
 			 //std::cout << time << std::endl; 
 		}
-		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//checks that the millisecond passes in order to let it pass again
+		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//waits until moving the ball is done
 			if (you_shall_not_pass) {
 				you_shall_not_pass = false;
 				iterator = 0;

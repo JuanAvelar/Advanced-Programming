@@ -1,23 +1,13 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="104,249,263,275"/>
+<area shape="rect" id="node2" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="104,173,263,199"/>
 <area shape="rect" id="node3" href="$class_controller.html#a4f507fe7987fadf92d30e94d97fc5480" title="Controller::set_brick\l_level" alt="" coords="341,5,479,47"/>
-<area shape="rect" id="node4" href="$class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="358,71,462,98"/>
-<area shape="rect" id="node7" href="$class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="347,122,473,149"/>
-<area shape="rect" id="node8" href="$class_controller.html#aa22db940ee518ad76de3bee9b560f02b" title="Controller::poll" alt="" coords="357,325,463,351"/>
-<area shape="rect" id="node9" href="$class_ball.html#a1f3049417c501e8b3ae671231817609d" title="Ball::move" alt="" coords="369,375,451,402"/>
-<area shape="rect" id="node10" href="$class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="344,274,476,301"/>
-<area shape="rect" id="node18" href="$class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="326,223,494,250"/>
-<area shape="rect" id="node19" href="$class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="351,173,469,199"/>
-<area shape="rect" id="node20" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Controller::showGraphicOutput" alt="" coords="311,426,509,453"/>
-<area shape="rect" id="node22" href="$class_controller.html#acb0260f3172be18bb43aea7bfdc9f381" title="Controller::destroy\l_level" alt="" coords="346,477,474,519"/>
-<area shape="rect" id="node5" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="559,71,745,98"/>
-<area shape="rect" id="node6" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="569,122,735,149"/>
-<area shape="rect" id="node11" href="$class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="557,173,747,199"/>
-<area shape="rect" id="node12" href="$class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="568,223,736,250"/>
-<area shape="rect" id="node13" href="$class_ball.html#a33c7d96eba2d906bbc499096cab640f9" title="Ball::setXDirection" alt="" coords="588,274,716,301"/>
-<area shape="rect" id="node14" href="$class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1" title="Ball::getXDirection" alt="" coords="588,375,716,402"/>
-<area shape="rect" id="node15" href="$class_brick.html#a3ec7bb017d112a16144986ff7446b5a2" title="Brick::removeBrickLife" alt="" coords="577,426,727,453"/>
-<area shape="rect" id="node16" href="$class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456" title="Ball::getYDirection" alt="" coords="587,477,717,503"/>
-<area shape="rect" id="node17" href="$class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207" title="Ball::setYDirection" alt="" coords="587,325,717,351"/>
-<area shape="rect" id="node21" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Window::clear" alt="" coords="600,527,704,554"/>
+<area shape="rect" id="node4" href="$class_ball.html#a1f3049417c501e8b3ae671231817609d" title="Ball::move" alt="" coords="369,71,451,98"/>
+<area shape="rect" id="node5" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Controller::showGraphicOutput" alt="" coords="311,122,509,149"/>
+<area shape="rect" id="node7" href="$class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="358,223,462,250"/>
+<area shape="rect" id="node10" href="$class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="347,173,473,199"/>
+<area shape="rect" id="node11" href="$class_controller.html#aa22db940ee518ad76de3bee9b560f02b" title="Controller::poll" alt="" coords="357,274,463,301"/>
+<area shape="rect" id="node12" href="$class_controller.html#acb0260f3172be18bb43aea7bfdc9f381" title="Controller::destroy\l_level" alt="" coords="346,325,474,367"/>
+<area shape="rect" id="node6" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Window::clear" alt="" coords="599,122,703,149"/>
+<area shape="rect" id="node8" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="557,223,744,250"/>
+<area shape="rect" id="node9" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="568,173,733,199"/>
 </map>

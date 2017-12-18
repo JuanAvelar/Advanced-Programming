@@ -1,0 +1,8 @@
+<map id="Platform::Bounce" name="Platform::Bounce">
+<area shape="rect" id="node2" href="$class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3" title="GameElement::getYLocation" alt="" coords="176,5,365,32"/>
+<area shape="rect" id="node3" href="$class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e" title="GameElement::getHeight" alt="" coords="187,56,355,83"/>
+<area shape="rect" id="node4" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="177,107,364,133"/>
+<area shape="rect" id="node5" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="188,157,353,184"/>
+<area shape="rect" id="node6" href="$class_ball.html#a33c7d96eba2d906bbc499096cab640f9" title="Ball::setXDirection" alt="" coords="207,208,335,235"/>
+<area shape="rect" id="node7" href="$class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207" title="Ball::setYDirection" alt="" coords="205,259,336,285"/>
+</map>
