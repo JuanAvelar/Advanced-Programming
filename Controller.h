@@ -3,6 +3,7 @@
 #include <string>
 #include "Window.h"
 #include "GameElement.h"
+#include "MoveableObject.h"
 #include <SDL2/SDL.h>
 #undef main
 #include <vector>
@@ -17,14 +18,18 @@ public:
 	void launchGame(int level);
 
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
-	void bounceOnObject(int);
+	void bounceOnObject(vector <int> number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
 	void set_brick_level(int level, vector <GameElement*>* elements);
 	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
 	void Controller::destroy_level(int level, vector <GameElement*>* elements);
 
+
+	//function to get the amount of lifes left in the main
+	int getLives();
+
 private:
 	int lives, score;
-	/**Get the time since the SDL library was accessed for the first time (in milliseconds)*/
+	/**Time passed in milliseconds*/
 	int time = 0;
 	/**Second time to compare*/
 	int new_time = 0;
@@ -32,6 +37,8 @@ private:
 	int xprevious_wsize = 1000;
 	int yprevious_wsize = 600;
 	bool Game_lost = false;
+	//Boolean to see if an event occurs
+	bool event_flag;
 
 	//Global variables
 
@@ -40,7 +47,6 @@ private:
 	/**Flag to ensure just one iteration per milisecond*/
 	bool you_shall_not_pass = 0;
 	int iterator = 0;
-	bool event_flag = false;
 };
 
 struct Green {

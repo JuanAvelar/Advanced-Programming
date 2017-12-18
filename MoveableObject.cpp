@@ -34,9 +34,3 @@ double MoveableObject::getYSpeed() {
 string MoveableObject::toString() const {
 	return "0";
 };
-
-//virtual function move, has to be defined for the child classes
-void MoveableObject::move() {
-	
-};
-

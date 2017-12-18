@@ -19,8 +19,7 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
-	xposition = 530;
-	yposition = 480;
+	
 	switch (size) {
 	case small:
 		height = 20;
@@ -35,9 +34,12 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 		width = 120;
 		break;
 	};
+	xposition = 530;
+	yposition = 500-height;
 	//initial directions of the ball
-	_xdirection = 0.5*sqrt(2);
-	_ydirection = -0.5*sqrt(2);
+	_xdirection = 0.01;
+	_ydirection = 1.0;
+	_speed = 0;
 }
 
 Ball::~Ball() {
@@ -57,13 +59,15 @@ void Ball::draw(Window *ball_window) const {
 }
 
 //function to move the ball, xposd and yposd are double for the rounding
-void Ball::move() {
+void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 
 	if (_speed != 0) {
-		xpos += _xdirection*_speed;
-		ypos += _ydirection*_speed;
-		xposition = int(xpos);
-		yposition = int(ypos);
+		if (xposition > left_wall->xposition + left_wall->width - 2 && xposition < right_wall->xposition) {
+			xpos += _xdirection*_speed;
+			ypos += _ydirection*_speed;
+			xposition = int(xpos);
+			yposition = int(ypos);
+		}
 	}
 	else {
 		xpos = double(xposition);
@@ -80,13 +84,13 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym) {
-			case SDLK_LEFT:
-				if (xposition > left_wall->getXLocation()+ 20 + 30) {
+			case SDLK_a:
+				if (xposition > left_wall->getXLocation()+left_wall->getWidth() + 30) {
 					xposition -= 50;
 				}
 				break;
-			case SDLK_RIGHT:
-				if (xposition < (right_wall->getXLocation() - getWidth() -20) + 30) {
+			case SDLK_d:
+				if (xposition < (right_wall->getXLocation()) - 70) {
 					xposition += 50;
 				}
 				break;
@@ -100,41 +104,8 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 	}
 }
 
-//reverses the ball direction if it hits a wall, destroys the ball if it hits the bottom wall
-void Ball::wallBounce(GameElement * wall1, GameElement * wall2, GameElement * wall3, GameElement * wall4, bool *Game_lost) {
-	Wall *lower_inh_ptr[4] = { dynamic_cast<Wall*> (wall1) , dynamic_cast<Wall*> (wall2) , dynamic_cast<Wall*> (wall3), dynamic_cast<Wall*> (wall4)};
-	int layer[4] = {0,0,0,0};
-	for (int i = 0; i < 4; i++) {
-		switch (lower_inh_ptr[i]->getWallSide()) {
-		case Wall::up:
-			layer[0] = lower_inh_ptr[i]->getYLocation() + 10;
-			break;
-		case Wall::left:
-			layer[1] = lower_inh_ptr[i]->getXLocation() + 10;
-			break;
-		case Wall::right:
-			layer[2] = lower_inh_ptr[i]->getXLocation();
-			break;
-		case Wall::down:
-			layer[3] = lower_inh_ptr[i]->getYLocation();
-			break;
-		}
-	}
-	if (xposition < layer[1] || xposition >(layer[2] - getWidth())) {
-		_xdirection = -_xdirection;
-	}
 
-	if (yposition < layer[0]) {
-		_ydirection = -_ydirection;
-	}
-	if (yposition >(layer[3] - getHeight())) {
-		*Game_lost = true;
-		std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
-	}
-	else {}
-}
-
-bool Ball::Bounce(GameElement * ball, bool *Game_lost) {
+GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
 	int layer[4] = { this->getXLocation() , this->getXLocation() , this->getYLocation() , this->getYLocation() };
 
@@ -150,7 +121,7 @@ bool Ball::Bounce(GameElement * ball, bool *Game_lost) {
 	if (ball->yposition == (layer[3] + getHeight())) {//down collision
 		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 	}
-	return 0;
+	return GameElement::destroynothing;
 }
 
 //* return functions for the x and y direction
