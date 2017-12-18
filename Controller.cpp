@@ -210,8 +210,9 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 		switch (event.key.keysym.sym) {
 		case SDLK_DOWN:
 			std::cout << "Amount of lives: " << lives << std::endl;
+			while (event.key.keysym.sym != SDLK_UP) { SDL_PollEvent(&event); }
 			break;
-	
+		
 		};
 	};
 
