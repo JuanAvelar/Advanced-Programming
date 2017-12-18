@@ -22,8 +22,10 @@ int main(int argc, char **argv) {
 
 	Controller controller( lives, score); //create the controller instance
 	for (int level = 1; level < 4; level++) {
-		controller.launchGame(level);
-		//break;//Get rid of this to enter new levels
+		if (controller.getLives() > 0) {
+			controller.launchGame(level);
+			//break;//Get rid of this to enter new levels
+		}
 	}
 	//test comment
 	//second test comment

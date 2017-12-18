@@ -18,7 +18,7 @@ public:
 
 	void Wall::draw(Window *window_wall) const;
 
-	bool Bounce(GameElement * ball, bool *Game_lost);
+	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 	std::string toString() const override;
 

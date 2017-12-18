@@ -69,7 +69,7 @@ enum Wall::Wall_type Wall::getWallSide()
 	return wallside_pick;
 }
 
-bool Wall::Bounce(GameElement * ball, bool *Game_lost) {
+GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 	MoveableObject *lower_inh_ptr = { dynamic_cast<MoveableObject*> (ball)};
 	int layer[4] = { 0, 0, 0, 0 };
 		switch (this->getWallSide()) {
@@ -78,28 +78,34 @@ bool Wall::Bounce(GameElement * ball, bool *Game_lost) {
 			if (ball->yposition < layer[0]) {
 				lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 			}
+			return GameElement::destroynothing;
 			break;
 		case Wall::left:
 			layer[1] = this->getXLocation() + 10;
 			if (ball->xposition < layer[1]) {
 				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 			}
+			return GameElement::destroynothing;
 			break;
 		case Wall::right:
 			layer[2] = this->getXLocation();
 			if ( ball->xposition >(layer[2] - ball->getWidth())) {
 				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 			}
+			return GameElement::destroynothing;
 			break;
 		case Wall::down:
 			layer[3] = this->getYLocation();
 			if (ball->yposition >(layer[3] - ball->getHeight())) {
-				*Game_lost = true;
-				std::cout << "You suck!" << std::endl << "Git gud n00b xddd" << std::endl;
+				delete ball;
+				return GameElement::destroyball;
+			}
+			else {
+				return GameElement::destroynothing;
 			}
 			break;
 		}
-		return 0;
+		
 }
 
 // return a string representation of Brick's information 

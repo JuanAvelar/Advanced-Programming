@@ -16,9 +16,9 @@ public:
 
 	void draw(Window *platform_window) const;
 
-	//void move(GameElement *right_wall, GameElement *left_wall);
+	virtual void move(GameElement *right_wall, GameElement *left_wall);
 
-	bool Bounce(GameElement * ball, bool *Game_lost);
+	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 private:
 	int _r, _g, _b, _a;

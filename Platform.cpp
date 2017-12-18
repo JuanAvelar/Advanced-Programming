@@ -18,7 +18,7 @@ Platform::Platform(const Window &window, GameElement::Color color)
 	_a = *(ptr + 3);
 	xposition = 500;
 	yposition = 500;
-	height = 20;
+	height = 10;
 	width = 100;
 	_xdirection = 0;
 	_ydirection = 0;
@@ -115,7 +115,7 @@ void Platform::keyInput(SDL_Event &event) {
 	//create the move function --> determined by userinput which we get in the controller
 }
 
-bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
+GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 	//if ball hits the top, output direction will totally depend on the impact position
 	//if ball hits the side, ball bounces of with same angle
@@ -136,10 +136,10 @@ bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
 	}
 
 
-	return 0;
+	return GameElement::destroynothing;
 }
 
-/*void Platform::move(GameElement *right_wall, GameElement *left_wall) {
+void Platform::move(GameElement *right_wall, GameElement *left_wall) {
 	if (xposition > left_wall->xposition + right_wall->width && _xdirection < 0) {
 		xposition -= 1;
 	}
@@ -147,4 +147,4 @@ bool Platform::Bounce(GameElement * ball, bool *Game_lost) {
 		xposition += 1;
 	}
 
-}*/
+}

@@ -12,7 +12,7 @@ public:
 
 	virtual void Brick::draw(Window *window_brick) const;
 
-	bool Bounce(GameElement *ball, bool *Game_lost);
+	GameElement::ElementDestroyed Bounce(GameElement *ball);
 
 	void removeBrickLife();
 

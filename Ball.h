@@ -9,11 +9,11 @@ public:
 	Ball(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Ball(); // normal destructor
 
-	//void move(GameElement *right_wall, GameElement *left_wall);
+	virtual void move(GameElement *right_wall, GameElement *left_wall);
 
 	void serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall);
 
-	bool Ball::Bounce(GameElement * ball, bool *Game_lost);
+	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 	void draw(Window *ball_window)const;
 

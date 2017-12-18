@@ -1,15 +1,17 @@
 #ifndef GameElement_H
 #define GameElement_H
 
+
 #include <string>
 #include "Window.h"
 
 class GameElement {
-public:								  
+public:				
 	// constructor
 	GameElement(int xpos, int ypos, const int h, const int w);
 	virtual ~GameElement() = default; // virtual standard destructor
 
+	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
 	enum Color {yellow, green, red, blue};
 	enum Size {small, medium, big};
 
@@ -23,9 +25,12 @@ public:
 
 	virtual void draw(Window* window) const = 0;//pure virtual
 
-	virtual bool Bounce(GameElement * ball, bool *Game_lost) = 0;
+	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0;
 
 	void destroyGameElement();
+
+
+
 
 	
 
@@ -33,6 +38,9 @@ public:
 
 public:
 	int xposition, yposition, height, width;
+	double xpos, ypos;
+
+	
 };
 
 #endif // GameElement_H
