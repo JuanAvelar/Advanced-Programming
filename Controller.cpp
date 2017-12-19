@@ -34,7 +34,7 @@ void Controller::launchGame(int level) {
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
+	Ball* ball = new Ball{ window_c, GameElement::big, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
 	Wall* right_wall = new Wall{ GameElement::yellow, Wall::right };
 	Wall* left_wall = new Wall{ GameElement::yellow, Wall::left };
@@ -89,7 +89,7 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 7) {break;}
+		if (Game_elements.size()-Moveable_objects.size() < 5) {break;}
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
