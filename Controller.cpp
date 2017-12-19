@@ -102,7 +102,7 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 7) {break;}
+		if (Game_elements.size()-Moveable_objects.size() < 5) {break;}
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
@@ -168,7 +168,15 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
 				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
-				
+
+			}
+		}
+		break;
+	case 3:
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 2; f++) {
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 2, 255, 0, 0, 0 });
+
 			}
 		}
 		break;
