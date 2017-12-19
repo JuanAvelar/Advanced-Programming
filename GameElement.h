@@ -24,7 +24,7 @@ public:
 	int getXLocation();
 	int getYLocation();
 
-	virtual void draw(Window* window) const = 0;     /**pure virtual function*/
+	virtual void draw(Window* window) const = 0;     /**Pure virtual function*/
 
 	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0; /**Pure virtual function that returns the type of object destroyed*/
 

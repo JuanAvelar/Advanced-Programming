@@ -11,11 +11,11 @@ using std::vector;
 
 class Controller {
 public:
-	// constructor
+	/**Constructor for controller*/
 	Controller( int liv, int sco);
-	virtual ~Controller() = default; // virtual standard destructor
+	virtual ~Controller() = default; /**Virtual standard destructor of controller*/
 
-	void launchGame(int level);
+	void launchGame(int level); /**Initaiating game launch function*/
 
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
 	void bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);

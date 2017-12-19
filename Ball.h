@@ -7,7 +7,7 @@
 class Ball : public MoveableObject {  /**Inheritance of Ball from MovableObject*/
 public:
 	Ball(const Window &window, GameElement::Size size, const std::string &image_path); /**Ball Constructor*/
-	~Ball(); // normal destructor
+	~Ball(); /**Normal destructor*/
 
 	virtual void move(GameElement *right_wall, GameElement *left_wall); /**Pure Virtualfunction for side walls*/
 
@@ -15,15 +15,18 @@ public:
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball); /**Accessing ball from GameElement*/
 
-	void draw(Window *ball_window)const;
+	/**Draw function*/
+	void draw(Window *ball_window)const;	
 
+	/**Functions to get and set directions of ball*/
 	double getXDirection();
 	double getYDirection();
 	void setXDirection(double xdirection);
 	void setYDirection(double ydirection);
 
+	/**Declaring private variables of Ball class*/
 private:
-	double xpos, ypos;
+	double xpos, ypos;			
 	int _r, _g, _b, _a;
 	SDL_Texture *pinball = nullptr;
 

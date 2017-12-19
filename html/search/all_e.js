@@ -10,5 +10,6 @@ var searchData=
   ['setyspeed',['setYSpeed',['../class_moveable_object.html#a3230c09c042d85b51291b4cbec420662',1,'MoveableObject']]],
   ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
   ['size',['Size',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7',1,'GameElement']]],
-  ['small',['small',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671',1,'GameElement']]]
+  ['small',['small',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671',1,'GameElement']]],
+  ['start_5fmenu',['Start_menu',['../class_controller.html#a7fa0cc40f37b02f318a9a07fb6859a23',1,'Controller']]]
 ];

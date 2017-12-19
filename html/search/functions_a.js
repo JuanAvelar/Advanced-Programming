@@ -8,5 +8,6 @@ var searchData=
   ['setxspeed',['setXSpeed',['../class_moveable_object.html#aeed1854dced5f6f874f08c17895c9a33',1,'MoveableObject']]],
   ['setydirection',['setYDirection',['../class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207',1,'Ball']]],
   ['setyspeed',['setYSpeed',['../class_moveable_object.html#a3230c09c042d85b51291b4cbec420662',1,'MoveableObject']]],
-  ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]]
+  ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
+  ['start_5fmenu',['Start_menu',['../class_controller.html#a7fa0cc40f37b02f318a9a07fb6859a23',1,'Controller']]]
 ];

@@ -7,14 +7,15 @@
 
 class Platform : public MoveableObject {
 public:
-	Platform(const Window &window, GameElement::Color color);
-	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
+	Platform(const Window &window, GameElement::Color color); /**Constructor of Platrom*/
+	Platform(const Window &window, GameElement::Size size, const std::string &image_path); /**Construction of platform*/
 	~Platform(); // destructor
 
-	virtual std::string toString() const override;
+	//virtual std::string toString() const override;
 	void keyInput(SDL_Event &event);
-
-	void draw(Window *platform_window) const;
+	
+	/**Draw function*/
+	void draw(Window *platform_window) const; 
 
 	virtual void move(GameElement *right_wall, GameElement *left_wall);
 

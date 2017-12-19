@@ -77,10 +77,10 @@ void Platform::draw(Window *platform_window) const {
 }
 
 // return a string representation of Moveable Object's information --> implements abstract class function
-string Platform::toString() const {
-	return "0";
+//string Platform::toString() const {
+	//return "0"};
 	// make string output
-}
+
 
 //function move --> implements abstract class function
 void Platform::keyInput(SDL_Event &event) {

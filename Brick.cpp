@@ -4,16 +4,16 @@
 #include <sstream>
 using namespace std;
 
-// constructor 
+/**Constructor  of Brick*/
 Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a)
 	: GameElement(xposition, yposition, height, width), _r(r), _g(g), _b(b), _a(a) {
 	hits = hitsToDestroy;
 }
-
+/**Destructor of Brick*/
 Brick::~Brick() {
 	std::cout << "Brick is being destroyed\n";
 }
-
+/**Brick Draw funtion*/
 void Brick::draw(Window *window_brick) const {
 	SDL_Rect brick_draw = { xposition, yposition, width, height };
 	if (bricks) {

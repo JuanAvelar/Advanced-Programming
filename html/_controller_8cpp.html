@@ -79,6 +79,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="_brick_8h_source.html">Brick.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_wall_8h_source.html">Wall.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_window_8h_source.html">Window.h</a>&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Controller.cpp:</div>
@@ -98,17 +100,17 @@ Include dependency graph for Controller.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab2b8ce0216d9f11f046f97557b0b4eba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#ab2b8ce0216d9f11f046f97557b0b4eba">window_height</a>&#160;&#160;&#160;600</td></tr>
+<tr class="memitem:ab2b8ce0216d9f11f046f97557b0b4eba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#ab2b8ce0216d9f11f046f97557b0b4eba">window_height</a>&#160;&#160;&#160;600           /**Declaring Height of <a class="el" href="class_window.html">Window</a>*/</td></tr>
 <tr class="separator:ab2b8ce0216d9f11f046f97557b0b4eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b05db8ab08a44c8bb2dfeb78fd61412"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a9b05db8ab08a44c8bb2dfeb78fd61412">window_width</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="memitem:a9b05db8ab08a44c8bb2dfeb78fd61412"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a9b05db8ab08a44c8bb2dfeb78fd61412">window_width</a>&#160;&#160;&#160;1000           /**Declaring Width of <a class="el" href="class_window.html">Window</a>*/</td></tr>
 <tr class="separator:a9b05db8ab08a44c8bb2dfeb78fd61412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f7921cbaf007c7c4f418e4a5f2d732"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a51f7921cbaf007c7c4f418e4a5f2d732">iterations_per_cycle</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:a51f7921cbaf007c7c4f418e4a5f2d732"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a51f7921cbaf007c7c4f418e4a5f2d732">iterations_per_cycle</a>&#160;&#160;&#160;8      /**Declaring iterations_per_cycle of <a class="el" href="class_window.html">Window</a>*/</td></tr>
 <tr class="separator:a51f7921cbaf007c7c4f418e4a5f2d732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab73b2e9d3766e851f29c716760c16f6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#ab73b2e9d3766e851f29c716760c16f6f">cycle_time</a>&#160;&#160;&#160;30</td></tr>
+<tr class="memitem:ab73b2e9d3766e851f29c716760c16f6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#ab73b2e9d3766e851f29c716760c16f6f">cycle_time</a>&#160;&#160;&#160;30				/**Declaring cycle_time of ball loop(in milliseconds)*/</td></tr>
 <tr class="separator:ab73b2e9d3766e851f29c716760c16f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bd27fc3dac911bdcdeaf5897d446580"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a3bd27fc3dac911bdcdeaf5897d446580">time_for_graphic_output</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a3bd27fc3dac911bdcdeaf5897d446580"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#a3bd27fc3dac911bdcdeaf5897d446580">time_for_graphic_output</a>&#160;&#160;&#160;10	/**Declaring  time_for_graphic_output(in milliseconds)*/</td></tr>
 <tr class="separator:a3bd27fc3dac911bdcdeaf5897d446580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaa3ca71be7eb77b747d17efc870012a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#aaaa3ca71be7eb77b747d17efc870012a">duty_cycle_percentage</a>&#160;&#160;&#160;0.4</td></tr>
+<tr class="memitem:aaaa3ca71be7eb77b747d17efc870012a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_controller_8cpp.html#aaaa3ca71be7eb77b747d17efc870012a">duty_cycle_percentage</a>&#160;&#160;&#160;0.4	/**State percentage of time spent to complete motion of the ball and collisions*/</td></tr>
 <tr class="separator:aaaa3ca71be7eb77b747d17efc870012a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -119,7 +121,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define cycle_time&#160;&#160;&#160;30</td>
+          <td class="memname">#define cycle_time&#160;&#160;&#160;30				/**Declaring cycle_time of ball loop(in milliseconds)*/</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -133,7 +135,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define duty_cycle_percentage&#160;&#160;&#160;0.4</td>
+          <td class="memname">#define duty_cycle_percentage&#160;&#160;&#160;0.4	/**State percentage of time spent to complete motion of the ball and collisions*/</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -147,7 +149,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define iterations_per_cycle&#160;&#160;&#160;8</td>
+          <td class="memname">#define iterations_per_cycle&#160;&#160;&#160;8      /**Declaring iterations_per_cycle of <a class="el" href="class_window.html">Window</a>*/</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,7 +163,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define time_for_graphic_output&#160;&#160;&#160;10</td>
+          <td class="memname">#define time_for_graphic_output&#160;&#160;&#160;10	/**Declaring  time_for_graphic_output(in milliseconds)*/</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,7 +177,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define window_height&#160;&#160;&#160;600</td>
+          <td class="memname">#define window_height&#160;&#160;&#160;600           /**Declaring Height of <a class="el" href="class_window.html">Window</a>*/</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -189,7 +191,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define window_width&#160;&#160;&#160;1000</td>
+          <td class="memname">#define window_width&#160;&#160;&#160;1000           /**Declaring Width of <a class="el" href="class_window.html">Window</a>*/</td>
         </tr>
       </table>
 </div><div class="memdoc">

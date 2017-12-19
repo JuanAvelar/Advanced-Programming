@@ -123,8 +123,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a43addde25a0ab76f8b48ded220d9c886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a021238a067d261855baf4176a7bebe96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a021238a067d261855baf4176a7bebe96">destroyGameElement</a> ()</td></tr>
 <tr class="separator:a021238a067d261855baf4176a7bebe96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e526e7a4e5e65d80652ee9c2d69005"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a86e526e7a4e5e65d80652ee9c2d69005">toString</a> () const</td></tr>
-<tr class="separator:a86e526e7a4e5e65d80652ee9c2d69005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -153,6 +151,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Declares a type of your own, in this case being a derstruction types </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55eda29ead53b80ef87d09ba8a014f6968ec2"></a>yellow&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55eda0441d0bbdcb6db7e732480b59baff4e3"></a>green&#160;</td><td class="fielddoc"></td></tr>
@@ -173,6 +172,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>virtual standard destructor </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b62036e0a68b55efbd82d41367b8ac7ac5e6c2f64a07c4d3e4058b4198a26a70"></a>destroynothing&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a7b62036e0a68b55efbd82d41367b8ac7aac9a865ae25ad1d8a6a79536aecf0bc2"></a>destroybrick&#160;</td><td class="fielddoc"></td></tr>
@@ -192,6 +192,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Declaring coloursElements </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671"></a>small&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a88e64c35dcdc76eec6078096cf5b64f7ab4a52c04f1d4ea93f606c245f7cd1b7f"></a>medium&#160;</td><td class="fielddoc"></td></tr>
@@ -238,6 +239,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor of class <a class="el" href="class_game_element.html">GameElement</a></p>
+<p>Constructor of Element object </p>
 
 </div>
 </div>
@@ -290,6 +293,7 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>pure virtual function </p>
 
 <p>Implemented in <a class="el" href="class_platform.html#a2fab20c6f6ec26458195d77765b35d81">Platform</a>, <a class="el" href="class_wall.html#aeed911bfd49748b395f5cd0ab3258621">Wall</a>, <a class="el" href="class_ball.html#a7b1524beab3c36584fc7bffce5e3b23f">Ball</a>, and <a class="el" href="class_brick.html#ae37676a7435387e40dbe777bc755d47d">Brick</a>.</p>
 
@@ -309,6 +313,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pure virtual function that returns the type of object destroyed</p>
+<p>Function to destroy the game element (Not Implemented) </p>
 
 </div>
 </div>
@@ -336,7 +342,7 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509">Wall</a>, <a class="el" href="class_ball.html#a9b170c27c74586af6108314c3623da53">Ball</a>, <a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">Platform</a>, and <a class="el" href="class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4">Brick</a>.</p>
+<p>Implemented in <a class="el" href="class_ball.html#a9b170c27c74586af6108314c3623da53">Ball</a>, <a class="el" href="class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509">Wall</a>, <a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">Platform</a>, and <a class="el" href="class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4">Brick</a>.</p>
 
 </div>
 </div>
@@ -354,16 +360,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get height of element object </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph.png" border="0" usemap="#class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph" alt=""/></div>
 <map name="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph" id="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="246,5,365,32"/>
-<area shape="rect" id="node5" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="239,56,371,83"/>
-<area shape="rect" id="node6" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="221,107,389,133"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="437,56,596,83"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="644,56,695,83"/>
+<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="223,5,342,32"/>
+<area shape="rect" id="node3" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="235,56,331,83"/>
+<area shape="rect" id="node4" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="231,107,335,133"/>
+<area shape="rect" id="node5" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="221,157,344,184"/>
+<area shape="rect" id="node6" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="233,208,333,235"/>
 </map>
 </div>
 
@@ -383,18 +390,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get width of element object </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph.png" border="0" usemap="#class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph" alt=""/></div>
 <map name="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph" id="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="251,5,355,32"/>
-<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="243,56,362,83"/>
-<area shape="rect" id="node6" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="237,107,369,133"/>
-<area shape="rect" id="node7" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="239,157,366,184"/>
-<area shape="rect" id="node8" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="219,208,387,235"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="435,107,593,133"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="641,107,692,133"/>
+<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="230,5,334,32"/>
+<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="223,56,341,83"/>
+<area shape="rect" id="node6" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="234,107,330,133"/>
+<area shape="rect" id="node7" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="230,157,334,184"/>
+<area shape="rect" id="node8" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="219,208,345,235"/>
+<area shape="rect" id="node9" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="221,259,343,285"/>
+<area shape="rect" id="node10" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="232,309,332,336"/>
+<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="393,107,552,133"/>
+<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="600,107,651,133"/>
 </map>
 </div>
 
@@ -414,18 +424,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Return the current location of the element (x and y seperately) </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph.png" border="0" usemap="#class_game_element_a7c154aff646c91168dc974a43d340812_icgraph" alt=""/></div>
 <map name="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph" id="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="272,5,376,32"/>
-<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="265,56,383,83"/>
-<area shape="rect" id="node6" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="258,107,390,133"/>
-<area shape="rect" id="node7" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="261,157,387,184"/>
-<area shape="rect" id="node8" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="240,208,408,235"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="456,107,615,133"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="663,107,713,133"/>
+<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="251,5,355,32"/>
+<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="244,56,363,83"/>
+<area shape="rect" id="node6" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="255,107,351,133"/>
+<area shape="rect" id="node7" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="251,157,355,184"/>
+<area shape="rect" id="node8" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="240,208,367,235"/>
+<area shape="rect" id="node9" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="242,259,365,285"/>
+<area shape="rect" id="node10" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="253,309,353,336"/>
+<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="415,107,573,133"/>
+<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="621,107,672,133"/>
 </map>
 </div>
 
@@ -450,11 +463,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph.png" border="0" usemap="#class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph" alt=""/></div>
 <map name="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph" id="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="267,5,386,32"/>
-<area shape="rect" id="node5" href="class_brick.html#ac05aa003aeb4194aa83d58af6fb7d5cc" title="Brick::brickBounce" alt="" coords="261,56,393,83"/>
-<area shape="rect" id="node6" href="class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c" title="Platform::platformBounce" alt="" coords="243,107,411,133"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="459,56,617,83"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="665,56,716,83"/>
+<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="245,5,363,32"/>
+<area shape="rect" id="node3" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="256,56,352,83"/>
+<area shape="rect" id="node4" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="252,107,356,133"/>
+<area shape="rect" id="node5" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="243,157,365,184"/>
+<area shape="rect" id="node6" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="254,208,354,235"/>
 </map>
 </div>
 
@@ -475,6 +488,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Declaring sizes of GameElements Declaring different GameElements</p>
 <p>Returns a pointer to an array of 4 integers </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -485,33 +499,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node3" href="class_wall.html#ab6ba5936b820b65e1566fa11181c2aab" title="Wall::Wall" alt="" coords="274,56,357,83"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a86e526e7a4e5e65d80652ee9c2d69005"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86e526e7a4e5e65d80652ee9c2d69005">&#9670;&nbsp;</a></span>toString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string GameElement::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_wall.html#a1a6aa7345415ced1ba906215b1fa1fa2">Wall</a>, <a class="el" href="class_moveable_object.html#a93704cba0720ba95499f405217ea75e5">MoveableObject</a>, <a class="el" href="class_brick.html#a024e3e055a8b17ada060f84772c564a9">Brick</a>, and <a class="el" href="class_platform.html#aef28e172a68bd392d1c7d90a1d91a3e6">Platform</a>.</p>
 
 </div>
 </div>
@@ -569,6 +556,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function to destroy GameElements </p>
 
 </div>
 </div>

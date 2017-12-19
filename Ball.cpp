@@ -6,19 +6,19 @@
 
 using namespace std;
 
-// constructor
+/**Constructor of Ball*/
 Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
-	//... no extra attributes to include?
-	auto surface = IMG_Load(image_path.c_str());
+
+	auto surface = IMG_Load(image_path.c_str()); /**Loading image file*/
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
 	}
-	pinball = SDL_CreateTextureFromSurface(window._renderer, surface);
+	pinball = SDL_CreateTextureFromSurface(window._renderer, surface); /**Creating texture*/
 	if (!pinball) {
 		std::cerr << "Failed to create texture\n";
 	}
-	SDL_FreeSurface(surface);
+	SDL_FreeSurface(surface);  /**Free the surface*/
 	
 	switch (size) {
 	case small:
@@ -36,7 +36,7 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 	};
 	xposition = 530;
 	yposition = 500-height;
-	//initial directions of the ball
+	/**Initial directions of the ball*/
 	_xdirection = 0.01;
 	_ydirection = 1.0;
 	_speed = 0;
@@ -46,7 +46,7 @@ Ball::~Ball() {
 	SDL_DestroyTexture(pinball);
 	std::cout << "Ball is being destroyed\n";
 }
-
+/**/
 void Ball::draw(Window *ball_window) const {
 	SDL_Rect ball = { xposition, yposition, width, height };
 	if (pinball) {
@@ -58,7 +58,7 @@ void Ball::draw(Window *ball_window) const {
 	}
 }
 
-//function to move the ball, xposd and yposd are double for the rounding
+/**Function to move the ball, xposd and yposd are double for the rounding*/
 void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 
 	if (_speed != 0) {
@@ -73,11 +73,11 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 		xpos = double(xposition);
 		ypos = double(yposition);
 	}
-	//create the move function --> determined by userinput which we get in the controller
-	//return new position
+	/**Create the move function --> determined by userinput which we get in the controller*/
+	/**Return to new position*/
 }
 
-//function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.
+/**Function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.*/
 void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
 	if (_speed == 0) {
 		switch (event.type) {
@@ -104,27 +104,27 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 	}
 }
 
-
+/**Elements destroyed*/
 GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
 	int layer[4] = { this->getXLocation() , this->getXLocation() , this->getYLocation() , this->getYLocation() };
 
-	if (ball->xposition == layer[0]) {//right collision
+	if (ball->xposition == layer[0]) {/**Right collision*/
 		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 	}
-	if (ball->xposition == (layer[1] + getWidth())) {//left collision
+	if (ball->xposition == (layer[1] + getWidth())) {/**Left collision*/
 		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 	}
-	if (ball->yposition == layer[2]) {//up collision
+	if (ball->yposition == layer[2]) {/**Up collision*/
 		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 	}
-	if (ball->yposition == (layer[3] + getHeight())) {//down collision
+	if (ball->yposition == (layer[3] + getHeight())) {/**Down collision*/
 		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 	}
 	return GameElement::destroynothing;
 }
 
-//* return functions for the x and y direction
+/** Return functions for the x and y direction*/
 double Ball::getYDirection() {
 	return _ydirection;
 }
