@@ -34,7 +34,7 @@ void Controller::launchGame(int level) {
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::big, "pictures/shiny_pinball.png" };	/**ball instance*/
+	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
 	Wall* right_wall = new Wall{ GameElement::yellow, Wall::right };
 	Wall* left_wall = new Wall{ GameElement::yellow, Wall::left };
@@ -155,7 +155,15 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
 				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
-				
+
+			}
+		}
+		break;
+	case 3:
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 2; f++) {
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 2, 255, 0, 0, 0 });
+
 			}
 		}
 		break;
