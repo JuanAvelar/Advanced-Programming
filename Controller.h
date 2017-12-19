@@ -18,10 +18,11 @@ public:
 	void launchGame(int level);
 
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
-	void bounceOnObject(vector <int> number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
+	void bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
 	void set_brick_level(int level, vector <GameElement*>* elements);
 	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
 	void Controller::destroy_level(int level, vector <GameElement*>* elements);
+	void Controller::Start_menu(SDL_Event *event, Window *window_c);
 
 
 	//function to get the amount of lifes left in the main
@@ -39,6 +40,8 @@ private:
 	bool Game_lost = false;
 	//Boolean to see if an event occurs
 	bool event_flag;
+	double mouse_position[2];
+	bool Start_game = false;
 
 	//Global variables
 

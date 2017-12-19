@@ -8,7 +8,7 @@
 class Platform : public MoveableObject {
 public:
 	Platform(const Window &window, GameElement::Color color);
-	Platform::Platform(const Window &window, GameElement::Size size, const std::string &image_path);
+	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 
 	virtual std::string toString() const override;

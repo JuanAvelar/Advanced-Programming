@@ -52,8 +52,10 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 		width = 130;
 		break;
 	case big:
-		height = 20;
-		width = 160;
+		height = 300;
+		width = 300;
+		xposition = 350;
+		yposition = 150;
 		break;
 	};
 }
@@ -134,8 +136,6 @@ GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 		//set the y direction based on the total direction length being 1
 		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
 	}
-
-
 	return GameElement::destroynothing;
 }
 

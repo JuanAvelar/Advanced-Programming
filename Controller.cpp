@@ -9,7 +9,9 @@
 #include "Brick.h"
 #include "Wall.h"
 #include "Window.h"
+#include "math.h"
 #include <vector>
+#include <memory>
 #define window_height 600
 #define window_width 1000
 #define iterations_per_cycle 8
@@ -46,11 +48,15 @@ void Controller::launchGame(int level) {
 	Game_elements.emplace_back( left_wall );
 	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });
 
+
 	Moveable_objects.emplace_back(ball);
 	Moveable_objects.emplace_back(platform);
 
 	set_brick_level(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
-
+	
+//int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
+	vector <int> number_of_ball = { 0};
+	Start_menu(&event, &window_c);
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
@@ -61,18 +67,9 @@ void Controller::launchGame(int level) {
 		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
 		
 		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
-			if (iterator == iterations_per_cycle - 1) {
-				you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
-			}
-
-			for (auto moving : Moveable_objects) {
-				moving->move(right_wall, left_wall);
-			}
-
-			//int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
-			vector <int> number_of_ball = { 0 };
-			bounceOnObject(number_of_ball, &Game_elements, &Moveable_objects, &window_c);
-		
+			if (iterator == iterations_per_cycle - 1) {	you_shall_not_pass = true;}//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
+			for (auto moving : Moveable_objects) {moving->move(right_wall, left_wall);}
+			bounceOnObject(&number_of_ball, &Game_elements, &Moveable_objects, &window_c);
 			iterator++;
 		}
 		else if (time % cycle_time > cycle_time/2 && time % cycle_time < cycle_time / 2 + time_for_graphic_output) {
@@ -89,13 +86,10 @@ void Controller::launchGame(int level) {
 					ball_pointer->serveBall(event, right_wall, left_wall);//ball moves with the platform when speed is 0
 					platform->keyInput(event);//platform moves when an event happens
 					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
-					
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 7) {
-			break;
-		}
+		if (Game_elements.size() < 7) {break;}
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
@@ -112,15 +106,15 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 }
 
 //gets input from checkForColission
-void Controller::bounceOnObject(vector <int> number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
-	for (auto c : number_of_ball) {
+void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
+	for (auto c : *number_of_ball) {
 		for (int i = 0; i < signed(Game_elements->size()); i++) {//check for a brick collision
 			if (i != c) {//skips the collision between the ball and the same ball, because it is phisically not possible
 				GameElement::ElementDestroyed Element_destructed = (*Game_elements)[i]->Bounce((*Game_elements)[c]);//the element in c is the ball //Returns true if brick is destroyed
 				if (Element_destructed == GameElement::destroybrick) { Game_elements->erase(Game_elements->begin() + i); }//if brick is destroyed then it gets rid of the vector element
 				if (Element_destructed == GameElement::destroyball) {
 					//the size of number_of_ball is defined in bits, so 1 element is 4, 2 is 8...
-					if (number_of_ball.size() < 2) {
+					if (number_of_ball->size() < 2) {
 						lives--;
 
 						if (lives < 1) {
@@ -212,13 +206,34 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 			std::cout << "Amount of lives: " << lives << std::endl;
 			while (event.key.keysym.sym != SDLK_UP) { SDL_PollEvent(&event); }
 			break;
-		
 		};
 	};
-
-
 }
 
 int Controller::getLives() {
 	return lives;
+}
+
+void Controller::Start_menu(SDL_Event * event, Window * window_c) {
+
+	std::unique_ptr<Platform> Start(new Platform{ *window_c, GameElement::big, "pictures/start.png" });
+	while (!window_c->isClosed() && Start_game == false) {
+		if (SDL_PollEvent(event)) {
+			switch (event->type) {
+			case SDL_MOUSEMOTION:
+				mouse_position[0] = event->motion.x - Start->xposition - Start->width / 2;
+				mouse_position[1] = event->motion.y - Start->yposition - Start->height / 2;
+				break;
+			case SDL_MOUSEBUTTONUP:
+				double radius = sqrt(pow(mouse_position[0], 2) + pow(mouse_position[1], 2)) + 10;
+				std::cout << radius << std::endl;
+				if (radius < double(Start->width) / 2) {
+					Start_game = true;
+				}
+				break;
+			}
+		}
+		Start->draw(window_c);
+		window_c->clear();
+	}
 }
