@@ -5,18 +5,18 @@
 #include "MoveableObject.h"
 
 
-class Platform : public MoveableObject {  /**Inheritance of platform from Movableobject*/
+class Platform : public MoveableObject {
 public:
-	Platform(const Window &window, GameElement::Color color);	/**Platform constructor (only colour)*/
-	Platform(const Window &window, GameElement::Size size, const std::string &image_path); /**Platform constructor including size and path of image*/
+	Platform(const Window &window, GameElement::Color color);
+	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 
-//	virtual std::string toString() const override;			/*?*/
-	void keyInput(SDL_Event &event);						/** Function to assaign input keys for platform movement*/
+	virtual std::string toString() const override;
+	void keyInput(SDL_Event &event);
 
-	void draw(Window *platform_window) const;				/*?*/
+	void draw(Window *platform_window) const;
 
-	virtual void move(GameElement *right_wall, GameElement *left_wall);  /*?*/
+	virtual void move(GameElement *right_wall, GameElement *left_wall);
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 

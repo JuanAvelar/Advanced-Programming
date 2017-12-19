@@ -21,13 +21,12 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{10C821D2-D551-461E-9E22-A11C0F52F800}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -64,8 +63,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\Hemanth\source\repos\Advanced-Programming\SDL2\include</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\Hemanth\source\repos\Advanced-Programming\SDL2\lib\x86</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\merij\source\repos\Advanced-Programming\SDL2\include;C:\Users\Juan Avelar\Documents\uni\intercambio holanda\advanced programming\good visual studio 2 porque la cague(pacman)\SDL2\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;C:\Users\merij\source\repos\Advanced-Programming\SDL2\lib\x86;C:\Users\Juan Avelar\Documents\uni\intercambio holanda\advanced programming\good visual studio 2 porque la cague(pacman)\SDL2\lib\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -125,7 +124,6 @@
     <ResourceCompile Include="Breakout.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon1.ico" />
     <Image Include="pictures\shiny_pinball.png" />
     <Image Include="pictures\sphere_pinball_icon.ico" />
   </ItemGroup>
