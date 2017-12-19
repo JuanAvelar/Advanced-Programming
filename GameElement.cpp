@@ -7,21 +7,21 @@
 
 using namespace std;
 
-// constructor
+/**Constructor of Element object*/
 GameElement::GameElement( int xpos, int ypos, const int h, const int w)
 	:	 xposition(xpos), yposition(ypos), height(h), width(w) {}
 
-//get height of element
+/**Get height of element object*/
 int GameElement::getHeight() const {
 	return height;
 }
 
-//get width of element
+/**Get width of element object*/
 int GameElement::getWidth() const {
 	return width;
 }
 
-//return the current location of the element (x an y seperately)
+/**Return the current location of the element (x and y seperately)*/
 int GameElement::getXLocation() {
 	return xposition;
 }
@@ -30,16 +30,16 @@ int GameElement::getYLocation() {
 	return yposition;
 }
 
-//function to destroy the game element
+/**Function to destroy the game element (Not Implemented)*/
 void GameElement::destroyGameElement() {
-	//...
+	
 }
 
 
 // toString GameElements's information
-string GameElement::toString() const {
+/*string GameElement::toString() const {
 	return "0";
-}
+}*/
 /**Returns a pointer to an array of 4 integers*/
 int* GameElement::set_color_rgba(Color color) {
 	int _r, _g, _b, _a;

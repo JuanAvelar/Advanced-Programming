@@ -6,7 +6,7 @@
 #include <SDL2/SDL_image.h>
 using namespace std;
 
-// constructor
+/**Constructor of platform*/
 Platform::Platform(const Window &window, GameElement::Color color)
 	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
 	//... no extra attributes to include?
@@ -59,12 +59,12 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 }
 
 Platform::~Platform() {
-SDL_DestroyTexture(platform); //this is only for the images
+SDL_DestroyTexture(platform);	/**This is only for the images*/
 std::cout << "Platform is being destroyed\n";
 }
-
-void Platform::draw(Window *platform_window) const {
-	SDL_Rect platform_draw = { xposition, yposition, width, height };
+ 
+void Platform::draw(Window *platform_window) const {  
+	SDL_Rect platform_draw = { xposition, yposition, width, height }; /**Defining characteristics of platform*/
 	if (platform) {
 		SDL_RenderCopy(platform_window->_renderer, platform, nullptr, &platform_draw);
 	}
@@ -72,29 +72,29 @@ void Platform::draw(Window *platform_window) const {
 		SDL_SetRenderDrawColor(platform_window->_renderer, _r, _g, _b, _a);
 		SDL_RenderFillRect(platform_window->_renderer, &platform_draw);
 	}
-}
+};
 
-// return a string representation of Moveable Object's information --> implements abstract class function
+/*Return a string representation of Moveable Object's information --> implements abstract class function
 string Platform::toString() const {
-	return "0";
+	return "0";}*/
 	// make string output
-}
 
-//function move --> implements abstract class function
-void Platform::keyInput(SDL_Event &event) {
+
+/**function move --> implements abstract class function*/
+void Platform::keyInput(SDL_Event &event) {   /** Function to assaign input keys for platform movement*/
 	if (event.type == SDL_KEYDOWN) {
 		switch (event.key.keysym.sym) {
-		case SDLK_LEFT:
+		case SDLK_LEFT:						/**Left arrow assigned to move platform left*/
 			_xdirection = -1.0;
 			break;
-		case SDLK_RIGHT:
+		case SDLK_RIGHT:					/**Right arrow assigned to move platform left*/
 			_xdirection = 1.0;
 			break;
 		default:
 			break;
 		}
 	}
-	if (event.type == SDL_KEYUP){
+	if (event.type == SDL_KEYUP){				/**UP arrow key assigned to move platform left*/
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
 			if (_xdirection < 0) {
@@ -112,29 +112,28 @@ void Platform::keyInput(SDL_Event &event) {
 	
 	}
 
-	//create the move function --> determined by userinput which we get in the controller
+	/**create the move function --> determined by userinput which we get in the controller*/
 }
 
 GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
-	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
-	//if ball hits the top, output direction will totally depend on the impact position
-	//if ball hits the side, ball bounces of with same angle
+	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);/**Lower inheritance pointer of type ball*/
+	/**If ball hits the top, output direction will totally depend on the impact position*/
+	/**If ball hits the side, ball bounces of with same angle*/
 
-	//ball hits top: --> then change the ydirection
+	/**Ball hits top: --> then change the ydirection*/
 	if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 2 &&
 		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth())//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
 	{
 
-		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
+		/**Re-map values form left to right edge of platform to values for xdir between -0.9 and 0.9*/
 		double collisionPoint = (-0.9 + 1.8 * (((double)ball->getXLocation() + (double)ball->getWidth()  - (double)this->getXLocation()) / ((double)getWidth()+(double)ball->getWidth())));
-		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
+		/**output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)*/
 
-		//set the new directions for the ball
+		/**Set the new directions for the ball*/
 		lower_inh_ptr->setXDirection(collisionPoint);
-		//set the y direction based on the total direction length being 1
+		/**Set the y direction based on the total direction length being 1*/
 		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
 	}
-
 
 	return GameElement::destroynothing;
 }
@@ -143,7 +142,7 @@ void Platform::move(GameElement *right_wall, GameElement *left_wall) {
 	if (xposition > left_wall->xposition + right_wall->width && _xdirection < 0) {
 		xposition -= 1;
 	}
-	if (xposition+width < right_wall->xposition && _xdirection > 0) {
+	if (xposition+width < right_wall->xposition && _xdirection > 0) {	/**Moving conditions of platform*/
 		xposition += 1;
 	}
 

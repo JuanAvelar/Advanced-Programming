@@ -1,11 +1,12 @@
 #include "MoveableObject.h"
 using namespace std;
 
-// constructor
+/**MovableObject constructor*/
 MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed)
 	: GameElement(xposition, yposition, height, width) {
 }
 
+/**Setting speeds and directions of movable objects*/
 void MoveableObject::setXSpeed(double xspeed) {
 	_xdirection = xspeed;
 }
@@ -31,6 +32,6 @@ double MoveableObject::getYSpeed() {
 }
 
 // return a string representation of Brick's information 
-string MoveableObject::toString() const {
+/*string MoveableObject::toString() const {
 	return "0";
-};
+};*/

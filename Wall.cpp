@@ -3,12 +3,14 @@
 #include "MoveableObject.h"
 #include <iostream>
 #include <SDL2/SDL_image.h>
+
 using namespace std;
 
-// wall side can be either "up", "down", "right", "left"
-// constructor 
+/**Wall side can be either "up", "down", "right", "left"*/
+/**Wall constructor*/
 Wall::Wall( GameElement::Color color, Wall_type wallside)
 	: GameElement(xposition, yposition, height, width) {
+	/**Positioning and Characteristics of walls*/
 	switch (wallside) {
 	case right:
 		xposition = 990;
@@ -45,7 +47,7 @@ Wall::Wall( GameElement::Color color, Wall_type wallside)
 }
 
 Wall::~Wall() {
-	std::cout << "Wall is being destroyed\n";
+	std::cout << "Wall is being destroyed.\n"; 
 	SDL_DestroyTexture(game_wall);
 }
 
@@ -109,8 +111,8 @@ GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 }
 
 // return a string representation of Brick's information 
-string Wall::toString() const {
-	return "0";
-	//...
-}
+//string Wall::toString() const {
+	//return "0";
+	//...}
+
 

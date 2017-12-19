@@ -64,6 +64,6 @@ void Brick::removeBrickLife() {
 }
 
 // return a string representation of Brick's information 
-string Brick::toString() const {
+/*string Brick::toString() const {
 	return "0";
-}
+}*/

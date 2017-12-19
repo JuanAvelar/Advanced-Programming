@@ -10,15 +10,16 @@
 #include "Wall.h"
 #include "Window.h"
 #include <vector>
-#define window_height 600
-#define window_width 1000
-#define iterations_per_cycle 8
-#define cycle_time 30				//in milliseconds
-#define time_for_graphic_output 10	//in milliseconds
-#define duty_cycle_percentage 0.4	//state percentage of time spent to complete motion of the ball and collisions
+#define window_height 600           /**Declaring Height of Window*/
+#define window_width 1000           /**Declaring Width of Window*/
+#define iterations_per_cycle 8      /**Declaring iterations_per_cycle of Window*/
+#define cycle_time 30				/**Declaring cycle_time of ball loop(in milliseconds)*/
+#define time_for_graphic_output 10	/**Declaring  time_for_graphic_output(in milliseconds)*/
+#define duty_cycle_percentage 0.4	/**State percentage of time spent to complete motion of the ball and collisions*/
+
 using std::vector;
 
-// constructor
+/**Constructor for Controller*/
 Controller::Controller( int liv, int sco)
 	: lives(liv), score(sco) {
 	
@@ -26,7 +27,7 @@ Controller::Controller( int liv, int sco)
 
 /**In this function every function from the game is implemented(top major function)*/
 void Controller::launchGame(int level) {
-	std::ostringstream Window_title;
+	std::ostringstream Window_title;															
 	Window_title << "Breakout: Level " << level;
 	Window window_c(Window_title.str(), window_width, window_height);								/**UI instance*/
 	SDL_Event event;																		/**Event of keyboard instance*/
@@ -34,38 +35,39 @@ void Controller::launchGame(int level) {
 	vector <MoveableObject*> Moveable_objects;
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
-	Wall* right_wall = new Wall{ GameElement::yellow, Wall::right };
-	Wall* left_wall = new Wall{ GameElement::yellow, Wall::left };
+	Wall* right_wall = new Wall{ GameElement::yellow, Wall::right };						/**Right wall instance*/
+	Wall* left_wall = new Wall{ GameElement::yellow, Wall::left };							/**Left wall instance*/
 	
 	Game_lost = false;																		/**The game is not lost when you begin*/
 
-	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
-	Game_elements.emplace_back(platform);										//platform pointer as second
-	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
-	Game_elements.emplace_back( right_wall );
-	Game_elements.emplace_back( left_wall );
-	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });
+	Game_elements.emplace_back(ball);											/**Puts the ball pointer as first*/
+	Game_elements.emplace_back(platform);										/**Platform pointer as second*/
+	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::up });		/**Wall pointers as third*/
+	Game_elements.emplace_back( right_wall );									/**Right Wall pointer as fourth*/
+	Game_elements.emplace_back( left_wall );									/**Right Wall pointer as fifth*/
+	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });   /**Right Wall pointer as sixth*/
 
-	Moveable_objects.emplace_back(ball);
-	Moveable_objects.emplace_back(platform);
+	Moveable_objects.emplace_back(ball);										/*?*/
+	Moveable_objects.emplace_back(platform);									/*?*/
 
-	set_brick_level(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
+	set_brick_level(level, &Game_elements);										/**Function to generate all bricks depending on the level*/
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
-			event_flag = true;
-			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
+			event_flag = true;						 	
+			poll(event, &window_c, &Game_elements);  /**Checks if the window has changed its size*/
 		}
 		//std::cout << "busy" << std::endl;
-		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
+		time = SDL_GetTicks();						/**Gets time since the first time sdl library was accessed*/
 		
-		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
+		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {/**In this output is updated time in milliseconds*/
 			if (iterator == iterations_per_cycle - 1) {
-				you_shall_not_pass = true;//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
+				you_shall_not_pass = true; /**The cycle repeated 3 times in the same millisecond this is to 
+										   ensure it just iterates n times in that millisecond*/
 			}
 
-			for (auto moving : Moveable_objects) {
+			for (auto moving : Moveable_objects) {			//?
 				moving->move(right_wall, left_wall);
 			}
 
@@ -79,16 +81,16 @@ void Controller::launchGame(int level) {
 			showGraphicOutput(&window_c, &Game_elements);
 			 //std::cout << time << std::endl; 
 		}
-		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//checks that the millisecond passes in order to let it pass again
+		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {/**checks that the millisecond passes in order to let it pass again*/
 			if (you_shall_not_pass) {
 				you_shall_not_pass = false;
 				iterator = 0;
 			}
 			if (event_flag) {
 				Ball *ball_pointer = dynamic_cast<Ball*> (Game_elements[0]);
-					ball_pointer->serveBall(event, right_wall, left_wall);//ball moves with the platform when speed is 0
-					platform->keyInput(event);//platform moves when an event happens
-					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
+					ball_pointer->serveBall(event, right_wall, left_wall);/**Ball moves with the platform when speed is 0*/
+					platform->keyInput(event);/**Platform moves when an event happens*/
+					window_c.pollEvents(event);/**Checks for events happening in the window such as keyboard and mouse*/
 					
 					event_flag = false;
 			}
@@ -206,7 +208,7 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 		};
 		
 	};
-	if (event.type == SDL_KEYDOWN) {
+	if (event.type == SDL_KEYDOWN) {				//Keydown for ?
 		switch (event.key.keysym.sym) {
 		case SDLK_DOWN:
 			std::cout << "Amount of lives: " << lives << std::endl;

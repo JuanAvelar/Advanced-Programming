@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['platform',['Platform',['../class_platform.html',1,'Platform'],['../class_platform.html#aab657eabe23844e757e5ad27c54174f9',1,'Platform::Platform()']]],
-  ['platform_2ecpp',['Platform.cpp',['../_platform_8cpp.html',1,'']]],
-  ['platform_2eh',['Platform.h',['../_platform_8h.html',1,'']]],
-  ['platformbounce',['platformBounce',['../class_platform.html#ab185ba90948cbc1fe59a4c0c521ea96c',1,'Platform']]],
-  ['poll',['poll',['../class_controller.html#aa22db940ee518ad76de3bee9b560f02b',1,'Controller']]],
-  ['pollevents',['pollEvents',['../class_window.html#a826ab0a64b7095a3d52ea05d0c9edbb5',1,'Window']]]
+  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['medium',['medium',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7ab4a52c04f1d4ea93f606c245f7cd1b7f',1,'GameElement']]],
+  ['move',['move',['../class_ball.html#a9a9b1020d19103d28b361cdf5b8111f6',1,'Ball::move()'],['../class_moveable_object.html#af3bab36b427a158f3176aa2aa88e3757',1,'MoveableObject::move()'],['../class_platform.html#a44421802653ad453152be640053d6c1c',1,'Platform::move()']]],
+  ['moveableobject',['MoveableObject',['../class_moveable_object.html',1,'MoveableObject'],['../class_moveable_object.html#a3ec5f9542f529909cbb0e69709c645ea',1,'MoveableObject::MoveableObject()']]],
+  ['moveableobject_2ecpp',['MoveableObject.cpp',['../_moveable_object_8cpp.html',1,'']]],
+  ['moveableobject_2eh',['MoveableObject.h',['../_moveable_object_8h.html',1,'']]]
 ];

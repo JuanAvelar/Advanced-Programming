@@ -10,13 +10,13 @@ public:
 	Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
 	~Brick(); // virtual destructor
 
-	virtual void Brick::draw(Window *window_brick) const;
+	virtual void draw(Window *window_brick) const; 
 
 	GameElement::ElementDestroyed Bounce(GameElement *ball);
 
 	void removeBrickLife();
 
-	virtual std::string toString() const override;
+	//virtual std::string toString() const override;
 
 private:
 	int hitsToDestroy;

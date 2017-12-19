@@ -7,8 +7,8 @@
 *
 *
 *
-*\author Juan Pablo Avelar
-*\date 16 december 2017
+*\author Juan Pablo Avelar		
+*\date 16 december 2017			//?
 */
 #include "Controller.h"
 #include "GameElement.h"
@@ -20,9 +20,9 @@ int main(int argc, char **argv) {
 	
 	//GameElement game_element(100,100,20,20);
 
-	Controller controller( lives, score); //create the controller instance
-	for (int level = 1; level < 4; level++) {
-		if (controller.getLives() > 0) {
+	Controller controller( lives, score);     /**Create the controller instance*/
+	for (int level = 1; level < 4; level++) { /**Loop to change levels*/
+		if (controller.getLives() > 0) {     /**Launches or runs game if lives greater than 0*/
 			controller.launchGame(level);
 			//break;//Get rid of this to enter new levels
 		}

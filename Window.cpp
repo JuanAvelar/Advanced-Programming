@@ -29,7 +29,7 @@ bool Window::init() {
 		std::cerr << "Failed to initialize SDL_image.\n";
 		return 0;
 	}
-
+	/**Defining characteristics of window*/
 	_window = SDL_CreateWindow(
 		_title.c_str(),
 		SDL_WINDOWPOS_CENTERED,
@@ -47,7 +47,7 @@ bool Window::init() {
 	if (_renderer == nullptr) {
 		std::cerr << "Failed to create renderer.\n";
 		return 0;
-	}
+	}/**Loading image surface*/
 	_surface = IMG_Load("pictures/shiny_pinball.png");
 	SDL_SetWindowIcon(_window, _surface);
 	SDL_SetWindowMinimumSize(_window, 1000, 600);

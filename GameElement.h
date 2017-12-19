@@ -7,14 +7,15 @@
 
 class GameElement {
 public:				
-	// constructor
+	/**Constructor of class GameElement*/
 	GameElement(int xpos, int ypos, const int h, const int w);
-	virtual ~GameElement() = default; // virtual standard destructor
+	virtual ~GameElement() = default; /**virtual standard destructor*/
 
-	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
-	enum Color {yellow, green, red, blue};
-	enum Size {small, medium, big};
-
+    enum ElementDestroyed { destroynothing, destroybrick, destroyball };  /**Declares a type of your own, in this case being a derstruction types*/
+	enum Color {yellow, green, red, blue};								  /**Declaring coloursElements*/	
+	enum Size {small, medium, big};										  /**Declaring sizes of GameElements*/	
+	
+																		  /**Declaring different GameElements*/
 	int* set_color_rgba(Color color);
 
 	int getHeight() const;
@@ -23,18 +24,14 @@ public:
 	int getXLocation();
 	int getYLocation();
 
-	virtual void draw(Window* window) const = 0;//pure virtual
+	virtual void draw(Window* window) const = 0;     /**pure virtual function*/
 
-	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0;
+	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0; /**Pure virtual function that returns the type of object destroyed*/
 
-	void destroyGameElement();
-
-
+	void destroyGameElement();  /**Function to destroy GameElements*/
 
 
-	
-
-	virtual std::string toString() const;
+	//virtual std::string toString() const;
 
 public:
 	int xposition, yposition, height, width;
