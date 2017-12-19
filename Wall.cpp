@@ -45,12 +45,12 @@ Wall::Wall( GameElement::Color color, Wall_type wallside)
 	_a = *(ptr + 3);
 	wallside_pick = wallside;
 }
-
+/**Wall destructor*/
 Wall::~Wall() {
 	std::cout << "Wall is being destroyed.\n"; 
 	SDL_DestroyTexture(game_wall);
 }
-
+/**Wall draw function*/
 void Wall::draw(Window *window_wall) const {
 	SDL_Rect fixed_wall = { xposition, yposition, width, height };
 	if (game_wall) {
@@ -61,17 +61,17 @@ void Wall::draw(Window *window_wall) const {
 		SDL_RenderFillRect(window_wall->_renderer, &fixed_wall);
 	}
 }
-
-void Wall::setWallSide(Wall_type wallSide) {
+/**It sets the wall side but not used*/
+void Wall::setWallSide(Wall_type wallSide) { 
 		
 }
-
-enum Wall::Wall_type Wall::getWallSide()
+/**Returns Variable of wall type*/
+enum Wall::Wall_type Wall::getWallSide() 
 {
 	return wallside_pick;
 }
-
-GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
+/**Bounce override function for the element wall*/
+GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) { 
 	MoveableObject *lower_inh_ptr = { dynamic_cast<MoveableObject*> (ball)};
 	int layer[4] = { 0, 0, 0, 0 };
 		switch (this->getWallSide()) {

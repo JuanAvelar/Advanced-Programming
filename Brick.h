@@ -5,19 +5,22 @@
 #include "GameElement.h" 
 #include "Ball.h"
 
-class Brick : public GameElement {
+/**Inheritance of Brick class from GameElement*/
+class Brick : public GameElement { 
 public:
+	/**Constructor for brick*/
 	Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a);
-	~Brick(); // virtual destructor
-
-	virtual void draw(Window *window_brick) const; 
-
+	/**Normal Destructor of Bricks*/
+	~Brick(); 
+	/**Virtual Draw function of Brick class*/
+	virtual void draw(Window *window_brick) const;  
+	/**Bounce function of brick that overrides the virtual function of GameElement*/
 	GameElement::ElementDestroyed Bounce(GameElement *ball);
-
-	void removeBrickLife();
+	/**Fucntion that contains conditions to remove brick life*/
+	void removeBrickLife(); 
 
 	//virtual std::string toString() const override;
-
+	/**Private Variables of Brick class*/
 private:
 	int hitsToDestroy;
 	int hits;

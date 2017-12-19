@@ -4,25 +4,29 @@
 #include <string> // C++ standard string class
 #include "GameElement.h"
 
-
-class Wall : public GameElement {		/**Class wall inheriting from GameElement*/
+/**Class wall inheriting from GameElement*/
+class Wall : public GameElement {		
 public:
-	enum Wall_type { up, down, right, left }; /**Declares a type of your own, in this case being a wall type*/
+	/**Declares a type of your own, in this case being a wall types*/
+	enum Wall_type { up, down, right, left }; 
 
 public:
-	Wall(GameElement::Color color, Wall_type wallside);	/**Public: Constructor elements of wall*/
-	~Wall();		/**Non-virtual destructor of wall*/
-
-	void setWallSide(Wall_type);	/**Declaring function setwallside*/
-	enum Wall_type getWallSide();	/***/
-
-	void draw(Window *window_wall) const;  /**Declaring draw function*/
-
-	GameElement::ElementDestroyed Bounce(GameElement * ball);  /**Performs bounce on all objects and depends on amount of balls in the game*/
+	/**Public: Constructor elements of wall*/
+	Wall(GameElement::Color color, Wall_type wallside);	
+	/**Non-virtual destructor of wall*/
+	~Wall();		
+	/**Declaring function setwallside*/
+	void setWallSide(Wall_type);	
+	/**Declares a type of your own, in this case being a side wall types*/
+	enum Wall_type getWallSide();	
+	/**Declaring draw function of wall*/
+	void draw(Window *window_wall) const;  
+	/**Performs bounce on all objects and depends on amount of balls in the game*/
+	GameElement::ElementDestroyed Bounce(GameElement * ball);  
 
 	//std::string toString() const override; 
 
-/** Private variables of class wall*/
+/** Private variables declaration of class wall*/
 private:
 	std::string wallSide;		
 	std::string wall;

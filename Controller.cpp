@@ -119,6 +119,7 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 }
 
 //gets input from checkForColission
+/**collisions between all objects*/
 void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
 	for (auto c : *number_of_ball) {
 		for (int i = 0; i < signed(Game_elements->size()); i++) {//check for a brick collision
@@ -153,6 +154,7 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 }
 
 //You must disinherit the window object to the rest of the objects
+/**Sets bricks according to level*/
 void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	
 	switch (level) {
@@ -234,9 +236,8 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 int Controller::getLives() {
 	return lives;
 }
-/**Controller to */
+/**Start menu controller*/
 void Controller::Start_menu(SDL_Event * event, Window * window_c) {
-
 	std::unique_ptr<Platform> Start(new Platform{ *window_c, GameElement::big, "pictures/start.png" });
 	while (!window_c->isClosed() && Start_game == false) {
 		if (SDL_PollEvent(event)) {

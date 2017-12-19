@@ -9,17 +9,18 @@ using namespace std;
 /**Constructor of Ball*/
 Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
-
-	auto surface = IMG_Load(image_path.c_str()); /**Loading image file*/
+	/**Loading image file for ball*/
+	auto surface = IMG_Load(image_path.c_str()); 
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
 	}
-	pinball = SDL_CreateTextureFromSurface(window._renderer, surface); /**Creating texture*/
+	pinball = SDL_CreateTextureFromSurface(window._renderer, surface); /**Creating texture of ball*/
 	if (!pinball) {
 		std::cerr << "Failed to create texture\n";
 	}
-	SDL_FreeSurface(surface);  /**Free the surface*/
-	
+	/**Free the surface*/
+	SDL_FreeSurface(surface);  
+	/**To select the size of ball*/
 	switch (size) {
 	case small:
 		height = 20;
@@ -34,19 +35,22 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 		width = 120;
 		break;
 	};
+	/**Initial X position of ball*/
 	xposition = 530;
+	/**Initial Y position of ball*/
 	yposition = 500-height;
-	/**Initial directions of the ball*/
+	/**Initial X direction of the ball*/
 	_xdirection = 0.01;
+	/**Initial X direction of the ball*/
 	_ydirection = 1.0;
 	_speed = 0;
 }
-
+/**Destroyer of ball*/
 Ball::~Ball() {
 	SDL_DestroyTexture(pinball);
 	std::cout << "Ball is being destroyed\n";
 }
-/**/
+/**Draw funtion of ball to draw(set) characteristics of ball*/
 void Ball::draw(Window *ball_window) const {
 	SDL_Rect ball = { xposition, yposition, width, height };
 	if (pinball) {
