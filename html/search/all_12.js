@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['yellow',['Yellow',['../struct_yellow.html',1,'Yellow'],['../class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda29ead53b80ef87d09ba8a014f6968ec2',1,'GameElement::yellow()']]],
-  ['yposition',['yposition',['../class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce',1,'GameElement']]]
+  ['xpos',['xpos',['../class_game_element.html#a277a6aebf21af808bc409be730624164',1,'GameElement']]],
+  ['xposition',['xposition',['../class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08',1,'GameElement']]]
 ];

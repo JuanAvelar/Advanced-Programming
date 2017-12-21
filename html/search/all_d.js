@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['serveball',['serveBall',['../class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9',1,'Ball']]],
-  ['set_5fbrick_5flevel',['set_brick_level',['../class_controller.html#a4f507fe7987fadf92d30e94d97fc5480',1,'Controller']]],
-  ['set_5fcolor_5frgba',['set_color_rgba',['../class_game_element.html#a88d2c44b4ee25758cc96b61ff8809f1b',1,'GameElement']]],
-  ['setwallside',['setWallSide',['../class_wall.html#ab3d0a44b04581e63dfadf2d2c3b02149',1,'Wall']]],
-  ['setxdirection',['setXDirection',['../class_ball.html#a33c7d96eba2d906bbc499096cab640f9',1,'Ball']]],
-  ['setxspeed',['setXSpeed',['../class_moveable_object.html#aeed1854dced5f6f874f08c17895c9a33',1,'MoveableObject']]],
-  ['setydirection',['setYDirection',['../class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207',1,'Ball']]],
-  ['setyspeed',['setYSpeed',['../class_moveable_object.html#a3230c09c042d85b51291b4cbec420662',1,'MoveableObject']]],
-  ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
-  ['size',['Size',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7',1,'GameElement']]],
-  ['small',['small',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671',1,'GameElement']]]
+  ['r',['r',['../struct_green.html#a7f22ca31d26b693ea13670aa79a28a02',1,'Green::r()'],['../struct_yellow.html#a62371a2b1bad0135bffd85a92a677ff0',1,'Yellow::r()'],['../struct_red.html#a1fdf40126e9e9e9c4ec944c3ae4e3d49',1,'Red::r()'],['../struct_blue.html#a2615cf4bb008046fe335ac1978c5bfaa',1,'Blue::r()']]],
+  ['red',['Red',['../struct_red.html',1,'Red'],['../class_game_element.html#a753a941083f668c6b1e84c9cd85b55edaf2c53ff694d32ce6157b05f4b3aa4466',1,'GameElement::red()']]],
+  ['removebricklife',['removeBrickLife',['../class_brick.html#a3ec7bb017d112a16144986ff7446b5a2',1,'Brick']]],
+  ['resource_2eh',['resource.h',['../resource_8h.html',1,'']]],
+  ['right',['right',['../class_wall.html#a9744b0c53e839cf748ab7f7f332e9e2aa618a0b26aad029cdd353f6e2e893295e',1,'Wall']]]
 ];

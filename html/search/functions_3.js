@@ -2,6 +2,7 @@ var searchData=
 [
   ['gameelement',['GameElement',['../class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423',1,'GameElement']]],
   ['getheight',['getHeight',['../class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e',1,'GameElement']]],
+  ['getlives',['getLives',['../class_controller.html#a073cb8054fa6d98500524e2f45635648',1,'Controller']]],
   ['getwallside',['getWallSide',['../class_wall.html#a07c0c8d97afbf44b744bd9c364a9c503',1,'Wall']]],
   ['getwidth',['getWidth',['../class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d',1,'GameElement']]],
   ['getxdirection',['getXDirection',['../class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1',1,'Ball']]],

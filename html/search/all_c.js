@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['r',['r',['../struct_green.html#a7f22ca31d26b693ea13670aa79a28a02',1,'Green::r()'],['../struct_yellow.html#a62371a2b1bad0135bffd85a92a677ff0',1,'Yellow::r()'],['../struct_red.html#a1fdf40126e9e9e9c4ec944c3ae4e3d49',1,'Red::r()'],['../struct_blue.html#a2615cf4bb008046fe335ac1978c5bfaa',1,'Blue::r()']]],
-  ['red',['Red',['../struct_red.html',1,'Red'],['../class_game_element.html#a753a941083f668c6b1e84c9cd85b55edaf2c53ff694d32ce6157b05f4b3aa4466',1,'GameElement::red()']]],
-  ['removebricklife',['removeBrickLife',['../class_brick.html#a3ec7bb017d112a16144986ff7446b5a2',1,'Brick']]],
-  ['resource_2eh',['resource.h',['../resource_8h.html',1,'']]],
-  ['right',['right',['../class_wall.html#a9744b0c53e839cf748ab7f7f332e9e2aa618a0b26aad029cdd353f6e2e893295e',1,'Wall']]]
+  ['platform',['Platform',['../class_platform.html',1,'Platform'],['../class_platform.html#aab657eabe23844e757e5ad27c54174f9',1,'Platform::Platform(const Window &amp;window, GameElement::Color color)'],['../class_platform.html#a8743e33a404693da0fa5fb3dbfda606b',1,'Platform::Platform(const Window &amp;window, GameElement::Size size, const std::string &amp;image_path)']]],
+  ['platform_2ecpp',['Platform.cpp',['../_platform_8cpp.html',1,'']]],
+  ['platform_2eh',['Platform.h',['../_platform_8h.html',1,'']]],
+  ['poll',['poll',['../class_controller.html#aa22db940ee518ad76de3bee9b560f02b',1,'Controller']]],
+  ['pollevents',['pollEvents',['../class_window.html#a826ab0a64b7095a3d52ea05d0c9edbb5',1,'Window']]]
 ];

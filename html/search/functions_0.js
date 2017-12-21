@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ball',['Ball',['../class_ball.html#a6f719742509968820f1fb59e535c4178',1,'Ball']]],
-  ['bounce',['Bounce',['../class_ball.html#a2ab0e0b3912efd228f4075129f7fd836',1,'Ball::Bounce()'],['../class_brick.html#ab3c4a1f26d327a551b8215bd575442fd',1,'Brick::Bounce()'],['../class_game_element.html#a2d58156599ba3b52ef3776f9f4d3478d',1,'GameElement::Bounce()'],['../class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a',1,'Platform::Bounce()'],['../class_wall.html#a47fd100838dde29f79e46862961ab185',1,'Wall::Bounce()']]],
-  ['bounceonobject',['bounceOnObject',['../class_controller.html#a65347b318916691c2846d5efaef56ec1',1,'Controller']]],
+  ['bounce',['Bounce',['../class_ball.html#a7b1524beab3c36584fc7bffce5e3b23f',1,'Ball::Bounce()'],['../class_brick.html#ae37676a7435387e40dbe777bc755d47d',1,'Brick::Bounce()'],['../class_game_element.html#a43addde25a0ab76f8b48ded220d9c886',1,'GameElement::Bounce()'],['../class_platform.html#a2fab20c6f6ec26458195d77765b35d81',1,'Platform::Bounce()'],['../class_wall.html#aeed911bfd49748b395f5cd0ab3258621',1,'Wall::Bounce()']]],
+  ['bounceonobject',['bounceOnObject',['../class_controller.html#a2bcfa1bc9f689d95b0074e24d59b6389',1,'Controller']]],
   ['brick',['Brick',['../class_brick.html#aba255d2dd6968161137f1d3ad32e913e',1,'Brick']]]
 ];

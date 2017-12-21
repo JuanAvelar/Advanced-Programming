@@ -1,14 +1,21 @@
 /**
-*\mainpage Breakout description
-*\section a Why?
-*Breakout is a game in which various objects are being created and destroyed along the lifecycle of the game
+*\mainpage Breakout Description
+*\section a Introduction:
+*Breakout is a game in which various objects are being created and destroyed along the lifecycle of the game.
 *
-*\section b How?
+*\section b Game Controls:
+* \details Click inside start button to start game.
+* \details Keys:
+* \details Up arrow to start Ball Bounce/Continue game
+* \details Down arrow to Pause game
+* \details Left arrow to move Platform Left
+* \details Right arrow to move Platform Right
 *
-*
-*
-*\author Juan Pablo Avelar
-*\date 16 december 2017
+*\author Juan Pablo Avelar S1961756  
+*\author Merijn Chantal Schneider S1574973
+*\author Merijn Hofsteenge S1939408
+*\author Hemmanth Jaladi S1912119
+*\date 20th December 2017
 */
 #include "Controller.h"
 #include "GameElement.h"
@@ -20,14 +27,15 @@ int main() {
 	
 	//GameElement game_element(100,100,20,20);
 	/**This is a controller*/
-	Controller controller( lives, score); //create the controller instance
-	for (int level = 1; level < 4; level++) {
+	/**Create the controller instance*/
+	Controller controller( lives, score); 
+	/**For loop to control levels*/
+	for (int level = 1; level < 4; level++) {  
 		if (controller.getLives() > 0) {
 			controller.launchGame(level);
 			//break;//Get rid of this to enter new levels
 		}
 	}
-	//test comment
-	//second test comment
+	
 	return 0;
 }

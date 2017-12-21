@@ -1,5 +1,15 @@
 var searchData=
 [
-  ['time_5ffor_5fgraphic_5foutput',['time_for_graphic_output',['../_controller_8cpp.html#a3bd27fc3dac911bdcdeaf5897d446580',1,'Controller.cpp']]],
-  ['tostring',['toString',['../class_brick.html#a024e3e055a8b17ada060f84772c564a9',1,'Brick::toString()'],['../class_game_element.html#a86e526e7a4e5e65d80652ee9c2d69005',1,'GameElement::toString()'],['../class_moveable_object.html#a93704cba0720ba95499f405217ea75e5',1,'MoveableObject::toString()'],['../class_platform.html#aef28e172a68bd392d1c7d90a1d91a3e6',1,'Platform::toString()'],['../class_wall.html#a1a6aa7345415ced1ba906215b1fa1fa2',1,'Wall::toString()']]]
+  ['serveball',['serveBall',['../class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9',1,'Ball']]],
+  ['set_5fbrick_5flevel',['set_brick_level',['../class_controller.html#a4f507fe7987fadf92d30e94d97fc5480',1,'Controller']]],
+  ['set_5fcolor_5frgba',['set_color_rgba',['../class_game_element.html#a88d2c44b4ee25758cc96b61ff8809f1b',1,'GameElement']]],
+  ['setwallside',['setWallSide',['../class_wall.html#ab3d0a44b04581e63dfadf2d2c3b02149',1,'Wall']]],
+  ['setxdirection',['setXDirection',['../class_ball.html#a33c7d96eba2d906bbc499096cab640f9',1,'Ball']]],
+  ['setxspeed',['setXSpeed',['../class_moveable_object.html#aeed1854dced5f6f874f08c17895c9a33',1,'MoveableObject']]],
+  ['setydirection',['setYDirection',['../class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207',1,'Ball']]],
+  ['setyspeed',['setYSpeed',['../class_moveable_object.html#a3230c09c042d85b51291b4cbec420662',1,'MoveableObject']]],
+  ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
+  ['size',['Size',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7',1,'GameElement']]],
+  ['small',['small',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671',1,'GameElement']]],
+  ['start_5fmenu',['Start_menu',['../class_controller.html#a7fa0cc40f37b02f318a9a07fb6859a23',1,'Controller']]]
 ];

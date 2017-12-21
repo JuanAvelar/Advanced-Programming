@@ -1,0 +1,25 @@
+digraph "Brick::Bounce"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node4 [label="Brick::Bounce",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="GameElement::getXLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_element.html#a7c154aff646c91168dc974a43d340812"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="GameElement::getWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="GameElement::getYLocation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3"];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GameElement::getHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e"];
+  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Ball::setXDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#a33c7d96eba2d906bbc499096cab640f9"];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Ball::getXDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1"];
+  Node4 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Brick::removeBrickLife",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_brick.html#a3ec7bb017d112a16144986ff7446b5a2"];
+  Node4 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Ball::getYDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456"];
+  Node4 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Ball::setYDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#abd9ccb6c5c49cacbfbcd25447bfd6207"];
+}

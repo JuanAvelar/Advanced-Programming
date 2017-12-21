@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['breakout_20description',['Breakout description',['../index.html',1,'']]]
+  ['breakout_20description',['Breakout Description',['../index.html',1,'']]]
 ];

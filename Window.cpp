@@ -29,7 +29,7 @@ bool Window::init() {
 		std::cerr << "Failed to initialize SDL_image.\n";
 		return 0;
 	}
-
+	/**Defining characteristics of window*/
 	_window = SDL_CreateWindow(
 		_title.c_str(),
 		SDL_WINDOWPOS_CENTERED,
@@ -37,17 +37,19 @@ bool Window::init() {
 		_width, _height,
 		SDL_WINDOW_RESIZABLE);
 
-	if (_window == nullptr) {
+	/**Checking if window is created*/
+	if (_window == nullptr) { 
 		std::cerr << "Failed to create window.\n";
 		return 0;
 	}
 
 	_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
 
-	if (_renderer == nullptr) {
+	/**checking if renderer is created*/
+	if (_renderer == nullptr) { 
 		std::cerr << "Failed to create renderer.\n";
 		return 0;
-	}
+	}/**Loading image surface*/
 	_surface = IMG_Load("pictures/shiny_pinball.png");
 	SDL_SetWindowIcon(_window, _surface);
 	SDL_SetWindowMinimumSize(_window, 1000, 600);
@@ -57,11 +59,14 @@ bool Window::init() {
 }
 /**Render backround color*/
 void Window::clear()const {
-	SDL_RenderPresent(_renderer);					//Use this function to update the screen with any rendering performed since the previous call.
-	SDL_SetRenderDrawColor(_renderer, 0, 0, 50, 55);//Use this function to set the color used for drawing operations
-	SDL_RenderClear(_renderer);						//Use this function to clear the current rendering target with the drawing color.
+	/**Use this function to update the screen with any rendering performed since the previous call.*/
+	SDL_RenderPresent(_renderer);					
+	/**Use this function to set the color used for drawing operations*/
+	SDL_SetRenderDrawColor(_renderer, 0, 0, 50, 55);
+	/**Use this function to clear the current rendering target with the drawing color.*/
+	SDL_RenderClear(_renderer);						
 }
-/**Events of keyboard and mouse*/
+/**Events of keyboard and mouse to close window*/
 void Window::pollEvents(SDL_Event &event) {
 	switch (event.type) {
 	case SDL_QUIT:
