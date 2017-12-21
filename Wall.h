@@ -10,22 +10,18 @@ public:
 	enum Wall_type { up, down, right, left };
 
 public:
-	Wall(GameElement::Color color, Wall_type wallside);
+	Wall(SDL_Color color, Wall_type wallside);
 	~Wall(); // nonvirtual destructor
 
-	void setWallSide(Wall_type);
 	enum Wall_type getWallSide();
 
 	void Wall::draw(Window *window_wall) const;
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
-	std::string toString() const override;
-
 private:
 	std::string wallSide;
 	std::string wall;
-	int _r, _g, _b, _a;
 	SDL_Texture *game_wall = nullptr;
 
 protected:

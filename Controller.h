@@ -1,6 +1,5 @@
 #ifndef Controller_H
 #define Controller_H
-#include <string>
 #include "Window.h"
 #include "GameElement.h"
 #include "MoveableObject.h"
@@ -50,31 +49,11 @@ private:
 	/**Flag to ensure just one iteration per milisecond*/
 	bool you_shall_not_pass = 0;
 	int iterator = 0;
+public:
+	SDL_Color Green =	 { 0  ,255,0  ,0  };
+	SDL_Color Yellow =	 { 255,255,0  ,100};
+	SDL_Color Red =		 { 255,0  ,0  ,0  };
+	SDL_Color Blue =	 { 0  ,0  ,255,0  };
+	SDL_Color White =	 { 255,255,255,255};
 };
-
-struct Green {
-	int r = 0;
-	int g = 255;
-	int b = 0;
-	int a = 0;
-};
-struct Yellow {
-	int r = 255;
-	int g = 255;
-	int b = 0;
-	int a = 100;
-};
-struct Red {
-	int r = 255;
-	int g = 0;
-	int b = 0;
-	int a = 0;
-};
-struct Blue {
-	int r = 0;
-	int g = 0;
-	int b = 255;
-	int a = 0;
-};
-
 #endif // Controller_H

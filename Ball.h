@@ -2,6 +2,7 @@
 #define Ball_H
 #include "Window.h"
 #include "MoveableObject.h"
+#include <string>
 
 
 class Ball : public MoveableObject {
@@ -24,7 +25,6 @@ public:
 
 private:
 	double xpos, ypos;
-	int _r, _g, _b, _a;
 	SDL_Texture *pinball = nullptr;
 
 };

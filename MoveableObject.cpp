@@ -2,7 +2,7 @@
 using namespace std;
 
 // constructor
-MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width, double xdirection, double ydirection, double speed)
+MoveableObject::MoveableObject( int xposition, int yposition, const int height, const int width)
 	: GameElement(xposition, yposition, height, width) {
 }
 
@@ -29,8 +29,3 @@ double MoveableObject::getXSpeed() {
 double MoveableObject::getYSpeed() {
 	return _ydirection*_speed;
 }
-
-// return a string representation of Brick's information 
-string MoveableObject::toString() const {
-	return "0";
-};

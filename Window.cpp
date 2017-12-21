@@ -78,4 +78,4 @@ void Window::pollEvents(SDL_Event &event) {
 	default:
 		break;
 	}
-}
+};

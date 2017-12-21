@@ -26,9 +26,7 @@ private:
 	std::string _title;
 	int _width = 800;
 	int _height = 600;
-
 	bool _closed = false;
-
 	SDL_Surface *_surface;
 
 public:

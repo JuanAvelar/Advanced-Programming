@@ -14,7 +14,7 @@
 #include "GameElement.h"
 #include <iostream>
 
-int main(int argc, char **argv) {
+int main() {
 	int lives = 3;
 	int score = 0; 
 	

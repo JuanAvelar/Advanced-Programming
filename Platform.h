@@ -7,11 +7,10 @@
 
 class Platform : public MoveableObject {
 public:
-	Platform(const Window &window, GameElement::Color color);
+	Platform( SDL_Color color);
 	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 
-	virtual std::string toString() const override;
 	void keyInput(SDL_Event &event);
 
 	void draw(Window *platform_window) const;
@@ -21,7 +20,6 @@ public:
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 private:
-	int _r, _g, _b, _a;
 	SDL_Texture *platform = nullptr;
 	//empty for now (unless we want to add more later), but should not be necessary
 };

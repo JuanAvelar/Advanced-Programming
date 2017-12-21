@@ -5,9 +5,13 @@
 using namespace std;
 
 // constructor 
-Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, int r, int g, int b, int a)
-	: GameElement(xposition, yposition, height, width), _r(r), _g(g), _b(b), _a(a) {
+Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+	: GameElement(xposition, yposition, height, width){
 	hits = hitsToDestroy;
+	_r = r;
+	_g = g;
+	_b = b;
+	_a = a;
 }
 
 Brick::~Brick() {
@@ -61,9 +65,4 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 
 void Brick::removeBrickLife() {
 	hits--;
-}
-
-// return a string representation of Brick's information 
-string Brick::toString() const {
-	return "0";
 }

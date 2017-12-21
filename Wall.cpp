@@ -1,13 +1,14 @@
 #include "Wall.h"
 #include "Window.h"
 #include "MoveableObject.h"
+#include "Controller.h"
 #include <iostream>
 #include <SDL2/SDL_image.h>
 using namespace std;
 
 // wall side can be either "up", "down", "right", "left"
 // constructor 
-Wall::Wall( GameElement::Color color, Wall_type wallside)
+Wall::Wall(SDL_Color color, Wall_type wallside)
 	: GameElement(xposition, yposition, height, width) {
 	switch (wallside) {
 	case right:
@@ -35,12 +36,11 @@ Wall::Wall( GameElement::Color color, Wall_type wallside)
 		width = 1000;
 		break;
 	}
-	int *ptr;
-	ptr = set_color_rgba(color);
-	_r = *ptr;
-	_g = *(ptr + 1);
-	_b = *(ptr + 2);
-	_a = *(ptr + 3);
+
+	_r = Uint8(color.r);
+	_g = Uint8(color.g);
+	_b = Uint8(color.b);
+	_a = Uint8(color.a);
 	wallside_pick = wallside;
 }
 
@@ -58,10 +58,6 @@ void Wall::draw(Window *window_wall) const {
 		SDL_SetRenderDrawColor(window_wall->_renderer, _r, _g, _b, _a);
 		SDL_RenderFillRect(window_wall->_renderer, &fixed_wall);
 	}
-}
-
-void Wall::setWallSide(Wall_type wallSide) {
-		
 }
 
 enum Wall::Wall_type Wall::getWallSide()
@@ -104,13 +100,10 @@ GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 				return GameElement::destroynothing;
 			}
 			break;
+		default:
+			return GameElement::destroynothing;
 		}
 		
-}
 
-// return a string representation of Brick's information 
-string Wall::toString() const {
-	return "0";
-	//...
+		
 }
-

@@ -9,9 +9,10 @@
 #include "Brick.h"
 #include "Wall.h"
 #include "Window.h"
-#include "math.h"
+#include <cmath>
 #include <vector>
 #include <memory>
+#include <string>
 #define window_height 600
 #define window_width 1000
 #define iterations_per_cycle 8
@@ -35,18 +36,18 @@ void Controller::launchGame(int level) {
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
-	Platform* platform= new Platform{ window_c, GameElement::green};						/**Platform instance*/
-	Wall* right_wall = new Wall{ GameElement::yellow, Wall::right };
-	Wall* left_wall = new Wall{ GameElement::yellow, Wall::left };
+	Platform* platform= new Platform{ Green };						/**Platform instance*/
+	Wall* right_wall = new Wall{ Yellow, Wall::right };
+	Wall* left_wall = new Wall{ Yellow, Wall::left };
 	
 	Game_lost = false;																		/**The game is not lost when you begin*/
 
 	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
 	Game_elements.emplace_back(platform);										//platform pointer as second
-	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
+	Game_elements.emplace_back( new Wall{ Yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
 	Game_elements.emplace_back( right_wall );
 	Game_elements.emplace_back( left_wall );
-	Game_elements.emplace_back( new Wall{ GameElement::yellow, Wall::down });
+	Game_elements.emplace_back( new Wall{ Yellow, Wall::down });
 
 
 	Moveable_objects.emplace_back(ball);
@@ -146,7 +147,7 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	case 1:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
+				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8( 0), Uint8(255 - i * 25), Uint8(0) });
 				
 			}
 		}
@@ -154,7 +155,7 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	case 2:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, i * 25, 0, 255 - i * 25, 0 });
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8(0), Uint8(255 - i * 25), Uint8(0) });
 				
 			}
 		}
@@ -220,6 +221,9 @@ void Controller::Start_menu(SDL_Event * event, Window * window_c) {
 	while (!window_c->isClosed() && Start_game == false) {
 		if (SDL_PollEvent(event)) {
 			switch (event->type) {
+			case SDLK_ESCAPE:
+				
+				break;
 			case SDL_MOUSEMOTION:
 				mouse_position[0] = event->motion.x - Start->xposition - Start->width / 2;
 				mouse_position[1] = event->motion.y - Start->yposition - Start->height / 2;

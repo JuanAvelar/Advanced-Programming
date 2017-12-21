@@ -1,21 +1,22 @@
 #include "Platform.h"
 #include "Window.h"
 #include "Ball.h"
+#include "Controller.h"
 #include <iostream>
 #include <sstream>
 #include <SDL2/SDL_image.h>
+#include <cmath>
 using namespace std;
 
 // constructor
-Platform::Platform(const Window &window, GameElement::Color color)
-	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
+Platform::Platform(SDL_Color color)
+	: MoveableObject(xposition, yposition, height, width) {
 	//... no extra attributes to include?
-	int *ptr;
-	ptr = set_color_rgba(color);
-	_r = *ptr;
-	_g = *(ptr + 1);
-	_b = *(ptr + 2);
-	_a = *(ptr + 3);
+	
+	_r = color.r;
+	_g = color.g;
+	_b = color.b;
+	_a = color.a;
 	xposition = 500;
 	yposition = 500;
 	height = 10;
@@ -29,7 +30,7 @@ Platform::Platform(const Window &window, GameElement::Color color)
 
 // constructor
 Platform::Platform(const Window &window, GameElement::Size size, const std::string &image_path)
-	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
+	: MoveableObject(xposition, yposition, height, width) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
@@ -76,11 +77,6 @@ void Platform::draw(Window *platform_window) const {
 	}
 }
 
-// return a string representation of Moveable Object's information --> implements abstract class function
-string Platform::toString() const {
-	return "0";
-	// make string output
-}
 
 //function move --> implements abstract class function
 void Platform::keyInput(SDL_Event &event) {
@@ -123,8 +119,9 @@ GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 	//if ball hits the side, ball bounces of with same angle
 
 	//ball hits top: --> then change the ydirection
-	if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 2 &&
-		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth())//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
+	if ((ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 2 || lower_inh_ptr->_speed == 0) &&
+		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth() 
+		)//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
 	{
 
 		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9

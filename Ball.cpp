@@ -8,7 +8,7 @@ using namespace std;
 
 // constructor
 Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
-	: MoveableObject(xposition, yposition, height, width, _xdirection, _ydirection, _speed) {
+	: MoveableObject(xposition, yposition, height, width) {
 	//... no extra attributes to include?
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
@@ -56,6 +56,11 @@ void Ball::draw(Window *ball_window) const {
 		SDL_SetRenderDrawColor(ball_window->_renderer, _r, _g, _b, _a);
 		SDL_RenderFillRect(ball_window->_renderer, &ball);
 	}
+	if(_speed == 0){
+		SDL_SetRenderDrawColor(ball_window->_renderer, Uint8(255), Uint8(255), Uint8(255), Uint8(255));
+		SDL_RenderDrawLine(ball_window->_renderer, int(xposition+width/2), int(yposition+height/2), int(xposition+width/2+_xdirection*50), int(yposition+height/2+_ydirection*50));
+		//std::cout << _xdirection << std::endl;
+	}
 }
 
 //function to move the ball, xposd and yposd are double for the rounding
@@ -80,6 +85,7 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 //function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.
 void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
 	if (_speed == 0) {
+
 		switch (event.type) {
 
 		case SDL_KEYDOWN:

@@ -1,8 +1,6 @@
 #ifndef GameElement_H
 #define GameElement_H
 
-
-#include <string>
 #include "Window.h"
 
 class GameElement {
@@ -12,10 +10,7 @@ public:
 	virtual ~GameElement() = default; // virtual standard destructor
 
 	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
-	enum Color {yellow, green, red, blue};
-	enum Size {small, medium, big};
-
-	int* set_color_rgba(Color color);
+	enum Size { small, medium, big };
 
 	int getHeight() const;
 	int getWidth() const;
@@ -29,17 +24,10 @@ public:
 
 	void destroyGameElement();
 
-
-
-
-	
-
-	virtual std::string toString() const;
-
 public:
 	int xposition, yposition, height, width;
 	double xpos, ypos;
-
+	Uint8 _r, _g, _b, _a;
 	
 };
 
