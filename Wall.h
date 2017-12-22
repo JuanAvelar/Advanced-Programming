@@ -20,8 +20,6 @@ public:
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 private:
-	std::string wallSide;
-	std::string wall;
 	SDL_Texture *game_wall = nullptr;
 
 protected:
