@@ -18,10 +18,6 @@ public:
 	virtual void move(GameElement *right_wall, GameElement *left_wall);
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
-
-private:
-	SDL_Texture *platform = nullptr;
-	//empty for now (unless we want to add more later), but should not be necessary
 };
 
 #endif // Platform_HH

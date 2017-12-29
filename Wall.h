@@ -19,9 +19,6 @@ public:
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
-private:
-	SDL_Texture *game_wall = nullptr;
-
 protected:
 	Wall_type wallside_pick;
 	

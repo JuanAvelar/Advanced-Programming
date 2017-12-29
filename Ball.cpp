@@ -14,8 +14,8 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
 	}
-	pinball = SDL_CreateTextureFromSurface(window._renderer, surface);
-	if (!pinball) {
+	Possesed_image = SDL_CreateTextureFromSurface(window._renderer, surface);
+	if (!Possesed_image) {
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
@@ -43,14 +43,14 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 }
 
 Ball::~Ball() {
-	SDL_DestroyTexture(pinball);
+	SDL_DestroyTexture(Possesed_image);
 	std::cout << "Ball is being destroyed\n";
 }
 
 void Ball::draw(Window *ball_window) const {
 	SDL_Rect ball = { xposition, yposition, width, height };
-	if (pinball) {
-		SDL_RenderCopy(ball_window->_renderer, pinball, nullptr, &ball);
+	if (Possesed_image) {
+		SDL_RenderCopy(ball_window->_renderer, Possesed_image, nullptr, &ball);
 	}
 	else {
 		SDL_SetRenderDrawColor(ball_window->_renderer, _r, _g, _b, _a);

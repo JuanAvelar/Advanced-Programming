@@ -42,17 +42,18 @@ Wall::Wall(SDL_Color color, Wall_type wallside)
 	_b = Uint8(color.b);
 	_a = Uint8(color.a);
 	wallside_pick = wallside;
+	Possesed_image = nullptr;
 }
 
 Wall::~Wall() {
 	std::cout << "Wall is being destroyed\n";
-	SDL_DestroyTexture(game_wall);
+	SDL_DestroyTexture(Possesed_image);
 }
 
 void Wall::draw(Window *window_wall) const {
 	SDL_Rect fixed_wall = { xposition, yposition, width, height };
-	if (game_wall) {
-		SDL_RenderCopy(window_wall->_renderer, game_wall, nullptr, &fixed_wall);
+	if (Possesed_image) {
+		SDL_RenderCopy(window_wall->_renderer, Possesed_image, nullptr, &fixed_wall);
 	}
 	else {
 		SDL_SetRenderDrawColor(window_wall->_renderer, _r, _g, _b, _a);

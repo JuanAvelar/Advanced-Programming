@@ -18,7 +18,6 @@ public:
 private:
 	int hitsToDestroy;
 	int hits;
-	SDL_Texture *bricks = nullptr;
 };
 
 #endif // Brick_H

@@ -25,7 +25,6 @@ public:
 
 private:
 	double xpos, ypos;
-	SDL_Texture *pinball = nullptr;
 
 };
 

@@ -31,12 +31,13 @@ Controller::Controller( int liv, int sco)
 void Controller::launchGame(int level) {
 	std::ostringstream Window_title;
 	Window_title << "Breakout: Level " << level;
-	Window window_c(Window_title.str(), window_width, window_height);								/**UI instance*/
+	Window window_c(Window_title.str(), window_width, window_height);						/**UI instance*/
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
-	Platform* platform= new Platform{ Green };						/**Platform instance*/
+	Platform* platform= new Platform{ Green };												/**Platform instance*/
+	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
 	Wall* left_wall = new Wall{ Yellow, Wall::left };
 	
@@ -58,6 +59,7 @@ void Controller::launchGame(int level) {
 //int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
 	vector <int> number_of_ball = { 0};
 	Start_menu(&event, &window_c);
+
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
@@ -99,9 +101,10 @@ void Controller::launchGame(int level) {
 
 /**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
-	
+
 	for (int i = 0; i < signed(elements->size()); i++) {
-			(*elements)[i]->draw(window_foo);
+		//if ((*elements)[i]->Possesed_image != nullptr) { std::cout << "This element does contain an image!" << std::endl; }
+		(*elements)[i]->draw(window_foo);			
 	}
 	window_foo->clear();
 }
@@ -185,8 +188,8 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 	if (event.type == SDL_WINDOWEVENT) {
 		switch (event.window.event) {
 			case SDL_WINDOWEVENT_SIZE_CHANGED:
-				std::cout << (SDL_GetWindowSurface(window->_window)->w)  << std::endl;
-				std::cout << (SDL_GetWindowSurface(window->_window)->w)/2-500 << std::endl;
+				//std::cout << (SDL_GetWindowSurface(window->_window)->w)  << std::endl;
+				//std::cout << (SDL_GetWindowSurface(window->_window)->w)/2-500 << std::endl;
 				
 			for (int i = 0; i < signed(elements->size()); i++) {
 				(*elements)[i]->xposition += (SDL_GetWindowSurface(window->_window)->w)/2 - xprevious_wsize/2;

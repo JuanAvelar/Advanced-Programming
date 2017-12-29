@@ -28,6 +28,8 @@ public:
 	int xposition, yposition, height, width;
 	double xpos, ypos;
 	Uint8 _r, _g, _b, _a;
+//protected:
+	SDL_Texture *Possesed_image;
 	
 };
 

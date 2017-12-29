@@ -26,6 +26,7 @@ Platform::Platform(SDL_Color color)
 	_speed = 1.0;
 	xpos = double(xposition);
 	ypos = double(yposition);
+	Possesed_image = nullptr;
 }
 
 // constructor
@@ -36,8 +37,8 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
 	}
-	platform = SDL_CreateTextureFromSurface(window._renderer, surface);
-	if (!platform) {
+	Possesed_image = SDL_CreateTextureFromSurface(window._renderer, surface);
+	if (!Possesed_image) {
 		std::cerr << "Failed to create texture\n";
 	}
 	SDL_FreeSurface(surface);
@@ -62,14 +63,14 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 }
 
 Platform::~Platform() {
-SDL_DestroyTexture(platform); //this is only for the images
+SDL_DestroyTexture(Possesed_image); //this is only for the images
 std::cout << "Platform is being destroyed\n";
 }
 
 void Platform::draw(Window *platform_window) const {
 	SDL_Rect platform_draw = { xposition, yposition, width, height };
-	if (platform) {
-		SDL_RenderCopy(platform_window->_renderer, platform, nullptr, &platform_draw);
+	if (Possesed_image) {
+		SDL_RenderCopy(platform_window->_renderer, Possesed_image, nullptr, &platform_draw);
 	}
 	else {
 		SDL_SetRenderDrawColor(platform_window->_renderer, _r, _g, _b, _a);

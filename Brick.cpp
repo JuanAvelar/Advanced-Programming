@@ -12,6 +12,7 @@ Brick::Brick( int xposition, int yposition, const int	height, const int width, i
 	_g = g;
 	_b = b;
 	_a = a;
+	Possesed_image = nullptr;
 }
 
 Brick::~Brick() {
@@ -20,8 +21,8 @@ Brick::~Brick() {
 
 void Brick::draw(Window *window_brick) const {
 	SDL_Rect brick_draw = { xposition, yposition, width, height };
-	if (bricks) {
-		SDL_RenderCopy(window_brick->_renderer, bricks, nullptr, &brick_draw);
+	if (Possesed_image) {
+		SDL_RenderCopy(window_brick->_renderer, Possesed_image, nullptr, &brick_draw);
 	}
 	else {
 		SDL_SetRenderDrawColor(window_brick->_renderer, _r, _g, _b, _a);
