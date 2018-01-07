@@ -1,7 +1,8 @@
 #ifndef GameElement_H
 #define GameElement_H
-
 #include "Window.h"
+#include <string>
+#include <iostream>
 
 class GameElement {
 public:				
@@ -12,17 +13,9 @@ public:
 	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
 	enum Size { small, medium, big };
 
-	int getHeight() const;
-	int getWidth() const;
-
-	int getXLocation();
-	int getYLocation();
-
 	virtual void draw(Window* window) const = 0;//pure virtual
 
 	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0;
-
-	void destroyGameElement();
 
 public:
 	int xposition, yposition, height, width;

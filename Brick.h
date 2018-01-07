@@ -13,10 +13,7 @@ public:
 
 	GameElement::ElementDestroyed Bounce(GameElement *ball);
 
-	void removeBrickLife();
-
 private:
-	int hitsToDestroy;
 	int hits;
 };
 

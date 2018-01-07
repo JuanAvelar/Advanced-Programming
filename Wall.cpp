@@ -1,8 +1,6 @@
 #include "Wall.h"
 #include "Window.h"
 #include "MoveableObject.h"
-#include "Controller.h"
-#include <iostream>
 #include <SDL2/SDL_image.h>
 using namespace std;
 
@@ -71,29 +69,29 @@ GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 	int layer[4] = { 0, 0, 0, 0 };
 		switch (this->getWallSide()) {
 		case Wall::up:
-			layer[0] = this->getYLocation() + 10;
+			layer[0] = this->yposition + this->height;
 			if (ball->yposition < layer[0]) {
 				lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::left:
-			layer[1] = this->getXLocation() + 10;
+			layer[1] = this->xposition + this->width;
 			if (ball->xposition < layer[1]) {
 				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::right:
-			layer[2] = this->getXLocation();
-			if ( ball->xposition >(layer[2] - ball->getWidth())) {
+			layer[2] = this->xposition;
+			if ( ball->xposition >(layer[2] - ball->width)) {
 				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::down:
-			layer[3] = this->getYLocation();
-			if (ball->yposition >(layer[3] - ball->getHeight())) {
+			layer[3] = this->yposition;
+			if (ball->yposition >(layer[3] - ball->height)) {
 				delete ball;
 				return GameElement::destroyball;
 			}

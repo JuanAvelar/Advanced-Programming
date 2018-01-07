@@ -1,12 +1,10 @@
 #include "Ball.h"
-#include "Controller.h"
-#include "Wall.h"
 #include <SDL2/SDL_image.h>
-#include <iostream>
+#include "Controller.h"
 
 using namespace std;
 
-// constructor
+/** Constructor of the ball class*/
 Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width) {
 	//... no extra attributes to include?
@@ -34,19 +32,22 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 		width = 120;
 		break;
 	};
-	xposition = 530;
-	yposition = 500-height;
+	xposition = 500+30; //initial offcentered platform position
+	yposition = 500-height; //initial position (on the platform)
+
 	//initial directions of the ball
-	_xdirection = 0.01;
+	_xdirection = 0.0;
 	_ydirection = 1.0;
-	_speed = 0;
+	_speed = 0.0;
 }
 
+/**Standard destructor for the ball class*/
 Ball::~Ball() {
 	SDL_DestroyTexture(Possesed_image);
 	std::cout << "Ball is being destroyed\n";
 }
 
+/**Draws the ball object with its image*/
 void Ball::draw(Window *ball_window) const {
 	SDL_Rect ball = { xposition, yposition, width, height };
 	if (Possesed_image) {
@@ -63,7 +64,7 @@ void Ball::draw(Window *ball_window) const {
 	}
 }
 
-//function to move the ball, xposd and yposd are double for the rounding
+/**Function to move the ball. It changes position towards the current directions and saves its location in a double variable. That double gets rounded each iteration to get its integer position.*/
 void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 
 	if (_speed != 0) {
@@ -78,11 +79,9 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 		xpos = double(xposition);
 		ypos = double(yposition);
 	}
-	//create the move function --> determined by userinput which we get in the controller
-	//return new position
 }
 
-//function for when the ball is still attached to the platform. left and right makes the ball follow the platform and the up key will launch it.
+/**Function for when the ball is still attached to the platform (speed = 0). Left and right key makes the ball follow the platform and the up key will launch it.*/
 void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
 	if (_speed == 0) {
 
@@ -91,12 +90,12 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym) {
 			case SDLK_a:
-				if (xposition > left_wall->getXLocation()+left_wall->getWidth() + 30) {
+				if (xposition > left_wall->xposition+left_wall->width + 30) {
 					xposition -= 50;
 				}
 				break;
 			case SDLK_d:
-				if (xposition < (right_wall->getXLocation()) - 70) {
+				if (xposition < (right_wall->xposition) - 70) {
 					xposition += 50;
 				}
 				break;
@@ -110,40 +109,22 @@ void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *lef
 	}
 }
 
-
+/**Function that allows to make multiple balls bounce on eachother.*/
 GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
-	int layer[4] = { this->getXLocation() , this->getXLocation() , this->getYLocation() , this->getYLocation() };
+	int layer[4] = { this->xposition , this->xposition , this->yposition , this->yposition };
 
 	if (ball->xposition == layer[0]) {//right collision
 		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 	}
-	if (ball->xposition == (layer[1] + getWidth())) {//left collision
+	if (ball->xposition == (layer[1] + this->width)) {//left collision
 		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
 	}
 	if (ball->yposition == layer[2]) {//up collision
 		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 	}
-	if (ball->yposition == (layer[3] + getHeight())) {//down collision
+	if (ball->yposition == (layer[3] + this->height)) {//down collision
 		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
 	}
 	return GameElement::destroynothing;
-}
-
-//* return functions for the x and y direction
-double Ball::getYDirection() {
-	return _ydirection;
-}
-
-double Ball::getXDirection() {
-	return _xdirection;
-}
-
-// * function to set the x and y direction
-void Ball::setXDirection(double xdirection) {
-	_xdirection = xdirection;
-}
-
-void Ball::setYDirection(double ydirection) {
-	_ydirection = ydirection;
 }

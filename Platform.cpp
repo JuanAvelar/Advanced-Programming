@@ -2,17 +2,12 @@
 #include "Window.h"
 #include "Ball.h"
 #include "Controller.h"
-#include <iostream>
-#include <sstream>
 #include <SDL2/SDL_image.h>
-#include <cmath>
 using namespace std;
 
 // constructor
 Platform::Platform(SDL_Color color)
-	: MoveableObject(xposition, yposition, height, width) {
-	//... no extra attributes to include?
-	
+	: MoveableObject(xposition, yposition, height, width) {	
 	_r = color.r;
 	_g = color.g;
 	_b = color.b;
@@ -111,7 +106,6 @@ void Platform::keyInput(SDL_Event &event) {
 	
 	}
 
-	//create the move function --> determined by userinput which we get in the controller
 }
 
 GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
@@ -120,19 +114,19 @@ GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 	//if ball hits the side, ball bounces of with same angle
 
 	//ball hits top: --> then change the ydirection
-	if ((ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 2 || lower_inh_ptr->_speed == 0) &&
-		ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth() 
-		)//|| ball.getXLocation() > this->getXLocation() + this->getWidth()) 
+	if ((ball->yposition + ball->height > this->yposition && ball->yposition + ball->height < this->yposition + 2 || lower_inh_ptr->_speed == 0) &&
+		ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width 
+		)
 	{
 
 		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
-		double collisionPoint = (-0.9 + 1.8 * (((double)ball->getXLocation() + (double)ball->getWidth()  - (double)this->getXLocation()) / ((double)getWidth()+(double)ball->getWidth())));
+		double collisionPoint = (-0.9 + 1.8 * (((double)ball->xposition + (double)ball->width  - (double)this->xposition) / ((double)width+(double)ball->width)));
 		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
 
 		//set the new directions for the ball
-		lower_inh_ptr->setXDirection(collisionPoint);
+		lower_inh_ptr->_xdirection = collisionPoint;
 		//set the y direction based on the total direction length being 1
-		lower_inh_ptr->setYDirection(-sqrt(1 - pow(collisionPoint, 2)));
+		lower_inh_ptr->_ydirection = -sqrt(1 - pow(collisionPoint, 2));
 	}
 	return GameElement::destroynothing;
 }

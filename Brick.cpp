@@ -1,7 +1,5 @@
 #include "Brick.h"
-#include <iostream>
 #include "Window.h"
-#include <sstream>
 using namespace std;
 
 // constructor 
@@ -27,34 +25,34 @@ void Brick::draw(Window *window_brick) const {
 	else {
 		SDL_SetRenderDrawColor(window_brick->_renderer, _r, _g, _b, _a);
 		SDL_RenderFillRect(window_brick->_renderer, &brick_draw);
-		//std::cout << xposition << std::endl;
 	}
 }
-
+/** This function will check the point of colission of the ball with a brick. Depending on this point of colission (which will be on a ring of 1 pixel wide around the brick) the x direction, y direction or both will change*/
 GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 
 	//first we need to check if the ball hits the side or the top/bottom
 	if (hits > 0) {
+
 		//ball hits sides: --> then change the xdirection. Also remove a life of the brick.
-		if (ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() + ball->getWidth() < this->getXLocation() + 0.05*this->getWidth() &&
-			ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() < this->getYLocation() + this->getHeight()
-			|| ball->getXLocation() < this->getXLocation() + this->getWidth() && ball->getXLocation() > this->getXLocation() + 0.95*this->getWidth() &&
-			ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() < this->getYLocation() + this->getHeight()) {
-			lower_inh_ptr->setXDirection(-lower_inh_ptr->getXDirection());
-			this->removeBrickLife();
+		if (ball->xposition + ball->width > this->xposition && ball->xposition + ball->width < this->xposition + 2 && //the 2 is used to set a 1 pixel boundary around the brick (1<2)
+			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height
+			|| ball->xposition < this->xposition + this->width && ball->xposition > this->xposition + this->width-2 &&
+			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height) {
+			
+			lower_inh_ptr->_xdirection =-lower_inh_ptr->_xdirection; //flip x direction
+			hits--;
 		}
 		// ball hits the top/bottom: --> then change the ydirection. Also remove a life of the brick.
 
-		if (ball->getYLocation() + ball->getHeight() > this->getYLocation() && ball->getYLocation() + ball->getHeight() < this->getYLocation() + 0.05*this->getHeight() &&
-			ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth()
+		if (ball->yposition + ball->height > this->yposition && ball->yposition + ball->height < this->yposition + 2 &&
+			ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width
 			||
-			ball->getYLocation() < this->getYLocation() + this->getHeight() && ball->getYLocation() > this->getYLocation() + 0.95*this->getHeight() &&
-			ball->getXLocation() + ball->getWidth() > this->getXLocation() && ball->getXLocation() < this->getXLocation() + this->getWidth()) {
+			ball->yposition < this->yposition + this->height && ball->yposition > this->yposition + this->height-2 &&
+			ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width) {
 
-			double ydir = lower_inh_ptr->getYDirection();
-			lower_inh_ptr->setYDirection(-ydir);
-			this->removeBrickLife();
+			lower_inh_ptr->_ydirection = -lower_inh_ptr->_ydirection; //flip y direction
+			hits--;
 		}
 		return GameElement::destroynothing;
 	}
@@ -62,8 +60,4 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 		delete this;
 		return GameElement::destroybrick;
 	}
-}
-
-void Brick::removeBrickLife() {
-	hits--;
 }

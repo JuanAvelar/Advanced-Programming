@@ -1,7 +1,6 @@
 #ifndef Platform_H
 #define Platform_H
 
-#include <string> // C++ standard string class
 #include "MoveableObject.h"
 
 
