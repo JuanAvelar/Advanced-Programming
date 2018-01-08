@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['r',['r',['../struct_green.html#a7f22ca31d26b693ea13670aa79a28a02',1,'Green::r()'],['../struct_yellow.html#a62371a2b1bad0135bffd85a92a677ff0',1,'Yellow::r()'],['../struct_red.html#a1fdf40126e9e9e9c4ec944c3ae4e3d49',1,'Red::r()'],['../struct_blue.html#a2615cf4bb008046fe335ac1978c5bfaa',1,'Blue::r()']]]
+  ['edit',['edit',['../union_s_d_l___event.html#a9a7e3b67b2654d4c5fc509676c6a7183',1,'SDL_Event']]],
+  ['end',['end',['../struct_s_d_l___haptic_ramp.html#a16dd3ee307795248e21ee45ba8fb4c6c',1,'SDL_HapticRamp']]],
+  ['event',['event',['../struct_s_d_l___window_event.html#a485cd1f07f0f22fdb9f4c4bf214011dc',1,'SDL_WindowEvent']]],
+  ['event_5fflag',['event_flag',['../class_controller.html#a7229eb32c9d6c98106ce6d7fe2a9a2d3',1,'Controller']]]
 ];

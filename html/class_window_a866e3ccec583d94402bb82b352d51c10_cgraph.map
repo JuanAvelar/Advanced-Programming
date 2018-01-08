@@ -1,0 +1,5 @@
+<map id="Window::clear" name="Window::clear">
+<area shape="rect" id="node2" href="$_s_d_l__render_8h.html#a48fa9d24395f3610746988ecca2aae86" title="Update the screen with rendering performed. " alt="" coords="196,5,364,35"/>
+<area shape="rect" id="node3" href="$_s_d_l__render_8h.html#aa26234da40f87f4b16d715564242a341" title="Set the color used for drawing operations (Rect, Line and Clear). " alt="" coords="173,59,387,88"/>
+<area shape="rect" id="node4" href="$_s_d_l__render_8h.html#a473b4abbb29c60e98876eb68ad850f79" title="Clear the current rendering target with the drawing color. " alt="" coords="204,112,356,141"/>
+</map>

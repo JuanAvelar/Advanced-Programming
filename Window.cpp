@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-/**Constructor of window*/
+/**Constructor of window, calls function init to initialize renderer and window settings*/
 Window::Window(const std::string &title, int width, int height) :
 	_title(title), _width(width), _height(height)
 {
@@ -45,7 +45,7 @@ bool Window::init() {
 
 	_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
 
-	/**checking if renderer is created*/
+	/**checking if renderer has been created*/
 	if (_renderer == nullptr) { 
 		std::cerr << "Failed to create renderer.\n";
 		return 0;

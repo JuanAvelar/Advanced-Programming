@@ -3,7 +3,7 @@
 #include "Window.h"
 #include "MoveableObject.h"
 
-
+/**Platform generates a square with color and manages function accordingly, you can also use an image*/
 class Platform : public MoveableObject {
 public:
 	Platform( SDL_Color color);

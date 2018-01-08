@@ -1,0 +1,5 @@
+<map id="Window::~Window" name="Window::~Window">
+<area shape="rect" id="node2" href="$_s_d_l__render_8h.html#ab1f096742fa9c882c3f1555ee62c4ac2" title="Destroy the rendering context for a window and free associated textures. " alt="" coords="204,5,387,35"/>
+<area shape="rect" id="node3" href="$_s_d_l__video_8h.html#a72609295a4faee0587268339ccff80c2" title="Destroy a window. " alt="" coords="209,59,382,88"/>
+<area shape="rect" id="node4" href="$_s_d_l_8h.html#afdabaf714781099083592051f2d9ac11" title="This function cleans up all initialized subsystems. " alt="" coords="250,112,341,141"/>
+</map>

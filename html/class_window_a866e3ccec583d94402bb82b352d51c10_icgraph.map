@@ -1,5 +1,3 @@
 <map id="Window::clear" name="Window::clear">
-<area shape="rect" id="node2" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Controller::showGraphicOutput" alt="" coords="157,5,356,32"/>
-<area shape="rect" id="node3" href="$class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="404,5,563,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="611,5,661,32"/>
+<area shape="rect" id="node2" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="173,5,407,35"/>
 </map>

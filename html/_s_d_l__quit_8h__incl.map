@@ -1,0 +1,8 @@
+<map id="SDL2/include/SDL2/SDL_quit.h" name="SDL2/include/SDL2/SDL_quit.h">
+<area shape="rect" id="node2" href="$_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support. " alt="" coords="223,177,339,207"/>
+<area shape="rect" id="node9" href="$_s_d_l__error_8h.html" title="Simple error message routines for SDL. " alt="" coords="181,100,289,129"/>
+<area shape="rect" id="node3" href="$_s_d_l__config_8h_source.html" title="SDL_config.h" alt="" coords="101,255,219,284"/>
+<area shape="rect" id="node5" href="$begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions..." alt="" coords="5,409,123,439"/>
+<area shape="rect" id="node6" href="$close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="404,409,519,439"/>
+<area shape="rect" id="node4" href="$_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines. " alt="" coords="101,332,232,361"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Window::Window" name="Window::Window">
+<area shape="rect" id="node2" href="$class_window.html#a4887a707337450dc686d30ea81eac3a1" title="Boolean function to know if window is correctly initialized. " alt="" coords="196,32,303,61"/>
+<area shape="rect" id="node3" href="$_s_d_l_8h.html#a8fc8d35348d7c74bad8392d776c937b8" title="This function initializes the subsystems specified by flags. " alt="" coords="393,5,475,35"/>
+<area shape="rect" id="node4" href="$_s_d_l__video_8h.html#a42565088bdb739a5353fd67abbe235d2" title="Create a window with the specified position, dimensions, and flags. " alt="" coords="351,59,517,88"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Window" name="Window">
+<area shape="rect" id="node2" href="$struct_s_d_l___surface.html" title="A collection of pixels used in software blitting. " alt="" coords="177,717,295,959"/>
+<area shape="rect" id="node3" href="$struct_s_d_l___pixel_format.html" title="{SDL_PixelFormat\n|+ Aloss\l+ Amask\l+ Ashift\l+ BitsPerPixel\l+ Bloss\l+ Bmask\l+ Bshift\l+ BytesPerPixel\l+ format\l+ Gloss\land 7 more...\l|}" alt="" coords="5,393,152,652"/>
+<area shape="rect" id="node4" href="$struct_s_d_l___palette.html" title="{SDL_Palette\n|+ ncolors\l+ refcount\l+ version\l|}" alt="" coords="23,208,135,328"/>
+<area shape="rect" id="node5" href="$struct_s_d_l___color.html" title="{SDL_Color\n|+ a\l+ b\l+ g\l+ r\l|}" alt="" coords="28,5,129,143"/>
+<area shape="rect" id="node6" href="$struct_s_d_l___rect.html" title="A rectangle, with the origin at the upper left. " alt="" coords="242,454,337,591"/>
+</map>

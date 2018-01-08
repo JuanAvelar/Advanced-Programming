@@ -24,18 +24,13 @@
 int main() {
 	int lives = 3;
 	int score = 0; 
-	
-	//GameElement game_element(100,100,20,20);
-	/**This is a controller*/
 	/**Create the controller instance*/
 	Controller controller( lives, score); 
 	/**For loop to control levels*/
 	for (int level = 1; level < 4; level++) {  
 		if (controller.getLives() > 0) {
 			controller.launchGame(level);
-			//break;//Get rid of this to enter new levels
 		}
 	}
-	
 	return 0;
 }

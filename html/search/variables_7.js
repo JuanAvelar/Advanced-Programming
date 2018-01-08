@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xpos',['xpos',['../class_game_element.html#a277a6aebf21af808bc409be730624164',1,'GameElement']]],
-  ['xposition',['xposition',['../class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08',1,'GameElement']]]
+  ['game_5flost',['Game_lost',['../class_controller.html#ad4011ff742a97b4d5b34c8bf709e0f1b',1,'Controller']]],
+  ['green',['Green',['../class_controller.html#af5236bf8f5475f8fc17bc30034559d3a',1,'Controller']]]
 ];

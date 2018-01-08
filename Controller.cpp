@@ -99,6 +99,10 @@ void Controller::launchGame(int level) {
 	Game_elements.clear();
 }
 
+/**Controller destructor*/
+Controller::~Controller() {
+}
+
 /**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
 
@@ -219,28 +223,34 @@ int Controller::getLives() {
 }
 
 void Controller::Start_menu(SDL_Event * event, Window * window_c) {
-
-	std::unique_ptr<Platform> Start(new Platform{ *window_c, GameElement::big, "pictures/start.png" });
-	while (!window_c->isClosed() && Start_game == false) {
-		if (SDL_PollEvent(event)) {
-			switch (event->type) {
-			case SDLK_ESCAPE:
-				
-				break;
-			case SDL_MOUSEMOTION:
-				mouse_position[0] = event->motion.x - Start->xposition - Start->width / 2;
-				mouse_position[1] = event->motion.y - Start->yposition - Start->height / 2;
-				break;
-			case SDL_MOUSEBUTTONUP:
-				double radius = sqrt(pow(mouse_position[0], 2) + pow(mouse_position[1], 2)) + 10;
-				std::cout << radius << std::endl;
-				if (radius < double(Start->width) / 2) {
-					Start_game = true;
+	if (!Start_game) {
+		std::unique_ptr<Platform> Start(new Platform{ *window_c, GameElement::big, "pictures/start.png" });
+		while (!window_c->isClosed() && Start_game == false) {
+			if (SDL_PollEvent(event)) {
+				switch (event->type) {
+				case SDL_KEYUP:
+					switch (event->key.keysym.sym) {
+					case SDLK_ESCAPE:
+						Start_game = true;
+						break;
+					default:
+						break;
+					}
+				case SDL_MOUSEMOTION:
+					mouse_position[0] = event->motion.x - Start->xposition - Start->width / 2;
+					mouse_position[1] = event->motion.y - Start->yposition - Start->height / 2;
+					break;
+				case SDL_MOUSEBUTTONUP:
+					double radius = sqrt(pow(mouse_position[0], 2) + pow(mouse_position[1], 2)) + 10;
+					std::cout << radius << std::endl;
+					if (radius < double(Start->width) / 2) {
+						Start_game = true;
+					}
+					break;
 				}
-				break;
 			}
+			Start->draw(window_c);
+			window_c->clear();
 		}
-		Start->draw(window_c);
-		window_c->clear();
 	}
 }

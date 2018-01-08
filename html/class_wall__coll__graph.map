@@ -1,3 +1,3 @@
 <map id="Wall" name="Wall">
-<area shape="rect" id="node2" href="$class_game_element.html" title="GameElement" alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="5,5,164,316"/>
 </map>

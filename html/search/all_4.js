@@ -1,11 +1,19 @@
 var searchData=
 [
+  ['data',['data',['../struct_s_d_l___haptic_custom.html#ad5a034f97e1699eacbe3f478538537c5',1,'SDL_HapticCustom']]],
+  ['data1',['data1',['../struct_s_d_l___window_event.html#a01da0025428d3434c80021f3e4089fec',1,'SDL_WindowEvent::data1()'],['../struct_s_d_l___user_event.html#ab2893a12be2f97195f16463a23107913',1,'SDL_UserEvent::data1()']]],
+  ['data2',['data2',['../struct_s_d_l___window_event.html#af6cd0a21bc9ecadfee42f6a0147d7171',1,'SDL_WindowEvent::data2()'],['../struct_s_d_l___user_event.html#aae4dbf65c34d654c9edf519eb061b7cf',1,'SDL_UserEvent::data2()']]],
+  ['deadband',['deadband',['../struct_s_d_l___haptic_condition.html#af684c8eeeb719739a32723c00c5a2bbd',1,'SDL_HapticCondition']]],
+  ['delay',['delay',['../struct_s_d_l___haptic_constant.html#a16a751009893f5412201e3ce91146b25',1,'SDL_HapticConstant::delay()'],['../struct_s_d_l___haptic_periodic.html#a8688d1c7ee6270ed290f6b474aef5ec9',1,'SDL_HapticPeriodic::delay()'],['../struct_s_d_l___haptic_condition.html#aad40417980530ca8d80c62ba864a090b',1,'SDL_HapticCondition::delay()'],['../struct_s_d_l___haptic_ramp.html#ac9471016f41919b4a1c786bbd649a777',1,'SDL_HapticRamp::delay()'],['../struct_s_d_l___haptic_custom.html#a094229466ff4cf695860db664100a2b0',1,'SDL_HapticCustom::delay()']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
   ['destroy_5flevel',['destroy_level',['../class_controller.html#acb0260f3172be18bb43aea7bfdc9f381',1,'Controller']]],
-  ['destroyball',['destroyball',['../class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7a097b05e4baba29b3d954dbbbd767f71a',1,'GameElement']]],
-  ['destroybrick',['destroybrick',['../class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7aac9a865ae25ad1d8a6a79536aecf0bc2',1,'GameElement']]],
-  ['destroygameelement',['destroyGameElement',['../class_game_element.html#a021238a067d261855baf4176a7bebe96',1,'GameElement']]],
-  ['destroynothing',['destroynothing',['../class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7ac5e6c2f64a07c4d3e4058b4198a26a70',1,'GameElement']]],
-  ['down',['down',['../class_wall.html#a9744b0c53e839cf748ab7f7f332e9e2aae943e70c193bf1123704889c7de5a788',1,'Wall']]],
+  ['dgesture',['dgesture',['../union_s_d_l___event.html#a4481167b9f8549aeb254e97ca812e74d',1,'SDL_Event']]],
+  ['dir',['dir',['../struct_s_d_l___haptic_direction.html#a6cebd8118a3e61e36bd0c503ae020362',1,'SDL_HapticDirection']]],
+  ['direction',['direction',['../struct_s_d_l___mouse_wheel_event.html#a9fc46552d116499e5b8ca89d66df932c',1,'SDL_MouseWheelEvent::direction()'],['../struct_s_d_l___haptic_constant.html#a3e871debf4e57c35960f019d2605d84f',1,'SDL_HapticConstant::direction()'],['../struct_s_d_l___haptic_periodic.html#a2c4f27d4583187a7a994e79ad49083d3',1,'SDL_HapticPeriodic::direction()'],['../struct_s_d_l___haptic_condition.html#a728507d30d18998949313de3a25e5581',1,'SDL_HapticCondition::direction()'],['../struct_s_d_l___haptic_ramp.html#a6fb6c67ccf262b8f3ec08bcdf08f9965',1,'SDL_HapticRamp::direction()'],['../struct_s_d_l___haptic_custom.html#ad7eb84f59404d9e0da07570b4b57dd43',1,'SDL_HapticCustom::direction()']]],
   ['draw',['draw',['../class_ball.html#a9b170c27c74586af6108314c3623da53',1,'Ball::draw()'],['../class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4',1,'Brick::draw()'],['../class_game_element.html#acad1a30d8bcf7cce64058262464da795',1,'GameElement::draw()'],['../class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac',1,'Platform::draw()'],['../class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509',1,'Wall::draw()']]],
-  ['duty_5fcycle_5fpercentage',['duty_cycle_percentage',['../_controller_8cpp.html#aaaa3ca71be7eb77b747d17efc870012a',1,'Controller.cpp']]]
+  ['driverdata',['driverdata',['../struct_s_d_l___display_mode.html#a411f93025411da873f37a384ae62bbcf',1,'SDL_DisplayMode']]],
+  ['drop',['drop',['../union_s_d_l___event.html#acff77bccbca65abbb876360a3f5209c9',1,'SDL_Event']]],
+  ['dst_5fformat',['dst_format',['../struct_s_d_l___audio_c_v_t.html#a8f890d017be857a3b048bf00525736c6',1,'SDL_AudioCVT']]],
+  ['dx',['dx',['../struct_s_d_l___touch_finger_event.html#ac6acac209d6e2bd659fdb6760081393d',1,'SDL_TouchFingerEvent']]],
+  ['dy',['dy',['../struct_s_d_l___touch_finger_event.html#a9c0320c5f18a6b9d10da657e166608c9',1,'SDL_TouchFingerEvent']]]
 ];

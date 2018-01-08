@@ -1,0 +1,7 @@
+<map id="SDL2/include/SDL2/SDL_clipboard.h" name="SDL2/include/SDL2/SDL_clipboard.h">
+<area shape="rect" id="node2" href="$_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support. " alt="" coords="222,100,338,129"/>
+<area shape="rect" id="node5" href="$begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions..." alt="" coords="401,332,519,361"/>
+<area shape="rect" id="node6" href="$close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="5,332,120,361"/>
+<area shape="rect" id="node3" href="$_s_d_l__config_8h_source.html" title="SDL_config.h" alt="" coords="100,177,217,207"/>
+<area shape="rect" id="node4" href="$_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines. " alt="" coords="100,255,231,284"/>
+</map>

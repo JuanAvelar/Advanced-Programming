@@ -1,3 +1,6 @@
 <map id="Controller::showGraphicOutput" name="Controller::showGraphicOutput">
-<area shape="rect" id="node2" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Window::clear" alt="" coords="252,5,356,32"/>
+<area shape="rect" id="node2" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="287,59,407,88"/>
+<area shape="rect" id="node3" href="$_s_d_l__render_8h.html#a48fa9d24395f3610746988ecca2aae86" title="Update the screen with rendering performed. " alt="" coords="477,5,645,35"/>
+<area shape="rect" id="node4" href="$_s_d_l__render_8h.html#aa26234da40f87f4b16d715564242a341" title="Set the color used for drawing operations (Rect, Line and Clear). " alt="" coords="455,59,668,88"/>
+<area shape="rect" id="node5" href="$_s_d_l__render_8h.html#a473b4abbb29c60e98876eb68ad850f79" title="Clear the current rendering target with the drawing color. " alt="" coords="485,112,637,141"/>
 </map>

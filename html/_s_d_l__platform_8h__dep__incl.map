@@ -1,0 +1,51 @@
+<map id="SDL2/include/SDL2/SDL_platform.h" name="SDL2/include/SDL2/SDL_platform.h">
+<area shape="rect" id="node2" href="$_s_d_l__config_8h_source.html" title="SDL2/include/SDL2/SDL\l_config.h" alt="" coords="1805,100,2003,147"/>
+<area shape="rect" id="node6" href="$_s_d_l__atomic_8h.html" title="Atomic operations. " alt="" coords="5,384,203,431"/>
+<area shape="rect" id="node42" href="$_s_d_l__config__android_8h.html" title="This is a configuration that can be used to build SDL for Android. " alt="" coords="2027,100,2224,147"/>
+<area shape="rect" id="node43" href="$_s_d_l__config__iphoneos_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_iphoneos.h" alt="" coords="2248,100,2445,147"/>
+<area shape="rect" id="node44" href="$_s_d_l__config__macosx_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_macosx.h" alt="" coords="2469,100,2667,147"/>
+<area shape="rect" id="node45" href="$_s_d_l__config__minimal_8h.html" title="This is the minimal configuration that can be used to build SDL. " alt="" coords="2691,100,2888,147"/>
+<area shape="rect" id="node46" href="$_s_d_l__config__pandora_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_pandora.h" alt="" coords="2912,100,3109,147"/>
+<area shape="rect" id="node47" href="$_s_d_l__config__psp_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_psp.h" alt="" coords="3133,100,3331,147"/>
+<area shape="rect" id="node48" href="$_s_d_l__config__windows_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_windows.h" alt="" coords="3355,100,3552,147"/>
+<area shape="rect" id="node49" href="$_s_d_l__config__winrt_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_winrt.h" alt="" coords="3576,100,3773,147"/>
+<area shape="rect" id="node50" href="$_s_d_l__config__wiz_8h_source.html" title="SDL2/include/SDL2/SDL\l_config_wiz.h" alt="" coords="3797,100,3995,147"/>
+<area shape="rect" id="node3" href="$_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support. " alt="" coords="1916,195,2113,241"/>
+<area shape="rect" id="node38" href="$_s_d_l__assert_8h_source.html" title="SDL2/include/SDL2/SDL\l_assert.h" alt="" coords="3643,289,3840,336"/>
+<area shape="rect" id="node39" href="$_s_d_l__opengl_8h.html" title="This is a simple file to encapsulate the OpenGL API headers. " alt="" coords="2188,195,2385,241"/>
+<area shape="rect" id="node40" href="$_s_d_l__opengles_8h.html" title="This is a simple file to encapsulate the OpenGL ES 1.X API headers. " alt="" coords="1473,195,1671,241"/>
+<area shape="rect" id="node41" href="$_s_d_l__opengles2_8h.html" title="This is a simple file to encapsulate the OpenGL ES 2.0 API headers. " alt="" coords="1695,195,1892,241"/>
+<area shape="rect" id="node4" href="$_s_d_l__main_8h.html" title="Redefine main() on some platforms so that it is called by SDL. " alt="" coords="3549,668,3747,715"/>
+<area shape="rect" id="node5" href="$_s_d_l_8h.html" title="Main include header for the SDL library. " alt="" coords="2069,1047,2278,1076"/>
+<area shape="rect" id="node7" href="$_s_d_l__thread_8h.html" title="Header for the SDL thread management routines. " alt="" coords="955,479,1152,525"/>
+<area shape="rect" id="node8" href="$_s_d_l__audio_8h.html" title="Access to the raw audio mixing buffer for the SDL library. " alt="" coords="1056,573,1253,620"/>
+<area shape="rect" id="node9" href="$_s_d_l__error_8h.html" title="Simple error message routines for SDL. " alt="" coords="1717,289,1915,336"/>
+<area shape="rect" id="node10" href="$_s_d_l__mutex_8h.html" title="Functions to provide thread synchronization primitives. " alt="" coords="1005,384,1203,431"/>
+<area shape="rect" id="node11" href="$_s_d_l__rwops_8h.html" title="This file provides a general interface for SDL to read and write data streams. " alt="" coords="1277,384,1475,431"/>
+<area shape="rect" id="node12" href="$_s_d_l__rect_8h.html" title="Header file for SDL_rect definition and management functions. " alt="" coords="632,479,829,525"/>
+<area shape="rect" id="node13" href="$_s_d_l__video_8h.html" title="Header file for SDL video functions. " alt="" coords="853,668,1051,715"/>
+<area shape="rect" id="node14" href="$_s_d_l__events_8h.html" title="Include file for SDL event handling. " alt="" coords="2075,952,2272,999"/>
+<area shape="rect" id="node15" href="$_s_d_l__keyboard_8h.html" title="Include file for SDL keyboard event handling. " alt="" coords="2472,763,2669,809"/>
+<area shape="rect" id="node16" href="$_s_d_l__mouse_8h.html" title="Include file for SDL mouse event handling. " alt="" coords="1803,763,2000,809"/>
+<area shape="rect" id="node17" href="$_s_d_l__gesture_8h.html" title="Include file for SDL gesture event handling. " alt="" coords="1548,857,1745,904"/>
+<area shape="rect" id="node18" href="$_s_d_l__touch_8h.html" title="Include file for SDL touch event handling. " alt="" coords="1429,763,1627,809"/>
+<area shape="rect" id="node19" href="$_s_d_l__messagebox_8h_source.html" title="SDL2/include/SDL2/SDL\l_messagebox.h" alt="" coords="360,763,557,809"/>
+<area shape="rect" id="node20" href="$_s_d_l__render_8h.html" title="Header file for SDL 2D rendering functions. " alt="" coords="803,763,1000,809"/>
+<area shape="rect" id="node21" href="$_s_d_l__shape_8h.html" title="Header file for the shaped window API. " alt="" coords="581,763,779,809"/>
+<area shape="rect" id="node22" href="$_s_d_l__surface_8h.html" title="Header file for SDL_Surface definition and management functions. " alt="" coords="531,573,728,620"/>
+<area shape="rect" id="node23" href="$_s_d_l__gamecontroller_8h.html" title="Include file for SDL game controller event handling. " alt="" coords="1931,479,2128,525"/>
+<area shape="rect" id="node24" href="$_s_d_l__joystick_8h.html" title="Include file for SDL joystick event handling. " alt="" coords="2277,384,2475,431"/>
+<area shape="rect" id="node25" href="$_s_d_l__haptic_8h.html" title="The SDL haptic subsystem allows you to control haptic (force feedback) devices. " alt="" coords="2608,479,2805,525"/>
+<area shape="rect" id="node26" href="$_s_d_l__quit_8h.html" title="Include file for SDL quit event handling. " alt="" coords="2005,384,2203,431"/>
+<area shape="rect" id="node27" href="$_s_d_l__loadso_8h.html" title="System dependent library loading routines. " alt="" coords="2821,384,3019,431"/>
+<area shape="rect" id="node28" href="$_s_d_l__endian_8h.html" title="Functions for reading and writing endian&#45;specific values. " alt="" coords="328,289,525,336"/>
+<area shape="rect" id="node29" href="$_s_d_l__pixels_8h.html" title="Header for the enumerated pixel format definitions. " alt="" coords="379,384,576,431"/>
+<area shape="rect" id="node30" href="$_s_d_l__clipboard_8h.html" title="Include file for SDL clipboard handling. " alt="" coords="2853,857,3051,904"/>
+<area shape="rect" id="node31" href="$_s_d_l__cpuinfo_8h.html" title="CPU feature detection for SDL. " alt="" coords="2904,952,3101,999"/>
+<area shape="rect" id="node32" href="$_s_d_l__keycode_8h.html" title="Defines constants which identify keyboard keys and modifiers. " alt="" coords="2600,384,2797,431"/>
+<area shape="rect" id="node33" href="$_s_d_l__scancode_8h.html" title="Defines keyboard scancodes. " alt="" coords="2511,289,2708,336"/>
+<area shape="rect" id="node34" href="$_s_d_l__filesystem_8h.html" title="Include file for filesystem SDL API functions. " alt="" coords="3125,573,3323,620"/>
+<area shape="rect" id="node35" href="$_s_d_l__hints_8h.html" title="Official documentation for SDL configuration variables. " alt="" coords="3176,668,3373,715"/>
+<area shape="rect" id="node36" href="$_s_d_l__log_8h.html" title="Simple log messages with categories and priorities. " alt="" coords="3227,857,3424,904"/>
+<area shape="rect" id="node37" href="$_s_d_l__power_8h.html" title="Header for the SDL power management routines. " alt="" coords="3277,952,3475,999"/>
+</map>

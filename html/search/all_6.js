@@ -1,20 +1,11 @@
 var searchData=
 [
-  ['g',['g',['../struct_green.html#a5eca274e7a0c26bf52de960a434a2964',1,'Green::g()'],['../struct_yellow.html#ab3bb1bc2900b6fbaffc0e2c43ef43653',1,'Yellow::g()'],['../struct_red.html#a4834b0749990ebe18fd27dc35c613643',1,'Red::g()'],['../struct_blue.html#aa19347f921e93f07e883ea8a26ca90de',1,'Blue::g()']]],
-  ['gameelement',['GameElement',['../class_game_element.html',1,'GameElement'],['../class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423',1,'GameElement::GameElement()']]],
-  ['gameelement_2ecpp',['GameElement.cpp',['../_game_element_8cpp.html',1,'']]],
-  ['gameelement_2eh',['GameElement.h',['../_game_element_8h.html',1,'']]],
-  ['getheight',['getHeight',['../class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e',1,'GameElement']]],
-  ['getlives',['getLives',['../class_controller.html#a073cb8054fa6d98500524e2f45635648',1,'Controller']]],
-  ['getwallside',['getWallSide',['../class_wall.html#a07c0c8d97afbf44b744bd9c364a9c503',1,'Wall']]],
-  ['getwidth',['getWidth',['../class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d',1,'GameElement']]],
-  ['getxdirection',['getXDirection',['../class_ball.html#acbfbb8c4f504e354663b8a775e48d1e1',1,'Ball']]],
-  ['getxlocation',['getXLocation',['../class_game_element.html#a7c154aff646c91168dc974a43d340812',1,'GameElement']]],
-  ['getxposition',['getXPosition',['../class_moveable_object.html#a9607b8b302a374ea1c48d636ff42974a',1,'MoveableObject']]],
-  ['getxspeed',['getXSpeed',['../class_moveable_object.html#a28621b0cca115dcb3935ac984effd29d',1,'MoveableObject']]],
-  ['getydirection',['getYDirection',['../class_ball.html#ad8a9bd03b11c5bfdebd60698baa24456',1,'Ball']]],
-  ['getylocation',['getYLocation',['../class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3',1,'GameElement']]],
-  ['getyposition',['getYPosition',['../class_moveable_object.html#a7386a57db974dac635d99b7d69670811',1,'MoveableObject']]],
-  ['getyspeed',['getYSpeed',['../class_moveable_object.html#a18533fb8449d6cb4eefd741142753370',1,'MoveableObject']]],
-  ['green',['Green',['../struct_green.html',1,'Green'],['../class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda0441d0bbdcb6db7e732480b59baff4e3',1,'GameElement::green()']]]
+  ['fade_5flength',['fade_length',['../struct_s_d_l___haptic_constant.html#a647a6b761ac6ba16160d0892a12806bc',1,'SDL_HapticConstant::fade_length()'],['../struct_s_d_l___haptic_periodic.html#ae1c186d02304eae142a62dca72f50fa8',1,'SDL_HapticPeriodic::fade_length()'],['../struct_s_d_l___haptic_ramp.html#ad58a8f7cfdf659b45f0503fc56db7436',1,'SDL_HapticRamp::fade_length()'],['../struct_s_d_l___haptic_custom.html#ab47fac94baeba28a3acd6c706e0b6a5c',1,'SDL_HapticCustom::fade_length()']]],
+  ['fade_5flevel',['fade_level',['../struct_s_d_l___haptic_constant.html#a49f6499c89f3e494efbe92f12277c949',1,'SDL_HapticConstant::fade_level()'],['../struct_s_d_l___haptic_periodic.html#afa7713fc264959873f2a852fca4174fd',1,'SDL_HapticPeriodic::fade_level()'],['../struct_s_d_l___haptic_ramp.html#a66b586f2e6a23a085a7b2854f61752c5',1,'SDL_HapticRamp::fade_level()'],['../struct_s_d_l___haptic_custom.html#a73a522581eb514d032e500ec6294fe50',1,'SDL_HapticCustom::fade_level()']]],
+  ['file',['file',['../struct_s_d_l___drop_event.html#abc41ef4beb62e1d8b56827128b29585f',1,'SDL_DropEvent']]],
+  ['filter_5findex',['filter_index',['../struct_s_d_l___audio_c_v_t.html#a35093b3ad3331c17416c593a76012b63',1,'SDL_AudioCVT']]],
+  ['filters',['filters',['../struct_s_d_l___audio_c_v_t.html#afeb8dc60716644de3b681653442de1db',1,'SDL_AudioCVT']]],
+  ['flags',['flags',['../struct_s_d_l___message_box_button_data.html#a426c8b5da0e718242c7840706d95de0b',1,'SDL_MessageBoxButtonData::flags()'],['../struct_s_d_l___message_box_data.html#a113d016f760bf4e4156b0f376358d6a0',1,'SDL_MessageBoxData::flags()'],['../struct_s_d_l___renderer_info.html#a95cf0ffd1704fd0a4dd8ceac6c9f0542',1,'SDL_RendererInfo::flags()'],['../struct_s_d_l___surface.html#a86d78b665d5dfd7aa1dd9696b067641b',1,'SDL_Surface::flags()']]],
+  ['format',['format',['../struct_s_d_l___audio_spec.html#ae37c634cac5807762f184c8d5d49fc2d',1,'SDL_AudioSpec::format()'],['../struct_s_d_l___surface.html#a0a90721f947c10c3b79e02ccb419ca62',1,'SDL_Surface::format()'],['../struct_s_d_l___display_mode.html#ae8120e0a18a99992f039756e1b503680',1,'SDL_DisplayMode::format()']]],
+  ['freq',['freq',['../struct_s_d_l___audio_spec.html#a8b823ce46fc2e448cf7e6fc141aff6b2',1,'SDL_AudioSpec']]]
 ];

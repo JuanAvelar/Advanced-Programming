@@ -1,0 +1,8 @@
+<map id="SDL_SetRenderDrawColor" name="SDL_SetRenderDrawColor">
+<area shape="rect" id="node2" href="$class_ball.html#a9b170c27c74586af6108314c3623da53" title="Draws the ball object with its image. " alt="" coords="283,5,373,35"/>
+<area shape="rect" id="node3" href="$class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4" title="Draws a brick in the SDL window. " alt="" coords="278,59,378,88"/>
+<area shape="rect" id="node4" href="$class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac" title="Function that draws the platform into the SDL window. " alt="" coords="267,112,389,141"/>
+<area shape="rect" id="node5" href="$class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509" title="Draws the walls into the SDL window. " alt="" coords="281,165,375,195"/>
+<area shape="rect" id="node6" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="268,219,388,248"/>
+<area shape="rect" id="node7" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="437,219,671,248"/>
+</map>

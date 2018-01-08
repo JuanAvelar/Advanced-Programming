@@ -1,0 +1,4 @@
+<map id="SDL_CreateTextureFromSurface" name="SDL_CreateTextureFromSurface">
+<area shape="rect" id="node2" href="$class_ball.html#a6f719742509968820f1fb59e535c4178" title="Constructor of the ball class. " alt="" coords="339,5,421,35"/>
+<area shape="rect" id="node3" href="$class_platform.html#a8743e33a404693da0fa5fb3dbfda606b" title="Secondary constructor of the platform using an image (currently no image to use), this one is current..." alt="" coords="307,59,453,88"/>
+</map>

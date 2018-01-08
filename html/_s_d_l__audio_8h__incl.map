@@ -1,0 +1,13 @@
+<map id="SDL2/include/SDL2/SDL_audio.h" name="SDL2/include/SDL2/SDL_audio.h">
+<area shape="rect" id="node2" href="$_s_d_l__stdinc_8h.html" title="This is a general header that includes C language support. " alt="" coords="670,332,786,361"/>
+<area shape="rect" id="node5" href="$begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions..." alt="" coords="149,564,267,593"/>
+<area shape="rect" id="node6" href="$close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="903,564,1017,593"/>
+<area shape="rect" id="node9" href="$_s_d_l__error_8h.html" title="Simple error message routines for SDL. " alt="" coords="815,255,923,284"/>
+<area shape="rect" id="node10" href="$_s_d_l__endian_8h.html" title="Functions for reading and writing endian&#45;specific values. " alt="" coords="144,255,267,284"/>
+<area shape="rect" id="node11" href="$_s_d_l__mutex_8h.html" title="Functions to provide thread synchronization primitives. " alt="" coords="665,177,781,207"/>
+<area shape="rect" id="node12" href="$_s_d_l__thread_8h.html" title="Header for the SDL thread management routines. " alt="" coords="662,100,781,129"/>
+<area shape="rect" id="node14" href="$_s_d_l__rwops_8h.html" title="This file provides a general interface for SDL to read and write data streams. " alt="" coords="907,177,1024,207"/>
+<area shape="rect" id="node3" href="$_s_d_l__config_8h_source.html" title="SDL_config.h" alt="" coords="499,409,616,439"/>
+<area shape="rect" id="node4" href="$_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines. " alt="" coords="467,487,597,516"/>
+<area shape="rect" id="node13" href="$_s_d_l__atomic_8h.html" title="Atomic operations. " alt="" coords="467,255,589,284"/>
+</map>

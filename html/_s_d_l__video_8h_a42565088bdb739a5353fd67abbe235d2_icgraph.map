@@ -1,0 +1,4 @@
+<map id="SDL_CreateWindow" name="SDL_CreateWindow">
+<area shape="rect" id="node2" href="$class_window.html#a4887a707337450dc686d30ea81eac3a1" title="Boolean function to know if window is correctly initialized. " alt="" coords="220,5,327,35"/>
+<area shape="rect" id="node3" href="$class_window.html#aa75e2e442088a062e3f7751e0f33a63d" title="Window constructor. " alt="" coords="375,5,517,35"/>
+</map>

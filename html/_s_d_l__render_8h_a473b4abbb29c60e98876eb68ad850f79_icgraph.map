@@ -1,0 +1,4 @@
+<map id="SDL_RenderClear" name="SDL_RenderClear">
+<area shape="rect" id="node2" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="205,5,325,35"/>
+<area shape="rect" id="node3" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="373,5,607,35"/>
+</map>

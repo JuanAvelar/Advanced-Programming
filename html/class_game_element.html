@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Break Out: GameElement Class Reference</title>
+<title>Breakout: GameElement Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,8 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="shiny_pinball.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Break Out
+   <div id="projectname">Breakout
    </div>
   </td>
  </tr>
@@ -62,11 +63,15 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_game_element-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameElement Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Game Element manages each element of the game seperately, each must contain its own texture to add the possibility to draw an PNG image instead of a rectangle with a color.  
+ <a href="class_game_element.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_game_element_8h_source.html">GameElement.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -74,529 +79,108 @@ Inheritance diagram for GameElement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element__inherit__graph.png" border="0" usemap="#_game_element_inherit__map" alt="Inheritance graph"/></div>
 <map name="_game_element_inherit__map" id="_game_element_inherit__map">
-<area shape="rect" id="node2" href="class_brick.html" title="Brick" alt="" coords="5,80,57,107"/>
-<area shape="rect" id="node3" href="class_moveable_object.html" title="MoveableObject" alt="" coords="82,80,197,107"/>
-<area shape="rect" id="node6" href="class_wall.html" title="Wall" alt="" coords="221,80,269,107"/>
-<area shape="rect" id="node4" href="class_ball.html" title="Ball" alt="" coords="76,155,120,181"/>
-<area shape="rect" id="node5" href="class_platform.html" title="Platform" alt="" coords="144,155,215,181"/>
+<area shape="rect" id="node2" href="class_brick.html" title="Brick generates a brick and manages functions accordingly. " alt="" coords="5,373,104,510"/>
+<area shape="rect" id="node3" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="129,364,295,519"/>
+<area shape="rect" id="node6" href="class_wall.html" title="Wall generates a colored rectangle and manages functions accordingly. " alt="" coords="319,373,449,510"/>
+<area shape="rect" id="node4" href="class_ball.html" title="Ball generates a ball and manages function accordingly. " alt="" coords="89,575,199,747"/>
+<area shape="rect" id="node5" href="class_platform.html" title="Platform generates a square with color and manages function accordingly, you can also use an image..." alt="" coords="223,567,335,756"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for GameElement:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_element__coll__graph.png" border="0" usemap="#_game_element_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7b62036e0a68b55efbd82d41367b8ac7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">ElementDestroyed</a> { <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7ac5e6c2f64a07c4d3e4058b4198a26a70">destroynothing</a>, 
-<a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7aac9a865ae25ad1d8a6a79536aecf0bc2">destroybrick</a>, 
-<a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7a097b05e4baba29b3d954dbbbd767f71a">destroyball</a>
- }</td></tr>
+<tr class="memitem:a7b62036e0a68b55efbd82d41367b8ac7"><td class="memItemLeft" align="right" valign="top"><a id="a7b62036e0a68b55efbd82d41367b8ac7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">ElementDestroyed</a> { <b>destroynothing</b>, 
+<b>destroybrick</b>, 
+<b>destroyball</b>
+ }<tr class="memdesc:a7b62036e0a68b55efbd82d41367b8ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function) <br /></td></tr>
+</td></tr>
 <tr class="separator:a7b62036e0a68b55efbd82d41367b8ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753a941083f668c6b1e84c9cd85b55ed"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">Color</a> { <a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda29ead53b80ef87d09ba8a014f6968ec2">yellow</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda0441d0bbdcb6db7e732480b59baff4e3">green</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55edaf2c53ff694d32ce6157b05f4b3aa4466">red</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda0337afc087a3cac19411c2c633c6d158">blue</a>
- }</td></tr>
-<tr class="separator:a753a941083f668c6b1e84c9cd85b55ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671">small</a>, 
-<a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7ab4a52c04f1d4ea93f606c245f7cd1b7f">medium</a>, 
-<a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7aeb1bfe6e9cd8b838dd0071ea86d645a9">big</a>
- }</td></tr>
+<tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7"><td class="memItemLeft" align="right" valign="top"><a id="a88e64c35dcdc76eec6078096cf5b64f7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <b>small</b>, 
+<b>medium</b>, 
+<b>big</b>
+ }<tr class="memdesc:a88e64c35dcdc76eec6078096cf5b64f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the game elements (Input of most of the elements constructor, select height and width in a switch case inside each constructor) <br /></td></tr>
+</td></tr>
 <tr class="separator:a88e64c35dcdc76eec6078096cf5b64f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a21faa0b2f1af0f3c3b8c4d9c0e402423"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423">GameElement</a> (int <a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a>, int <a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a>, const int h, const int w)</td></tr>
+<tr class="memitem:a21faa0b2f1af0f3c3b8c4d9c0e402423"><td class="memItemLeft" align="right" valign="top"><a id="a21faa0b2f1af0f3c3b8c4d9c0e402423"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423">GameElement</a> (int <a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a>, int <a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a>, const int h, const int w)</td></tr>
+<tr class="memdesc:a21faa0b2f1af0f3c3b8c4d9c0e402423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor it has X Y coordinates and height/width as inputs. <br /></td></tr>
 <tr class="separator:a21faa0b2f1af0f3c3b8c4d9c0e402423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e487fb9386f884491c6cffd16910126"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a3e487fb9386f884491c6cffd16910126">~GameElement</a> ()=default</td></tr>
+<tr class="memitem:a3e487fb9386f884491c6cffd16910126"><td class="memItemLeft" align="right" valign="top"><a id="a3e487fb9386f884491c6cffd16910126"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a3e487fb9386f884491c6cffd16910126">~GameElement</a> ()=default</td></tr>
+<tr class="memdesc:a3e487fb9386f884491c6cffd16910126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Standard destructor. <br /></td></tr>
 <tr class="separator:a3e487fb9386f884491c6cffd16910126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d2c44b4ee25758cc96b61ff8809f1b"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88d2c44b4ee25758cc96b61ff8809f1b">set_color_rgba</a> (<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">Color</a> color)</td></tr>
-<tr class="separator:a88d2c44b4ee25758cc96b61ff8809f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb82bf0c9072c2bbdb623b0d7958655e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e">getHeight</a> () const</td></tr>
-<tr class="separator:adb82bf0c9072c2bbdb623b0d7958655e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a614be3513f3bd193fb2666b44e7c6b4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d">getWidth</a> () const</td></tr>
-<tr class="separator:a614be3513f3bd193fb2666b44e7c6b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c154aff646c91168dc974a43d340812"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7c154aff646c91168dc974a43d340812">getXLocation</a> ()</td></tr>
-<tr class="separator:a7c154aff646c91168dc974a43d340812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29823dea49b05f06fa6cb9b20239e3a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3">getYLocation</a> ()</td></tr>
-<tr class="separator:a29823dea49b05f06fa6cb9b20239e3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad1a30d8bcf7cce64058262464da795"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">draw</a> (<a class="el" href="class_window.html">Window</a> *window) const =0</td></tr>
-<tr class="separator:acad1a30d8bcf7cce64058262464da795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43addde25a0ab76f8b48ded220d9c886"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a43addde25a0ab76f8b48ded220d9c886">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)=0</td></tr>
+<tr class="memitem:a43addde25a0ab76f8b48ded220d9c886"><td class="memItemLeft" align="right" valign="top"><a id="a43addde25a0ab76f8b48ded220d9c886"></a>
+virtual <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a43addde25a0ab76f8b48ded220d9c886">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)=0</td></tr>
+<tr class="memdesc:a43addde25a0ab76f8b48ded220d9c886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function to manage bouncing objects throughout the game, it also manages the destruction of objects in each situation. <br /></td></tr>
 <tr class="separator:a43addde25a0ab76f8b48ded220d9c886"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a021238a067d261855baf4176a7bebe96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a021238a067d261855baf4176a7bebe96">destroyGameElement</a> ()</td></tr>
-<tr class="separator:a021238a067d261855baf4176a7bebe96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad1a30d8bcf7cce64058262464da795"><td class="memItemLeft" align="right" valign="top"><a id="acad1a30d8bcf7cce64058262464da795"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">draw</a> (<a class="el" href="class_window.html">Window</a> *window) const =0</td></tr>
+<tr class="memdesc:acad1a30d8bcf7cce64058262464da795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw virtual function, it draws the element using the pointer Renderer of the window class, it detects if an image is used or just a colored rectangle. <br /></td></tr>
+<tr class="separator:acad1a30d8bcf7cce64058262464da795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2f77501ee6edb9c987fe15ea6c73bb08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a></td></tr>
-<tr class="separator:a2f77501ee6edb9c987fe15ea6c73bb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c5380d86d3b8eb38e3a09f7149a31ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a></td></tr>
-<tr class="separator:a0c5380d86d3b8eb38e3a09f7149a31ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
+<tr class="memitem:ae4e2693a45395a6717cd8a181adefcb3"><td class="memItemLeft" align="right" valign="top"><a id="ae4e2693a45395a6717cd8a181adefcb3"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#ae4e2693a45395a6717cd8a181adefcb3">_a</a></td></tr>
+<tr class="memdesc:ae4e2693a45395a6717cd8a181adefcb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absence of light RGBA. <br /></td></tr>
+<tr class="separator:ae4e2693a45395a6717cd8a181adefcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfcd970b7d56bbd3f254c50475a8d50d"><td class="memItemLeft" align="right" valign="top"><a id="adfcd970b7d56bbd3f254c50475a8d50d"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#adfcd970b7d56bbd3f254c50475a8d50d">_b</a></td></tr>
+<tr class="memdesc:adfcd970b7d56bbd3f254c50475a8d50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue RGBA. <br /></td></tr>
+<tr class="separator:adfcd970b7d56bbd3f254c50475a8d50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4977fd881e3a22285b7419535f853da"><td class="memItemLeft" align="right" valign="top"><a id="aa4977fd881e3a22285b7419535f853da"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#aa4977fd881e3a22285b7419535f853da">_g</a></td></tr>
+<tr class="memdesc:aa4977fd881e3a22285b7419535f853da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green RGBA. <br /></td></tr>
+<tr class="separator:aa4977fd881e3a22285b7419535f853da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65695f75ec6a178422933a27f59a8e0a"><td class="memItemLeft" align="right" valign="top"><a id="a65695f75ec6a178422933a27f59a8e0a"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a65695f75ec6a178422933a27f59a8e0a">_r</a></td></tr>
+<tr class="memdesc:a65695f75ec6a178422933a27f59a8e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red RGBA. <br /></td></tr>
+<tr class="separator:a65695f75ec6a178422933a27f59a8e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="memItemLeft" align="right" valign="top"><a id="a94cb6e054d7b806cb0fec56c2ea223fd"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
+<tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cbcfa253a9f677696f569639949ac6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
+<tr class="memitem:a1cbcfa253a9f677696f569639949ac6c"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
+<tr class="memdesc:a1cbcfa253a9f677696f569639949ac6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a1cbcfa253a9f677696f569639949ac6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a277a6aebf21af808bc409be730624164"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a></td></tr>
+<tr class="memitem:a277a6aebf21af808bc409be730624164"><td class="memItemLeft" align="right" valign="top"><a id="a277a6aebf21af808bc409be730624164"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a></td></tr>
+<tr class="memdesc:a277a6aebf21af808bc409be730624164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as xposition but double to manage more accuracy. <br /></td></tr>
 <tr class="separator:a277a6aebf21af808bc409be730624164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d8bdb14a360b2979ac810b71304ddd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a></td></tr>
+<tr class="memitem:a2f77501ee6edb9c987fe15ea6c73bb08"><td class="memItemLeft" align="right" valign="top"><a id="a2f77501ee6edb9c987fe15ea6c73bb08"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a></td></tr>
+<tr class="memdesc:a2f77501ee6edb9c987fe15ea6c73bb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">position Left most part of the object <br /></td></tr>
+<tr class="separator:a2f77501ee6edb9c987fe15ea6c73bb08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d8bdb14a360b2979ac810b71304ddd"><td class="memItemLeft" align="right" valign="top"><a id="a01d8bdb14a360b2979ac810b71304ddd"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a></td></tr>
+<tr class="memdesc:a01d8bdb14a360b2979ac810b71304ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as yposition but double to manage more accuracy. <br /></td></tr>
 <tr class="separator:a01d8bdb14a360b2979ac810b71304ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5380d86d3b8eb38e3a09f7149a31ce"><td class="memItemLeft" align="right" valign="top"><a id="a0c5380d86d3b8eb38e3a09f7149a31ce"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a></td></tr>
+<tr class="memdesc:a0c5380d86d3b8eb38e3a09f7149a31ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">position Top most part of the object <br /></td></tr>
+<tr class="separator:a0c5380d86d3b8eb38e3a09f7149a31ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a1ddb9234af1f3b50e53d647716421ff0"><td class="memItemLeft" align="right" valign="top"><a id="a1ddb9234af1f3b50e53d647716421ff0"></a>
+SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1ddb9234af1f3b50e53d647716421ff0">Possesed_image</a></td></tr>
+<tr class="memdesc:a1ddb9234af1f3b50e53d647716421ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to an image texture used to draw a PNG image representing the game element chosen. <br /></td></tr>
+<tr class="separator:a1ddb9234af1f3b50e53d647716421ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a753a941083f668c6b1e84c9cd85b55ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a753a941083f668c6b1e84c9cd85b55ed">&#9670;&nbsp;</a></span>Color</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">GameElement::Color</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Declaring coloursElements </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55eda29ead53b80ef87d09ba8a014f6968ec2"></a>yellow&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55eda0441d0bbdcb6db7e732480b59baff4e3"></a>green&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55edaf2c53ff694d32ce6157b05f4b3aa4466"></a>red&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a753a941083f668c6b1e84c9cd85b55eda0337afc087a3cac19411c2c633c6d158"></a>blue&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a7b62036e0a68b55efbd82d41367b8ac7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b62036e0a68b55efbd82d41367b8ac7">&#9670;&nbsp;</a></span>ElementDestroyed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Declares a type of your own, in this case being a derstruction types </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b62036e0a68b55efbd82d41367b8ac7ac5e6c2f64a07c4d3e4058b4198a26a70"></a>destroynothing&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b62036e0a68b55efbd82d41367b8ac7aac9a865ae25ad1d8a6a79536aecf0bc2"></a>destroybrick&#160;</td><td class="fielddoc"><p>destroys brick </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7b62036e0a68b55efbd82d41367b8ac7a097b05e4baba29b3d954dbbbd767f71a"></a>destroyball&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a88e64c35dcdc76eec6078096cf5b64f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88e64c35dcdc76eec6078096cf5b64f7">&#9670;&nbsp;</a></span>Size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">GameElement::Size</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Declaring sizes of GameElements </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671"></a>small&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a88e64c35dcdc76eec6078096cf5b64f7ab4a52c04f1d4ea93f606c245f7cd1b7f"></a>medium&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a88e64c35dcdc76eec6078096cf5b64f7aeb1bfe6e9cd8b838dd0071ea86d645a9"></a>big&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a21faa0b2f1af0f3c3b8c4d9c0e402423"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21faa0b2f1af0f3c3b8c4d9c0e402423">&#9670;&nbsp;</a></span>GameElement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GameElement::GameElement </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>xpos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ypos</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>w</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Constructor of class <a class="el" href="class_game_element.html">GameElement</a></p>
-<p>Constructor of Element object </p>
-
-</div>
-</div>
-<a id="a3e487fb9386f884491c6cffd16910126"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e487fb9386f884491c6cffd16910126">&#9670;&nbsp;</a></span>~GameElement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual GameElement::~GameElement </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>virtual standard destructor of <a class="el" href="class_game_element.html">GameElement</a> </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a43addde25a0ab76f8b48ded220d9c886"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43addde25a0ab76f8b48ded220d9c886">&#9670;&nbsp;</a></span>Bounce()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a> GameElement::Bounce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_game_element.html">GameElement</a> *&#160;</td>
-          <td class="paramname"><em>ball</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Pure virtual function that returns the type of object destroyed </p>
-
-<p>Implemented in <a class="el" href="class_wall.html#aeed911bfd49748b395f5cd0ab3258621">Wall</a>, <a class="el" href="class_platform.html#a2fab20c6f6ec26458195d77765b35d81">Platform</a>, <a class="el" href="class_brick.html#ae37676a7435387e40dbe777bc755d47d">Brick</a>, and <a class="el" href="class_ball.html#a7b1524beab3c36584fc7bffce5e3b23f">Ball</a>.</p>
-
-</div>
-</div>
-<a id="a021238a067d261855baf4176a7bebe96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a021238a067d261855baf4176a7bebe96">&#9670;&nbsp;</a></span>destroyGameElement()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameElement::destroyGameElement </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to destroy GameElements</p>
-<p>Function to destroy the game element (Not Implemented) </p>
-
-</div>
-</div>
-<a id="acad1a30d8bcf7cce64058262464da795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acad1a30d8bcf7cce64058262464da795">&#9670;&nbsp;</a></span>draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void GameElement::draw </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_window.html">Window</a> *&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Pure virtual function </p>
-
-<p>Implemented in <a class="el" href="class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509">Wall</a>, <a class="el" href="class_ball.html#a9b170c27c74586af6108314c3623da53">Ball</a>, <a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">Platform</a>, and <a class="el" href="class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4">Brick</a>.</p>
-
-</div>
-</div>
-<a id="adb82bf0c9072c2bbdb623b0d7958655e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb82bf0c9072c2bbdb623b0d7958655e">&#9670;&nbsp;</a></span>getHeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::getHeight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to height of elements</p>
-<p>Get height of element object </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph.png" border="0" usemap="#class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph" alt=""/></div>
-<map name="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph" id="class_game_element_adb82bf0c9072c2bbdb623b0d7958655e_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="223,5,342,32"/>
-<area shape="rect" id="node3" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="235,56,331,83"/>
-<area shape="rect" id="node4" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="231,107,335,133"/>
-<area shape="rect" id="node5" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="221,157,344,184"/>
-<area shape="rect" id="node6" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="233,208,333,235"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a614be3513f3bd193fb2666b44e7c6b4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a614be3513f3bd193fb2666b44e7c6b4d">&#9670;&nbsp;</a></span>getWidth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::getWidth </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to width of elements</p>
-<p>Get width of element object </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph.png" border="0" usemap="#class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph" alt=""/></div>
-<map name="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph" id="class_game_element_a614be3513f3bd193fb2666b44e7c6b4d_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="230,5,334,32"/>
-<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="223,56,341,83"/>
-<area shape="rect" id="node6" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="234,107,330,133"/>
-<area shape="rect" id="node7" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="230,157,334,184"/>
-<area shape="rect" id="node8" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="219,208,345,235"/>
-<area shape="rect" id="node9" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="221,259,343,285"/>
-<area shape="rect" id="node10" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="232,309,332,336"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="393,107,552,133"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="600,107,651,133"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a7c154aff646c91168dc974a43d340812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c154aff646c91168dc974a43d340812">&#9670;&nbsp;</a></span>getXLocation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::getXLocation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Functions to get X location of elements</p>
-<p>Return the current location of the element (x and y seperately) </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph.png" border="0" usemap="#class_game_element_a7c154aff646c91168dc974a43d340812_icgraph" alt=""/></div>
-<map name="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph" id="class_game_element_a7c154aff646c91168dc974a43d340812_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="251,5,355,32"/>
-<area shape="rect" id="node5" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="244,56,363,83"/>
-<area shape="rect" id="node6" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="255,107,351,133"/>
-<area shape="rect" id="node7" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="251,157,355,184"/>
-<area shape="rect" id="node8" href="class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="240,208,367,235"/>
-<area shape="rect" id="node9" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="242,259,365,285"/>
-<area shape="rect" id="node10" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="253,309,353,336"/>
-<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="Controller::launchGame" alt="" coords="415,107,573,133"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="621,107,672,133"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a29823dea49b05f06fa6cb9b20239e3a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29823dea49b05f06fa6cb9b20239e3a3">&#9670;&nbsp;</a></span>getYLocation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::getYLocation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Functions to get Y location of elements </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph.png" border="0" usemap="#class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph" alt=""/></div>
-<map name="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph" id="class_game_element_a29823dea49b05f06fa6cb9b20239e3a3_icgraph">
-<area shape="rect" id="node2" href="class_ball.html#ab1da9238c136e43523cddea8a2d96c19" title="Ball::wallBounce" alt="" coords="245,5,363,32"/>
-<area shape="rect" id="node3" href="class_ball.html#a2ab0e0b3912efd228f4075129f7fd836" title="Ball::Bounce" alt="" coords="256,56,352,83"/>
-<area shape="rect" id="node4" href="class_brick.html#ab3c4a1f26d327a551b8215bd575442fd" title="Brick::Bounce" alt="" coords="252,107,356,133"/>
-<area shape="rect" id="node5" href="class_platform.html#a44c730f78cbe8c709ee0393121ec3f7a" title="Platform::Bounce" alt="" coords="243,157,365,184"/>
-<area shape="rect" id="node6" href="class_wall.html#a47fd100838dde29f79e46862961ab185" title="Wall::Bounce" alt="" coords="254,208,354,235"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a88d2c44b4ee25758cc96b61ff8809f1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88d2c44b4ee25758cc96b61ff8809f1b">&#9670;&nbsp;</a></span>set_color_rgba()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int * GameElement::set_color_rgba </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">Color</a>&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function to set color</p>
-<p>Returns a pointer to an array of 4 integers </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_game_element_a88d2c44b4ee25758cc96b61ff8809f1b_icgraph.png" border="0" usemap="#class_game_element_a88d2c44b4ee25758cc96b61ff8809f1b_icgraph" alt=""/></div>
-<map name="class_game_element_a88d2c44b4ee25758cc96b61ff8809f1b_icgraph" id="class_game_element_a88d2c44b4ee25758cc96b61ff8809f1b_icgraph">
-<area shape="rect" id="node2" href="class_platform.html#aab657eabe23844e757e5ad27c54174f9" title="Platform::Platform" alt="" coords="252,5,379,32"/>
-<area shape="rect" id="node3" href="class_wall.html#ab6ba5936b820b65e1566fa11181c2aab" title="Wall::Wall" alt="" coords="274,56,357,83"/>
-</map>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a94cb6e054d7b806cb0fec56c2ea223fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94cb6e054d7b806cb0fec56c2ea223fd">&#9670;&nbsp;</a></span>height</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::height</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1cbcfa253a9f677696f569639949ac6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cbcfa253a9f677696f569639949ac6c">&#9670;&nbsp;</a></span>width</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::width</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a277a6aebf21af808bc409be730624164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a277a6aebf21af808bc409be730624164">&#9670;&nbsp;</a></span>xpos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double GameElement::xpos</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2f77501ee6edb9c987fe15ea6c73bb08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f77501ee6edb9c987fe15ea6c73bb08">&#9670;&nbsp;</a></span>xposition</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::xposition</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a01d8bdb14a360b2979ac810b71304ddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d8bdb14a360b2979ac810b71304ddd">&#9670;&nbsp;</a></span>ypos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double GameElement::ypos</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0c5380d86d3b8eb38e3a09f7149a31ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c5380d86d3b8eb38e3a09f7149a31ce">&#9670;&nbsp;</a></span>yposition</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GameElement::yposition</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>Advanced-Programming/<a class="el" href="_game_element_8h_source.html">GameElement.h</a></li>
-<li>Advanced-Programming/<a class="el" href="_game_element_8cpp.html">GameElement.cpp</a></li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Game Element manages each element of the game seperately, each must contain its own texture to add the possibility to draw an PNG image instead of a rectangle with a color. </p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_game_element_8h_source.html">GameElement.h</a></li>
+<li>GameElement.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

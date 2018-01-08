@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['idi_5ficon1',['IDI_ICON1',['../resource_8h.html#a455fef2a9349aae3af8ef8f24f6fc9d8',1,'resource.h']]],
-  ['isclosed',['isClosed',['../class_window.html#a752a62c1fedece0a87ba6ff7e72de344',1,'Window']]],
-  ['iterations_5fper_5fcycle',['iterations_per_cycle',['../_controller_8cpp.html#a51f7921cbaf007c7c4f418e4a5f2d732',1,'Controller.cpp']]]
+  ['h',['h',['../struct_s_d_l___surface.html#af33bcf87a1f5e10a99b3c7e8626b38c8',1,'SDL_Surface::h()'],['../struct_s_d_l___display_mode.html#a0d9eabed50a560ed553af772c26632d7',1,'SDL_DisplayMode::h()']]],
+  ['hat',['hat',['../struct_s_d_l___joy_hat_event.html#ab1b54a6d1091e583e856f86b5af1e2f6',1,'SDL_JoyHatEvent']]],
+  ['hdc',['hdc',['../struct_s_d_l___sys_w_minfo.html#a5c9d0745b083422834681e99c38b803e',1,'SDL_SysWMinfo']]],
+  ['height',['height',['../class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd',1,'GameElement']]],
+  ['hinstance',['hinstance',['../struct_s_d_l___sys_w_minfo.html#ae3e93d21e2b20b2069f5f7d5308194f1',1,'SDL_SysWMinfo']]],
+  ['hits',['hits',['../class_brick.html#a2cb4388212a739857daa231fbfff6fae',1,'Brick']]],
+  ['hwnd',['hwnd',['../struct_s_d_l___sys_w_mmsg.html#a55cf9583b5eddfe60a5c9851f9cce457',1,'SDL_SysWMmsg']]]
 ];

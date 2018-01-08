@@ -1,0 +1,5 @@
+<map id="SDL2/include/SDL2/SDL_config_android.h" name="SDL2/include/SDL2/SDL_config_android.h">
+<area shape="rect" id="node2" href="$_s_d_l__platform_8h.html" title="Try to get a standard set of platform defines. " alt="" coords="68,100,199,129"/>
+<area shape="rect" id="node3" href="$begin__code_8h.html" title="This file sets things up for C dynamic library function definitions, static inlined functions..." alt="" coords="5,177,123,207"/>
+<area shape="rect" id="node4" href="$close__code_8h.html" title="This file reverses the effects of begin_code.h and should be included after you finish any function a..." alt="" coords="147,177,261,207"/>
+</map>

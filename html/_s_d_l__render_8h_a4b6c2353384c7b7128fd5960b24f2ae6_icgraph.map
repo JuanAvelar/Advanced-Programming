@@ -1,0 +1,6 @@
+<map id="SDL_RenderCopy" name="SDL_RenderCopy">
+<area shape="rect" id="node2" href="$class_ball.html#a9b170c27c74586af6108314c3623da53" title="Draws the ball object with its image. " alt="" coords="220,5,311,35"/>
+<area shape="rect" id="node3" href="$class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4" title="Draws a brick in the SDL window. " alt="" coords="215,59,315,88"/>
+<area shape="rect" id="node4" href="$class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac" title="Function that draws the platform into the SDL window. " alt="" coords="204,112,327,141"/>
+<area shape="rect" id="node5" href="$class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509" title="Draws the walls into the SDL window. " alt="" coords="218,165,313,195"/>
+</map>

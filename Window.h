@@ -4,7 +4,7 @@
 #include <SDL2/SDL.h>
 #include <vector>
 
-/**Declaring class Window*/
+/**Manages the window attributes aswell as all pointers involving rendering, (textures are not part of this class)*/
 class Window {  
 public:
 	/**Window constructor*/
@@ -20,23 +20,27 @@ public:
 	/**Declaring window to null pointer*/
 	SDL_Window *_window = nullptr;//should be private
 
-	/**Virtual Destroyer of window*/
 public:
+	/**Virtual Destroyer of window*/
 	virtual ~Window();
-	/**Boolean to know if window is initialised or not */
 private:
+	/**Boolean function to know if window is correctly initialized */
 	bool init();
 
 private:
-
+	/**This will be the title of the window*/
 	std::string _title;
+	/**Width of the only window*/
 	int _width = 800;
+	/**Height of the only window*/
 	int _height = 600;
+	/**Variable that tells if the window is closed or still open*/
 	bool _closed = false;
+	/**A pointer to a structure that contains a collection of pixels used in software blitting*/
 	SDL_Surface *_surface;
 
-	/**Declaring renderer and setting to null pointer*/
 public:
+	/**Render pointer, called when something needs to be drawn, NOTE: there can only be one renderer pointer per window*/
 	SDL_Renderer *_renderer = nullptr;
 };
 

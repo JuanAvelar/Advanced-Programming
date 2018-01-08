@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Break Out: Platform Class Reference</title>
+<title>Breakout: Platform Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,8 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="shiny_pinball.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Break Out
+   <div id="projectname">Breakout
    </div>
   </td>
  </tr>
@@ -66,159 +67,155 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_platform.html" title="Platform generates a square with color and manages function accordingly, you can also use an image...">Platform</a> generates a square with color and manages function accordingly, you can also use an image.  
+ <a href="class_platform.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_platform_8h_source.html">Platform.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Platform:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_platform__inherit__graph.png" border="0" usemap="#_platform_inherit__map" alt="Inheritance graph"/></div>
 <map name="_platform_inherit__map" id="_platform_inherit__map">
-<area shape="rect" id="node2" href="class_moveable_object.html" title="MoveableObject" alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node3" href="class_game_element.html" title="GameElement" alt="" coords="10,5,115,32"/>
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,364,172,519"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,316"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for Platform:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_platform__coll__graph.png" border="0" usemap="#_platform_coll__map" alt="Collaboration graph"/></div>
 <map name="_platform_coll__map" id="_platform_coll__map">
-<area shape="rect" id="node2" href="class_moveable_object.html" title="MoveableObject" alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node3" href="class_game_element.html" title="GameElement" alt="" coords="10,5,115,32"/>
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,364,172,519"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,316"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab657eabe23844e757e5ad27c54174f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#aab657eabe23844e757e5ad27c54174f9">Platform</a> (const <a class="el" href="class_window.html">Window</a> &amp;window, <a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">GameElement::Color</a> color)</td></tr>
-<tr class="separator:aab657eabe23844e757e5ad27c54174f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66de440b7b04ea97b898ee6d32a6ae70"><td class="memItemLeft" align="right" valign="top"><a id="a66de440b7b04ea97b898ee6d32a6ae70"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a66de440b7b04ea97b898ee6d32a6ae70">Platform</a> (<a class="el" href="struct_s_d_l___color.html">SDL_Color</a> color)</td></tr>
+<tr class="memdesc:a66de440b7b04ea97b898ee6d32a6ae70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the platform class(currently used and monochromatic) <br /></td></tr>
+<tr class="separator:a66de440b7b04ea97b898ee6d32a6ae70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8743e33a404693da0fa5fb3dbfda606b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a8743e33a404693da0fa5fb3dbfda606b">Platform</a> (const <a class="el" href="class_window.html">Window</a> &amp;window, <a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">GameElement::Size</a> size, const std::string &amp;image_path)</td></tr>
+<tr class="memdesc:a8743e33a404693da0fa5fb3dbfda606b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary constructor of the platform using an image (currently no image to use), this one is currently not being used for the platform, but is used for the start button.  <a href="#a8743e33a404693da0fa5fb3dbfda606b">More...</a><br /></td></tr>
 <tr class="separator:a8743e33a404693da0fa5fb3dbfda606b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13b5e4ef946b8a2fe38d22014145ab68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68">~Platform</a> ()</td></tr>
+<tr class="memitem:a13b5e4ef946b8a2fe38d22014145ab68"><td class="memItemLeft" align="right" valign="top"><a id="a13b5e4ef946b8a2fe38d22014145ab68"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68">~Platform</a> ()</td></tr>
+<tr class="memdesc:a13b5e4ef946b8a2fe38d22014145ab68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard destructor of the platform class. <br /></td></tr>
 <tr class="separator:a13b5e4ef946b8a2fe38d22014145ab68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae196677ddbb2f1854c16c01b29e041d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#ae196677ddbb2f1854c16c01b29e041d0">keyInput</a> (SDL_Event &amp;event)</td></tr>
-<tr class="separator:ae196677ddbb2f1854c16c01b29e041d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">draw</a> (<a class="el" href="class_window.html">Window</a> *platform_window) const</td></tr>
-<tr class="separator:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44421802653ad453152be640053d6c1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a44421802653ad453152be640053d6c1c">move</a> (<a class="el" href="class_game_element.html">GameElement</a> *right_wall, <a class="el" href="class_game_element.html">GameElement</a> *left_wall)</td></tr>
-<tr class="separator:a44421802653ad453152be640053d6c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fab20c6f6ec26458195d77765b35d81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a2fab20c6f6ec26458195d77765b35d81">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)</td></tr>
+<tr class="memitem:a2fab20c6f6ec26458195d77765b35d81"><td class="memItemLeft" align="right" valign="top"><a id="a2fab20c6f6ec26458195d77765b35d81"></a>
+<a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a2fab20c6f6ec26458195d77765b35d81">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)</td></tr>
+<tr class="memdesc:a2fab20c6f6ec26458195d77765b35d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that evaluates when the platform is hit by the ball and sets a new direction according to where on the platform it is hit (left side = left, right side = right, middle is straight up) <br /></td></tr>
 <tr class="separator:a2fab20c6f6ec26458195d77765b35d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="memItemLeft" align="right" valign="top"><a id="aa046dc1f23bc5e6e0c7ec8b435108bac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">draw</a> (<a class="el" href="class_window.html">Window</a> *platform_window) const</td></tr>
+<tr class="memdesc:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that draws the platform into the SDL window. <br /></td></tr>
+<tr class="separator:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae196677ddbb2f1854c16c01b29e041d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#ae196677ddbb2f1854c16c01b29e041d0">keyInput</a> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;event)</td></tr>
+<tr class="memdesc:ae196677ddbb2f1854c16c01b29e041d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that implements the keyboard input for movement of the platform.  <a href="#ae196677ddbb2f1854c16c01b29e041d0">More...</a><br /></td></tr>
+<tr class="separator:ae196677ddbb2f1854c16c01b29e041d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44421802653ad453152be640053d6c1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a44421802653ad453152be640053d6c1c">move</a> (<a class="el" href="class_game_element.html">GameElement</a> *right_wall, <a class="el" href="class_game_element.html">GameElement</a> *left_wall)</td></tr>
+<tr class="memdesc:a44421802653ad453152be640053d6c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that looks at the direction of the platform and moves it accordingly.  <a href="#a44421802653ad453152be640053d6c1c">More...</a><br /></td></tr>
+<tr class="separator:a44421802653ad453152be640053d6c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_moveable_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_moveable_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_moveable_object.html">MoveableObject</a></td></tr>
-<tr class="memitem:a3ec5f9542f529909cbb0e69709c645ea inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a3ec5f9542f529909cbb0e69709c645ea">MoveableObject</a> (int <a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a>, int <a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a>, const int <a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a>, const int <a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a>, double xdirection, double ydirection, double speed)</td></tr>
-<tr class="separator:a3ec5f9542f529909cbb0e69709c645ea inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af75c9322ce79ed9f9704f113ec44861a inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#af75c9322ce79ed9f9704f113ec44861a">~MoveableObject</a> ()=default</td></tr>
+<tr class="memitem:a95d5332f03b16dbafc1b515f7dbc31d1 inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top"><a id="a95d5332f03b16dbafc1b515f7dbc31d1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a95d5332f03b16dbafc1b515f7dbc31d1">MoveableObject</a> (int <a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a>, int <a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a>, const int <a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a>, const int <a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a>)</td></tr>
+<tr class="memdesc:a95d5332f03b16dbafc1b515f7dbc31d1 inherit pub_methods_class_moveable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the movable object (not really used) <br /></td></tr>
+<tr class="separator:a95d5332f03b16dbafc1b515f7dbc31d1 inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af75c9322ce79ed9f9704f113ec44861a inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top"><a id="af75c9322ce79ed9f9704f113ec44861a"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#af75c9322ce79ed9f9704f113ec44861a">~MoveableObject</a> ()=default</td></tr>
+<tr class="memdesc:af75c9322ce79ed9f9704f113ec44861a inherit pub_methods_class_moveable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor (not really used) <br /></td></tr>
 <tr class="separator:af75c9322ce79ed9f9704f113ec44861a inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed1854dced5f6f874f08c17895c9a33 inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#aeed1854dced5f6f874f08c17895c9a33">setXSpeed</a> (double)</td></tr>
-<tr class="separator:aeed1854dced5f6f874f08c17895c9a33 inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3230c09c042d85b51291b4cbec420662 inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a3230c09c042d85b51291b4cbec420662">setYSpeed</a> (double)</td></tr>
-<tr class="separator:a3230c09c042d85b51291b4cbec420662 inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9607b8b302a374ea1c48d636ff42974a inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a9607b8b302a374ea1c48d636ff42974a">getXPosition</a> ()</td></tr>
-<tr class="separator:a9607b8b302a374ea1c48d636ff42974a inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7386a57db974dac635d99b7d69670811 inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a7386a57db974dac635d99b7d69670811">getYPosition</a> ()</td></tr>
-<tr class="separator:a7386a57db974dac635d99b7d69670811 inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28621b0cca115dcb3935ac984effd29d inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a28621b0cca115dcb3935ac984effd29d">getXSpeed</a> ()</td></tr>
-<tr class="separator:a28621b0cca115dcb3935ac984effd29d inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18533fb8449d6cb4eefd741142753370 inherit pub_methods_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a18533fb8449d6cb4eefd741142753370">getYSpeed</a> ()</td></tr>
-<tr class="separator:a18533fb8449d6cb4eefd741142753370 inherit pub_methods_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_element')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
-<tr class="memitem:a21faa0b2f1af0f3c3b8c4d9c0e402423 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423">GameElement</a> (int <a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a>, int <a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a>, const int h, const int w)</td></tr>
+<tr class="memitem:a21faa0b2f1af0f3c3b8c4d9c0e402423 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a21faa0b2f1af0f3c3b8c4d9c0e402423"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a21faa0b2f1af0f3c3b8c4d9c0e402423">GameElement</a> (int <a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a>, int <a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a>, const int h, const int w)</td></tr>
+<tr class="memdesc:a21faa0b2f1af0f3c3b8c4d9c0e402423 inherit pub_methods_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor it has X Y coordinates and height/width as inputs. <br /></td></tr>
 <tr class="separator:a21faa0b2f1af0f3c3b8c4d9c0e402423 inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e487fb9386f884491c6cffd16910126 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a3e487fb9386f884491c6cffd16910126">~GameElement</a> ()=default</td></tr>
+<tr class="memitem:a3e487fb9386f884491c6cffd16910126 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a3e487fb9386f884491c6cffd16910126"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a3e487fb9386f884491c6cffd16910126">~GameElement</a> ()=default</td></tr>
+<tr class="memdesc:a3e487fb9386f884491c6cffd16910126 inherit pub_methods_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Standard destructor. <br /></td></tr>
 <tr class="separator:a3e487fb9386f884491c6cffd16910126 inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d2c44b4ee25758cc96b61ff8809f1b inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88d2c44b4ee25758cc96b61ff8809f1b">set_color_rgba</a> (<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">Color</a> color)</td></tr>
-<tr class="separator:a88d2c44b4ee25758cc96b61ff8809f1b inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb82bf0c9072c2bbdb623b0d7958655e inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#adb82bf0c9072c2bbdb623b0d7958655e">getHeight</a> () const</td></tr>
-<tr class="separator:adb82bf0c9072c2bbdb623b0d7958655e inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a614be3513f3bd193fb2666b44e7c6b4d inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d">getWidth</a> () const</td></tr>
-<tr class="separator:a614be3513f3bd193fb2666b44e7c6b4d inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c154aff646c91168dc974a43d340812 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7c154aff646c91168dc974a43d340812">getXLocation</a> ()</td></tr>
-<tr class="separator:a7c154aff646c91168dc974a43d340812 inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29823dea49b05f06fa6cb9b20239e3a3 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a29823dea49b05f06fa6cb9b20239e3a3">getYLocation</a> ()</td></tr>
-<tr class="separator:a29823dea49b05f06fa6cb9b20239e3a3 inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a021238a067d261855baf4176a7bebe96 inherit pub_methods_class_game_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a021238a067d261855baf4176a7bebe96">destroyGameElement</a> ()</td></tr>
-<tr class="separator:a021238a067d261855baf4176a7bebe96 inherit pub_methods_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_game_element')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
-<tr class="memitem:a7b62036e0a68b55efbd82d41367b8ac7 inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">ElementDestroyed</a> { <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7ac5e6c2f64a07c4d3e4058b4198a26a70">destroynothing</a>, 
-<a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7aac9a865ae25ad1d8a6a79536aecf0bc2">destroybrick</a>, 
-<a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7a097b05e4baba29b3d954dbbbd767f71a">destroyball</a>
- }</td></tr>
+<tr class="memitem:a7b62036e0a68b55efbd82d41367b8ac7 inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a7b62036e0a68b55efbd82d41367b8ac7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">ElementDestroyed</a> { <b>destroynothing</b>, 
+<b>destroybrick</b>, 
+<b>destroyball</b>
+ }<tr class="memdesc:a7b62036e0a68b55efbd82d41367b8ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function) <br /></td></tr>
+</td></tr>
 <tr class="separator:a7b62036e0a68b55efbd82d41367b8ac7 inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753a941083f668c6b1e84c9cd85b55ed inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">Color</a> { <a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda29ead53b80ef87d09ba8a014f6968ec2">yellow</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda0441d0bbdcb6db7e732480b59baff4e3">green</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55edaf2c53ff694d32ce6157b05f4b3aa4466">red</a>, 
-<a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55eda0337afc087a3cac19411c2c633c6d158">blue</a>
- }</td></tr>
-<tr class="separator:a753a941083f668c6b1e84c9cd85b55ed inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7 inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7a3eab3773750e5c218b98dde8c15fd671">small</a>, 
-<a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7ab4a52c04f1d4ea93f606c245f7cd1b7f">medium</a>, 
-<a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7aeb1bfe6e9cd8b838dd0071ea86d645a9">big</a>
- }</td></tr>
+<tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7 inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a88e64c35dcdc76eec6078096cf5b64f7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <b>small</b>, 
+<b>medium</b>, 
+<b>big</b>
+ }<tr class="memdesc:a88e64c35dcdc76eec6078096cf5b64f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the game elements (Input of most of the elements constructor, select height and width in a switch case inside each constructor) <br /></td></tr>
+</td></tr>
 <tr class="separator:a88e64c35dcdc76eec6078096cf5b64f7 inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_moveable_object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_moveable_object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_moveable_object.html">MoveableObject</a></td></tr>
-<tr class="memitem:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a57f836d0869c42b5a6c26288018a57db">_xdirection</a></td></tr>
+<tr class="memitem:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top"><a id="aa1c4b67da638d07aa0abed7ea039c5e2"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#aa1c4b67da638d07aa0abed7ea039c5e2">_speed</a></td></tr>
+<tr class="memdesc:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pub_attribs_class_moveable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed of the moving object, 0 or 1, Warning: never different than these two values. <br /></td></tr>
+<tr class="separator:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pub_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top"><a id="a57f836d0869c42b5a6c26288018a57db"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a57f836d0869c42b5a6c26288018a57db">_xdirection</a></td></tr>
+<tr class="memdesc:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">X Direction in which game objects should move in terms of a vector, form 0 to 1. <br /></td></tr>
 <tr class="separator:a57f836d0869c42b5a6c26288018a57db inherit pub_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0">_ydirection</a></td></tr>
+<tr class="memitem:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top"><a id="a0db3d6c36068da78ba54753817b634f0"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0">_ydirection</a></td></tr>
+<tr class="memdesc:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y Direction in which game objects should move in terms of a vector, form 0 to 1. <br /></td></tr>
 <tr class="separator:a0db3d6c36068da78ba54753817b634f0 inherit pub_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_game_element')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
-<tr class="memitem:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a></td></tr>
-<tr class="separator:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c5380d86d3b8eb38e3a09f7149a31ce inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a></td></tr>
-<tr class="separator:a0c5380d86d3b8eb38e3a09f7149a31ce inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
+<tr class="memitem:ae4e2693a45395a6717cd8a181adefcb3 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="ae4e2693a45395a6717cd8a181adefcb3"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#ae4e2693a45395a6717cd8a181adefcb3">_a</a></td></tr>
+<tr class="memdesc:ae4e2693a45395a6717cd8a181adefcb3 inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absence of light RGBA. <br /></td></tr>
+<tr class="separator:ae4e2693a45395a6717cd8a181adefcb3 inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfcd970b7d56bbd3f254c50475a8d50d inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="adfcd970b7d56bbd3f254c50475a8d50d"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#adfcd970b7d56bbd3f254c50475a8d50d">_b</a></td></tr>
+<tr class="memdesc:adfcd970b7d56bbd3f254c50475a8d50d inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue RGBA. <br /></td></tr>
+<tr class="separator:adfcd970b7d56bbd3f254c50475a8d50d inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4977fd881e3a22285b7419535f853da inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="aa4977fd881e3a22285b7419535f853da"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#aa4977fd881e3a22285b7419535f853da">_g</a></td></tr>
+<tr class="memdesc:aa4977fd881e3a22285b7419535f853da inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green RGBA. <br /></td></tr>
+<tr class="separator:aa4977fd881e3a22285b7419535f853da inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65695f75ec6a178422933a27f59a8e0a inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a65695f75ec6a178422933a27f59a8e0a"></a>
+Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a65695f75ec6a178422933a27f59a8e0a">_r</a></td></tr>
+<tr class="memdesc:a65695f75ec6a178422933a27f59a8e0a inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red RGBA. <br /></td></tr>
+<tr class="separator:a65695f75ec6a178422933a27f59a8e0a inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a94cb6e054d7b806cb0fec56c2ea223fd"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
+<tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
+<tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
+<tr class="memdesc:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a277a6aebf21af808bc409be730624164 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a></td></tr>
+<tr class="memitem:a277a6aebf21af808bc409be730624164 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a277a6aebf21af808bc409be730624164"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a277a6aebf21af808bc409be730624164">xpos</a></td></tr>
+<tr class="memdesc:a277a6aebf21af808bc409be730624164 inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as xposition but double to manage more accuracy. <br /></td></tr>
 <tr class="separator:a277a6aebf21af808bc409be730624164 inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d8bdb14a360b2979ac810b71304ddd inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a></td></tr>
+<tr class="memitem:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a2f77501ee6edb9c987fe15ea6c73bb08"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a></td></tr>
+<tr class="memdesc:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">position Left most part of the object <br /></td></tr>
+<tr class="separator:a2f77501ee6edb9c987fe15ea6c73bb08 inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d8bdb14a360b2979ac810b71304ddd inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a01d8bdb14a360b2979ac810b71304ddd"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a01d8bdb14a360b2979ac810b71304ddd">ypos</a></td></tr>
+<tr class="memdesc:a01d8bdb14a360b2979ac810b71304ddd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as yposition but double to manage more accuracy. <br /></td></tr>
 <tr class="separator:a01d8bdb14a360b2979ac810b71304ddd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_moveable_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_moveable_object')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_moveable_object.html">MoveableObject</a></td></tr>
-<tr class="memitem:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pro_attribs_class_moveable_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_moveable_object.html#aa1c4b67da638d07aa0abed7ea039c5e2">_speed</a> = 0</td></tr>
-<tr class="separator:aa1c4b67da638d07aa0abed7ea039c5e2 inherit pro_attribs_class_moveable_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5380d86d3b8eb38e3a09f7149a31ce inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a0c5380d86d3b8eb38e3a09f7149a31ce"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a></td></tr>
+<tr class="memdesc:a0c5380d86d3b8eb38e3a09f7149a31ce inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">position Top most part of the object <br /></td></tr>
+<tr class="separator:a0c5380d86d3b8eb38e3a09f7149a31ce inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_game_element"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_element')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_game_element.html">GameElement</a></td></tr>
+<tr class="memitem:a1ddb9234af1f3b50e53d647716421ff0 inherit pro_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1ddb9234af1f3b50e53d647716421ff0"></a>
+SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1ddb9234af1f3b50e53d647716421ff0">Possesed_image</a></td></tr>
+<tr class="memdesc:a1ddb9234af1f3b50e53d647716421ff0 inherit pro_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to an image texture used to draw a PNG image representing the game element chosen. <br /></td></tr>
+<tr class="separator:a1ddb9234af1f3b50e53d647716421ff0 inherit pro_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aab657eabe23844e757e5ad27c54174f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab657eabe23844e757e5ad27c54174f9">&#9670;&nbsp;</a></span>Platform() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Platform::Platform </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_window.html">Window</a> &amp;&#160;</td>
-          <td class="paramname"><em>window</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_game_element.html#a753a941083f668c6b1e84c9cd85b55ed">GameElement::Color</a>&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Inheritance of <a class="el" href="class_platform.html">Platform</a> class from MovableObject class</p>
-<p>Constructor of platform </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_platform_aab657eabe23844e757e5ad27c54174f9_cgraph.png" border="0" usemap="#class_platform_aab657eabe23844e757e5ad27c54174f9_cgraph" alt=""/></div>
-<map name="class_platform_aab657eabe23844e757e5ad27c54174f9_cgraph" id="class_platform_aab657eabe23844e757e5ad27c54174f9_cgraph">
-<area shape="rect" id="node2" href="class_game_element.html#a88d2c44b4ee25758cc96b61ff8809f1b" title="GameElement::set_color_rgba" alt="" coords="180,5,379,32"/>
-</map>
-</div>
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_platform.html" title="Platform generates a square with color and manages function accordingly, you can also use an image...">Platform</a> generates a square with color and manages function accordingly, you can also use an image. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8743e33a404693da0fa5fb3dbfda606b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8743e33a404693da0fa5fb3dbfda606b">&#9670;&nbsp;</a></span>Platform() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8743e33a404693da0fa5fb3dbfda606b">&#9670;&nbsp;</a></span>Platform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,104 +245,20 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor of Platrom to define color</p>
-<p><a class="el" href="class_platform.html">Platform</a> Constructor </p>
 
-</div>
-</div>
-<a id="a13b5e4ef946b8a2fe38d22014145ab68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13b5e4ef946b8a2fe38d22014145ab68">&#9670;&nbsp;</a></span>~Platform()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Platform::~Platform </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Construction of platform</p>
-<p><a class="el" href="class_platform.html">Platform</a> Destructor </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2fab20c6f6ec26458195d77765b35d81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fab20c6f6ec26458195d77765b35d81">&#9670;&nbsp;</a></span>Bounce()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a> Platform::Bounce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_game_element.html">GameElement</a> *&#160;</td>
-          <td class="paramname"><em>ball</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Function that returns the type of object destroyed </p>
-<p>Lower inheritance pointer of type ball</p>
-<p>If ball hits the top, output direction will totally depend on the impact position</p>
-<p>If ball hits the side, ball bounces of with same angle</p>
-<p><a class="el" href="class_ball.html">Ball</a> hits top: &ndash;&gt; then change the ydirection</p>
-<p>Remap values form left to right edge of platform to values for xdir between -0.9 and 0.9</p>
-<p>Set the new directions for the ball</p>
-<p>Set the y direction based on the total direction length being 1 </p>
-
-<p>Implements <a class="el" href="class_game_element.html#a43addde25a0ab76f8b48ded220d9c886">GameElement</a>.</p>
+<p>Secondary constructor of the platform using an image (currently no image to use), this one is currently not being used for the platform, but is used for the start button. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_platform_a2fab20c6f6ec26458195d77765b35d81_cgraph.png" border="0" usemap="#class_platform_a2fab20c6f6ec26458195d77765b35d81_cgraph" alt=""/></div>
-<map name="class_platform_a2fab20c6f6ec26458195d77765b35d81_cgraph" id="class_platform_a2fab20c6f6ec26458195d77765b35d81_cgraph">
+<div class="center"><img src="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph.png" border="0" usemap="#class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph" alt=""/></div>
+<map name="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph" id="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph">
+<area shape="rect" id="node2" href="_s_d_l__render_8h.html#a0c75234b90965e9db70947fbe91a5840" title="Create a texture from an existing surface. " alt="" coords="200,5,453,35"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aa046dc1f23bc5e6e0c7ec8b435108bac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa046dc1f23bc5e6e0c7ec8b435108bac">&#9670;&nbsp;</a></span>draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Platform::draw </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_window.html">Window</a> *&#160;</td>
-          <td class="paramname"><em>platform_window</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Draw function of platform</p>
-<p>Characteristics and ppostion of platform </p>
-
-<p>Implements <a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">GameElement</a>.</p>
-
-</div>
-</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae196677ddbb2f1854c16c01b29e041d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae196677ddbb2f1854c16c01b29e041d0">&#9670;&nbsp;</a></span>keyInput()</h2>
 
@@ -355,21 +268,15 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void Platform::keyInput </td>
           <td>(</td>
-          <td class="paramtype">SDL_Event &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="class_platform.html">Platform</a> Destructor keyInput function to set events of key pressed</p>
-<p>Function move &ndash;&gt; implements abstract class function </p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_platform_ae196677ddbb2f1854c16c01b29e041d0_icgraph.png" border="0" usemap="#class_platform_ae196677ddbb2f1854c16c01b29e041d0_icgraph" alt=""/></div>
-<map name="class_platform_ae196677ddbb2f1854c16c01b29e041d0_icgraph" id="class_platform_ae196677ddbb2f1854c16c01b29e041d0_icgraph">
-</map>
-</div>
+
+<p>Function that implements the keyboard input for movement of the platform. </p>
+<p>Key pressdown sets a direction of the platform (left or right) and key release resets the direction to 0. </p>
 
 </div>
 </div>
@@ -406,15 +313,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Virtual move funtion </p>
+
+<p>Function that looks at the direction of the platform and moves it accordingly. </p>
 
 <p>Implements <a class="el" href="class_moveable_object.html#af3bab36b427a158f3176aa2aa88e3757">MoveableObject</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Advanced-Programming/<a class="el" href="_platform_8h_source.html">Platform.h</a></li>
-<li>Advanced-Programming/<a class="el" href="_platform_8cpp.html">Platform.cpp</a></li>
+<li><a class="el" href="_platform_8h_source.html">Platform.h</a></li>
+<li>Platform.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
