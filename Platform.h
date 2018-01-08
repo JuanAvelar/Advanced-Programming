@@ -1,6 +1,6 @@
 #ifndef Platform_H
 #define Platform_H
-
+#include "Window.h"
 #include "MoveableObject.h"
 
 
@@ -19,4 +19,4 @@ public:
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 };
 
-#endif // Platform_HH
+#endif // Platform_H

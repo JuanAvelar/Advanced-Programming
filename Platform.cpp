@@ -1,33 +1,39 @@
 #include "Platform.h"
-#include "Window.h"
 #include "Ball.h"
-#include "Controller.h"
 #include <SDL2/SDL_image.h>
 using namespace std;
 
-// constructor
+/**Constructor of the platform class(currently used and monochromatic)*/
 Platform::Platform(SDL_Color color)
 	: MoveableObject(xposition, yposition, height, width) {	
+	//takes the rgba values of the color of the input
 	_r = color.r;
 	_g = color.g;
 	_b = color.b;
 	_a = color.a;
+	
+	//initial position and dimensions
 	xposition = 500;
 	yposition = 500;
 	height = 10;
 	width = 100;
+
+	//sets the nonrounded position values to be equal to the starting position
+	xpos = double(xposition);
+	ypos = double(yposition);
+
+	//initial directions are 0, speed is constant
 	_xdirection = 0;
 	_ydirection = 0;
 	_speed = 1.0;
-	xpos = double(xposition);
-	ypos = double(yposition);
+	
 	Possesed_image = nullptr;
 }
 
-// constructor
+/**Secondary constructor of the platform using an image (currently no image to use), this one is currently not being used for the platform, but is used for the start button.*/
 Platform::Platform(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width) {
-	//... no extra attributes to include?
+	//loading of the image
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
@@ -39,14 +45,15 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 	SDL_FreeSurface(surface);
 	xposition = 500;
 	yposition = 500;
+	//switch to use different sizes (small is standard platform size, big is used for the start button)
 	switch (size) {
 	case small:
-		height = 20;
+		height = 10;
 		width = 100;
 		break;
 	case medium:
-		height = 20;
-		width = 130;
+		height = 10;
+		width = 200;
 		break;
 	case big:
 		height = 300;
@@ -57,11 +64,13 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 	};
 }
 
+/**Standard destructor of the platform class*/
 Platform::~Platform() {
 SDL_DestroyTexture(Possesed_image); //this is only for the images
 std::cout << "Platform is being destroyed\n";
 }
 
+/**Function that draws the platform into the SDL window*/
 void Platform::draw(Window *platform_window) const {
 	SDL_Rect platform_draw = { xposition, yposition, width, height };
 	if (Possesed_image) {
@@ -74,8 +83,9 @@ void Platform::draw(Window *platform_window) const {
 }
 
 
-//function move --> implements abstract class function
+/**Function that implements the keyboard input for movement of the platform. Key pressdown sets a direction of the platform (left or right) and key release resets the direction to 0.*/
 void Platform::keyInput(SDL_Event &event) {
+	//Key is pressed
 	if (event.type == SDL_KEYDOWN) {
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
@@ -88,6 +98,7 @@ void Platform::keyInput(SDL_Event &event) {
 			break;
 		}
 	}
+	//Key is released
 	if (event.type == SDL_KEYUP){
 		switch (event.key.keysym.sym) {
 		case SDLK_LEFT:
@@ -108,12 +119,12 @@ void Platform::keyInput(SDL_Event &event) {
 
 }
 
+/**Function that evaluates when the platform is hit by the ball and sets a new direction according to where on the platform it is hit (left side = left, right side = right, middle is straight up)*/
 GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
-	//if ball hits the top, output direction will totally depend on the impact position
-	//if ball hits the side, ball bounces of with same angle
+	//if the ball hits the top, output direction will depend on the impact position
 
-	//ball hits top: --> then change the ydirection
+	//evaluate when the ball hits the platform top
 	if ((ball->yposition + ball->height > this->yposition && ball->yposition + ball->height < this->yposition + 2 || lower_inh_ptr->_speed == 0) &&
 		ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width 
 		)
@@ -121,16 +132,16 @@ GameElement::ElementDestroyed Platform::Bounce(GameElement * ball) {
 
 		//remap values form left to right edge of platform to values for xdir between -0.9 and 0.9
 		double collisionPoint = (-0.9 + 1.8 * (((double)ball->xposition + (double)ball->width  - (double)this->xposition) / ((double)width+(double)ball->width)));
-		//output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
-
+		
 		//set the new directions for the ball
 		lower_inh_ptr->_xdirection = collisionPoint;
-		//set the y direction based on the total direction length being 1
+		//set the y direction based on the total direction length being 1 (pythagoras)
 		lower_inh_ptr->_ydirection = -sqrt(1 - pow(collisionPoint, 2));
 	}
 	return GameElement::destroynothing;
 }
 
+/**Function that looks at the direction of the platform and moves it accordingly.*/
 void Platform::move(GameElement *right_wall, GameElement *left_wall) {
 	if (xposition > left_wall->xposition + right_wall->width && _xdirection < 0) {
 		xposition -= 1;

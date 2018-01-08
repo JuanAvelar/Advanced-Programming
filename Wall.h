@@ -1,6 +1,6 @@
-#ifndef WALL_H
-#define WALL_H
-
+#ifndef Wall_H
+#define Wall_H
+#include "Window.h"
 #include "GameElement.h"
 
 
@@ -12,7 +12,6 @@ public:
 	Wall(SDL_Color color, Wall_type wallside);
 	~Wall(); // nonvirtual destructor
 
-	enum Wall_type getWallSide();
 
 	void Wall::draw(Window *window_wall) const;
 

@@ -1,13 +1,12 @@
 #include "Ball.h"
 #include <SDL2/SDL_image.h>
-#include "Controller.h"
 
 using namespace std;
 
 /** Constructor of the ball class*/
 Ball::Ball(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width) {
-	//... no extra attributes to include?
+	//loading of the image provided in the input
 	auto surface = IMG_Load(image_path.c_str());
 	if (!surface) {
 		std::cerr << "Failed to create surface.\n";
@@ -18,6 +17,7 @@ Ball::Ball(const Window &window, GameElement::Size size, const std::string &imag
 	}
 	SDL_FreeSurface(surface);
 	
+	//switch for multiple sizes of the ball, standard is small
 	switch (size) {
 	case small:
 		height = 20;

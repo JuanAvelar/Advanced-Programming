@@ -14,7 +14,7 @@ public:
 public:
 	double _xdirection;
 	double _ydirection;
-	double _speed = 0;
+	double _speed;
 };
 
-#endif // MoveableObject_H
+#endif //MoveableObject_H

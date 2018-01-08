@@ -1,8 +1,7 @@
 #include "Brick.h"
-#include "Window.h"
 using namespace std;
 
-// constructor 
+/**Constructor of the brick class*/ 
 Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 	: GameElement(xposition, yposition, height, width){
 	hits = hitsToDestroy;
@@ -13,10 +12,12 @@ Brick::Brick( int xposition, int yposition, const int	height, const int width, i
 	Possesed_image = nullptr;
 }
 
+/**Standard destructor of the brick class*/
 Brick::~Brick() {
 	std::cout << "Brick is being destroyed\n";
 }
 
+/**Draws a brick in the SDL window*/
 void Brick::draw(Window *window_brick) const {
 	SDL_Rect brick_draw = { xposition, yposition, width, height };
 	if (Possesed_image) {
@@ -27,11 +28,12 @@ void Brick::draw(Window *window_brick) const {
 		SDL_RenderFillRect(window_brick->_renderer, &brick_draw);
 	}
 }
-/** This function will check the point of colission of the ball with a brick. Depending on this point of colission (which will be on a ring of 1 pixel wide around the brick) the x direction, y direction or both will change*/
+/** This function will check the point of colission of the ball with a brick. Depending on this point of colission (which will be on a ring of 1 pixel wide around the brick) the x direction, y direction or both will change. Also if the brick has no lifes left it will be deleted.*/
 GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
+	//A dynamic cast to access the ball class.
 	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
 
-	//first we need to check if the ball hits the side or the top/bottom
+	//if the brick has lives left check for colissions
 	if (hits > 0) {
 
 		//ball hits sides: --> then change the xdirection. Also remove a life of the brick.
@@ -56,7 +58,9 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 		}
 		return GameElement::destroynothing;
 	}
+	//if there are no lives left, delete the brick
 	else {
+
 		delete this;
 		return GameElement::destroybrick;
 	}

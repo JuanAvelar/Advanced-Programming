@@ -1,11 +1,8 @@
 #include "Wall.h"
-#include "Window.h"
 #include "MoveableObject.h"
-#include <SDL2/SDL_image.h>
 using namespace std;
 
-// wall side can be either "up", "down", "right", "left"
-// constructor 
+/**Constructor of the wall class. It has a switch for walls on the upper, down, right and left side.*/ 
 Wall::Wall(SDL_Color color, Wall_type wallside)
 	: GameElement(xposition, yposition, height, width) {
 	switch (wallside) {
@@ -35,19 +32,24 @@ Wall::Wall(SDL_Color color, Wall_type wallside)
 		break;
 	}
 
+	//sets the rgba values to the color input
 	_r = Uint8(color.r);
 	_g = Uint8(color.g);
 	_b = Uint8(color.b);
 	_a = Uint8(color.a);
+	
+	//stores the pick of the wallside
 	wallside_pick = wallside;
 	Possesed_image = nullptr;
 }
 
+/**Standard destructor for the walls.*/
 Wall::~Wall() {
 	std::cout << "Wall is being destroyed\n";
 	SDL_DestroyTexture(Possesed_image);
 }
 
+/**Draws the walls into the SDL window*/
 void Wall::draw(Window *window_wall) const {
 	SDL_Rect fixed_wall = { xposition, yposition, width, height };
 	if (Possesed_image) {
@@ -59,15 +61,13 @@ void Wall::draw(Window *window_wall) const {
 	}
 }
 
-enum Wall::Wall_type Wall::getWallSide()
-{
-	return wallside_pick;
-}
-
+/**Function that evaluates if the ball collides with it and makes the ball change direction if it does.*/
 GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
+	//Dynamic cast to access the ball class.
 	MoveableObject *lower_inh_ptr = { dynamic_cast<MoveableObject*> (ball)};
+	//makes an empty array that will be used for wall evaluation
 	int layer[4] = { 0, 0, 0, 0 };
-		switch (this->getWallSide()) {
+		switch (this->wallside_pick) {
 		case Wall::up:
 			layer[0] = this->yposition + this->height;
 			if (ball->yposition < layer[0]) {

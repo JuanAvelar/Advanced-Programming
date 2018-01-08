@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Window_H
+#define Window_H
 #include <string>
 #include <SDL2/SDL.h>
 #include <vector>
@@ -38,3 +39,5 @@ private:
 public:
 	SDL_Renderer *_renderer = nullptr;
 };
+
+#endif // Window_H

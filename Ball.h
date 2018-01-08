@@ -19,4 +19,4 @@ public:
 
 };
 
-#endif // Ball_HBall_H
+#endif //Ball_H

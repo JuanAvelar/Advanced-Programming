@@ -1,6 +1,6 @@
-#ifndef BRICK_H
-#define BRICK_H
-
+#ifndef Brick_H
+#define Brick_H
+#include "Window.h"
 #include "GameElement.h" 
 #include "Ball.h"
 
