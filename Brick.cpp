@@ -58,7 +58,7 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 		}
 		return GameElement::destroynothing;
 	}
-	//if there are no lives left, delete the brick
+	//if there are no hits left, delete the brick
 	else {
 
 		delete this;

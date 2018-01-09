@@ -6,6 +6,7 @@
 #include <SDL2/SDL.h>
 #undef main
 #include <vector>
+#include <array>
 using std::vector;
 /**Game controller manages all iterative functions and logic functions to set variables or delete objects*/
 class Controller {
@@ -48,7 +49,7 @@ private:
 	/**Boolean to see if a key event occurs*/
 	bool event_flag;
 	/**Mouse position array of 2 elements representing the position of the mouse in the window in X Y coordinates*/
-	double mouse_position[2];
+	std::array<double, 2> mouse_position = {0,0};
 	/**Boolean to jump the start menu function*/
 	bool Start_game = false;
 

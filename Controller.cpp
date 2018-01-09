@@ -86,13 +86,13 @@ void Controller::launchGame(int level) {
 			}
 			if (event_flag) {
 				Ball *ball_pointer = dynamic_cast<Ball*> (Game_elements[0]);
-					ball_pointer->serveBall(event, right_wall, left_wall);//ball moves with the platform when speed is 0
+					ball_pointer->serveBall(event, right_wall, left_wall);//ball direction moves with the platform when speed is 0
 					platform->keyInput(event);//platform moves when an event happens
-					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and mouse
+					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and change window size
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 7) {break;}
+		if (Game_elements.size() < 7) {break;}//when number of elements is less than 7 exit game, because you have lost.
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
