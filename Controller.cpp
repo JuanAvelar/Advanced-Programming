@@ -152,8 +152,10 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 		}
 	}
 	//erasing elements from vector
-	for (auto to_delete : later_be_deleted) {
-		Game_elements->erase(Game_elements->begin() + to_delete);//erase previously defined vector spaces to be whiped
+
+	int multipledestruction = 0; //used because the vector elements that will be erased will be at a lower number. this is compensation for that.
+	for (auto to_delete : later_be_deleted) {	
+		Game_elements->erase(Game_elements->begin() + to_delete - multipledestruction);//erase previously defined vector spaces to be whiped
 		int it = 0;
 		while (it < signed(number_of_ball->size())) {//a while loop is used to compare the numbers inside number_of_ball and all stuff to be erased, if it matches then position is erased from vector.
 			if ((*number_of_ball)[it] == to_delete) {
@@ -162,6 +164,7 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 			else {
 				it++;
 			}
+			multipledestruction++;
 		}//erase the position of the balls in the game elements vector if ball is eliminated
 	}
 }
