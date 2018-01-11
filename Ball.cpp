@@ -81,34 +81,6 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 	}
 }
 
-/**Function for when the ball is still attached to the platform (speed = 0). Left and right key makes the ball follow the platform and the up key will launch it.*/
-void Ball::serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall) {
-	if (_speed == 0) {
-
-		switch (event.type) {
-
-		case SDL_KEYDOWN:
-			switch (event.key.keysym.sym) {
-			case SDLK_a:
-				if (xposition > left_wall->xposition+left_wall->width + 30) {
-					xposition -= 50;
-				}
-				break;
-			case SDLK_d:
-				if (xposition < (right_wall->xposition) - 70) {
-					xposition += 50;
-				}
-				break;
-			case SDLK_UP:
-				_speed = 1.0;
-				break;
-			}
-		default:
-			break;
-		}
-	}
-}
-
 /**Function that allows to make multiple balls bounce on eachother.*/
 GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
