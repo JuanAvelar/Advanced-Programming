@@ -91,7 +91,6 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 7) {break;}//when number of elements is less than 7 exit game, because you have lost.
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
