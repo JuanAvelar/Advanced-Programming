@@ -150,7 +150,7 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 	}
 	//erasing elements from vector
 	int it_1 = 0;
-	while (it_1 < signed(Game_elements->size())) {
+	while (it_1 < signed(Game_elements->size())) {//manual iteration to prevent undefined behavior
 		//std::cout << it_1 << std::endl;
 		if ((*Game_elements)[it_1] == nullptr) {
 			Game_elements->erase(Game_elements->begin() + it_1);//erase previously defined vector spaces to be whiped
