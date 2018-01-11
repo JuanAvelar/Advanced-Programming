@@ -11,7 +11,6 @@ public:
 
 	virtual void move(GameElement *right_wall, GameElement *left_wall);
 	/**Moves the ball when its speed is 0*/
-	void serveBall(SDL_Event &event, GameElement *right_wall, GameElement *left_wall);
 
 	void draw(Window *ball_window)const;
 

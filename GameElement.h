@@ -18,7 +18,7 @@ public:
 	/**Draw virtual function, it draws the element using the pointer Renderer of the window class, it detects if an image is used or just a colored rectangle*/
 	virtual void draw(Window* window) const = 0;//pure virtual
 	/**Virtual function to manage bouncing objects throughout the game, it also manages the destruction of objects in each situation*/
-	virtual GameElement::ElementDestroyed Bounce(GameElement * ball) = 0;
+	virtual ElementDestroyed Bounce(GameElement * ball) = 0;
 
 public:
 	/**position Left most part of the object*/

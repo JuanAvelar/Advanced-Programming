@@ -2,6 +2,7 @@
 #define Platform_H
 #include "Window.h"
 #include "MoveableObject.h"
+#include "Ball.h"
 
 /**Platform generates a square with color and manages function accordingly, you can also use an image*/
 class Platform : public MoveableObject {
@@ -10,7 +11,7 @@ public:
 	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 
-	void keyInput(SDL_Event &event);
+	void keyInput(SDL_Event &event, Ball *ball);
 
 	void draw(Window *platform_window) const;
 
