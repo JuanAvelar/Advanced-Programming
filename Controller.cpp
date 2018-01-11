@@ -171,8 +171,8 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	
 	switch (level) {
 	case 1:
-		for (int i = 1; i < 2; i++) {
-			for (int f = 0; f < 1; f++) {
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 3; f++) {
 				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8( 0), Uint8(255 - i * 25), Uint8(0) });
 				
 			}
