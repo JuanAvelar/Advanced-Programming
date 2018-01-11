@@ -91,6 +91,7 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
+		if (Game_elements.size() < 6 + number_of_ball.size()) { break; }//when number of elements is less than 7 exit game, because all the bricks have been cleared.
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
@@ -170,8 +171,8 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	
 	switch (level) {
 	case 1:
-		for (int i = 1; i < 10; i++) {
-			for (int f = 0; f < 3; f++) {
+		for (int i = 1; i < 2; i++) {
+			for (int f = 0; f < 1; f++) {
 				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8( 0), Uint8(255 - i * 25), Uint8(0) });
 				
 			}
