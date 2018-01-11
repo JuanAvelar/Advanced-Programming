@@ -35,7 +35,7 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 
 	//if the brick has lives left check for colissions
 	if (hits > 0) {
-
+		bool lifeRemoved = false; // boolean that checks if a life is already removed when it changes y direction. Because of this only 1 life will be removed from a brick if the ball hits the corner.
 		//ball hits sides: --> then change the xdirection. Also remove a life of the brick.
 		if (ball->xposition + ball->width > this->xposition && ball->xposition + ball->width < this->xposition + 2 && //the 2 is used to set a 1 pixel boundary around the brick (1<2)
 			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height
@@ -43,7 +43,8 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height) {
 			
 			lower_inh_ptr->_xdirection =-lower_inh_ptr->_xdirection; //flip x direction
-			hits--;
+			hits--;			
+			lifeRemoved = true;
 		}
 		// ball hits the top/bottom: --> then change the ydirection. Also remove a life of the brick.
 
@@ -54,13 +55,14 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width) {
 
 			lower_inh_ptr->_ydirection = -lower_inh_ptr->_ydirection; //flip y direction
-			hits--;
+			if (lifeRemoved == false) {
+				hits--;
+			}
 		}
 		return GameElement::destroynothing;
 	}
 	//if there are no hits left, delete the brick
 	else {
-
 		delete this;
 		return GameElement::destroybrick;
 	}
