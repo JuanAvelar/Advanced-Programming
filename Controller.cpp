@@ -107,8 +107,9 @@ Controller::~Controller() {
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
 
 	for (int i = 0; i < signed(elements->size()); i++) {
-		//if ((*elements)[i]->Possesed_image != nullptr) { std::cout << "This element does contain an image!" << std::endl; }
-		(*elements)[i]->draw(window_foo);			
+		if ((*elements)[i] == nullptr) { std::cout << "This element is nullptr!" << std::endl; }
+		(*elements)[i]->draw(window_foo);		
+
 	}
 	window_foo->clear();
 }
@@ -116,14 +117,12 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 //gets input from checkForColission
 void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
 	/**vector to state which game elements will be erased after the range based for*/
-	vector <int> later_be_deleted;
 	for (auto c : *number_of_ball) {
 		for (int i = 0; i < signed(Game_elements->size()); i++) {//check for a brick collision
 			if (i != c && (*Game_elements)[i] != nullptr && (*Game_elements)[c] != nullptr) {//skips the collision between the ball and the same ball, because it is phisically not possible
 				GameElement::ElementDestroyed Element_destructed = (*Game_elements)[i]->Bounce((*Game_elements)[c]);//the element in c is the ball //Returns true if brick is destroyed
 				if (Element_destructed == GameElement::destroybrick) { 
 					(*Game_elements)[i] = nullptr;
-					later_be_deleted.push_back(i);
 				}//if brick is destroyed then it gets rid of the vector element
 				if (Element_destructed == GameElement::destroyball) {
 					//the size of number_of_ball is defined in bits, so 1 element is 4, 2 is 8...
@@ -133,7 +132,6 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 						if (lives < 1) {
 							Game_lost = true;
 							(*Game_elements)[c] = nullptr;//Setting it to null ptr, it cannot be erased until the pc is out of the second for loop
-							later_be_deleted.push_back(c);
 							break;
 						}
 						else {
@@ -144,7 +142,6 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 					}
 					else {
 						(*Game_elements)[c] = nullptr;
-						later_be_deleted.push_back(c);
 						Moveable_objects->erase(Moveable_objects->begin() + c);
 						//delete also place of the number of ball
 					}
@@ -153,17 +150,23 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 		}
 	}
 	//erasing elements from vector
-	for (auto to_delete : later_be_deleted) {
-		Game_elements->erase(Game_elements->begin() + to_delete);//erase previously defined vector spaces to be whiped
-		int it = 0;
-		while (it < signed(number_of_ball->size())) {//a while loop is used to compare the numbers inside number_of_ball and all stuff to be erased, if it matches then position is erased from vector.
-			if ((*number_of_ball)[it] == to_delete) {
-				number_of_ball->erase(number_of_ball->begin() + it);
-			}
-			else {
-				it++;
-			}
-		}//erase the position of the balls in the game elements vector if ball is eliminated
+	int it_1 = 0;
+	while (it_1 < signed(Game_elements->size())) {
+		//std::cout << it_1 << std::endl;
+		if ((*Game_elements)[it_1] == nullptr) {
+			Game_elements->erase(Game_elements->begin() + it_1);//erase previously defined vector spaces to be whiped
+
+			int it_2 = 0;
+			while (it_2 < signed(number_of_ball->size())) {//a while loop is used to compare the numbers inside number_of_ball and all stuff to be erased, if it matches then position is erased from vector.
+				if ((*number_of_ball)[it_2] == it_1) {
+					number_of_ball->erase(number_of_ball->begin() + it_2);
+				}
+				else {
+					it_2++;
+				}
+			}//erase the position of the balls in the game elements vector if ball is eliminated
+		}
+		it_1++;
 	}
 }
 
