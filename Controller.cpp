@@ -35,7 +35,7 @@ void Controller::launchGame(int level) {
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::big, "pictures/shiny_pinball.png" };	/**ball instance*/
+	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
 	Platform* platform= new Platform{ Green };												/**Platform instance*/
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
@@ -71,7 +71,7 @@ void Controller::launchGame(int level) {
 		
 		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
 			if (iterator == iterations_per_cycle - 1) {	you_shall_not_pass = true;}//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
-			for (auto moving : Moveable_objects) {moving->move(right_wall, left_wall);}
+			for (auto moving : Moveable_objects) {moving->move(right_wall, left_wall);}			
 			bounceOnObject(&number_of_ball, &Game_elements, &Moveable_objects, &window_c);
 			iterator++;
 		}
@@ -146,8 +146,21 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 					}
 				}
 			}
+			
 		}
+		//evaluates whether the direction of the balls needs to be changed and if so does so
+		if ((*Moveable_objects)[c]->_yflip == true) {
+			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
+		}
+		if ((*Moveable_objects)[c]->_xflip == true) {
+			(*Moveable_objects)[c]->_xdirection = -(*Moveable_objects)[c]->_xdirection;
+		}
+		//reset the change of direction to be false as to not endlessly change direction
+		(*Moveable_objects)[c]->_yflip = false;
+		(*Moveable_objects)[c]->_xflip = false;
 	}
+	
+
 	//erasing elements from vector
 	int it_1 = 0;
 	while (it_1 < signed(Game_elements->size())) {//manual iteration to prevent undefined behavior
@@ -170,6 +183,7 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 		}
 	}
 }
+
 
 //You must disinherit the window object to the rest of the objects
 void Controller::set_brick_level(int level, vector <GameElement*>* elements) {

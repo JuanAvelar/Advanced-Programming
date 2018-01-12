@@ -26,9 +26,9 @@ public:
 	/**Handles events of the user input*/
 	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
 	/**Destroys all game objects*/
-	void Controller::destroy_level(int level, vector <GameElement*>* elements);
+	void destroy_level(int level, vector <GameElement*>* elements);
 	/**Does a pause until you click the big button*/
-	void Controller::Start_menu(SDL_Event *event, Window *window_c);
+	void Start_menu(SDL_Event *event, Window *window_c);
 	/**function to get the amount of lifes left in the main*/
 	int getLives();
 private:

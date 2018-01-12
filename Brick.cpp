@@ -42,7 +42,7 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			|| ball->xposition < this->xposition + this->width && ball->xposition > this->xposition + this->width-2 &&
 			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height) {
 			
-			lower_inh_ptr->_xdirection =-lower_inh_ptr->_xdirection; //flip x direction
+			lower_inh_ptr->_xflip = true; //flip x direction
 			hits--;			
 			lifeRemoved = true;
 		}
@@ -54,7 +54,7 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			ball->yposition < this->yposition + this->height && ball->yposition > this->yposition + this->height-2 &&
 			ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width) {
 
-			lower_inh_ptr->_ydirection = -lower_inh_ptr->_ydirection; //flip y direction
+			lower_inh_ptr->_yflip = true; //flip y direction
 			if (lifeRemoved == false) {
 				hits--;
 			}

@@ -20,5 +20,9 @@ public:
 	double _ydirection;
 	/**Speed of the moving object, 0 or 1, Warning: never different than these two values*/
 	double _speed;
+	/**Boolean to make the x direction only flip once in an iteration*/
+	bool _xflip = false;
+	/**Boolean to make the y direction only flip once in an iteration*/
+	bool _yflip = false;
 };
 #endif //MoveableObject_H
