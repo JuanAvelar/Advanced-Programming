@@ -2,13 +2,45 @@
 using namespace std;
 
 /**Constructor of the brick class*/ 
-Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+Brick::Brick( int xposition, int yposition, const int	height, const int width, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool powerups)
 	: GameElement(xposition, yposition, height, width){
 	hits = hitsToDestroy;
 	_r = r;
 	_g = g;
 	_b = b;
 	_a = a;
+	if (powerups == true) {
+		int randompowerupnumber = rand() % 10;
+		if (randompowerupnumber == 1) {
+			int i = rand() % 3 + 1;
+			switch (i) {
+			case 1:
+				_r = 255;
+				_g = 0;
+				_b = 0;
+				_a = 0;
+				powerUp = biggerBall;
+				break;
+			case 2:
+				_r = 0;
+				_g = 0;
+				_b = 255;
+				_a = 0;
+				powerUp = biggerPlatform;
+				break;
+			case 3:
+				_r = 0;
+				_g = 255;
+				_b = 0;
+				_a = 0;
+				powerUp = extraBall;
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
 	Possesed_image = nullptr;
 }
 
@@ -63,6 +95,9 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 	}
 	//if there are no hits left, delete the brick
 	else {
+		if (powerUp != none) {
+			ball->powerUp = powerUp;
+		}
 		delete this;
 		return GameElement::destroybrick;
 	}

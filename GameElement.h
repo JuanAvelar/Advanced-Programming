@@ -15,6 +15,8 @@ public:
 	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
 	/**Size of the game elements (Input of most of the elements constructor, select height and width in a switch case inside each constructor)*/
 	enum Size { small, medium, big };
+	/**Enum that tells which powerup to store in a brick and subsequently in a ball if the brick gets hit.*/
+	enum Powerups { none = 0, biggerBall, biggerPlatform, extraBall };
 	/**Draw virtual function, it draws the element using the pointer Renderer of the window class, it detects if an image is used or just a colored rectangle*/
 	virtual void draw(Window* window) const = 0;//pure virtual
 	/**Virtual function to manage bouncing objects throughout the game, it also manages the destruction of objects in each situation*/
@@ -41,6 +43,7 @@ public:
 			_b, 
 	/**Absence of light RGBA*/
 			_a;
+	Powerups powerUp = none;
 protected:
 	/**A pointer to an image texture used to draw a PNG image representing the game element chosen*/
 	SDL_Texture *Possesed_image;

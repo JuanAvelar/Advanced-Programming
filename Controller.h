@@ -20,7 +20,7 @@ public:
 	/**Function to update the graphical output*/
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
 	/**Function to manage bouncing and deleting of objects*/
-	void bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
+	void bounceOnObject( vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
 	/**Function to generate brick setting for each level*/
 	void set_brick_level(int level, vector <GameElement*>* elements);
 	/**Handles events of the user input*/
@@ -37,7 +37,7 @@ private:
 	/**score of the game should be displayed when exiting the game*/
 		score;
 	/**Time passed in milliseconds*/
-	int time = 0;
+	int timeElapsed = 0;
 	/**Second time to compare*/
 	int new_time = 0;
 	/**window sizes in X and Y to resize*/

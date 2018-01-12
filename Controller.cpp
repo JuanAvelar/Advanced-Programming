@@ -13,6 +13,7 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <ctime>
 #define window_height 600
 #define window_width 1000
 #define iterations_per_cycle 8
@@ -55,9 +56,6 @@ void Controller::launchGame(int level) {
 	Moveable_objects.emplace_back(platform);
 
 	set_brick_level(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
-	
-//int number_of_ball[number of balls] = {position1, position2, etc.};//positions in the array of game elements
-	vector <int> number_of_ball = { 0};
 	Start_menu(&event, &window_c);
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
@@ -67,31 +65,34 @@ void Controller::launchGame(int level) {
 			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 		}
 		//std::cout << "busy" << std::endl;
-		time = SDL_GetTicks();//Gets time since the first time sdl library was accessed
+		timeElapsed = SDL_GetTicks();//Gets time since the first time sdl library was accessed
 		
-		if ((time % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
+		if ((timeElapsed % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
 			if (iterator == iterations_per_cycle - 1) {	you_shall_not_pass = true;}//The cycle repeated 3 times in the same millisecond this is to ensure it just iterates n times in that millisecond
 			for (auto moving : Moveable_objects) {moving->move(right_wall, left_wall);}			
-			bounceOnObject(&number_of_ball, &Game_elements, &Moveable_objects, &window_c);
+			bounceOnObject(&Game_elements, &Moveable_objects, &window_c);
 			iterator++;
 		}
-		else if (time % cycle_time > cycle_time/2 && time % cycle_time < cycle_time / 2 + time_for_graphic_output) {
+		else if (timeElapsed % cycle_time > cycle_time/2 && timeElapsed % cycle_time < cycle_time / 2 + time_for_graphic_output) {
 			showGraphicOutput(&window_c, &Game_elements);
 			 //std::cout << time << std::endl; 
 		}
-		else if (time % cycle_time > cycle_time*duty_cycle_percentage) {//waits until moving the ball is done
+		else if (timeElapsed % cycle_time > cycle_time*duty_cycle_percentage) {//waits until moving the ball is done
 			if (you_shall_not_pass) {
 				you_shall_not_pass = false;
 				iterator = 0;
 			}
 			if (event_flag) {
-				Ball *ball_pointer = dynamic_cast<Ball*> (Game_elements[0]);
-					platform->keyInput(event, ball_pointer);//platform moves when an event happens
+				for (int i = 0; i < (signed)Moveable_objects.size() - 1; i++){
+					Ball *ball_pointer = dynamic_cast<Ball*> (Game_elements[i]);
+				platform->keyInput(event, ball_pointer);//platform moves when an event happens
+			}
 					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and change window size
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 6 + number_of_ball.size()) { break; }//when number of elements is less than 7 exit game, because all the bricks have been cleared.
+		if (Game_elements.size() < 5 + Moveable_objects.size()) { break; }//when number of elements is less than 6 plus the amount of balls, break because all the bricks have been cleared.
+			
 	}
 	destroy_level(level, &Game_elements);
 	Moveable_objects.clear();
@@ -114,18 +115,18 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 }
 
 //gets input from checkForColission
-void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
+void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
 	/**vector to state which game elements will be erased after the range based for*/
-	for (auto c : *number_of_ball) {
-		for (int i = 0; i < signed(Game_elements->size()); i++) {//check for a brick collision
+	for (int c = 0; c < (signed)Moveable_objects->size()-1;c++) {
+		for (int i = 0; i < (signed)(Game_elements->size()); i++) {//check for a brick collision
 			if (i != c && (*Game_elements)[i] != nullptr && (*Game_elements)[c] != nullptr) {//skips the collision between the ball and the same ball, because it is phisically not possible
 				GameElement::ElementDestroyed Element_destructed = (*Game_elements)[i]->Bounce((*Game_elements)[c]);//the element in c is the ball //Returns true if brick is destroyed
 				if (Element_destructed == GameElement::destroybrick) { 
 					(*Game_elements)[i] = nullptr;
 				}//if brick is destroyed then it gets rid of the vector element
 				if (Element_destructed == GameElement::destroyball) {
-					//the size of number_of_ball is defined in bits, so 1 element is 4, 2 is 8...
-					if (number_of_ball->size() < 2) {
+					//the size of Moveable_objects is the amount of balls + 1 (platform)
+					if (Moveable_objects->size() < 3) {
 						lives--;
 
 						if (lives < 1) {
@@ -149,15 +150,6 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 			
 		}
 		//evaluates whether the direction of the balls needs to be changed and if so does so
-		if ((*Moveable_objects)[c]->_yflip == true) {
-			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
-		}
-		if ((*Moveable_objects)[c]->_xflip == true) {
-			(*Moveable_objects)[c]->_xdirection = -(*Moveable_objects)[c]->_xdirection;
-		}
-		//reset the change of direction to be false as to not endlessly change direction
-		(*Moveable_objects)[c]->_yflip = false;
-		(*Moveable_objects)[c]->_xflip = false;
 	}
 	
 
@@ -169,9 +161,9 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 			Game_elements->erase(Game_elements->begin() + it_1);//erase previously defined vector spaces to be whiped
 
 			int it_2 = 0;
-			while (it_2 < signed(number_of_ball->size())) {//a while loop is used to compare the numbers inside number_of_ball and all stuff to be erased, if it matches then position is erased from vector.
-				if ((*number_of_ball)[it_2] == it_1) {
-					number_of_ball->erase(number_of_ball->begin() + it_2);
+			while (it_2 < (signed)(Moveable_objects->size() - 1)) {//a while loop is used to compare the numbers inside Moveable_objects and all stuff to be erased, if it matches then position is erased from vector.
+				if ((*Moveable_objects)[it_2] == nullptr) {
+					Moveable_objects->erase(Moveable_objects->begin() + it_2);
 				}
 				else {
 					it_2++;
@@ -181,27 +173,56 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 		else {
 			it_1++;
 		}
+		
+	}
+	for (int c = 0; c < (signed)Moveable_objects->size()-1; c++) {
+		if ((*Moveable_objects)[c]->_yflip == true) {
+			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
+		}
+		if ((*Moveable_objects)[c]->_xflip == true) {
+			(*Moveable_objects)[c]->_xdirection = -(*Moveable_objects)[c]->_xdirection;
+		}
+		//reset the change of direction to be false as to not endlessly change direction
+		(*Moveable_objects)[c]->_yflip = false;
+		(*Moveable_objects)[c]->_xflip = false;
+
+		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerBall) {
+			(*Moveable_objects)[c]->height += 10;
+			(*Moveable_objects)[c]->width += 10;
+			(*Moveable_objects)[c]->powerUp = GameElement::none;
+		}
+		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerPlatform) {
+			(*Moveable_objects)[Moveable_objects->size() - 1]->width += 50;
+			(*Moveable_objects)[Moveable_objects->size() - 1]->xposition -= 25;
+			(*Moveable_objects)[c]->powerUp = GameElement::none;
+		}
+		if ((*Moveable_objects)[c]->powerUp == GameElement::extraBall) {	
+			Moveable_objects->emplace(Moveable_objects->begin()+c+1, new Ball{ (*window_c), GameElement::small, "pictures/shiny_pinball.png" });
+			Game_elements->emplace(Game_elements->begin() + c + 1, (*Moveable_objects)[c+1] );
+			(*Game_elements)[c]->powerUp = GameElement::none;
+		}
 	}
 }
 
 
 //You must disinherit the window object to the rest of the objects
 void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
-	
+	srand((unsigned int)time(0)); //Ensures that the powerup locations will be random each time starting up the game.
 	switch (level) {
 	case 1:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 3; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8( 0), Uint8(255 - i * 25), Uint8(0) });
-				
+				bool powerups = true;
+				elements->emplace_back(new Brick{ i * 110 - 100, 150 + f * 40, 30, 100, 1, Uint8(255), Uint8(0), Uint8(255), Uint8(0), powerups });
 			}
 		}
 		break;
 	case 2:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
-				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, Uint8(i * 25), Uint8(0), Uint8(255 - i * 25), Uint8(0) });
-				
+				bool powerups = true;
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, Uint8(255), Uint8(0), Uint8(255), Uint8(0), powerups });
+
 			}
 		}
 		break;
@@ -210,20 +231,13 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 
 /**Destroys all bricks if level is lost*/
 void Controller::destroy_level(int level, vector <GameElement*>* elements) {
-
-	switch (level) {
-	case 1:
-		for (int i = 0; i < signed(elements->size()) ; i++) {
-			delete (*elements)[i];
-		}
-		break;
-	case 2:
-		for (int i = 0; i < signed(elements->size()); i++) {
-			delete (*elements)[i];
-		}
-		break;
+	(void)level;
+	for (int i = 0; i < signed(elements->size()); i++) {
+		delete (*elements)[i];
 	}
 }
+
+
 
 /**Displaces the game to the center of the window*/
 void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* elements) {

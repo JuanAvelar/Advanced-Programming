@@ -83,20 +83,6 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 
 /**Function that allows to make multiple balls bounce on eachother.*/
 GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
-	Ball *lower_inh_ptr = { dynamic_cast<Ball*> (ball) };
-	int layer[4] = { this->xposition , this->xposition , this->yposition , this->yposition };
-
-	if (ball->xposition == layer[0]) {//right collision
-		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
-	}
-	if (ball->xposition == (layer[1] + this->width)) {//left collision
-		lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
-	}
-	if (ball->yposition == layer[2]) {//up collision
-		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
-	}
-	if (ball->yposition == (layer[3] + this->height)) {//down collision
-		lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
-	}
+	(void)ball;
 	return GameElement::destroynothing;
 }
