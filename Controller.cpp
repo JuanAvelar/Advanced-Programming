@@ -36,7 +36,7 @@ void Controller::launchGame(int level) {
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::big, "pictures/shiny_pinball.png" };		/**ball instance*/
+	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };		/**ball instance*/
 	Platform* platform= new Platform{ Green };												/**Platform instance*/
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
@@ -132,6 +132,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 						if (lives < 1) {
 							Game_lost = true;
 							(*Game_elements)[c] = nullptr;//Setting it to null ptr, it cannot be erased until the pc is out of the second for loop
+							(*Moveable_objects)[c] = nullptr;
 							break;
 						}
 						else {
@@ -142,7 +143,8 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 					}
 					else {
 						(*Game_elements)[c] = nullptr;
-						Moveable_objects->erase(Moveable_objects->begin() + c);
+						(*Moveable_objects)[c] = nullptr;
+						//Moveable_objects->erase(Moveable_objects->begin() + c);
 						//delete also place of the number of ball
 					}
 				}
@@ -152,7 +154,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		//evaluates whether the direction of the balls needs to be changed and if so does so
 	}
 
-	//erasing elements from vector
+	//erasing elements from vector if they are nullptr
 	int it_1 = 0;
 	while (it_1 < signed(Game_elements->size())) {//manual iteration to prevent undefined behavior
 		//std::cout << it_1 << std::endl;
@@ -174,6 +176,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		}
 		
 	}
+	//correcting direction of the ball
 	for (int c = 0; c < (signed)Moveable_objects->size()-1; c++) {
 		if ((*Moveable_objects)[c]->_yflip == true) {
 			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
@@ -184,7 +187,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		//reset the change of direction to be false as to not endlessly change direction
 		(*Moveable_objects)[c]->_yflip = false;
 		(*Moveable_objects)[c]->_xflip = false;
-
+		//Manage powerups individually
 		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerBall) {
 			(*Moveable_objects)[c]->height += 10;
 			(*Moveable_objects)[c]->width += 10;
@@ -219,6 +222,15 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 	case 2:
 		for (int i = 1; i < 10; i++) {
 			for (int f = 0; f < 4; f++) {
+				bool powerups = true;
+				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, Uint8(255), Uint8(0), Uint8(255), Uint8(0), powerups });
+
+			}
+		}
+		break;
+	case 3:
+		for (int i = 1; i < 10; i++) {
+			for (int f = 0; f < 5; f++) {
 				bool powerups = true;
 				elements->emplace_back(new Brick{ i * 110 - 100, 50 + f * 40, 30, 100, 1, Uint8(255), Uint8(0), Uint8(255), Uint8(0), powerups });
 
