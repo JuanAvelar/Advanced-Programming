@@ -35,7 +35,7 @@ void Controller::launchGame(int level) {
 	SDL_Event event;																		/**Event of keyboard instance*/
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	/**ball instance*/
+	Ball* ball = new Ball{ window_c, GameElement::big, "pictures/shiny_pinball.png" };		/**ball instance*/
 	Platform* platform= new Platform{ Green };												/**Platform instance*/
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
@@ -159,7 +159,6 @@ void Controller::bounceOnObject(vector <int>* number_of_ball, vector <GameElemen
 		(*Moveable_objects)[c]->_yflip = false;
 		(*Moveable_objects)[c]->_xflip = false;
 	}
-	
 
 	//erasing elements from vector
 	int it_1 = 0;
