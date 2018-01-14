@@ -16,7 +16,7 @@ Window::~Window() {
 	SDL_DestroyWindow(_window);
 	IMG_Quit();
 	SDL_Quit();
-	std::cout << "Why is window being destroyed??\n";
+	std::cout << "Window is being destroyed.\n";
 }
 /**Checks initial conditions to make sense (used by constructor of game window)*/
 bool Window::init() {

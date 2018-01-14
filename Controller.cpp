@@ -176,7 +176,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		}
 		
 	}
-	//correcting direction of the ball
+	//correcting direction of the ball and management of powerups.
 	for (int c = 0; c < (signed)Moveable_objects->size()-1; c++) {
 		if ((*Moveable_objects)[c]->_yflip == true) {
 			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
@@ -187,22 +187,21 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		//reset the change of direction to be false as to not endlessly change direction
 		(*Moveable_objects)[c]->_yflip = false;
 		(*Moveable_objects)[c]->_xflip = false;
+		
 		//Manage powerups individually
 		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerBall) {
 			(*Moveable_objects)[c]->height += 10;
-			(*Moveable_objects)[c]->width += 10;
-			(*Moveable_objects)[c]->powerUp = GameElement::none;
+			(*Moveable_objects)[c]->width += 10;	
 		}
 		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerPlatform) {
 			(*Moveable_objects)[Moveable_objects->size() - 1]->width += 50;
 			(*Moveable_objects)[Moveable_objects->size() - 1]->xposition -= 25;
-			(*Moveable_objects)[c]->powerUp = GameElement::none;
 		}
 		if ((*Moveable_objects)[c]->powerUp == GameElement::extraBall) {	
 			Moveable_objects->emplace(Moveable_objects->begin()+c+1, new Ball{ (*window_c), GameElement::small, "pictures/shiny_pinball.png" });
 			Game_elements->emplace(Game_elements->begin() + c + 1, (*Moveable_objects)[c+1] );
-			(*Game_elements)[c]->powerUp = GameElement::none;
 		}
+		(*Moveable_objects)[c]->powerUp = GameElement::none;
 	}
 }
 
