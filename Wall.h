@@ -14,7 +14,7 @@ public:
 	~Wall(); // nonvirtual destructor
 
 
-	void Wall::draw(Window *window_wall) const;
+	void draw(Window *window_wall) const;
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 

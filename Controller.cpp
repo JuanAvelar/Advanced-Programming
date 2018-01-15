@@ -304,7 +304,6 @@ void Controller::Start_menu(SDL_Event * event, Window * window_c) {
 					break;
 				case SDL_MOUSEBUTTONUP:
 					double radius = sqrt(pow(mouse_position[0], 2) + pow(mouse_position[1], 2)) + 10;
-					std::cout << radius << std::endl;
 					if (radius < double(Start->width) / 2) {
 						Start_game = true;
 					}
