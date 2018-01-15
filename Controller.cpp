@@ -49,7 +49,7 @@ void Controller::launchGame(int level) {
 	Game_elements.emplace_back( new Wall{ Yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
 	Game_elements.emplace_back( right_wall );
 	Game_elements.emplace_back( left_wall );
-	Game_elements.emplace_back( new Wall{ Red, Wall::down });
+	Game_elements.emplace_back( new Wall{ Yellow, Wall::down });
 
 
 	Moveable_objects.emplace_back(ball);
@@ -123,7 +123,6 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 				GameElement::ElementDestroyed Element_destructed = (*Game_elements)[i]->Bounce((*Game_elements)[c]);//the element in c is the ball //Returns true if brick is destroyed
 				if (Element_destructed == GameElement::destroybrick) { 
 					(*Game_elements)[i] = nullptr;
-					std::cout << c << std::endl;
 				}//if brick is destroyed then it gets rid of the vector element
 				if (Element_destructed == GameElement::destroyball) {
 					//the size of Moveable_objects is the amount of balls + 1 (platform)
@@ -145,6 +144,8 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 					else {
 						(*Game_elements)[c] = nullptr;
 						(*Moveable_objects)[c] = nullptr;
+						//Moveable_objects->erase(Moveable_objects->begin() + c);
+						//delete also place of the number of ball
 					}
 				}
 			}
@@ -156,7 +157,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 	//erasing elements from vector if they are nullptr
 	int it_1 = 0;
 	while (it_1 < signed(Game_elements->size())) {//manual iteration to prevent undefined behavior
-		
+		//std::cout << it_1 << std::endl;
 		if ((*Game_elements)[it_1] == nullptr) {
 			Game_elements->erase(Game_elements->begin() + it_1);//erase previously defined vector spaces to be whiped
 
@@ -175,7 +176,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		}
 		
 	}
-	//correcting direction of the ball
+	//correcting direction of the ball and management of powerups.
 	for (int c = 0; c < (signed)Moveable_objects->size()-1; c++) {
 		if ((*Moveable_objects)[c]->_yflip == true) {
 			(*Moveable_objects)[c]->_ydirection = -(*Moveable_objects)[c]->_ydirection;
@@ -186,25 +187,21 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		//reset the change of direction to be false as to not endlessly change direction
 		(*Moveable_objects)[c]->_yflip = false;
 		(*Moveable_objects)[c]->_xflip = false;
+		
 		//Manage powerups individually
 		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerBall) {
-			std::cout << std::endl << c << std::endl;
-			std::cout << (*Moveable_objects)[c] << std::endl;
-			std::cout << (*Game_elements)[c] << std::endl;
 			(*Moveable_objects)[c]->height += 10;
-			(*Moveable_objects)[c]->width += 10;
-			(*Moveable_objects)[c]->powerUp = GameElement::none;
+			(*Moveable_objects)[c]->width += 10;	
 		}
 		if ((*Moveable_objects)[c]->powerUp == GameElement::biggerPlatform) {
 			(*Moveable_objects)[Moveable_objects->size() - 1]->width += 50;
 			(*Moveable_objects)[Moveable_objects->size() - 1]->xposition -= 25;
-			(*Moveable_objects)[c]->powerUp = GameElement::none;
 		}
 		if ((*Moveable_objects)[c]->powerUp == GameElement::extraBall) {	
-			Moveable_objects->emplace(Moveable_objects->begin() + c + 1, new Ball{ (*window_c), GameElement::medium, "pictures/shiny_pinball.png" });
-			Game_elements->insert(Game_elements->begin() + c + 1, (*Moveable_objects)[c+1] );
-			(*Game_elements)[c]->powerUp = GameElement::none;
+			Moveable_objects->emplace(Moveable_objects->begin()+c+1, new Ball{ (*window_c), GameElement::small, "pictures/shiny_pinball.png" });
+			Game_elements->emplace(Game_elements->begin() + c + 1, (*Moveable_objects)[c+1] );
 		}
+		(*Moveable_objects)[c]->powerUp = GameElement::none;
 	}
 }
 
@@ -307,7 +304,6 @@ void Controller::Start_menu(SDL_Event * event, Window * window_c) {
 					break;
 				case SDL_MOUSEBUTTONUP:
 					double radius = sqrt(pow(mouse_position[0], 2) + pow(mouse_position[1], 2)) + 10;
-					std::cout << radius << std::endl;
 					if (radius < double(Start->width) / 2) {
 						Start_game = true;
 					}

@@ -75,7 +75,14 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			ball->yposition + ball->height > this->yposition && ball->yposition < this->yposition + this->height) {
 			
 			lower_inh_ptr->_xflip = true; //flip x direction
-			hits--;			
+			hits--;
+			
+			//gives the ball the powerup if the brick has no lifes left, the ball will then process it in the controller.
+			if (hits < 1) {
+				if (powerUp != none) {
+					ball->powerUp = powerUp;
+				}
+			}
 			lifeRemoved = true;
 		}
 		// ball hits the top/bottom: --> then change the ydirection. Also remove a life of the brick.
@@ -87,17 +94,23 @@ GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 			ball->xposition + ball->width > this->xposition && ball->xposition < this->xposition + this->width) {
 
 			lower_inh_ptr->_yflip = true; //flip y direction
+			
 			if (lifeRemoved == false) {
 				hits--;
+				
+				//gives the ball the powerup if the brick has no lifes left, the ball will then process it in the controller.
+				if (hits < 1){
+					if (powerUp != none) {
+						ball->powerUp = powerUp;
+					}
+				}
 			}
 		}
 		return GameElement::destroynothing;
 	}
 	//if there are no hits left, delete the brick
 	else {
-		if (powerUp != none) {
-			ball->powerUp = powerUp;
-		}
+	
 		delete this;
 		return GameElement::destroybrick;
 	}

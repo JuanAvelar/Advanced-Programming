@@ -14,12 +14,12 @@ public:
 	/**Controller constructor*/
 	Controller( int liv, int sco);
 	/**Controller destructor*/
-	~Controller(); // virtual standard destructor
+	~Controller(); 
 	/**All game logic and elements are chosen there*/
 	void launchGame(int level);
 	/**Function to update the graphical output*/
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
-	/**Function to manage bouncing and deleting of objects*/
+	/**Function to manage bouncing and deleting of objects. Also allows balls to change directions and implements powerups with the bouncing.*/
 	void bounceOnObject( vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
 	/**Function to generate brick setting for each level*/
 	void set_brick_level(int level, vector <GameElement*>* elements);
@@ -55,8 +55,6 @@ private:
 
 	//Global variables
 
-	/**Map of bits to check further collisions*/
-	bool map_array[1000][600];
 	/**Flag to ensure a certain number of iteration within a cycle*/
 	bool you_shall_not_pass = 0;
 	/**Tells the number of iterations, after selected amount of iterations in iterations_per_cycle -> you_shall_not_pass = true, and iterate no more*/

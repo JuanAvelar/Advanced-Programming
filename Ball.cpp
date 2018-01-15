@@ -81,7 +81,7 @@ void Ball::move(GameElement *right_wall, GameElement *left_wall) {
 	}
 }
 
-/**Function that allows to make multiple balls bounce on eachother.*/
+/**Function that returns destroynothing.*/
 GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	(void)ball;
 	return GameElement::destroynothing;
