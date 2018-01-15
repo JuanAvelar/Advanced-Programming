@@ -11,7 +11,7 @@ Brick::Brick( int xposition, int yposition, const int	height, const int width, i
 	_a = a;
 	if (powerups == true) {
 		int randompowerupnumber = rand() % 10;
-		if (randompowerupnumber == 1) {
+		if (randompowerupnumber < 5) {
 			int i = rand() % 3 + 1;
 			switch (i) {
 			case 1:
