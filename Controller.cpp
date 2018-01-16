@@ -37,7 +37,7 @@ void Controller::launchGame(int level) {
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };		/**ball instance*/
-	Platform* platform= new Platform{ Green };												/**Platform instance*/
+	Platform* platform= new Platform{ window_c, GameElement::small, "pictures/start.png" };												/**Platform instance*/
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
 	Wall* left_wall = new Wall{ Yellow, Wall::left };
