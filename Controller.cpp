@@ -55,16 +55,15 @@ void Controller::launchGame(int level) {
 	Moveable_objects.emplace_back(ball);
 	Moveable_objects.emplace_back(platform);
 
-	setBrickLevel(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
-	startMenu(&event, &window_c);
+	setBrickLevel(level, &Game_elements);													//Function to generate all bricks depending on the level
+	startMenu(&event, &window_c);															//function to start the game, make a big start button and when clicked the game starts 
 
-	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
+	
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
 			event_flag = true;
 			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 		}
-		//std::cout << "busy" << std::endl;
 		timeElapsed = SDL_GetTicks();//Gets time since the first time sdl library was accessed
 		
 		if ((timeElapsed % cycle_time < cycle_time*duty_cycle_percentage) && !you_shall_not_pass) {//in this if output is updated time in milliseconds
@@ -90,7 +89,7 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 5 + Moveable_objects.size()) { break; }//when number of elements is less than 6 plus the amount of balls, break because all the bricks have been cleared.
+		if (Game_elements.size() < 5 + Moveable_objects.size()) { break; }//when number of elements is less than 5 (4 walls) plus the amount moveable objects, break because all the bricks have been cleared.
 			
 	}
 	destroyLevel(level, &Game_elements);
@@ -113,7 +112,6 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 	window_foo->clear();
 }
 
-//gets input from checkForColission
 void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
 	
 	for (int c = 0; c < (signed)Moveable_objects->size()-1;c++) {
@@ -122,35 +120,32 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 				GameElement::ElementDestroyed Element_destructed = (*Game_elements)[i]->Bounce((*Game_elements)[c]);//the element in c is the ball //Returns true if brick is destroyed
 				if (Element_destructed == GameElement::destroybrick) { 
 					(*Game_elements)[i] = nullptr;
-				}//if brick is destroyed then it gets rid of the vector element
+				}//if brick is destroyed then it sets the vector element to a nullpointer, so it cannot be erased until the function is out of the second for loop
 				if (Element_destructed == GameElement::destroyball) {
 					//the size of Moveable_objects is the amount of balls + 1 (platform)
-					if (Moveable_objects->size() < 3) {
+					if (Moveable_objects->size() < 3) { //if there is only 1 ball
 						lives--;
 
 						if (lives < 1) {
 							Game_lost = true;
-							(*Game_elements)[c] = nullptr;//Setting it to null ptr, it cannot be erased until the pc is out of the second for loop
+							(*Game_elements)[c] = nullptr;//Setting it to null ptr, so it cannot be erased until the function is out of the second for loop
 							(*Moveable_objects)[c] = nullptr;
 							break;
 						}
 						else {
 							Ball* ball = new Ball{ (*window_c), GameElement::small, "pictures/shiny_pinball.png" };
-							(*Game_elements)[c] = ball;//check that all movable objects are first in the game element vector, use: myvector.emplace ( myvector.begin()+ position, newBlabla );
+							(*Game_elements)[c] = ball;
 							(*Moveable_objects)[c] = ball;
 						}
 					}
-					else {
+					else { //if there are multiple balls
 						(*Game_elements)[c] = nullptr;
-						(*Moveable_objects)[c] = nullptr;
-						//Moveable_objects->erase(Moveable_objects->begin() + c);
-						//delete also place of the number of ball
+						(*Moveable_objects)[c] = nullptr; //set the vector elements to nullpointers to later be destroyed
 					}
 				}
 			}
 			
 		}
-		//evaluates whether the direction of the balls needs to be changed and if so does so
 	}
 
 	//erasing elements from vector if they are nullptr
@@ -163,12 +158,12 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 			int it_2 = 0;
 			while (it_2 < (signed)(Moveable_objects->size() - 1)) {//a while loop is used to compare the numbers inside Moveable_objects and all stuff to be erased, if it matches then position is erased from vector.
 				if ((*Moveable_objects)[it_2] == nullptr) {
-					Moveable_objects->erase(Moveable_objects->begin() + it_2);
+					Moveable_objects->erase(Moveable_objects->begin() + it_2); //erase the position of the balls in the game elements vector if ball is eliminated
 				}
 				else {
 					it_2++;
 				}
-			}//erase the position of the balls in the game elements vector if ball is eliminated
+			}
 		}
 		else {
 			it_1++;
@@ -177,11 +172,11 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 	}
 	//correcting direction of the ball and management of powerups.
 	int it_3 = 0;
-	while( it_3 < (signed)Moveable_objects->size()-1) {
-		if ((*Moveable_objects)[it_3]->_yflip == true) {
+	while( it_3 < (signed)Moveable_objects->size()-1) { //a while loop is used because the size of the vector can increase
+		if ((*Moveable_objects)[it_3]->_yflip == true) { //flips ydirection
 			(*Moveable_objects)[it_3]->_ydirection = -(*Moveable_objects)[it_3]->_ydirection;
 		}
-		if ((*Moveable_objects)[it_3]->_xflip == true) {
+		if ((*Moveable_objects)[it_3]->_xflip == true) { //flips xdirection
 			(*Moveable_objects)[it_3]->_xdirection = -(*Moveable_objects)[it_3]->_xdirection;
 		}
 		//reset the change of direction to be false as to not endlessly change direction
@@ -189,15 +184,15 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 		(*Moveable_objects)[it_3]->_xflip = false;
 		
 		//Manage powerups individually
-		if ((*Moveable_objects)[it_3]->powerUp == GameElement::biggerBall) {
+		if ((*Moveable_objects)[it_3]->powerUp == GameElement::biggerBall) { //makes the ball size 10x10 pixels bigger
 			(*Moveable_objects)[it_3]->height += 10;
 			(*Moveable_objects)[it_3]->width += 10;	
 		}
-		if ((*Moveable_objects)[it_3]->powerUp == GameElement::biggerPlatform) {
+		if ((*Moveable_objects)[it_3]->powerUp == GameElement::biggerPlatform) { //makes the platform 50 pixels wider
 			(*Moveable_objects)[Moveable_objects->size() - 1]->width += 50;
-			(*Moveable_objects)[Moveable_objects->size() - 1]->xposition -= 25;
+			(*Moveable_objects)[Moveable_objects->size() - 1]->xposition -= 25; //moves the platform back so the growth will look like it occurs on both sides
 		}
-		if ((*Moveable_objects)[it_3]->powerUp == GameElement::extraBall) {	
+		if ((*Moveable_objects)[it_3]->powerUp == GameElement::extraBall) {	//puts an extra ball into the Moveable_objects and Game_elements vectors
 			Moveable_objects->emplace(Moveable_objects->begin()+it_3+1, new Ball{ (*window_c), GameElement::small, "pictures/shiny_pinball.png" });
 			Game_elements->emplace(Game_elements->begin() + it_3 + 1, (*Moveable_objects)[it_3+1] );
 		}
@@ -207,7 +202,6 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 }
 
 
-//You must disinherit the window object to the rest of the objects
 void Controller::setBrickLevel(int level, vector <GameElement*>* elements) {
 	srand((unsigned int)time(0)); //Ensures that the powerup locations will be random each time starting up the game.
 	switch (level) {
@@ -253,9 +247,7 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 	if (event.type == SDL_WINDOWEVENT) {
 		switch (event.window.event) {
 			case SDL_WINDOWEVENT_SIZE_CHANGED:
-				//std::cout << (SDL_GetWindowSurface(window->_window)->w)  << std::endl;
-				//std::cout << (SDL_GetWindowSurface(window->_window)->w)/2-500 << std::endl;
-				
+
 			for (int i = 0; i < signed(elements->size()); i++) {
 				(*elements)[i]->xposition += (SDL_GetWindowSurface(window->_window)->w)/2 - xprevious_wsize/2;
 				(*elements)[i]->yposition += (SDL_GetWindowSurface(window->_window)->h)/2 - yprevious_wsize/2;
