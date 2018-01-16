@@ -28,7 +28,7 @@ int main() {
 	Controller controller( lives, score); 
 	/**For loop to control levels*/
 	for (int level = 1; level < 4; level++) {  
-		if (controller.getLives() > 0) {
+		if (controller.lives > 0) {
 			controller.launchGame(level);
 		}
 	}

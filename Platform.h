@@ -4,10 +4,9 @@
 #include "MoveableObject.h"
 #include "Ball.h"
 
-/**Platform generates a square with color and manages function accordingly, you can also use an image*/
+/**Platform generates a rectangle with an image and manages function accordingly*/
 class Platform : public MoveableObject {
 public:
-	Platform( SDL_Color color);
 	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 

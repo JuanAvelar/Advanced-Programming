@@ -37,7 +37,7 @@ void Controller::launchGame(int level) {
 	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
 	vector <MoveableObject*> Moveable_objects;
 	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };		/**ball instance*/
-	Platform* platform= new Platform{ Green };												/**Platform instance*/
+	Platform* platform= new Platform{ window_c, GameElement::small, "pictures/start.png" };												/**Platform instance*/
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
 	Wall* left_wall = new Wall{ Yellow, Wall::left };
@@ -55,8 +55,8 @@ void Controller::launchGame(int level) {
 	Moveable_objects.emplace_back(ball);
 	Moveable_objects.emplace_back(platform);
 
-	set_brick_level(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
-	Start_menu(&event, &window_c);
+	setBrickLevel(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
+	startMenu(&event, &window_c);
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
@@ -94,7 +94,7 @@ void Controller::launchGame(int level) {
 		if (Game_elements.size() < 5 + Moveable_objects.size()) { break; }//when number of elements is less than 6 plus the amount of balls, break because all the bricks have been cleared.
 			
 	}
-	destroy_level(level, &Game_elements);
+	destroyLevel(level, &Game_elements);
 	Moveable_objects.clear();
 	Game_elements.clear();
 }
@@ -207,7 +207,7 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 
 
 //You must disinherit the window object to the rest of the objects
-void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
+void Controller::setBrickLevel(int level, vector <GameElement*>* elements) {
 	srand((unsigned int)time(0)); //Ensures that the powerup locations will be random each time starting up the game.
 	switch (level) {
 	case 1:
@@ -240,7 +240,7 @@ void Controller::set_brick_level(int level, vector <GameElement*>* elements) {
 }
 
 /**Destroys all bricks if level is lost*/
-void Controller::destroy_level(int level, vector <GameElement*>* elements) {
+void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 	(void)level;
 	for (int i = 0; i < signed(elements->size()); i++) {
 		delete (*elements)[i];
@@ -280,11 +280,7 @@ void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* el
 	};
 }
 
-int Controller::getLives() {
-	return lives;
-}
-
-void Controller::Start_menu(SDL_Event * event, Window * window_c) {
+void Controller::startMenu(SDL_Event * event, Window * window_c) {
 	if (!Start_game) {
 		std::unique_ptr<Platform> Start(new Platform{ *window_c, GameElement::big, "pictures/start.png" });
 		while (!window_c->isClosed() && Start_game == false) {

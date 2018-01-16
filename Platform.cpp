@@ -3,34 +3,8 @@
 #include <SDL2/SDL_image.h>
 using namespace std;
 
-/**Constructor of the platform class(currently used and monochromatic)*/
-Platform::Platform(SDL_Color color)
-	: MoveableObject(xposition, yposition, height, width) {	
-	//takes the rgba values of the color of the input
-	_r = color.r;
-	_g = color.g;
-	_b = color.b;
-	_a = color.a;
-	
-	//initial position and dimensions
-	xposition = 500;
-	yposition = 500;
-	height = 10;
-	width = 100;
 
-	//sets the nonrounded position values to be equal to the starting position
-	xpos = double(xposition);
-	ypos = double(yposition);
-
-	//initial directions are 0, speed is constant
-	_xdirection = 0;
-	_ydirection = 0;
-	_speed = 1.0;
-	
-	Possesed_image = nullptr;
-}
-
-/**Secondary constructor of the platform using an image (currently no image to use), this one is currently not being used for the platform, but is used for the start button.*/
+/**Constructor of the platform using an image, also used for the start button.*/
 Platform::Platform(const Window &window, GameElement::Size size, const std::string &image_path)
 	: MoveableObject(xposition, yposition, height, width) {
 	//loading of the image
@@ -45,6 +19,13 @@ Platform::Platform(const Window &window, GameElement::Size size, const std::stri
 	SDL_FreeSurface(surface);
 	xposition = 500;
 	yposition = 500;
+
+	//initial directions are 0, speed is constant
+	_xdirection = 0;
+	_ydirection = 0;
+	_speed = 1.0;
+
+
 	//switch to use different sizes (small is standard platform size, big is used for the start button)
 	switch (size) {
 	case small:
