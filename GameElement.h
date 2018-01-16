@@ -11,7 +11,7 @@ public:
 	GameElement(int xpos, int ypos, const int h, const int w);
 	/**Virtual Standard destructor*/
 	virtual ~GameElement() = default; // virtual standard destructor
-	/**Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function)*/
+	/**Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function). These set later the course of action to take(only bricks and balls are destryed in the game)*/
 	enum ElementDestroyed { destroynothing, destroybrick, destroyball };
 	/**Size of the game elements (Input of most of the elements constructor, select height and width in a switch case inside each constructor)*/
 	enum Size { small, medium, big };
@@ -43,7 +43,7 @@ public:
 			_b, 
 	/**Absence of light RGBA*/
 			_a;
-	/**The powerup possessed by the game element*/
+	/**The powerup possessed by the game element. Power ups are assigned randomly 1 out of 10 bricks during brick level generation*/
 	Powerups powerUp = none;
 protected:
 	/**A pointer to an image texture used to draw a PNG image representing the game element chosen*/
