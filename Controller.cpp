@@ -88,7 +88,7 @@ void Controller::launchGame(int level) {
 					event_flag = false;
 			}
 		}
-		if (Game_elements.size() < 5 + Moveable_objects.size()) { break; }//when number of elements is less than 5 (4 walls) plus the amount moveable objects, break because all the bricks have been cleared.
+		if (Game_elements.size() < 5 + Moveable_objects.size()) { Game_lost = true; }//when number of elements is less than 5 (4 walls) plus the amount moveable objects, break because all the bricks have been cleared.
 			
 	}
 	destroyLevel(level, &Game_elements);
