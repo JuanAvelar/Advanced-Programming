@@ -77,13 +77,17 @@ $(function() {
 Inheritance diagram for Wall:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wall__inherit__graph.png" border="0" usemap="#_wall_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="_wall_inherit__map" id="_wall_inherit__map">
+<area shape="rect" id="node2" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="5,5,164,316"/>
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Wall:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_wall__coll__graph.png" border="0" usemap="#_wall_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="_wall_coll__map" id="_wall_coll__map">
+<area shape="rect" id="node2" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="5,5,164,316"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -118,7 +122,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4bf20cc3e567c56ff8f8fb3ccc7f6950"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a4bf20cc3e567c56ff8f8fb3ccc7f6950">Wall</a> (<a class="el" href="struct_s_d_l___color.html">SDL_Color</a> color, <a class="el" href="class_wall.html#a9744b0c53e839cf748ab7f7f332e9e2a">Wall_type</a> wallside)</td></tr>
+<tr class="memitem:a4bf20cc3e567c56ff8f8fb3ccc7f6950"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a4bf20cc3e567c56ff8f8fb3ccc7f6950">Wall</a> (SDL_Color color, <a class="el" href="class_wall.html#a9744b0c53e839cf748ab7f7f332e9e2a">Wall_type</a> wallside)</td></tr>
 <tr class="memdesc:a4bf20cc3e567c56ff8f8fb3ccc7f6950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the wall class.  <a href="#a4bf20cc3e567c56ff8f8fb3ccc7f6950">More...</a><br /></td></tr>
 <tr class="separator:a4bf20cc3e567c56ff8f8fb3ccc7f6950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a2992f2b533e1c160513d1e719f920c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a9a2992f2b533e1c160513d1e719f920c">~Wall</a> ()</td></tr>
@@ -172,7 +176,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a289bcb12e869de7e979c2509ef25b80f"></a>
-<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b> = none</td></tr>
+<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a289bcb12e869de7e979c2509ef25b80f">powerUp</a> = none</td></tr>
+<tr class="memdesc:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">The powerup possessed by the game element. <br /></td></tr>
 <tr class="separator:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
@@ -212,7 +217,7 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
         <tr>
           <td class="memname">Wall::Wall </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td>
+          <td class="paramtype">SDL_Color&#160;</td>
           <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
@@ -250,14 +255,6 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 
 <p>Standard destructor for the walls. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_wall_a9a2992f2b533e1c160513d1e719f920c_cgraph.png" border="0" usemap="#class_wall_a9a2992f2b533e1c160513d1e719f920c_cgraph" alt=""/></div>
-<map name="class_wall_a9a2992f2b533e1c160513d1e719f920c_cgraph" id="class_wall_a9a2992f2b533e1c160513d1e719f920c_cgraph">
-<area shape="rect" id="node2" href="_s_d_l__render_8h.html#a078c0a925e24542d356a02183a306be6" title="Destroy the specified texture. " alt="" coords="152,5,320,35"/>
-</map>
-</div>
 
 </div>
 </div>

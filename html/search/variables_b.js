@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['key',['key',['../union_s_d_l___event.html#ab99927835cc77a9b6bb50b419b4a27df',1,'SDL_Event']]],
-  ['keysym',['keysym',['../struct_s_d_l___keyboard_event.html#a2a57ba820a298f2c02ad5d41fd2b1aa8',1,'SDL_KeyboardEvent']]]
+  ['score',['score',['../class_controller.html#a86c1f87c265dd7f60642999382439f30',1,'Controller']]],
+  ['start_5fgame',['Start_game',['../class_controller.html#a9918336d90ea7b53d746007499947334',1,'Controller']]]
 ];

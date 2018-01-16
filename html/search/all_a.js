@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['jaxis',['jaxis',['../union_s_d_l___event.html#ac4611acd0e9c675e67dc20919f0accb4',1,'SDL_Event']]],
-  ['jball',['jball',['../union_s_d_l___event.html#ae433f511e3383d17f8fe02df745ee8f8',1,'SDL_Event']]],
-  ['jbutton',['jbutton',['../union_s_d_l___event.html#a591104d64903ae1cf70874fb5d3124ff',1,'SDL_Event']]],
-  ['jdevice',['jdevice',['../union_s_d_l___event.html#a17514dc19a846ea1b5fbe44123700c4c',1,'SDL_Event']]],
-  ['jhat',['jhat',['../union_s_d_l___event.html#a421b40e0f8e01f181c8d5548cff1dd1d',1,'SDL_Event']]]
+  ['mouse_5fposition',['mouse_position',['../class_controller.html#a24f640ca15719d3feabd470af5946a5a',1,'Controller']]],
+  ['move',['move',['../class_ball.html#a9a9b1020d19103d28b361cdf5b8111f6',1,'Ball::move()'],['../class_moveable_object.html#af3bab36b427a158f3176aa2aa88e3757',1,'MoveableObject::move()'],['../class_platform.html#a44421802653ad453152be640053d6c1c',1,'Platform::move()']]],
+  ['moveableobject',['MoveableObject',['../class_moveable_object.html',1,'MoveableObject'],['../class_moveable_object.html#a95d5332f03b16dbafc1b515f7dbc31d1',1,'MoveableObject::MoveableObject()']]]
 ];

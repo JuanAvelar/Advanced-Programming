@@ -1,12 +1,10 @@
 <map id="Controller::launchGame" name="Controller::launchGame">
-<area shape="rect" id="node2" href="$class_controller.html#a4f507fe7987fadf92d30e94d97fc5480" title="Controller::set_brick\l_level" alt="" coords="242,5,381,47"/>
-<area shape="rect" id="node3" href="$class_ball.html#a1f3049417c501e8b3ae671231817609d" title="Ball::move" alt="" coords="270,71,353,98"/>
-<area shape="rect" id="node4" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Controller::showGraphicOutput" alt="" coords="212,122,411,149"/>
-<area shape="rect" id="node6" href="$class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9" title="Ball::serveBall" alt="" coords="259,223,363,250"/>
-<area shape="rect" id="node9" href="$class_platform.html#a6a5b881d892c3cc796aa190f2c647ee3" title="Platform::keyInput" alt="" coords="248,173,375,199"/>
-<area shape="rect" id="node10" href="$class_controller.html#aa22db940ee518ad76de3bee9b560f02b" title="Controller::poll" alt="" coords="259,274,364,301"/>
-<area shape="rect" id="node11" href="$class_controller.html#acb0260f3172be18bb43aea7bfdc9f381" title="Controller::destroy\l_level" alt="" coords="247,325,375,367"/>
-<area shape="rect" id="node5" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Window::clear" alt="" coords="500,122,604,149"/>
-<area shape="rect" id="node7" href="$class_game_element.html#a7c154aff646c91168dc974a43d340812" title="GameElement::getXLocation" alt="" coords="459,223,645,250"/>
-<area shape="rect" id="node8" href="$class_game_element.html#a614be3513f3bd193fb2666b44e7c6b4d" title="GameElement::getWidth" alt="" coords="469,173,635,199"/>
+<area shape="rect" id="node2" href="$class_controller.html#ac85aef3930b192d838ac4d2763bed836" title="Function to generate brick setting for each level. " alt="" coords="259,5,449,35"/>
+<area shape="rect" id="node3" href="$class_controller.html#a96062807f924a58920faa7fb918598ef" title="Does a pause until you click the big button. " alt="" coords="271,59,437,88"/>
+<area shape="rect" id="node6" href="$class_controller.html#aa22db940ee518ad76de3bee9b560f02b" title="Handles events of the user input. " alt="" coords="293,112,415,141"/>
+<area shape="rect" id="node7" href="$class_controller.html#a7e324c2e7c43fd0ea416c0f6623d6877" title="Function to manage bouncing and deleting of objects. " alt="" coords="247,165,461,195"/>
+<area shape="rect" id="node8" href="$class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="237,219,471,248"/>
+<area shape="rect" id="node9" href="$class_controller.html#a1294b422876d7edcde277acfe5a093ea" title="Destroys all game objects. " alt="" coords="261,272,447,301"/>
+<area shape="rect" id="node4" href="$class_window.html#a752a62c1fedece0a87ba6ff7e72de344" title="Returns if the window is closed or not. " alt="" coords="519,59,667,88"/>
+<area shape="rect" id="node5" href="$class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="533,165,653,195"/>
 </map>

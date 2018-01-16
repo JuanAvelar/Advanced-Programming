@@ -1,4 +1,4 @@
 <map id="Ball" name="Ball">
-<area shape="rect" id="node2" href="$class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,364,172,519"/>
-<area shape="rect" id="node3" href="$class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,316"/>
+<area shape="rect" id="node2" href="$class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,381,172,588"/>
+<area shape="rect" id="node3" href="$class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
 </map>
