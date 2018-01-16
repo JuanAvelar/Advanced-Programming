@@ -1,0 +1,6 @@
+digraph "GameElement"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  Node6 [label="{GameElement\n|+ _a\l+ _b\l+ _g\l+ _r\l+ height\l+ powerUp\l+ width\l+ xpos\l+ xposition\l+ ypos\l+ yposition\l# Possesed_image\l|+ GameElement()\l+ ~GameElement()\l+ Bounce()\l+ draw()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

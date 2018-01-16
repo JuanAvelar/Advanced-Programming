@@ -12,6 +12,8 @@ public:
 	virtual ~MoveableObject() = default; // virtual destructor
 	/**Move function used to manage the ball and platform motions inside the boundaries set*/
 	virtual void move(GameElement *right_wall, GameElement *left_wall) = 0;
+	/**Moves the platform according to key input and launches balls with the up key*/
+	virtual void keyInput(SDL_Event &event) = 0;
 
 public:
 	/**X Direction in which game objects should move in terms of a vector, form 0 to 1*/

@@ -76,25 +76,21 @@ $(function() {
 Inheritance diagram for Brick:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_brick__inherit__graph.png" border="0" usemap="#_brick_inherit__map" alt="Inheritance graph"/></div>
-<map name="_brick_inherit__map" id="_brick_inherit__map">
-<area shape="rect" id="node2" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="5,5,164,316"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 Collaboration diagram for Brick:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_brick__coll__graph.png" border="0" usemap="#_brick_coll__map" alt="Collaboration graph"/></div>
-<map name="_brick_coll__map" id="_brick_coll__map">
-<area shape="rect" id="node2" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="5,5,164,316"/>
-</map>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4343a8b61871133ecc9132ae150f984b"><td class="memItemLeft" align="right" valign="top"><a id="a4343a8b61871133ecc9132ae150f984b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a4343a8b61871133ecc9132ae150f984b">Brick</a> (int <a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a>, int <a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a>, const int <a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a>, const int <a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a>, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a)</td></tr>
-<tr class="memdesc:a4343a8b61871133ecc9132ae150f984b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the brick class. <br /></td></tr>
-<tr class="separator:a4343a8b61871133ecc9132ae150f984b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e09a6316ab20d0e92c65f5fe40a40c"><td class="memItemLeft" align="right" valign="top"><a id="a86e09a6316ab20d0e92c65f5fe40a40c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a86e09a6316ab20d0e92c65f5fe40a40c">Brick</a> (int <a class="el" href="class_game_element.html#a2f77501ee6edb9c987fe15ea6c73bb08">xposition</a>, int <a class="el" href="class_game_element.html#a0c5380d86d3b8eb38e3a09f7149a31ce">yposition</a>, const int <a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a>, const int <a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a>, int hitsToDestroy, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool powerups)</td></tr>
+<tr class="memdesc:a86e09a6316ab20d0e92c65f5fe40a40c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the brick class. <br /></td></tr>
+<tr class="separator:a86e09a6316ab20d0e92c65f5fe40a40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e27476ccaeaed1d61a06bddf247c8ee"><td class="memItemLeft" align="right" valign="top"><a id="a0e27476ccaeaed1d61a06bddf247c8ee"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brick.html#a0e27476ccaeaed1d61a06bddf247c8ee">~Brick</a> ()</td></tr>
 <tr class="memdesc:a0e27476ccaeaed1d61a06bddf247c8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard destructor of the brick class. <br /></td></tr>
@@ -132,6 +128,13 @@ Additional Inherited Members</h2></td></tr>
  }<tr class="memdesc:a7b62036e0a68b55efbd82d41367b8ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function) <br /></td></tr>
 </td></tr>
 <tr class="separator:a7b62036e0a68b55efbd82d41367b8ac7 inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309423acc72febf26adef7efa466a8ae inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a> { <b>none</b> = 0, 
+<b>biggerBall</b>, 
+<b>biggerPlatform</b>, 
+<b>extraBall</b>
+ }<tr class="memdesc:a309423acc72febf26adef7efa466a8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that tells which powerup to store in a brick and subsequently in a ball if the brick gets hit.  <a href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a309423acc72febf26adef7efa466a8ae inherit pub_types_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7 inherit pub_types_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a88e64c35dcdc76eec6078096cf5b64f7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <b>small</b>, 
 <b>medium</b>, 
 <b>big</b>
@@ -159,6 +162,9 @@ Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
 <tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a289bcb12e869de7e979c2509ef25b80f"></a>
+<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b> = none</td></tr>
+<tr class="separator:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
 <tr class="memdesc:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the game element in amount of pixels. <br /></td></tr>
@@ -215,7 +221,7 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>This function will check the point of colission of the ball with a brick. </p>
 <p>Depending on this point of colission (which will be on a ring of 1 pixel wide around the brick) the x direction, y direction or both will change. Also if the brick has no lifes left it will be deleted. </p>
 
-<p>Implements <a class="el" href="class_game_element.html#a43addde25a0ab76f8b48ded220d9c886">GameElement</a>.</p>
+<p>Implements <a class="el" href="class_game_element.html#a5e54e957fdf5c2c4a21d9df8ab887741">GameElement</a>.</p>
 
 </div>
 </div>

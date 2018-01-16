@@ -10,7 +10,7 @@ public:
 	Platform(const Window &window, GameElement::Size size, const std::string &image_path);
 	~Platform(); // destructor
 
-	void keyInput(SDL_Event &event, Ball *ball);
+	void keyInput(SDL_Event &event);
 
 	void draw(Window *platform_window) const;
 

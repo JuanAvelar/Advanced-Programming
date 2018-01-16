@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyinput',['keyInput',['../class_platform.html#ae196677ddbb2f1854c16c01b29e041d0',1,'Platform']]]
+  ['keyinput',['keyInput',['../class_platform.html#ad58d874308da5c65a4281f2954efeee1',1,'Platform']]]
 ];

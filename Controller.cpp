@@ -32,21 +32,21 @@ Controller::Controller( int liv, int sco)
 void Controller::launchGame(int level) {
 	std::ostringstream Window_title;
 	Window_title << "Breakout: Level " << level;
-	Window window_c(Window_title.str(), window_width, window_height);						/**UI instance*/
-	SDL_Event event;																		/**Event of keyboard instance*/
-	vector <GameElement*> Game_elements;													/** Vector of Game element pointers*/
+	Window window_c(Window_title.str(), window_width, window_height);						//UI instance
+	SDL_Event event;																		//Event of keyboard instance
+	vector <GameElement*> Game_elements;													//Vector of Game element pointers
 	vector <MoveableObject*> Moveable_objects;
-	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };		/**ball instance*/
-	Platform* platform= new Platform{ window_c, GameElement::small, "pictures/start.png" };												/**Platform instance*/
+	Ball* ball = new Ball{ window_c, GameElement::small, "pictures/shiny_pinball.png" };	//ball instance
+	Platform* platform= new Platform{ window_c, GameElement::small, "pictures/start.png" };	//Platform instance
 	
 	Wall* right_wall = new Wall{ Yellow, Wall::right };
 	Wall* left_wall = new Wall{ Yellow, Wall::left };
 	
-	Game_lost = false;																		/**The game is not lost when you begin*/
+	Game_lost = false;																		//The game is not lost when you begin
 
-	Game_elements.emplace_back(ball);											//puts the ball pointer as first 
-	Game_elements.emplace_back(platform);										//platform pointer as second
-	Game_elements.emplace_back( new Wall{ Yellow, Wall::up });		//wall pointers as third, fourth, fifth, sixth
+	Game_elements.emplace_back(ball);														//puts the ball pointer as first 
+	Game_elements.emplace_back(platform);													//platform pointer as second
+	Game_elements.emplace_back( new Wall{ Yellow, Wall::up });								//wall pointers as third, fourth, fifth, sixth
 	Game_elements.emplace_back( right_wall );
 	Game_elements.emplace_back( left_wall );
 	Game_elements.emplace_back( new Wall{ Yellow, Wall::down });
@@ -83,9 +83,8 @@ void Controller::launchGame(int level) {
 				iterator = 0;
 			}
 			if (event_flag) {
-				for (int i = 0; i < (signed)Moveable_objects.size() - 1; i++){
-					Ball *ball_pointer = dynamic_cast<Ball*> (Game_elements[i]);
-				platform->keyInput(event, ball_pointer);//platform moves when an event happens
+				for (int i = 0; i < (signed)Moveable_objects.size(); i++){
+				Moveable_objects[i]->keyInput(event);//platform moves when an event happens
 			}
 					window_c.pollEvents(event);//checks for events happening in the window such as keyboard and change window size
 					event_flag = false;
@@ -116,7 +115,7 @@ void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* el
 
 //gets input from checkForColission
 void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window * window_c) {
-	/**vector to state which game elements will be erased after the range based for*/
+	
 	for (int c = 0; c < (signed)Moveable_objects->size()-1;c++) {
 		for (int i = 0; i < (signed)(Game_elements->size()); i++) {//check for a brick collision
 			if (i != c && (*Game_elements)[i] != nullptr && (*Game_elements)[c] != nullptr) {//skips the collision between the ball and the same ball, because it is phisically not possible
@@ -248,8 +247,6 @@ void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 		delete (*elements)[i];
 	}
 }
-
-
 
 /**Displaces the game to the center of the window*/
 void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* elements) {

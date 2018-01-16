@@ -1,0 +1,16 @@
+digraph "GameElement"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  Node0 [label="{GameElement\n|+ _a\l+ _b\l+ _g\l+ _r\l+ height\l+ powerUp\l+ width\l+ xpos\l+ xposition\l+ ypos\l+ yposition\l# Possesed_image\l|+ GameElement()\l+ ~GameElement()\l+ Bounce()\l+ draw()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node1 [label="{Brick\n|- hits\l|+ Brick()\l+ ~Brick()\l+ Bounce()\l+ draw()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_brick.html",tooltip="Brick generates a brick and manages functions accordingly. "];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{MoveableObject\n|+ _speed\l+ _xdirection\l+ _xflip\l+ _ydirection\l+ _yflip\l|+ MoveableObject()\l+ ~MoveableObject()\l+ move()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_moveable_object.html",tooltip="This class leaves an inheritance to all objects that move (ball, platform) "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Ball\n||+ Ball()\l+ ~Ball()\l+ Bounce()\l+ draw()\l+ move()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html",tooltip="Ball generates a ball and manages function accordingly. "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Platform\n||+ Platform()\l+ ~Platform()\l+ Bounce()\l+ draw()\l+ keyInput()\l+ move()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_platform.html",tooltip="Platform generates a rectangle with an image and manages function accordingly. "];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{Wall\n|- wallside_pick\l|+ Wall()\l+ ~Wall()\l+ Bounce()\l+ draw()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wall.html",tooltip="Wall generates a colored rectangle and manages functions accordingly. "];
+}

@@ -530,10 +530,9 @@ var searchData=
   ['sdltest_5fresetassertsummary',['SDLTest_ResetAssertSummary',['../_s_d_l__test__assert_8h.html#a1f78edbf1f7a38ebfeb2a2c76e3a5e60',1,'SDL_test_assert.h']]],
   ['sdltest_5frunsuites',['SDLTest_RunSuites',['../_s_d_l__test__harness_8h.html#a4999be460499b1cb45e2b2b3bbb582b2',1,'SDL_test_harness.h']]],
   ['sdltest_5ftrackallocations',['SDLTest_TrackAllocations',['../_s_d_l__test__memory_8h.html#a40bf863f369cc2c8a3364e4f882dafbd',1,'SDL_test_memory.h']]],
-  ['serveball',['serveBall',['../class_ball.html#adc3a970624c3c0c53a3a06e8811d36f9',1,'Ball']]],
-  ['set_5fbrick_5flevel',['set_brick_level',['../class_controller.html#a4f507fe7987fadf92d30e94d97fc5480',1,'Controller']]],
+  ['setbricklevel',['setBrickLevel',['../class_controller.html#ac85aef3930b192d838ac4d2763bed836',1,'Controller']]],
   ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
   ['sint64',['Sint64',['../struct_s_d_l___r_wops.html#a45f66dbb683a88281d96f83ca18c525f',1,'SDL_RWops::Sint64(SDLCALL *size)(struct SDL_RWops *context)'],['../struct_s_d_l___r_wops.html#a767114391a3d1b4a7c214da3e164acf5',1,'SDL_RWops::Sint64(SDLCALL *seek)(struct SDL_RWops *context']]],
   ['size_5ft',['size_t',['../struct_s_d_l___r_wops.html#acd9a3c6e840d285c1e30cadaf99097b2',1,'SDL_RWops::size_t(SDLCALL *read)(struct SDL_RWops *context'],['../struct_s_d_l___r_wops.html#a5f12fd517afffba5bfaff4643d6792b1',1,'SDL_RWops::size_t(SDLCALL *write)(struct SDL_RWops *context']]],
-  ['start_5fmenu',['Start_menu',['../class_controller.html#a7fa0cc40f37b02f318a9a07fb6859a23',1,'Controller']]]
+  ['startmenu',['startMenu',['../class_controller.html#a96062807f924a58920faa7fb918598ef',1,'Controller']]]
 ];

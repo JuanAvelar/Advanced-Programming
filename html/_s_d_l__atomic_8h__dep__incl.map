@@ -1,18 +1,18 @@
 <map id="SDL2/include/SDL2/SDL_atomic.h" name="SDL2/include/SDL2/SDL_atomic.h">
-<area shape="rect" id="node2" href="$_s_d_l_8h.html" title="Main include header for the SDL library. " alt="" coords="697,289,907,319"/>
-<area shape="rect" id="node16" href="$_s_d_l__thread_8h.html" title="Header for the SDL thread management routines. " alt="" coords="789,100,986,147"/>
-<area shape="rect" id="node3" href="$_window_8h_source.html" title="Window.h" alt="" coords="93,375,183,405"/>
-<area shape="rect" id="node8" href="$_controller_8h_source.html" title="Controller.h" alt="" coords="422,651,523,680"/>
-<area shape="rect" id="node11" href="$_s_d_l__image_8h_source.html" title="SDL2/include/SDL2/SDL\l_image.h" alt="" coords="567,367,765,413"/>
-<area shape="rect" id="node12" href="$_s_d_l__test_8h.html" title="Include file for SDL test framework. " alt="" coords="950,556,1147,603"/>
-<area shape="rect" id="node13" href="$_s_d_l__test__common_8h.html" title="Include file for SDL test framework. " alt="" coords="1111,461,1309,508"/>
-<area shape="rect" id="node14" href="$_s_d_l__test__compare_8h.html" title="Include file for SDL test framework. " alt="" coords="789,461,986,508"/>
-<area shape="rect" id="node15" href="$_s_d_l__test__images_8h.html" title="Include file for SDL test framework. " alt="" coords="839,367,1037,413"/>
-<area shape="rect" id="node4" href="$_ball_8h_source.html" title="Ball.h" alt="" coords="71,651,131,680"/>
-<area shape="rect" id="node5" href="$_brick_8h_source.html" title="Brick.h" alt="" coords="65,728,136,757"/>
-<area shape="rect" id="node6" href="$_game_element_8h_source.html" title="GameElement.h" alt="" coords="200,470,335,499"/>
-<area shape="rect" id="node9" href="$_platform_8h_source.html" title="Platform.h" alt="" coords="188,651,280,680"/>
-<area shape="rect" id="node10" href="$_wall_8h_source.html" title="Wall.h" alt="" coords="106,565,170,594"/>
-<area shape="rect" id="node7" href="$_moveable_object_8h_source.html" title="MoveableObject.h" alt="" coords="194,565,341,594"/>
-<area shape="rect" id="node17" href="$_s_d_l__audio_8h.html" title="Access to the raw audio mixing buffer for the SDL library. " alt="" coords="839,195,1037,241"/>
+<area shape="rect" id="node2" href="$_s_d_l_8h.html" title="Main include header for the SDL library. " alt="" coords="570,289,780,319"/>
+<area shape="rect" id="node16" href="$_s_d_l__thread_8h.html" title="Header for the SDL thread management routines. " alt="" coords="576,100,774,147"/>
+<area shape="rect" id="node3" href="$_window_8h_source.html" title="Window.h" alt="" coords="316,375,407,405"/>
+<area shape="rect" id="node9" href="$_controller_8h_source.html" title="Controller.h" alt="" coords="20,651,122,680"/>
+<area shape="rect" id="node11" href="$_s_d_l__image_8h_source.html" title="SDL2/include/SDL2/SDL\l_image.h" alt="" coords="440,367,638,413"/>
+<area shape="rect" id="node12" href="$_s_d_l__test_8h.html" title="Include file for SDL test framework. " alt="" coords="840,556,1038,603"/>
+<area shape="rect" id="node13" href="$_s_d_l__test__common_8h.html" title="Include file for SDL test framework. " alt="" coords="551,461,748,508"/>
+<area shape="rect" id="node14" href="$_s_d_l__test__compare_8h.html" title="Include file for SDL test framework. " alt="" coords="772,461,970,508"/>
+<area shape="rect" id="node15" href="$_s_d_l__test__images_8h.html" title="Include file for SDL test framework. " alt="" coords="772,367,970,413"/>
+<area shape="rect" id="node4" href="$_ball_8h_source.html" title="Ball.h" alt="" coords="353,651,413,680"/>
+<area shape="rect" id="node5" href="$_brick_8h_source.html" title="Brick.h" alt="" coords="416,728,486,757"/>
+<area shape="rect" id="node6" href="$_platform_8h_source.html" title="Platform.h" alt="" coords="269,728,361,757"/>
+<area shape="rect" id="node7" href="$_game_element_8h_source.html" title="GameElement.h" alt="" coords="184,470,318,499"/>
+<area shape="rect" id="node10" href="$_wall_8h_source.html" title="Wall.h" alt="" coords="39,565,103,594"/>
+<area shape="rect" id="node8" href="$_moveable_object_8h_source.html" title="MoveableObject.h" alt="" coords="178,565,324,594"/>
+<area shape="rect" id="node17" href="$_s_d_l__audio_8h.html" title="Access to the raw audio mixing buffer for the SDL library. " alt="" coords="576,195,774,241"/>
 </map>

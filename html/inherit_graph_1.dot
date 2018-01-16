@@ -1,0 +1,17 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node0 [label="GameElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game_element.html",tooltip="Game Element manages each element of the game seperately, each must contain its own texture to add th..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node1 [label="Brick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_brick.html",tooltip="Brick generates a brick and manages functions accordingly. "];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node2 [label="MoveableObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_moveable_object.html",tooltip="This class leaves an inheritance to all objects that move (ball, platform) "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node3 [label="Ball",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html",tooltip="Ball generates a ball and manages function accordingly. "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node4 [label="Platform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_platform.html",tooltip="Platform generates a rectangle with an image and manages function accordingly. "];
+  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node5 [label="Wall",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wall.html",tooltip="Wall generates a colored rectangle and manages functions accordingly. "];
+}

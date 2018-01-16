@@ -78,18 +78,13 @@ $(function() {
 Inheritance diagram for GameElement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element__inherit__graph.png" border="0" usemap="#_game_element_inherit__map" alt="Inheritance graph"/></div>
-<map name="_game_element_inherit__map" id="_game_element_inherit__map">
-<area shape="rect" id="node2" href="class_brick.html" title="Brick generates a brick and manages functions accordingly. " alt="" coords="5,373,104,510"/>
-<area shape="rect" id="node3" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="129,364,295,519"/>
-<area shape="rect" id="node6" href="class_wall.html" title="Wall generates a colored rectangle and manages functions accordingly. " alt="" coords="319,373,449,510"/>
-<area shape="rect" id="node4" href="class_ball.html" title="Ball generates a ball and manages function accordingly. " alt="" coords="89,575,199,747"/>
-<area shape="rect" id="node5" href="class_platform.html" title="Platform generates a square with color and manages function accordingly, you can also use an image..." alt="" coords="223,567,335,756"/>
-</map>
+<!-- MAP 0 -->
 </div>
 <div class="dynheader">
 Collaboration diagram for GameElement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_element__coll__graph.png" border="0" usemap="#_game_element_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 1 -->
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -100,6 +95,13 @@ Public Types</h2></td></tr>
  }<tr class="memdesc:a7b62036e0a68b55efbd82d41367b8ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum type that tells if the things destroyed is a brick or aa ball or nothing (used in the bounce function) <br /></td></tr>
 </td></tr>
 <tr class="separator:a7b62036e0a68b55efbd82d41367b8ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309423acc72febf26adef7efa466a8ae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a> { <b>none</b> = 0, 
+<b>biggerBall</b>, 
+<b>biggerPlatform</b>, 
+<b>extraBall</b>
+ }<tr class="memdesc:a309423acc72febf26adef7efa466a8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that tells which powerup to store in a brick and subsequently in a ball if the brick gets hit.  <a href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a309423acc72febf26adef7efa466a8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88e64c35dcdc76eec6078096cf5b64f7"><td class="memItemLeft" align="right" valign="top"><a id="a88e64c35dcdc76eec6078096cf5b64f7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7">Size</a> { <b>small</b>, 
 <b>medium</b>, 
 <b>big</b>
@@ -117,10 +119,10 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a3e487fb9386f884491c6cffd16910126">~GameElement</a> ()=default</td></tr>
 <tr class="memdesc:a3e487fb9386f884491c6cffd16910126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Standard destructor. <br /></td></tr>
 <tr class="separator:a3e487fb9386f884491c6cffd16910126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43addde25a0ab76f8b48ded220d9c886"><td class="memItemLeft" align="right" valign="top"><a id="a43addde25a0ab76f8b48ded220d9c886"></a>
-virtual <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">GameElement::ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a43addde25a0ab76f8b48ded220d9c886">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)=0</td></tr>
-<tr class="memdesc:a43addde25a0ab76f8b48ded220d9c886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function to manage bouncing objects throughout the game, it also manages the destruction of objects in each situation. <br /></td></tr>
-<tr class="separator:a43addde25a0ab76f8b48ded220d9c886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e54e957fdf5c2c4a21d9df8ab887741"><td class="memItemLeft" align="right" valign="top"><a id="a5e54e957fdf5c2c4a21d9df8ab887741"></a>
+virtual <a class="el" href="class_game_element.html#a7b62036e0a68b55efbd82d41367b8ac7">ElementDestroyed</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a5e54e957fdf5c2c4a21d9df8ab887741">Bounce</a> (<a class="el" href="class_game_element.html">GameElement</a> *ball)=0</td></tr>
+<tr class="memdesc:a5e54e957fdf5c2c4a21d9df8ab887741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function to manage bouncing objects throughout the game, it also manages the destruction of objects in each situation. <br /></td></tr>
+<tr class="separator:a5e54e957fdf5c2c4a21d9df8ab887741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad1a30d8bcf7cce64058262464da795"><td class="memItemLeft" align="right" valign="top"><a id="acad1a30d8bcf7cce64058262464da795"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">draw</a> (<a class="el" href="class_window.html">Window</a> *window) const =0</td></tr>
 <tr class="memdesc:acad1a30d8bcf7cce64058262464da795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw virtual function, it draws the element using the pointer Renderer of the window class, it detects if an image is used or just a colored rectangle. <br /></td></tr>
@@ -148,6 +150,9 @@ Uint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a94cb6e054d7b806cb0fec56c2ea223fd">height</a></td></tr>
 <tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289bcb12e869de7e979c2509ef25b80f"><td class="memItemLeft" align="right" valign="top"><a id="a289bcb12e869de7e979c2509ef25b80f"></a>
+<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b> = none</td></tr>
+<tr class="separator:a289bcb12e869de7e979c2509ef25b80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
 <tr class="memdesc:a1cbcfa253a9f677696f569639949ac6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the game element in amount of pixels. <br /></td></tr>
@@ -178,7 +183,24 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Game Element manages each element of the game seperately, each must contain its own texture to add the possibility to draw an PNG image instead of a rectangle with a color. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a309423acc72febf26adef7efa466a8ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309423acc72febf26adef7efa466a8ae">&#9670;&nbsp;</a></span>Powerups</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">GameElement::Powerups</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum that tells which powerup to store in a brick and subsequently in a ball if the brick gets hit. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_game_element_8h_source.html">GameElement.h</a></li>
 <li>GameElement.cpp</li>
 </ul>

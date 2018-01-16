@@ -1,0 +1,9 @@
+digraph "SDL_PollEvent"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node9 [label="SDL_PollEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node10 [label="Controller::startMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_controller.html#a96062807f924a58920faa7fb918598ef",tooltip="Does a pause until you click the big button. "];
+}

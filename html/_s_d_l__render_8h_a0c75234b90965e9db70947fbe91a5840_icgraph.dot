@@ -1,0 +1,11 @@
+digraph "SDL_CreateTextureFromSurface"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node7 [label="SDL_CreateTextureFromSurface",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node8 [label="Ball::Ball",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#a6f719742509968820f1fb59e535c4178",tooltip="Constructor of the ball class. "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node9 [label="Platform::Platform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_platform.html#a8743e33a404693da0fa5fb3dbfda606b",tooltip="Constructor of the platform using an image, also used for the start button. "];
+}

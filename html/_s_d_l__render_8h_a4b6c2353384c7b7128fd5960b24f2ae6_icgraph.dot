@@ -1,0 +1,15 @@
+digraph "SDL_RenderCopy"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node49 [label="SDL_RenderCopy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node49 -> Node50 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node50 [label="Ball::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ball.html#a9b170c27c74586af6108314c3623da53",tooltip="Moves the ball when its speed is 0. "];
+  Node49 -> Node51 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node51 [label="Brick::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4",tooltip="Draws a brick in the SDL window. "];
+  Node49 -> Node52 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node52 [label="Platform::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac",tooltip="Function that draws the platform into the SDL window. "];
+  Node49 -> Node53 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node53 [label="Wall::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509",tooltip="Draws the walls into the SDL window. "];
+}

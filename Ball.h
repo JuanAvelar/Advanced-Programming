@@ -14,6 +14,8 @@ public:
 
 	void draw(Window *ball_window)const;
 
+	void keyInput(SDL_Event &event);
+
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
 };

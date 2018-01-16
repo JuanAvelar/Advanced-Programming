@@ -63,7 +63,7 @@ void Brick::draw(Window *window_brick) const {
 /** This function will check the point of colission of the ball with a brick. Depending on this point of colission (which will be on a ring of 1 pixel wide around the brick) the x direction, y direction or both will change. Also if the brick has no lifes left it will be deleted.*/
 GameElement::ElementDestroyed Brick::Bounce(GameElement * ball) {
 	//A dynamic cast to access the ball class.
-	Ball *lower_inh_ptr = dynamic_cast<Ball*> (ball);//lower inheritance pointer of type ball
+	MoveableObject *lower_inh_ptr = dynamic_cast<MoveableObject*> (ball);//lower inheritance pointer of type ball
 
 	//if the brick has lives left check for colissions
 	if (hits > 0) {

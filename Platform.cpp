@@ -65,7 +65,7 @@ void Platform::draw(Window *platform_window) const {
 
 
 /**Function that implements the keyboard input for movement of the platform. Key pressdown sets a direction of the platform (left or right) and key release resets the direction to 0.*/
-void Platform::keyInput(SDL_Event &event, Ball *ball) {
+void Platform::keyInput(SDL_Event &event) {
 	//Key is pressed
 	if (event.type == SDL_KEYDOWN) {
 		switch (event.key.keysym.sym) {
@@ -74,9 +74,6 @@ void Platform::keyInput(SDL_Event &event, Ball *ball) {
 			break;
 		case SDLK_RIGHT:
 			_xdirection = 1.0;
-			break;
-		case SDLK_UP:
-			ball->_speed = 1.0;
 			break;
 		default:
 			break;

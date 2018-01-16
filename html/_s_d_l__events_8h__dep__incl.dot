@@ -1,0 +1,47 @@
+digraph "SDL2/include/SDL2/SDL_events.h"
+{
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  Node25 [label="SDL2/include/SDL2/SDL\l_events.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node25 -> Node26 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node26 [label="SDL2/include/SDL2/SDL.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l_8h.html",tooltip="Main include header for the SDL library. "];
+  Node26 -> Node27 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node27 [label="Window.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_window_8h_source.html"];
+  Node27 -> Node28 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node28 [label="Ball.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_ball_8h_source.html"];
+  Node28 -> Node29 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node29 [label="Brick.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_brick_8h_source.html"];
+  Node28 -> Node30 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node30 [label="Platform.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_platform_8h_source.html"];
+  Node27 -> Node31 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node31 [label="GameElement.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_element_8h_source.html"];
+  Node31 -> Node32 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node32 [label="MoveableObject.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_moveable_object_8h_source.html"];
+  Node32 -> Node28 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node32 -> Node33 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node33 [label="Controller.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_controller_8h_source.html"];
+  Node32 -> Node30 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node31 -> Node29 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node31 -> Node33 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node31 -> Node34 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node34 [label="Wall.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_wall_8h_source.html"];
+  Node27 -> Node29 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node27 -> Node33 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node27 -> Node30 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node27 -> Node34 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node26 -> Node33 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node26 -> Node35 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node35 [label="SDL2/include/SDL2/SDL\l_image.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__image_8h_source.html"];
+  Node26 -> Node36 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node36 [label="SDL2/include/SDL2/SDL\l_test.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__test_8h.html",tooltip="Include file for SDL test framework. "];
+  Node26 -> Node37 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node37 [label="SDL2/include/SDL2/SDL\l_test_common.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__test__common_8h.html",tooltip="Include file for SDL test framework. "];
+  Node37 -> Node36 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node26 -> Node38 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node38 [label="SDL2/include/SDL2/SDL\l_test_compare.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__test__compare_8h.html",tooltip="Include file for SDL test framework. "];
+  Node38 -> Node36 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node26 -> Node39 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node39 [label="SDL2/include/SDL2/SDL\l_test_images.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__test__images_8h.html",tooltip="Include file for SDL test framework. "];
+  Node39 -> Node38 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node39 -> Node36 [dir="back",color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+}

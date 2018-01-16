@@ -86,3 +86,16 @@ GameElement::ElementDestroyed Ball::Bounce(GameElement * ball) {
 	(void)ball;
 	return GameElement::destroynothing;
 }
+
+void Ball::keyInput(SDL_Event &event) {
+	
+	if (event.type == SDL_KEYDOWN) {
+		switch (event.key.keysym.sym) {
+		case SDLK_UP:
+			_speed = 1.0;
+			break;
+		default:
+			break;
+		}
+	}
+}

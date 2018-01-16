@@ -13,5 +13,7 @@ var searchData=
   ['_5fwidth',['_width',['../class_window.html#aeb1784c461502a1708d6ff8157f6ffd7',1,'Window']]],
   ['_5fwindow',['_window',['../class_window.html#af844aca305ade64da9cef8beb9faf8eb',1,'Window']]],
   ['_5fxdirection',['_xdirection',['../class_moveable_object.html#a57f836d0869c42b5a6c26288018a57db',1,'MoveableObject']]],
-  ['_5fydirection',['_ydirection',['../class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0',1,'MoveableObject']]]
+  ['_5fxflip',['_xflip',['../class_moveable_object.html#ad860b8f189ba7b5f6595a088d8a3f4a2',1,'MoveableObject']]],
+  ['_5fydirection',['_ydirection',['../class_moveable_object.html#a0db3d6c36068da78ba54753817b634f0',1,'MoveableObject']]],
+  ['_5fyflip',['_yflip',['../class_moveable_object.html#a1411fbc97c41fd2229da4e35c6a6000a',1,'MoveableObject']]]
 ];
