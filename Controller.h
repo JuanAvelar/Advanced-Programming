@@ -22,20 +22,19 @@ public:
 	/**Function to manage bouncing and deleting of objects. Also allows balls to change directions and implements powerups with the bouncing.*/
 	void bounceOnObject( vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);
 	/**Function to generate brick setting for each level*/
-	void set_brick_level(int level, vector <GameElement*>* elements);
+	void setBrickLevel(int level, vector <GameElement*>* elements);
 	/**Handles events of the user input*/
 	void poll(SDL_Event &event, Window * window, vector <GameElement*>* elements);
 	/**Destroys all game objects*/
-	void destroy_level(int level, vector <GameElement*>* elements);
+	void destroyLevel(int level, vector <GameElement*>* elements);
 	/**Does a pause until you click the big button*/
-	void Start_menu(SDL_Event *event, Window *window_c);
-	/**function to get the amount of lifes left in the main*/
-	int getLives();
-private:
+	void startMenu(SDL_Event *event, Window *window_c);
 	/**lives that the user has before exiting the game*/
-	int lives, 
+	int lives;
+
+private:
 	/**score of the game should be displayed when exiting the game*/
-		score;
+	int	score;
 	/**Time passed in milliseconds*/
 	int timeElapsed = 0;
 	/**Second time to compare*/
