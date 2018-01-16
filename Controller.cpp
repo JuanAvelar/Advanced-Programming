@@ -100,7 +100,7 @@ void Controller::launchGame(int level) {
 Controller::~Controller() {
 }
 
-//In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument
+//In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument.
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
 
 	for (int i = 0; i < signed(elements->size()); i++) {
