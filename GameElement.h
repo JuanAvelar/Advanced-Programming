@@ -43,6 +43,7 @@ public:
 			_b, 
 	/**Absence of light RGBA*/
 			_a;
+	/**The powerup possessed by the game element*/
 	Powerups powerUp = none;
 protected:
 	/**A pointer to an image texture used to draw a PNG image representing the game element chosen*/

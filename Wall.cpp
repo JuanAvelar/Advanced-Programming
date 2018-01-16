@@ -71,21 +71,21 @@ GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 		case Wall::up:
 			layer[0] = this->yposition + this->height;
 			if (ball->yposition < layer[0]) {
-				lower_inh_ptr->_ydirection = -(lower_inh_ptr->_ydirection);
+				lower_inh_ptr->_yflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::left:
 			layer[1] = this->xposition + this->width;
 			if (ball->xposition < layer[1]) {
-				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+				lower_inh_ptr->_xflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::right:
 			layer[2] = this->xposition;
 			if ( ball->xposition >(layer[2] - ball->width)) {
-				lower_inh_ptr->_xdirection = -(lower_inh_ptr->_xdirection);
+				lower_inh_ptr->_xflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
