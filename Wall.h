@@ -18,7 +18,7 @@ public:
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 
-protected:
+private:
 	/**Type of wall used, selected when wall is generated in a game launch function*/
 	Wall_type wallside_pick;
 	

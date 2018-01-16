@@ -16,7 +16,7 @@
 #include <ctime>
 #define window_height 600
 #define window_width 1000
-#define iterations_per_cycle 8
+#define iterations_per_cycle 15
 #define cycle_time 30				//in milliseconds
 #define time_for_graphic_output 10	//in milliseconds
 #define duty_cycle_percentage 0.4	//state percentage of time spent to complete motion of the ball and collisions
