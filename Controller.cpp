@@ -55,13 +55,13 @@ void Controller::launchGame(int level) {
 	Moveable_objects.emplace_back(ball);
 	Moveable_objects.emplace_back(platform);
 
-	setBrickLevel(level, &Game_elements);													//Function to generate all bricks depending on the level
-	startMenu(&event, &window_c);															//function to start the game, make a big start button and when clicked the game starts 
+	setBrickLevel(level, &Game_elements);													//function to generate all bricks depending on the level
+	startMenu(&event, &window_c);															//function to make the start button. When it is clicked the game will start
 
 	
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
-			event_flag = true;
+			event_flag = true;//pass down the flag to a variable
 			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 		}
 		timeElapsed = SDL_GetTicks();//Gets time since the first time sdl library was accessed
@@ -74,7 +74,6 @@ void Controller::launchGame(int level) {
 		}
 		else if (timeElapsed % cycle_time > cycle_time/2 && timeElapsed % cycle_time < cycle_time / 2 + time_for_graphic_output) {
 			showGraphicOutput(&window_c, &Game_elements);
-			 //std::cout << time << std::endl; 
 		}
 		else if (timeElapsed % cycle_time > cycle_time*duty_cycle_percentage) {//waits until moving the ball is done
 			if (you_shall_not_pass) {
@@ -97,11 +96,11 @@ void Controller::launchGame(int level) {
 	Game_elements.clear();
 }
 
-/**Controller destructor*/
+//Controller destructor
 Controller::~Controller() {
 }
 
-/**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
+//In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
 
 	for (int i = 0; i < signed(elements->size()); i++) {
@@ -151,7 +150,6 @@ void Controller::bounceOnObject(vector <GameElement*>* Game_elements, vector <Mo
 	//erasing elements from vector if they are nullptr
 	int it_1 = 0;
 	while (it_1 < signed(Game_elements->size())) {//manual iteration to prevent undefined behavior
-		//std::cout << it_1 << std::endl;
 		if ((*Game_elements)[it_1] == nullptr) {
 			Game_elements->erase(Game_elements->begin() + it_1);//erase previously defined vector spaces to be whiped
 
@@ -234,7 +232,7 @@ void Controller::setBrickLevel(int level, vector <GameElement*>* elements) {
 	}
 }
 
-/**Destroys all bricks if level is lost*/
+//Destroy elements
 void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 	(void)level;
 	for (int i = 0; i < signed(elements->size()); i++) {
@@ -242,7 +240,7 @@ void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 	}
 }
 
-/**Displaces the game to the center of the window*/
+//Displaces the game to the center of the window
 void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* elements) {
 	if (event.type == SDL_WINDOWEVENT) {
 		switch (event.window.event) {
