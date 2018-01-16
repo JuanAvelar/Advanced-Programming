@@ -65,33 +65,27 @@ void Wall::draw(Window *window_wall) const {
 GameElement::ElementDestroyed Wall::Bounce(GameElement * ball) {
 	//Dynamic cast to access the ball class.
 	MoveableObject *lower_inh_ptr = { dynamic_cast<MoveableObject*> (ball)};
-	//makes an empty array that will be used for wall evaluation
-	int layer[4] = { 0, 0, 0, 0 };
 		switch (this->wallside_pick) {
 		case Wall::up:
-			layer[0] = this->yposition + this->height;
-			if (ball->yposition < layer[0]) {
+			if (ball->yposition < this->yposition + this->height) {
 				lower_inh_ptr->_yflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::left:
-			layer[1] = this->xposition + this->width;
-			if (ball->xposition < layer[1]) {
+			if (ball->xposition < this->xposition + this->width) {
 				lower_inh_ptr->_xflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::right:
-			layer[2] = this->xposition;
-			if ( ball->xposition >(layer[2] - ball->width)) {
+			if ( ball->xposition >(this->xposition - ball->width)) {
 				lower_inh_ptr->_xflip = true;
 			}
 			return GameElement::destroynothing;
 			break;
 		case Wall::down:
-			layer[3] = this->yposition;
-			if (ball->yposition >(layer[3] - ball->height)) {
+			if (ball->yposition >(this->yposition - ball->height)) {
 				delete ball;
 				return GameElement::destroyball;
 			}
