@@ -62,7 +62,7 @@ void Window::clear()const {
 	/**Use this function to update the screen with any rendering performed since the previous call.*/
 	SDL_RenderPresent(_renderer);					
 	/**Use this function to set the color used for drawing operations*/
-	SDL_SetRenderDrawColor(_renderer, 0, 0, 50, 55);
+	SDL_SetRenderDrawColor(_renderer, 150, 50, 50, 50);
 	/**Use this function to clear the current rendering target with the drawing color.*/
 	SDL_RenderClear(_renderer);						
 }
