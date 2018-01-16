@@ -16,7 +16,7 @@
 #include <ctime>
 #define window_height 600
 #define window_width 1000
-#define iterations_per_cycle 15
+#define iterations_per_cycle 12
 #define cycle_time 30				//in milliseconds
 #define time_for_graphic_output 10	//in milliseconds
 #define duty_cycle_percentage 0.4	//state percentage of time spent to complete motion of the ball and collisions
@@ -61,7 +61,7 @@ void Controller::launchGame(int level) {
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
 	while (!window_c.isClosed() && !Game_lost) {
 		if (SDL_PollEvent(&event)) {
-			event_flag = true;
+			event_flag = true;//pass down the flag to a variable
 			poll(event, &window_c, &Game_elements);//checks if the window has changed its size
 		}
 		//std::cout << "busy" << std::endl;
