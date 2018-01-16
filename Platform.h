@@ -14,7 +14,7 @@ public:
 
 	void draw(Window *platform_window) const;
 
-	virtual void move(GameElement *right_wall, GameElement *left_wall);
+	void move(GameElement *right_wall, GameElement *left_wall);
 
 	GameElement::ElementDestroyed Bounce(GameElement * ball);
 };
