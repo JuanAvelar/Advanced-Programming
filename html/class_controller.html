@@ -77,7 +77,9 @@ $(function() {
 Collaboration diagram for Controller:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller__coll__graph.png" border="0" usemap="#_controller_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
+<map name="_controller_coll__map" id="_controller_coll__map">
+<area shape="rect" id="node3" title="STL class. " alt="" coords="35,156,157,241"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -99,7 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad15c460d359ab3464c00a97d786bf412"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412">launchGame</a> (int level)</td></tr>
 <tr class="memdesc:ad15c460d359ab3464c00a97d786bf412"><td class="mdescLeft">&#160;</td><td class="mdescRight">All game logic and elements are chosen there.  <a href="#ad15c460d359ab3464c00a97d786bf412">More...</a><br /></td></tr>
 <tr class="separator:ad15c460d359ab3464c00a97d786bf412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa22db940ee518ad76de3bee9b560f02b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa22db940ee518ad76de3bee9b560f02b">poll</a> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;event, <a class="el" href="class_window.html">Window</a> *window, vector&lt; <a class="el" href="class_game_element.html">GameElement</a> *&gt; *elements)</td></tr>
+<tr class="memitem:aa22db940ee518ad76de3bee9b560f02b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa22db940ee518ad76de3bee9b560f02b">poll</a> (SDL_Event &amp;event, <a class="el" href="class_window.html">Window</a> *window, vector&lt; <a class="el" href="class_game_element.html">GameElement</a> *&gt; *elements)</td></tr>
 <tr class="memdesc:aa22db940ee518ad76de3bee9b560f02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles events of the user input.  <a href="#aa22db940ee518ad76de3bee9b560f02b">More...</a><br /></td></tr>
 <tr class="separator:aa22db940ee518ad76de3bee9b560f02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85aef3930b192d838ac4d2763bed836"><td class="memItemLeft" align="right" valign="top"><a id="ac85aef3930b192d838ac4d2763bed836"></a>
@@ -110,18 +112,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:ae24d317546b8a54cbdc7b7334bb3d15f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to update the graphical output.  <a href="#ae24d317546b8a54cbdc7b7334bb3d15f">More...</a><br /></td></tr>
 <tr class="separator:ae24d317546b8a54cbdc7b7334bb3d15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96062807f924a58920faa7fb918598ef"><td class="memItemLeft" align="right" valign="top"><a id="a96062807f924a58920faa7fb918598ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a96062807f924a58920faa7fb918598ef">startMenu</a> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> *event, <a class="el" href="class_window.html">Window</a> *window_c)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a96062807f924a58920faa7fb918598ef">startMenu</a> (SDL_Event *event, <a class="el" href="class_window.html">Window</a> *window_c)</td></tr>
 <tr class="memdesc:a96062807f924a58920faa7fb918598ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a pause until you click the big button. <br /></td></tr>
 <tr class="separator:a96062807f924a58920faa7fb918598ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa39b21c3cbe41ae2d625c97570d4d1a8"><td class="memItemLeft" align="right" valign="top"><a id="aa39b21c3cbe41ae2d625c97570d4d1a8"></a>
-<a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa39b21c3cbe41ae2d625c97570d4d1a8">Blue</a> = { 0 ,0 ,255,0 }</td></tr>
+SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa39b21c3cbe41ae2d625c97570d4d1a8">Blue</a> = { 0 ,0 ,255,0 }</td></tr>
 <tr class="memdesc:aa39b21c3cbe41ae2d625c97570d4d1a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue color to use when selecting a new object. <br /></td></tr>
 <tr class="separator:aa39b21c3cbe41ae2d625c97570d4d1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5236bf8f5475f8fc17bc30034559d3a"><td class="memItemLeft" align="right" valign="top"><a id="af5236bf8f5475f8fc17bc30034559d3a"></a>
-<a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af5236bf8f5475f8fc17bc30034559d3a">Green</a> = { 0 ,255,0 ,0 }</td></tr>
+SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af5236bf8f5475f8fc17bc30034559d3a">Green</a> = { 0 ,255,0 ,0 }</td></tr>
 <tr class="memdesc:af5236bf8f5475f8fc17bc30034559d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green color to use when selecting a new object. <br /></td></tr>
 <tr class="separator:af5236bf8f5475f8fc17bc30034559d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1abfa80b7f381fd50e0a360ac840742"><td class="memItemLeft" align="right" valign="top"><a id="ae1abfa80b7f381fd50e0a360ac840742"></a>
@@ -129,15 +131,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:ae1abfa80b7f381fd50e0a360ac840742"><td class="mdescLeft">&#160;</td><td class="mdescRight">lives that the user has before exiting the game <br /></td></tr>
 <tr class="separator:ae1abfa80b7f381fd50e0a360ac840742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ff2b48c20cb00a001d163c18be8d6c"><td class="memItemLeft" align="right" valign="top"><a id="ad6ff2b48c20cb00a001d163c18be8d6c"></a>
-<a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad6ff2b48c20cb00a001d163c18be8d6c">Red</a> = { 255,0 ,0 ,0 }</td></tr>
+SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad6ff2b48c20cb00a001d163c18be8d6c">Red</a> = { 255,0 ,0 ,0 }</td></tr>
 <tr class="memdesc:ad6ff2b48c20cb00a001d163c18be8d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red color to use when selecting a new object. <br /></td></tr>
 <tr class="separator:ad6ff2b48c20cb00a001d163c18be8d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a081b8805397d70b31eb2995f31f70b88"><td class="memItemLeft" align="right" valign="top"><a id="a081b8805397d70b31eb2995f31f70b88"></a>
-<a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a081b8805397d70b31eb2995f31f70b88">White</a> = { 255,255,255,255}</td></tr>
+SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a081b8805397d70b31eb2995f31f70b88">White</a> = { 255,255,255,255}</td></tr>
 <tr class="memdesc:a081b8805397d70b31eb2995f31f70b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">White color to use when selecting a new object. <br /></td></tr>
 <tr class="separator:a081b8805397d70b31eb2995f31f70b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad821af30f6d222b89e38c9054edf931f"><td class="memItemLeft" align="right" valign="top"><a id="ad821af30f6d222b89e38c9054edf931f"></a>
-<a class="el" href="struct_s_d_l___color.html">SDL_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad821af30f6d222b89e38c9054edf931f">Yellow</a> = { 255,255,0 ,100}</td></tr>
+SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad821af30f6d222b89e38c9054edf931f">Yellow</a> = { 255,255,0 ,100}</td></tr>
 <tr class="memdesc:ad821af30f6d222b89e38c9054edf931f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow color to use when selecting a new object. <br /></td></tr>
 <tr class="separator:ad821af30f6d222b89e38c9054edf931f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -225,6 +227,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <p>Function to manage bouncing and deleting of objects. </p>
 <p>Also allows balls to change directions and implements powerups with the bouncing. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a7e324c2e7c43fd0ea416c0f6623d6877_icgraph.png" border="0" usemap="#class_controller_a7e324c2e7c43fd0ea416c0f6623d6877_icgraph" alt=""/></div>
+<map name="class_controller_a7e324c2e7c43fd0ea416c0f6623d6877_icgraph" id="class_controller_a7e324c2e7c43fd0ea416c0f6623d6877_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="All game logic and elements are chosen there. " alt="" coords="267,5,451,35"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -256,6 +266,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <p>Destroys all game objects. </p>
 <p>Destroys all bricks if level is lost. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1294b422876d7edcde277acfe5a093ea_icgraph.png" border="0" usemap="#class_controller_a1294b422876d7edcde277acfe5a093ea_icgraph" alt=""/></div>
+<map name="class_controller_a1294b422876d7edcde277acfe5a093ea_icgraph" id="class_controller_a1294b422876d7edcde277acfe5a093ea_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="All game logic and elements are chosen there. " alt="" coords="239,5,423,35"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -277,13 +295,22 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <p>All game logic and elements are chosen there. </p>
 <p>In this function every function from the game is implemented(top major function) </p>
-<p>UI instance</p>
-<p>Event of keyboard instance</p>
-<p>Vector of Game element pointers</p>
-<p>ball instance</p>
-<p><a class="el" href="class_platform.html" title="Platform generates a rectangle with an image and manages function accordingly. ">Platform</a> instance</p>
-<p>The game is not lost when you begin</p>
 <p>Function to generate all bricks depending on the level </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ad15c460d359ab3464c00a97d786bf412_cgraph.png" border="0" usemap="#class_controller_ad15c460d359ab3464c00a97d786bf412_cgraph" alt=""/></div>
+<map name="class_controller_ad15c460d359ab3464c00a97d786bf412_cgraph" id="class_controller_ad15c460d359ab3464c00a97d786bf412_cgraph">
+<area shape="rect" id="node2" href="class_controller.html#ac85aef3930b192d838ac4d2763bed836" title="Function to generate brick setting for each level. " alt="" coords="259,5,449,35"/>
+<area shape="rect" id="node3" href="class_controller.html#a96062807f924a58920faa7fb918598ef" title="Does a pause until you click the big button. " alt="" coords="271,59,437,88"/>
+<area shape="rect" id="node6" href="class_controller.html#aa22db940ee518ad76de3bee9b560f02b" title="Handles events of the user input. " alt="" coords="293,112,415,141"/>
+<area shape="rect" id="node7" href="class_controller.html#a7e324c2e7c43fd0ea416c0f6623d6877" title="Function to manage bouncing and deleting of objects. " alt="" coords="247,165,461,195"/>
+<area shape="rect" id="node8" href="class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="237,219,471,248"/>
+<area shape="rect" id="node9" href="class_controller.html#a1294b422876d7edcde277acfe5a093ea" title="Destroys all game objects. " alt="" coords="261,272,447,301"/>
+<area shape="rect" id="node4" href="class_window.html#a752a62c1fedece0a87ba6ff7e72de344" title="Returns if the window is closed or not. " alt="" coords="519,59,667,88"/>
+<area shape="rect" id="node5" href="class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="533,165,653,195"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -296,7 +323,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
         <tr>
           <td class="memname">void Controller::poll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;&#160;</td>
+          <td class="paramtype">SDL_Event &amp;&#160;</td>
           <td class="paramname"><em>event</em>, </td>
         </tr>
         <tr>
@@ -322,10 +349,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Handles events of the user input. </p>
 <p>Displaces the game to the center of the window. </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_aa22db940ee518ad76de3bee9b560f02b_cgraph.png" border="0" usemap="#class_controller_aa22db940ee518ad76de3bee9b560f02b_cgraph" alt=""/></div>
-<!-- MAP 1 -->
+<div class="center"><img src="class_controller_aa22db940ee518ad76de3bee9b560f02b_icgraph.png" border="0" usemap="#class_controller_aa22db940ee518ad76de3bee9b560f02b_icgraph" alt=""/></div>
+<map name="class_controller_aa22db940ee518ad76de3bee9b560f02b_icgraph" id="class_controller_aa22db940ee518ad76de3bee9b560f02b_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="All game logic and elements are chosen there. " alt="" coords="175,5,359,35"/>
+</map>
 </div>
 
 </div>
@@ -362,7 +391,17 @@ Here is the call graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_cgraph.png" border="0" usemap="#class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_cgraph" alt=""/></div>
-<!-- MAP 2 -->
+<map name="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_cgraph" id="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_cgraph">
+<area shape="rect" id="node2" href="class_window.html#a866e3ccec583d94402bb82b352d51c10" title="Function to set background color on window and update. " alt="" coords="287,5,407,35"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_icgraph.png" border="0" usemap="#class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_icgraph" alt=""/></div>
+<map name="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_icgraph" id="class_controller_ae24d317546b8a54cbdc7b7334bb3d15f_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="All game logic and elements are chosen there. " alt="" coords="287,5,471,35"/>
+</map>
 </div>
 
 </div>

@@ -17,7 +17,7 @@ public:
 	~Controller(); 
 	/**All game logic and elements are chosen there*/
 	void launchGame(int level);
-	/**Function to update the graphical output*/
+	/**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
 	void showGraphicOutput(Window * window_foo, vector <GameElement*>* elements);
 	/**Function to manage bouncing and deleting of objects. Also allows balls to change directions and implements powerups with the bouncing.*/
 	void bounceOnObject( vector <GameElement*>* Game_elements, vector <MoveableObject*>* Moveable_objects, Window *window_c);

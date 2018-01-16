@@ -1,3 +1,3 @@
 <map id="MoveableObject" name="MoveableObject">
-<area shape="rect" id="node2" href="$class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,316"/>
+<area shape="rect" id="node2" href="$class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
 </map>

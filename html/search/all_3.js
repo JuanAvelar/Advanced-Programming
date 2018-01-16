@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['callback',['callback',['../struct_s_d_l___audio_spec.html#a1f8d05139f1679dcf359f49251233eac',1,'SDL_AudioSpec']]],
-  ['caxis',['caxis',['../union_s_d_l___event.html#aa8f6df0f2716fae56204b12ab4a4c289',1,'SDL_Event']]],
-  ['cbutton',['cbutton',['../union_s_d_l___event.html#aee2b5671c8dcdb447023715cc21593cb',1,'SDL_Event']]],
-  ['cdevice',['cdevice',['../union_s_d_l___event.html#ad3beed01e690b885728e0b0e1d636378',1,'SDL_Event']]],
-  ['center',['center',['../struct_s_d_l___haptic_condition.html#a8a71ec28ff5ab85246cbc59736aa2c53',1,'SDL_HapticCondition']]],
-  ['channels',['channels',['../struct_s_d_l___audio_spec.html#a31fe8b3710cf23bbef24be8a1749fe46',1,'SDL_AudioSpec::channels()'],['../struct_s_d_l___haptic_custom.html#a560215762e9096d583d75867d9227cf5',1,'SDL_HapticCustom::channels()']]],
-  ['clear',['clear',['../class_window.html#a866e3ccec583d94402bb82b352d51c10',1,'Window']]],
-  ['clicks',['clicks',['../struct_s_d_l___mouse_button_event.html#aa606bebcbc3ffc7e932016039c2a36a1',1,'SDL_MouseButtonEvent']]],
-  ['clip_5frect',['clip_rect',['../struct_s_d_l___surface.html#aa9a0da3b38261dad6cf0cc4e3bb5b0c3',1,'SDL_Surface']]],
-  ['close_5fcode_2eh',['close_code.h',['../close__code_8h.html',1,'']]],
-  ['code',['code',['../struct_s_d_l___user_event.html#aef47976781ee82b527a353c5acfa0a34',1,'SDL_UserEvent']]],
-  ['colorscheme',['colorScheme',['../struct_s_d_l___message_box_data.html#a18744865a3e89e260db5f01aee579e35',1,'SDL_MessageBoxData']]],
-  ['common',['common',['../union_s_d_l___event.html#abe5cb8767f93de55163c8ddd4562a7f2',1,'SDL_Event']]],
-  ['condition',['condition',['../union_s_d_l___haptic_effect.html#aa8fdd1ba202ccd7e61f48ef9977080d2',1,'SDL_HapticEffect']]],
-  ['constant',['constant',['../union_s_d_l___haptic_effect.html#ac435275e9683d6cc5d65b9c7cc2ec659',1,'SDL_HapticEffect']]],
-  ['controller',['Controller',['../class_controller.html',1,'Controller'],['../class_controller.html#a290f7c99100482ec64340f0403da6cd8',1,'Controller::Controller()']]],
-  ['custom',['custom',['../union_s_d_l___haptic_effect.html#a0b2d2af28c515cc39896b2b7c23019d2',1,'SDL_HapticEffect']]]
+  ['destroylevel',['destroyLevel',['../class_controller.html#a1294b422876d7edcde277acfe5a093ea',1,'Controller']]],
+  ['draw',['draw',['../class_ball.html#a9b170c27c74586af6108314c3623da53',1,'Ball::draw()'],['../class_brick.html#a005005bbb1c9f5adcd5addfbc683c3d4',1,'Brick::draw()'],['../class_game_element.html#acad1a30d8bcf7cce64058262464da795',1,'GameElement::draw()'],['../class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac',1,'Platform::draw()'],['../class_wall.html#a1d0f02eebf32d1f85d3a24c91a2c5509',1,'Wall::draw()']]]
 ];

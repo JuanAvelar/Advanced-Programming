@@ -55,7 +55,7 @@ void Controller::launchGame(int level) {
 	Moveable_objects.emplace_back(ball);
 	Moveable_objects.emplace_back(platform);
 
-	setBrickLevel(level, &Game_elements);													/**Function to generate all bricks depending on the level*/
+	setBrickLevel(level, &Game_elements);													//Function to generate all bricks depending on the level
 	startMenu(&event, &window_c);
 
 	//...write function to start the game, make a big start button and when clicked the game starts (first need to get level from LevelsGeneration)
@@ -98,11 +98,11 @@ void Controller::launchGame(int level) {
 	Game_elements.clear();
 }
 
-/**Controller destructor*/
+//Controller destructor
 Controller::~Controller() {
 }
 
-/**In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument*/
+//In this for loop all objects belonging to Game_elements are drawn, it take the pointer of the window as argument
 void Controller::showGraphicOutput(Window *window_foo, vector <GameElement*>* elements) {
 
 	for (int i = 0; i < signed(elements->size()); i++) {
@@ -240,7 +240,7 @@ void Controller::setBrickLevel(int level, vector <GameElement*>* elements) {
 	}
 }
 
-/**Destroys all bricks if level is lost*/
+//Destroy elements
 void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 	(void)level;
 	for (int i = 0; i < signed(elements->size()); i++) {
@@ -248,7 +248,7 @@ void Controller::destroyLevel(int level, vector <GameElement*>* elements) {
 	}
 }
 
-/**Displaces the game to the center of the window*/
+//Displaces the game to the center of the window
 void Controller::poll(SDL_Event &event,Window *window, vector <GameElement*>* elements) {
 	if (event.type == SDL_WINDOWEVENT) {
 		switch (event.window.event) {

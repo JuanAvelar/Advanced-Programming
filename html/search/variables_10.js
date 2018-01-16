@@ -9,5 +9,6 @@ var searchData=
   ['pitch',['pitch',['../struct_s_d_l___surface.html#a5fa37325d77d65b2ed64ffc7cd01bb6c',1,'SDL_Surface']]],
   ['pixels',['pixels',['../struct_s_d_l___surface.html#abd9597e0e084b8ef33fe0397bc26d911',1,'SDL_Surface']]],
   ['possesed_5fimage',['Possesed_image',['../class_game_element.html#a1ddb9234af1f3b50e53d647716421ff0',1,'GameElement']]],
+  ['powerup',['powerUp',['../class_game_element.html#a289bcb12e869de7e979c2509ef25b80f',1,'GameElement']]],
   ['pressure',['pressure',['../struct_s_d_l___touch_finger_event.html#ab4fca822d0807b5748dbae8d3cc56524',1,'SDL_TouchFingerEvent']]]
 ];

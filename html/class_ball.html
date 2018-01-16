@@ -75,13 +75,19 @@ $(function() {
 Inheritance diagram for Ball:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball__inherit__graph.png" border="0" usemap="#_ball_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="_ball_inherit__map" id="_ball_inherit__map">
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,381,172,588"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Ball:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_ball__coll__graph.png" border="0" usemap="#_ball_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="_ball_coll__map" id="_ball_coll__map">
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,381,172,588"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -100,6 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b170c27c74586af6108314c3623da53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#a9b170c27c74586af6108314c3623da53">draw</a> (<a class="el" href="class_window.html">Window</a> *ball_window) const</td></tr>
 <tr class="memdesc:a9b170c27c74586af6108314c3623da53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the ball when its speed is 0.  <a href="#a9b170c27c74586af6108314c3623da53">More...</a><br /></td></tr>
 <tr class="separator:a9b170c27c74586af6108314c3623da53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab7ae87d5582a72eece1ee4d800597c"><td class="memItemLeft" align="right" valign="top"><a id="a3ab7ae87d5582a72eece1ee4d800597c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#a3ab7ae87d5582a72eece1ee4d800597c">keyInput</a> (SDL_Event &amp;event)</td></tr>
+<tr class="memdesc:a3ab7ae87d5582a72eece1ee4d800597c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the platform according to key input and launches balls with the up key. <br /></td></tr>
+<tr class="separator:a3ab7ae87d5582a72eece1ee4d800597c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9b1020d19103d28b361cdf5b8111f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ball.html#a9a9b1020d19103d28b361cdf5b8111f6">move</a> (<a class="el" href="class_game_element.html">GameElement</a> *right_wall, <a class="el" href="class_game_element.html">GameElement</a> *left_wall)</td></tr>
 <tr class="memdesc:a9a9b1020d19103d28b361cdf5b8111f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to move the ball.  <a href="#a9a9b1020d19103d28b361cdf5b8111f6">More...</a><br /></td></tr>
 <tr class="separator:a9a9b1020d19103d28b361cdf5b8111f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,7 +197,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a289bcb12e869de7e979c2509ef25b80f"></a>
-<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b> = none</td></tr>
+<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a289bcb12e869de7e979c2509ef25b80f">powerUp</a> = none</td></tr>
+<tr class="memdesc:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">The powerup possessed by the game element. <br /></td></tr>
 <tr class="separator:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
@@ -276,12 +287,6 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>Draws the ball object with its image. </p>
 
 <p>Implements <a class="el" href="class_game_element.html#acad1a30d8bcf7cce64058262464da795">GameElement</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_ball_a9b170c27c74586af6108314c3623da53_cgraph.png" border="0" usemap="#class_ball_a9b170c27c74586af6108314c3623da53_cgraph" alt=""/></div>
-<!-- MAP 2 -->
-</div>
 
 </div>
 </div>

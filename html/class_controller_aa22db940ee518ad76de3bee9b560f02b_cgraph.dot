@@ -1,9 +1,0 @@
-digraph "Controller::poll"
-{
-  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
-  node [fontname="Helvetica",fontsize="12",shape=record];
-  rankdir="LR";
-  Node6 [label="Controller::poll",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node6 -> Node7 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
-  Node7 [label="SDL_GetWindowSurface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_s_d_l__video_8h.html#a0f7a1d102e1d5dd2d739ad70fe268385",tooltip="Get the SDL surface associated with the window. "];
-}

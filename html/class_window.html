@@ -79,11 +79,8 @@ Collaboration diagram for Window:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_window__coll__graph.png" border="0" usemap="#_window_coll__map" alt="Collaboration graph"/></div>
 <map name="_window_coll__map" id="_window_coll__map">
-<area shape="rect" id="node2" href="struct_s_d_l___surface.html" title="A collection of pixels used in software blitting. " alt="" coords="177,717,295,959"/>
-<area shape="rect" id="node3" href="struct_s_d_l___pixel_format.html" title="{SDL_PixelFormat\n|+ Aloss\l+ Amask\l+ Ashift\l+ BitsPerPixel\l+ Bloss\l+ Bmask\l+ Bshift\l+ BytesPerPixel\l+ format\l+ Gloss\land 7 more...\l|}" alt="" coords="5,393,152,652"/>
-<area shape="rect" id="node4" href="struct_s_d_l___palette.html" title="{SDL_Palette\n|+ ncolors\l+ refcount\l+ version\l|}" alt="" coords="23,208,135,328"/>
-<area shape="rect" id="node5" href="struct_s_d_l___color.html" title="{SDL_Color\n|+ a\l+ b\l+ g\l+ r\l|}" alt="" coords="28,5,129,143"/>
-<area shape="rect" id="node6" href="struct_s_d_l___rect.html" title="A rectangle, with the origin at the upper left. " alt="" coords="242,454,337,591"/>
+<area shape="rect" id="node2" title="STL class. " alt="" coords="33,157,123,243"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="5,5,151,108"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -102,7 +99,7 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a752a62c1fedece0a87ba6ff7e72de344">isClosed</a> () const</td></tr>
 <tr class="memdesc:a752a62c1fedece0a87ba6ff7e72de344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the window is closed or not. <br /></td></tr>
 <tr class="separator:a752a62c1fedece0a87ba6ff7e72de344"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a826ab0a64b7095a3d52ea05d0c9edbb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a826ab0a64b7095a3d52ea05d0c9edbb5">pollEvents</a> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;event)</td></tr>
+<tr class="memitem:a826ab0a64b7095a3d52ea05d0c9edbb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a826ab0a64b7095a3d52ea05d0c9edbb5">pollEvents</a> (SDL_Event &amp;event)</td></tr>
 <tr class="memdesc:a826ab0a64b7095a3d52ea05d0c9edbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll events function to coordinate key events.  <a href="#a826ab0a64b7095a3d52ea05d0c9edbb5">More...</a><br /></td></tr>
 <tr class="separator:a826ab0a64b7095a3d52ea05d0c9edbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -113,7 +110,7 @@ SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memdesc:ab51476391df8f402016fcc0e3884bb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render pointer, called when something needs to be drawn, NOTE: there can only be one renderer pointer per window. <br /></td></tr>
 <tr class="separator:ab51476391df8f402016fcc0e3884bb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af844aca305ade64da9cef8beb9faf8eb"><td class="memItemLeft" align="right" valign="top"><a id="af844aca305ade64da9cef8beb9faf8eb"></a>
-<a class="el" href="_s_d_l__video_8h.html#a55a196c7d3b8497538632c79ae1e6392">SDL_Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#af844aca305ade64da9cef8beb9faf8eb">_window</a> = nullptr</td></tr>
+SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#af844aca305ade64da9cef8beb9faf8eb">_window</a> = nullptr</td></tr>
 <tr class="memdesc:af844aca305ade64da9cef8beb9faf8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Declaring window to null pointer. <br /></td></tr>
 <tr class="separator:af844aca305ade64da9cef8beb9faf8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,7 +131,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:aa68001bc905c217d9a82bbcced22b585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the only window. <br /></td></tr>
 <tr class="separator:aa68001bc905c217d9a82bbcced22b585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d4ba3ba66d9d01e80e86abc71ee9bf"><td class="memItemLeft" align="right" valign="top"><a id="a31d4ba3ba66d9d01e80e86abc71ee9bf"></a>
-<a class="el" href="struct_s_d_l___surface.html">SDL_Surface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a31d4ba3ba66d9d01e80e86abc71ee9bf">_surface</a></td></tr>
+SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_window.html#a31d4ba3ba66d9d01e80e86abc71ee9bf">_surface</a></td></tr>
 <tr class="memdesc:a31d4ba3ba66d9d01e80e86abc71ee9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to a structure that contains a collection of pixels used in software blitting. <br /></td></tr>
 <tr class="separator:a31d4ba3ba66d9d01e80e86abc71ee9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4096105823af83ad842d52f297aa38"><td class="memItemLeft" align="right" valign="top"><a id="a5d4096105823af83ad842d52f297aa38"></a>
@@ -188,9 +185,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_window_aa75e2e442088a062e3f7751e0f33a63d_cgraph.png" border="0" usemap="#class_window_aa75e2e442088a062e3f7751e0f33a63d_cgraph" alt=""/></div>
 <map name="class_window_aa75e2e442088a062e3f7751e0f33a63d_cgraph" id="class_window_aa75e2e442088a062e3f7751e0f33a63d_cgraph">
-<area shape="rect" id="node2" href="class_window.html#a4887a707337450dc686d30ea81eac3a1" title="Boolean function to know if window is correctly initialized. " alt="" coords="196,32,303,61"/>
-<area shape="rect" id="node3" href="_s_d_l_8h.html#a8fc8d35348d7c74bad8392d776c937b8" title="This function initializes the subsystems specified by flags. " alt="" coords="393,5,475,35"/>
-<area shape="rect" id="node4" href="_s_d_l__video_8h.html#a42565088bdb739a5353fd67abbe235d2" title="Create a window with the specified position, dimensions, and flags. " alt="" coords="351,59,517,88"/>
+<area shape="rect" id="node2" href="class_window.html#a4887a707337450dc686d30ea81eac3a1" title="Boolean function to know if window is correctly initialized. " alt="" coords="196,5,303,35"/>
 </map>
 </div>
 
@@ -221,16 +216,6 @@ Here is the call graph for this function:</div>
 
 <p>Virtual Destroyer of window. </p>
 <p>Destructor of window and objects inside. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_window_a245d821e6016fa1f6970ccbbedd635f6_cgraph.png" border="0" usemap="#class_window_a245d821e6016fa1f6970ccbbedd635f6_cgraph" alt=""/></div>
-<map name="class_window_a245d821e6016fa1f6970ccbbedd635f6_cgraph" id="class_window_a245d821e6016fa1f6970ccbbedd635f6_cgraph">
-<area shape="rect" id="node2" href="_s_d_l__render_8h.html#ab1f096742fa9c882c3f1555ee62c4ac2" title="Destroy the rendering context for a window and free associated textures. " alt="" coords="204,5,387,35"/>
-<area shape="rect" id="node3" href="_s_d_l__video_8h.html#a72609295a4faee0587268339ccff80c2" title="Destroy a window. " alt="" coords="209,59,382,88"/>
-<area shape="rect" id="node4" href="_s_d_l_8h.html#afdabaf714781099083592051f2d9ac11" title="This function cleans up all initialized subsystems. " alt="" coords="250,112,341,141"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -256,21 +241,13 @@ Here is the call graph for this function:</div>
 <p>Use this function to set the color used for drawing operations</p>
 <p>Use this function to clear the current rendering target with the drawing color. </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_window_a866e3ccec583d94402bb82b352d51c10_cgraph.png" border="0" usemap="#class_window_a866e3ccec583d94402bb82b352d51c10_cgraph" alt=""/></div>
-<map name="class_window_a866e3ccec583d94402bb82b352d51c10_cgraph" id="class_window_a866e3ccec583d94402bb82b352d51c10_cgraph">
-<area shape="rect" id="node2" href="_s_d_l__render_8h.html#a48fa9d24395f3610746988ecca2aae86" title="Update the screen with rendering performed. " alt="" coords="196,5,364,35"/>
-<area shape="rect" id="node3" href="_s_d_l__render_8h.html#aa26234da40f87f4b16d715564242a341" title="Set the color used for drawing operations (Rect, Line and Clear). " alt="" coords="173,59,387,88"/>
-<area shape="rect" id="node4" href="_s_d_l__render_8h.html#a473b4abbb29c60e98876eb68ad850f79" title="Clear the current rendering target with the drawing color. " alt="" coords="204,112,356,141"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_window_a866e3ccec583d94402bb82b352d51c10_icgraph.png" border="0" usemap="#class_window_a866e3ccec583d94402bb82b352d51c10_icgraph" alt=""/></div>
 <map name="class_window_a866e3ccec583d94402bb82b352d51c10_icgraph" id="class_window_a866e3ccec583d94402bb82b352d51c10_icgraph">
 <area shape="rect" id="node2" href="class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f" title="Function to update the graphical output. " alt="" coords="173,5,407,35"/>
+<area shape="rect" id="node4" href="class_controller.html#a96062807f924a58920faa7fb918598ef" title="Does a pause until you click the big button. " alt="" coords="207,59,373,88"/>
+<area shape="rect" id="node3" href="class_controller.html#ad15c460d359ab3464c00a97d786bf412" title="All game logic and elements are chosen there. " alt="" coords="455,32,639,61"/>
 </map>
 </div>
 
@@ -306,15 +283,6 @@ Here is the caller graph for this function:</div>
 <p>checking if renderer has been created</p>
 <p>Loading image surface </p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_window_a4887a707337450dc686d30ea81eac3a1_cgraph.png" border="0" usemap="#class_window_a4887a707337450dc686d30ea81eac3a1_cgraph" alt=""/></div>
-<map name="class_window_a4887a707337450dc686d30ea81eac3a1_cgraph" id="class_window_a4887a707337450dc686d30ea81eac3a1_cgraph">
-<area shape="rect" id="node2" href="_s_d_l_8h.html#a8fc8d35348d7c74bad8392d776c937b8" title="This function initializes the subsystems specified by flags. " alt="" coords="202,5,285,35"/>
-<area shape="rect" id="node3" href="_s_d_l__video_8h.html#a42565088bdb739a5353fd67abbe235d2" title="Create a window with the specified position, dimensions, and flags. " alt="" coords="160,59,327,88"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_window_a4887a707337450dc686d30ea81eac3a1_icgraph.png" border="0" usemap="#class_window_a4887a707337450dc686d30ea81eac3a1_icgraph" alt=""/></div>
@@ -334,7 +302,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Window::pollEvents </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;&#160;</td>
+          <td class="paramtype">SDL_Event &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
         </tr>

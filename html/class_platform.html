@@ -75,13 +75,19 @@ $(function() {
 Inheritance diagram for Platform:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_platform__inherit__graph.png" border="0" usemap="#_platform_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
+<map name="_platform_inherit__map" id="_platform_inherit__map">
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,381,172,588"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
+</map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Platform:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_platform__coll__graph.png" border="0" usemap="#_platform_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
+<map name="_platform_coll__map" id="_platform_coll__map">
+<area shape="rect" id="node2" href="class_moveable_object.html" title="This class leaves an inheritance to all objects that move (ball, platform) " alt="" coords="5,381,172,588"/>
+<area shape="rect" id="node3" href="class_game_element.html" title="Game Element manages each element of the game seperately, each must contain its own texture to add th..." alt="" coords="9,5,168,333"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -101,9 +107,9 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#aa046dc1f23bc5e6e0c7ec8b435108bac">draw</a> (<a class="el" href="class_window.html">Window</a> *platform_window) const</td></tr>
 <tr class="memdesc:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that draws the platform into the SDL window. <br /></td></tr>
 <tr class="separator:aa046dc1f23bc5e6e0c7ec8b435108bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad58d874308da5c65a4281f2954efeee1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#ad58d874308da5c65a4281f2954efeee1">keyInput</a> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;event, <a class="el" href="class_ball.html">Ball</a> *ball)</td></tr>
-<tr class="memdesc:ad58d874308da5c65a4281f2954efeee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that implements the keyboard input for movement of the platform.  <a href="#ad58d874308da5c65a4281f2954efeee1">More...</a><br /></td></tr>
-<tr class="separator:ad58d874308da5c65a4281f2954efeee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae196677ddbb2f1854c16c01b29e041d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#ae196677ddbb2f1854c16c01b29e041d0">keyInput</a> (SDL_Event &amp;event)</td></tr>
+<tr class="memdesc:ae196677ddbb2f1854c16c01b29e041d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that implements the keyboard input for movement of the platform.  <a href="#ae196677ddbb2f1854c16c01b29e041d0">More...</a><br /></td></tr>
+<tr class="separator:ae196677ddbb2f1854c16c01b29e041d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44421802653ad453152be640053d6c1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a44421802653ad453152be640053d6c1c">move</a> (<a class="el" href="class_game_element.html">GameElement</a> *right_wall, <a class="el" href="class_game_element.html">GameElement</a> *left_wall)</td></tr>
 <tr class="memdesc:a44421802653ad453152be640053d6c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that looks at the direction of the platform and moves it accordingly.  <a href="#a44421802653ad453152be640053d6c1c">More...</a><br /></td></tr>
 <tr class="separator:a44421802653ad453152be640053d6c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,7 +197,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memdesc:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the game element in amount of pixels. <br /></td></tr>
 <tr class="separator:a94cb6e054d7b806cb0fec56c2ea223fd inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a289bcb12e869de7e979c2509ef25b80f"></a>
-<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><b>powerUp</b> = none</td></tr>
+<a class="el" href="class_game_element.html#a309423acc72febf26adef7efa466a8ae">Powerups</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a289bcb12e869de7e979c2509ef25b80f">powerUp</a> = none</td></tr>
+<tr class="memdesc:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="mdescLeft">&#160;</td><td class="mdescRight">The powerup possessed by the game element. <br /></td></tr>
 <tr class="separator:a289bcb12e869de7e979c2509ef25b80f inherit pub_attribs_class_game_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbcfa253a9f677696f569639949ac6c inherit pub_attribs_class_game_element"><td class="memItemLeft" align="right" valign="top"><a id="a1cbcfa253a9f677696f569639949ac6c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_element.html#a1cbcfa253a9f677696f569639949ac6c">width</a></td></tr>
@@ -255,46 +262,38 @@ SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 
 <p>Constructor of the platform using an image, also used for the start button. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph.png" border="0" usemap="#class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph" alt=""/></div>
-<map name="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph" id="class_platform_a8743e33a404693da0fa5fb3dbfda606b_cgraph">
-<area shape="rect" id="node2" href="_s_d_l__render_8h.html#a0c75234b90965e9db70947fbe91a5840" title="Create a texture from an existing surface. " alt="" coords="200,5,453,35"/>
-</map>
-</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad58d874308da5c65a4281f2954efeee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad58d874308da5c65a4281f2954efeee1">&#9670;&nbsp;</a></span>keyInput()</h2>
+<a id="ae196677ddbb2f1854c16c01b29e041d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae196677ddbb2f1854c16c01b29e041d0">&#9670;&nbsp;</a></span>keyInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Platform::keyInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">SDL_Event &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_ball.html">Ball</a> *&#160;</td>
-          <td class="paramname"><em>ball</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Function that implements the keyboard input for movement of the platform. </p>
 <p>Key pressdown sets a direction of the platform (left or right) and key release resets the direction to 0. </p>
+
+<p>Implements <a class="el" href="class_moveable_object.html#ac068c819788c679f1a2dfaf8507871d3">MoveableObject</a>.</p>
 
 </div>
 </div>

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['name',['name',['../struct_s_d_l___renderer_info.html#a433ecb2865c81ba9f28038e56a4ae6f3',1,'SDL_RendererInfo']]],
-  ['needed',['needed',['../struct_s_d_l___audio_c_v_t.html#ac600a035a48df05e14d3712fd6953ad4',1,'SDL_AudioCVT']]],
-  ['new_5ftime',['new_time',['../class_controller.html#a4f87c3d45315a54318a5ff309eb90f39',1,'Controller']]],
-  ['num_5ftexture_5fformats',['num_texture_formats',['../struct_s_d_l___renderer_info.html#acdec165b2053b914313f5996983ec6b8',1,'SDL_RendererInfo']]]
+  ['score',['score',['../class_controller.html#a86c1f87c265dd7f60642999382439f30',1,'Controller']]],
+  ['setbricklevel',['setBrickLevel',['../class_controller.html#ac85aef3930b192d838ac4d2763bed836',1,'Controller']]],
+  ['showgraphicoutput',['showGraphicOutput',['../class_controller.html#ae24d317546b8a54cbdc7b7334bb3d15f',1,'Controller']]],
+  ['size',['Size',['../class_game_element.html#a88e64c35dcdc76eec6078096cf5b64f7',1,'GameElement']]],
+  ['start_5fgame',['Start_game',['../class_controller.html#a9918336d90ea7b53d746007499947334',1,'Controller']]],
+  ['startmenu',['startMenu',['../class_controller.html#a96062807f924a58920faa7fb918598ef',1,'Controller']]]
 ];
